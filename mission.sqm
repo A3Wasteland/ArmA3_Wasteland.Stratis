@@ -6592,14 +6592,14 @@ class Mission
 		class Item110
 		{
 			position[]={6582.3037,24.14024,5326.2734};
-			name="milSpawn_1_1";
+			name="milSpawn_2";
 			type="Empty";
 			colorName="ColorPink";
 		};
 		class Item111
 		{
 			position[]={2461.3945,74.185867,5696.3081};
-			name="milSpawn_2";
+			name="milSpawn_3";
 			type="Empty";
 			colorName="ColorPink";
 		};
