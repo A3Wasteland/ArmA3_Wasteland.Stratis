@@ -6609,7 +6609,6 @@ class Intro
 {
 	addOns[]=
 	{
-		"a3_map_altis",
 		"a3_map_stratis"
 	};
 	addOnsAuto[]=
@@ -6639,7 +6638,6 @@ class OutroWin
 {
 	addOns[]=
 	{
-		"a3_map_altis",
 		"a3_map_stratis"
 	};
 	addOnsAuto[]=
@@ -6669,7 +6667,6 @@ class OutroLoose
 {
 	addOns[]=
 	{
-		"a3_map_altis",
 		"a3_map_stratis"
 	};
 	addOnsAuto[]=

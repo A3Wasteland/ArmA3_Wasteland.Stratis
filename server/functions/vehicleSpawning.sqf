@@ -47,7 +47,7 @@ _createRandomVehicle =
 	_pos = getMarkerPos (_x select 0);
 	_tradius = _x select 1;
 	_townname = _x select 2;
-	_vehammount = ceil (_tradius / 20);  // spawns a vehicle for every 20m radius the townmarker has, this might need tweaking! 
+	_vehammount = ceil (_tradius / 30);  // spawns a vehicle for every 30m radius the townmarker has, this might need tweaking! 
 	_angleIncr = 360 / _vehammount;
 	_langle = random _angleIncr;
 	//_minrad = 15;
@@ -55,7 +55,7 @@ _createRandomVehicle =
 	_minrad = 0;
 	_maxrad = _tradius / 2;
 	
-	while {_lcounter < _vehammount} do
+	while {_lcounter < _vehammount && _tradius > 30} do  //ignore towns with a radius under 30 (this ignores pythos island on stratis)
 	{
 		_lpos = [_pos, [[_maxrad, 0, 0], _langle] call BIS_fnc_rotateVector2D] call BIS_fnc_vectorAdd;
 		_spawnedVehicles set [count _spawnedVehicles, [_lpos, _minrad, _maxrad, _counter] spawn _createRandomVehicle];
@@ -74,4 +74,4 @@ _createRandomVehicle =
 	waitUntil {scriptDone _x};
 } forEach _spawnedVehicles;
 
-diag_log format["WASTELAND - Vehicle spawning completed - %1 Vehicles Spawned on Altis",_counter];
+diag_log format["WASTELAND - Vehicle spawning completed - %1 Vehicles Spawned on Stratis",_counter];

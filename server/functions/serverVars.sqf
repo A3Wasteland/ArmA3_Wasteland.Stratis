@@ -40,7 +40,7 @@ currentStaticHelis = []; // Storage for the heli marker numbers so that we don't
 civilianVehicles =
 [
 	"C_Hatchback_01_F",
-//	"C_Hatchback_01_sport_F", // Too easy to break
+	"C_Hatchback_01_sport_F", 
 	"C_SUV_01_F",
 	"C_Offroad_01_F",
 	"I_G_Offroad_01_F",
@@ -81,14 +81,14 @@ waterVehicles =
 [
 //	"B_Lifeboat",
 //	"O_Lifeboat",
-//	"C_Rubberboat",
+	"C_Rubberboat",
 //	"B_SDV_01_F",
 //	"O_SDV_01_F",
-//	"I_SDV_01_F",
+	"I_SDV_01_F",
 //	"B_Boat_Transport_01_F",
 //	"O_Boat_Transport_01_F",
 //	"I_Boat_Transport_01_F",
-//	"I_G_Boat_Transport_01_F",
+	"I_G_Boat_Transport_01_F",
 	"B_Boat_Armed_01_minigun_F",
 	"O_Boat_Armed_01_hmg_F",
 	"I_Boat_Armed_01_minigun_F",
@@ -134,9 +134,7 @@ objectList =
 	"Land_LampShabby_F",
 	"Land_MetalBarrel_F",
 	"Land_Mil_ConcreteWall_F",
-	"Land_Mil_WallBig_4m_F",
-	"Land_Mil_WallBig_4m_F",
-	"Land_Mil_WallBig_4m_F",
+// these keep falling over	"Land_Mil_WallBig_4m_F",
 	"Land_Pipes_large_F",
 	"Land_RampConcrete_F",
 	"Land_RampConcreteHigh_F",
@@ -174,7 +172,7 @@ vehicleWeapons =
 //	"arifle_SDAR_F",
 	"SMG_01_F",	// Vermin .45 ACP
 	"SMG_02_F",	// Sting 9mm
-	"hgun_PDW2000_F",
+	"hgun_PDW2000_F",  //note: isnt actually a handgun, goes into rifle slot..
 	"arifle_TRG20_F",
 	"arifle_TRG21_F",
 	"arifle_TRG21_GL_F",

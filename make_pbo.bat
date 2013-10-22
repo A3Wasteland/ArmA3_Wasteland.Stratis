@@ -16,8 +16,8 @@ IF "%username%" == "Nick Ludlam" (
 
 :: General definitions
 
-SET "LOCAL_MISSION_NAME=ArmA3_Wasteland.Altis"
-SET "SOURCE_DIR=%USERPROFILE%\Documents\GitHub\ArmA3_Wasteland.Altis"
+SET "LOCAL_MISSION_NAME=ArmA3_Wasteland.Stratis"
+SET "SOURCE_DIR=%USERPROFILE%\Documents\GitHub\ArmA3_Wasteland.Stratis"
 SET "PBO_TOOL=C:\Program Files (x86)\Bohemia Interactive\Tools\BinPBO Personal Edition\BinPBO.exe"
 
 :: Business end
