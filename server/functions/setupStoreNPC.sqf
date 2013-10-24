@@ -99,7 +99,19 @@ if (isServer) then
 			} forEach (_storeOwnerAppearance select 1); 
 
 			_pDir = getDir _npc;
-			_bPos = _building buildingPos _spotNum;
+			//_bPos = _building buildingPos _spotNum;
+			private "_bPos";
+			switch (typeName _spotNum) do
+			{
+				case "SCALAR":
+				{
+					_bPos = _building buildingPos _spotNum;
+				};
+				case "ARRAY":
+				{
+					_bPos = _spotNum;
+				};
+			};
 			_npc setPosATL _bPos;
 			
 			_desk = [_npc, _bPos, _pDir, _deskDirMod, _identity] call compile preprocessFileLineNumbers "server\functions\createStoreFurniture.sqf";
