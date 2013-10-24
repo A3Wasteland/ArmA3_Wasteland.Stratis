@@ -1170,8 +1170,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4147.7075,157.70811,3307.1665};
-					azimut=157;
+					position[]={2853.6526,45.113235,3693.4648};
+					azimut=4.8233585;
 					id=65;
 					side="LOGIC";
 					vehicle="C_man_polo_2_F_euro";
@@ -1210,8 +1210,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2769.03,3.35144,1758.12};
-					azimut=268;
+					position[]={2769.03,143.92769,1758.12};
+					azimut=312.01596;
 					id=67;
 					side="LOGIC";
 					vehicle="C_man_polo_2_F_asia";

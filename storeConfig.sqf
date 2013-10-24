@@ -730,14 +730,14 @@ customPlayerItems = compileFinal str
 // Name, Building Position, Desk Direction Modifier, Excluded Buttons
 storeOwnerConfig = compileFinal str
 [
-	["GenStore1", 1, 191, []],
-	["GenStore2", 1, 52, []],
+	["GenStore1", 1, 178, []],
+	["GenStore2", 1, 95, []],
 	["GenStore3", 1, 30, []],
 	
-	["GunStore1", 1, 157, []],
-	["GunStore2", 1, 70, []],
-	["GunStore3", 1, 268, []],
-	["GunStore4", 1, 30, []]
+	["GunStore1", 1, 5, []],
+	["GunStore2", 1, 130, []],
+	["GunStore3", 2, 310, []],
+	["GunStore4", 1, 192, []]
 	
 //	["VehStore1", 1, 75, []],
 //	["VehStore2", 6, 45, ["Boats", "Submarines"]],
