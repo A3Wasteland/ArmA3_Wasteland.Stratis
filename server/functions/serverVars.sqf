@@ -8,11 +8,6 @@ if (!isServer) exitWith {};
 
 diag_log "WASTELAND SERVER - Initializing Server Vars";
 
-sideMissionPos = "";
-mainMissionPos = "";
-
-currentVehicles = [];
-publicVariable "currentVehicles";
 pvar_teamSwitchList = [];
 publicVariable "pvar_teamSwitchList";
 pvar_teamKillList = [];
@@ -32,7 +27,7 @@ publicVariable "currentDate";
 currentInvites = [];
 publicVariable "currentInvites";
 
-"PlayerCDeath" addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerDied};
+"PlayerCDeath" addPublicVariableEventHandler { [_this select 1] spawn server_playerDied };
 
 currentStaticHelis = []; // Storage for the heli marker numbers so that we don't spawn wrecks on top of live helis
 
@@ -40,7 +35,7 @@ currentStaticHelis = []; // Storage for the heli marker numbers so that we don't
 civilianVehicles =
 [
 	"C_Hatchback_01_F",
-	"C_Hatchback_01_sport_F", 
+	"C_Hatchback_01_sport_F",
 	"C_SUV_01_F",
 	"C_Offroad_01_F",
 	"I_G_Offroad_01_F",
@@ -87,8 +82,8 @@ waterVehicles =
 	"I_SDV_01_F",
 //	"B_Boat_Transport_01_F",
 //	"O_Boat_Transport_01_F",
-//	"I_Boat_Transport_01_F",
-	"I_G_Boat_Transport_01_F",
+	"I_Boat_Transport_01_F",
+//	"I_G_Boat_Transport_01_F",
 	"B_Boat_Armed_01_minigun_F",
 	"O_Boat_Armed_01_hmg_F",
 	"I_Boat_Armed_01_minigun_F",
@@ -134,7 +129,7 @@ objectList =
 	"Land_LampShabby_F",
 	"Land_MetalBarrel_F",
 	"Land_Mil_ConcreteWall_F",
-// these keep falling over	"Land_Mil_WallBig_4m_F",
+//	"Land_Mil_WallBig_4m_F",
 	"Land_Pipes_large_F",
 	"Land_RampConcrete_F",
 	"Land_RampConcreteHigh_F",
@@ -148,18 +143,14 @@ staticWeaponsList =
 [
 	"B_Mortar_01_F",
 	"O_Mortar_01_F",
-	"I_Mortar_01_F"
+	"I_Mortar_01_F",
+	"I_G_Mortar_01_F"
 ];
 
 //Object List - Random Helis.
 staticHeliList = 
 [
 	"B_Heli_Light_01_F",
-	"B_Heli_Light_01_F",
-	"B_Heli_Light_01_F",
-	"B_Heli_Light_01_armed_F",
-	"O_Heli_Light_02_unarmed_F",
-	"O_Heli_Light_02_unarmed_F",
 	"O_Heli_Light_02_unarmed_F"
 ];
 
@@ -172,7 +163,7 @@ vehicleWeapons =
 //	"arifle_SDAR_F",
 	"SMG_01_F",	// Vermin .45 ACP
 	"SMG_02_F",	// Sting 9mm
-	"hgun_PDW2000_F",  //note: isnt actually a handgun, goes into rifle slot..
+	"hgun_PDW2000_F",
 	"arifle_TRG20_F",
 	"arifle_TRG21_F",
 	"arifle_TRG21_GL_F",
@@ -186,10 +177,10 @@ vehicleWeapons =
 	"arifle_MX_F",
 	"arifle_MX_GL_F",
 	"arifle_MX_SW_F",
-	"arifle_MXM_F"
+	"arifle_MXM_F",
 //	"srifle_EBR_F",
-//	"LMG_Mk200_F",
-//	"LMG_Zafir_F"
+	"LMG_Mk200_F",
+	"LMG_Zafir_F"
 ];
 
 vehicleAddition =
@@ -224,26 +215,10 @@ vehicleAddition2 =
 	"Chemlight_red"
 ];
 
-MissionSpawnMarkers = 
-[
-	["Mission_1",false],
-	["Mission_2",false],
-	["Mission_3",false],
-	["Mission_4",false],
-	["Mission_5",false],
-	["Mission_6",false],
-	["Mission_7",false],
-	["Mission_8",false],
-	["Mission_9",false],
-	["Mission_10",false],
-	["Mission_11",false],
-	["Mission_12",false],
-	["Mission_13",false],
-	["Mission_14",false],
-	["Mission_15",false],
-	["Mission_16",false],
-	["Mission_17",false],
-	["Mission_18",false],
-	["Mission_19",false],
-	["Mission_20",false]
-];
+MissionSpawnMarkers = [];
+{
+	if (["Mission_", _x] call fn_findString == 0) then
+	{
+		MissionSpawnMarkers set [count MissionSpawnMarkers, [_x, false]];
+	};
+} forEach allMapMarkers;
