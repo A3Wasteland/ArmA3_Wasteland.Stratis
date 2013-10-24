@@ -10,44 +10,33 @@
 // Marker Name, Diameter, City Name
 cityList = compileFinal str
 [
-	["Town_1", 400, "Kavala"],
-	["Town_2", 300, "Agios Dionysios"],
-	["Town_3", 150, "Abdera"],
-	["Town_4", 250, "Athira"],
-	["Town_5", 200, "Telos"],
-	["Town_6", 200, "Sofia"],
-	["Town_7", 200, "Paros"],
-	["Town_8", 300, "Pyrgos"],
-	["Town_9", 150, "Selakano"],
-	["Town_10", 200, "Vikos"],
-	["Town_11", 250, "Zaros"],
-	["Town_12", 250, "Neochori"],
-	["Town_13", 250, "Aggelochori"],
-	["Town_14", 200, "Panochori"],
-	["Town_15", 200, "Charkia"],
-	["Town_16", 150, "Chalkeia"],
-	["Town_17", 150, "Oreokastro"],
-	["Town_18", 100, "Dump"],
-	["Town_19", 125, "Negades"],
-	["Town_20", 100, "Frini"]
+	["Town_1",200,"Air Station Mike-28"],
+	["Town_2",100,"Agios Loannis"],
+	["Town_3",100,"Agios Cephas"],
+	["Town_4",200,"Girna"],			
+	["Town_5",200,"Camp Tempest"],
+	["Town_6",300,"Stratis Airbase Town"],
+	["Town_7",250,"Stratis Airbase Runway"],
+	["Town_8",350,"Agia Marina"],
+	["Town_9",250,"Kill Farm"],
+	["Town_10",200,"Camp Rogain"],
+	["Town_11",230,"Kamino Firing Range"],
+	["Town_12",240,"Camp Maxwell"],
+	["Town_13",150,"ol-Kamino"],
+	["Town_14",15,"Isla Pythos"],  // do not increase radius, else vehicles and objects will spawn on the island!
+	["Town_15",100,"Baldy Barracks"],
+	["Town_16",175,"ol-Keiros"],			
+	["Town_17",175,"Tsoukalia"],
+	["Town_18",100,"LZ Connor"],
+	["Town_19",180,"Playa-del-Stragos"],
+	["Town_20",250,"ol-Jay"]
 ];
 
 militarylist = compileFinal str
 [
 	["milSpawn_1"],
 	["milSpawn_2"],
-	["milSpawn_3"],
-	["milSpawn_4"],
-	["milSpawn_5"],
-	["milSpawn_6"],
-	["milSpawn_7"],
-	["milSpawn_8"],
-	["milSpawn_9"],
-	["milSpawn_10"],
-	["milSpawn_11"],
-	["milSpawn_12"],
-	["milSpawn_13"],
-	["milSpawn_14"]
+	["milSpawn_3"]
 ];
 
 cityLocations = [];

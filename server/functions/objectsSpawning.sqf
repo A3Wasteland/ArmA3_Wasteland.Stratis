@@ -35,7 +35,7 @@ _createRandomObject =
 	_pos = getMarkerPos (_x select 0);
 	_tradius = _x select 1;
 	_townname = _x select 2;
-	_objammount = ceil (_tradius / 15);  // spawns an object for every 15m radius the townmarker has, this might need tweaking! 
+	_objammount = ceil (_tradius / 25);  // spawns an object for every 25m radius the townmarker has, this might need tweaking! 
 	_angleIncr = 360 / _objammount;
 	_langle = random _angleIncr;
 	//_minrad = 15;
@@ -43,7 +43,7 @@ _createRandomObject =
 	_minrad = 0;
 	_maxrad = _tradius / 2;
 	
-	while {_lcounter < _objammount} do
+	while {_lcounter < _objammount && _tradius > 30} do  // ignore towns smaller then 30m (this also ignores pythos island on stratis)
 	{
 		_lpos = [_pos, [[_maxrad, 0, 0], _langle] call BIS_fnc_rotateVector2D] call BIS_fnc_vectorAdd;
 		_spawnedObjects set [count _spawnedObjects, [_lpos, _minrad, _maxrad, _counter] spawn _createRandomObject];
