@@ -19,12 +19,10 @@ diag_log format["WASTELAND SERVER - Main Mission Started: %1",_missionType];
 //Get Mission Location
 _positions =
 [
-	[25461.8, 23708.4],
-	[22051.0, 12723.3],
-	[13285.9, 14049.9],
-	[8445.31, 7125.42],
-	[3634.34, 17198.5],
-	[6251.06, 22687.6]
+	[2580.06, 6032.54],
+	[6654.43, 4822.27],
+	[4286.94, 2530.58],
+	[2073.06, 1027.24]
 ]; 
 _randomPos = _positions call BIS_fnc_SelectRandom;
 
