@@ -123,7 +123,7 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="A3Wasteland Stratis v0.9d";
+		briefingName="A3Wasteland Stratis v0.9e";
 		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
 		resistanceWest=0;
 		startWeather=0.10000001;
@@ -133,7 +133,7 @@ class Mission
 		forecastWind=0.69999999;
 		forecastWaves=0.89999998;
 		forecastLightnings=0.30000001;
-		year=2013;
+		year=2035;
 		month=6;
 		hour=6;
 		minute=0;
@@ -4851,7 +4851,7 @@ class Intro
 		forecastWind=0.69999999;
 		forecastWaves=0.89999998;
 		forecastLightnings=0.30000001;
-		year=2013;
+		year=2035;
 		month=6;
 		hour=6;
 		minute=0;
@@ -4880,7 +4880,7 @@ class OutroWin
 		forecastWind=0.69999999;
 		forecastWaves=0.89999998;
 		forecastLightnings=0.30000001;
-		year=2013;
+		year=2035;
 		month=6;
 		hour=6;
 		minute=0;
@@ -4909,7 +4909,7 @@ class OutroLoose
 		forecastWind=0.69999999;
 		forecastWaves=0.89999998;
 		forecastLightnings=0.30000001;
-		year=2013;
+		year=2035;
 		month=6;
 		hour=6;
 		minute=0;
