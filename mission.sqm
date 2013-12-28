@@ -123,7 +123,7 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="A3Wasteland Stratis v0.9e";
+		briefingName="A3Wasteland Stratis v0.9f";
 		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
 		resistanceWest=0;
 		startWeather=0.10000001;
@@ -4060,7 +4060,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=128;
+		items=137;
 		class Item0
 		{
 			position[]={4339.3457,226.45149,3824.2236};
@@ -5067,6 +5067,69 @@ class Mission
 			a=80;
 			b=40;
 			angle=140;
+		};
+		class Item128
+		{
+			position[]={18295.152,-6.7252245,8136.5732};
+			name="Treasure_0";
+			type="Empty";
+			colorName="ColorWhite";
+		};
+		class Item129
+		{
+			position[]={16985.289,-0.27175087,13616.465};
+			name="Treasure_1";
+			type="Empty";
+			colorName="ColorWhite";
+		};
+		class Item130
+		{
+			position[]={9866.0479,0.014741103,11111.971};
+			name="Treasure_2";
+			type="Empty";
+			colorName="ColorWhite";
+		};
+		class Item131
+		{
+			position[]={4992.7637,-0.020654676,9908.2881};
+			name="Treasure_3";
+			type="Empty";
+			colorName="ColorWhite";
+		};
+		class Item132
+		{
+			position[]={3505.4102,-0.023277842,11439.938};
+			name="Treasure_4";
+			type="Empty";
+			colorName="ColorWhite";
+		};
+		class Item133
+		{
+			position[]={3849.9155,0.00057628582,15028.444};
+			name="Treasure_5";
+			type="Empty";
+			colorName="ColorWhite";
+		};
+		class Item134
+		{
+			position[]={5281.2344,0.23328479,22658.328};
+			name="Treasure_6";
+			type="Empty";
+			colorName="ColorWhite";
+		};
+		class Item135
+		{
+			position[]={21207.197,0.20755874,20124.484};
+			name="Treasure_7";
+			type="Empty";
+			colorName="ColorWhite";
+		};
+		class Item136
+		{
+			position[]={24573.881,-0.0090859979,16154.248};
+			name="Treasure_8";
+			type="Empty";
+			colorName="ColorWhite";
 		};
 	};
 };
