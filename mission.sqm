@@ -4060,7 +4060,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=108;
+		items=128;
 		class Item0
 		{
 			position[]={4339.3457,226.45149,3824.2236};
@@ -4827,6 +4827,246 @@ class Mission
 			type="Empty";
 			colorName="ColorBlack";
 			angle=212.57001;
+		};
+		class Item108
+		{
+			position[]={3002.9419,7.5624671,6057.8418};
+			name="TERRITORY_AGIA_NORTH";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=60;
+			b=150;
+			angle=111.495;
+		};
+		class Item109
+		{
+			position[]={2973.5229,3.3886197,5916.9707};
+			name="TERRITORY_AGIA_SOUTH";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=60;
+			b=150;
+			angle=292.77802;
+		};
+		class Item110
+		{
+			position[]={2773.0618,142.81674,1732.431};
+			name="TERRITORY_AGIOS_CEPHAS";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=35;
+			b=35;
+			angle=-39.101898;
+		};
+		class Item111
+		{
+			position[]={3076.7148,167.80202,2142.6006};
+			name="TERRITORY_AGIOS_IOANNIS";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=35;
+			b=35;
+			angle=-39.101898;
+		};
+		class Item112
+		{
+			position[]={2021.915,5.9415646,5823.9932};
+			name="TERRITORY_AIRBASE_NORTH";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=150;
+			b=250;
+			angle=462.81842;
+		};
+		class Item113
+		{
+			position[]={1953.4017,6.0084219,5524.6313};
+			name="TERRITORY_AIRBASE_SOUTH";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=150;
+			b=250;
+			angle=462.56647;
+		};
+		class Item114
+		{
+			position[]={4347.4814,226.21469,3803.2827};
+			name="TERRITORY_AIRSTATION_MIKE";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=130;
+			b=60;
+			angle=73.201897;
+		};
+		class Item115
+		{
+			position[]={3293.655,229.15094,2936.5811};
+			name="TERRITORY_CAMP_MAXWELL";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=35;
+			b=40;
+			angle=340.6662;
+		};
+		class Item116
+		{
+			position[]={5009.9287,208.40305,5905.5317};
+			name="TERRITORY_CAMP_ROGAIN";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=50;
+			b=45;
+			angle=140;
+		};
+		class Item117
+		{
+			position[]={1985.5208,2.4736626,3517.6958};
+			name="TERRITORY_CAMP_TEMPEST";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=35;
+			b=35;
+			angle=90.666199;
+		};
+		class Item118
+		{
+			position[]={2017.7045,3.5107236,2713.1907};
+			name="TERRITORY_GIRNA";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=78;
+			b=67;
+			angle=160;
+		};
+		class Item119
+		{
+			position[]={2554.3765,5.0208974,1191.589};
+			name="TERRITORY_JAY_COVE";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=40;
+			b=150;
+			angle=67.670403;
+		};
+		class Item120
+		{
+			position[]={6435.3022,7.9425282,5391.9478};
+			name="TERRITORY_KAMINO_FIRING_RANGE";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=40;
+			b=70;
+			angle=131.698;
+		};
+		class Item121
+		{
+			position[]={6062.4761,18.17507,5616.1758};
+			name="TERRITORY_KAMINO_SETTLEMENT";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=50;
+			b=50;
+			angle=30;
+		};
+		class Item122
+		{
+			position[]={4325.2378,133.20964,6777.4897};
+			name="TERRITORY_KILL_FARM";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=55;
+			b=105;
+			angle=90.666199;
+		};
+		class Item123
+		{
+			position[]={5360.7485,12.907221,3806.918};
+			name="TERRITORY_LIMERI_BAY";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=40;
+			b=40;
+			angle=59.799801;
+		};
+		class Item124
+		{
+			position[]={4605.9541,129.54497,5302.5034};
+			name="TERRITORY_LZ_BALDY";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=35;
+			b=35;
+			angle=73.201897;
+		};
+		class Item125
+		{
+			position[]={2985.7166,171.39104,1876.1532};
+			name="TERRITORY_LZ_CONNOR";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=40;
+			b=40;
+			angle=-39.101898;
+		};
+		class Item126
+		{
+			position[]={7085.0771,7.5975513,5954.0957};
+			name="TERRITORY_PYTHOS";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=50;
+			b=100;
+			angle=30.820299;
+		};
+		class Item127
+		{
+			position[]={5236.2642,223.33759,5025.2529};
+			name="TERRITORY_RADIO_TOWERS";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=80;
+			b=40;
+			angle=140;
 		};
 	};
 };

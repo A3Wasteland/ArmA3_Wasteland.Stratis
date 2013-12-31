@@ -70,5 +70,24 @@ config_initial_spawn_money = compileFinal "100";
 // 4 - Territory category, currently unused. See territory/README.md for details.
 config_territory_markers = compileFinal str
 [
-	//["TERRITORY_AIRPORT_TEST", "Main Airport", 500, "AIRFIELD"] // Also add to the map to test
+	["TERRITORY_AGIA_NORTH", "North Agia Marina", 200, "TOWN"],
+	["TERRITORY_AGIA_SOUTH", "South Agia Marina", 200, "TOWN"],
+	["TERRITORY_AGIOS_CEPHAS", "Agios Cephas", 200, "TOWN"],
+	["TERRITORY_AGIOS_IOANNIS", "Agios Ioannis", 200, "TOWN"],
+	["TERRITORY_AIRBASE_NORTH", "North Stratis Airbase", 500, "AIRBASE"],
+	["TERRITORY_AIRFIELD_SOUTH", "South Stratis Airbase", 500, "AIRBASE"],
+	["TERRITORY_AIRSTATION_MIKE", "Airstation Mike", 200, "MILITARY"],
+	["TERRITORY_CAMP_MAXWELL", "Camp Maxwell", 200, "MILITARY"],
+	["TERRITORY_CAMP_ROGAIN", "Camp Rogain", 200, "MILITARY"],
+	["TERRITORY_CAMP_TEMPEST", "Camp Tempest", 200, "MILITARY"],
+	["TERRITORY_GIRNA", "Girna", 200, "TOWN"],
+	["TERRITORY_JAY_COVE", "Jay Cove", 200, "TOWN"],
+	["TERRITORY_KAMINO_FIRING_RANGE", "Kamino Firing Range", 200, "MILITARY"],
+	["TERRITORY_KAMINO_SETTLEMENT", "Kamino Settlement", 200, "TOWN"],
+	["TERRITORY_KILL_FARM", "Kill Farm", 200, "TOWN"],
+	["TERRITORY_LIMERI_BAY", "Limeri Bay", 200, "TOWN"],
+	["TERRITORY_LZ_BALDY", "LZ Baldy", 200, "MILITARY"],
+	["TERRITORY_LZ_CONNOR", "LZ Connor", 200, "MILITARY"],
+	["TERRITORY_PYTHOS", "Pythos Island", 200, "ISLAND"],
+	["TERRITORY_RADIO_TOWERS", "Radio Towers", 200, "MILITARY"]
 ];
