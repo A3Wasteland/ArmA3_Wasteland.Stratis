@@ -4147,140 +4147,140 @@ class Mission
 		};
 		class Item12
 		{
-			position[]={2524.1465,34.068382,2093.5562};
+			position[]={2369.0054,107.78507,1632.3721};
 			name="Mission_1";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item13
 		{
-			position[]={3712.7583,53.192314,2523.0771};
+			position[]={3797.8179,7.8620515,2339.3105};
 			name="Mission_2";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item14
 		{
-			position[]={2602.4868,63.697041,2793.2163};
+			position[]={2609.8635,59.23555,2659.0366};
 			name="Mission_3";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item15
 		{
-			position[]={4506.9668,52.249435,3076.8628};
+			position[]={4790.9663,113.56647,3089.8618};
 			name="Mission_4";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item16
 		{
-			position[]={2688.9312,77.785332,931.95801};
+			position[]={2715.1575,80.801727,976.29785};
 			name="Mission_5";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item17
 		{
-			position[]={2780.7786,154.7764,3368.6128};
+			position[]={2864.2209,149.7159,3345.5703};
 			name="Mission_6";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item18
 		{
-			position[]={3672.2375,153.23082,3638.752};
+			position[]={3795.1182,179.96071,3651.8213};
 			name="Mission_7";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item19
 		{
-			position[]={5014.8281,58.343174,3995.3354};
+			position[]={5086.8369,170.01425,4296.3008};
 			name="Mission_8";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item20
 		{
-			position[]={2915.8479,129.57027,4214.1479};
+			position[]={3377.8274,141.65503,4405.0322};
 			name="Mission_9";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item21
 		{
-			position[]={2135.1462,93.530121,3803.5366};
+			position[]={2136.9324,94.061569,3819.6113};
 			name="Mission_10";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item22
 		{
-			position[]={2489.0286,116.47917,4959.7319};
+			position[]={2513.9607,120.13379,4931.1489};
 			name="Mission_11";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item23
 		{
-			position[]={3393.9939,170.61929,4975.9399};
+			position[]={4227.2729,155.06749,4898.0361};
 			name="Mission_12";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item24
 		{
-			position[]={3015.7996,9.4032001,5521.6206};
+			position[]={3435.9529,105.78931,5226.6699};
 			name="Mission_13";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item25
 		{
-			position[]={4877.0576,134.52586,5248.7798};
+			position[]={5319.2207,184.33072,5605.3867};
 			name="Mission_14";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item26
 		{
-			position[]={3672.2375,55.997234,6134.8364};
+			position[]={3743.0247,109.84108,6364.2837};
 			name="Mission_15";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item27
 		{
-			position[]={3645.2244,106.17321,7088.4277};
+			position[]={3638.9399,3.7452478,7473.6738};
 			name="Mission_16";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item28
 		{
-			position[]={4517.7734,121.45521,6467.1079};
+			position[]={4291.2466,135.89871,6334.2549};
 			name="Mission_17";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item29
 		{
-			position[]={5949.5103,27.598513,5632.3784};
+			position[]={6207.9512,3.8842688,5598.8716};
 			name="Mission_18";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item30
 		{
-			position[]={5800.9336,26.945276,4578.8354};
+			position[]={5812.1519,85.699165,4799.9253};
 			name="Mission_19";
 			type="Empty";
 			colorName="ColorOrange";
 		};
 		class Item31
 		{
-			position[]={1659.7026,5.5,5294.7041};
+			position[]={1703.0079,5.5,5450.6704};
 			name="Mission_20";
 			type="Empty";
 			colorName="ColorOrange";
@@ -4788,21 +4788,21 @@ class Mission
 			position[]={3269.7954,5.2580886,5796.834};
 			name="milSpawn_1";
 			type="Empty";
-			colorName="ColorPink";
+			colorName="ColorKhaki";
 		};
 		class Item103
 		{
 			position[]={6582.3037,24.14024,5326.2734};
 			name="milSpawn_2";
 			type="Empty";
-			colorName="ColorPink";
+			colorName="ColorKhaki";
 		};
 		class Item104
 		{
 			position[]={2461.3945,74.185867,5696.3081};
 			name="milSpawn_3";
 			type="Empty";
-			colorName="ColorPink";
+			colorName="ColorKhaki";
 		};
 		class Item105
 		{
