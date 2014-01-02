@@ -29,7 +29,7 @@ _veh1 = _MoneyShipmentVeh select 0;
 _veh2 = _MoneyShipmentVeh select 1;
 
 // available routes to add a route. If you add more routes append ,4 to the array and so on
-_routes = [1,2,3];
+_routes = [1];
 
 // pick one of the routes
 _rn = _routes call BIS_fnc_selectRandom;
@@ -37,131 +37,47 @@ _rn = _routes call BIS_fnc_selectRandom;
 // set starts and waypoints depending on above (random) choice
 switch (_rn) do 
 { 
-	case 1: {
+	case 1:
+	{
 		// route 1
 		// starting positions for this route
 		_starts = 
 		[
-			[11877.198, 22464.334],
-			[11921.394, 22530.055]
+			[3272.0862, 6818.0166],
+			[3256.6409, 6823.4746],
+			[3240.3447, 6829.6089]
 		];
 		// starting directions in which the vehicles are spawned on this route
 		_startdirs = 
 		[
-			210,
-			210,
-			210
+			110,
+			110,
+			110
 		];
 		// the routes
-		_waypoints = 
+		_waypoints =
 		[
-			[11869.673, 22208.621],
-			[11125.767, 20896.094],
-			[12994.632, 19462.133],
-			[12748.146, 18834.535],
-			[11160.020, 17270.051],
-			[9703.3369, 16182.543],
-			[8348.6055, 15781.597],
-			[6614.5122, 15335.907],
-			[4709.3672, 13381.538]
+			[4376.2495, 6777.9741],
+			[4093.5972, 6355.2212],
+			[4795.2671, 6547.9424],
+			[4989.0015, 6177.1587],
+			[4650.4116, 5920.8677],
+			[5209.6572, 5804.0298],
+			[5355.2534, 5447.2158],
+			[5179.1089, 5317.8140],
+			[5332.6191, 4984.7158],
+			[5034.1582, 4551.7168],
+			[4453.8467, 4265.6416],
+			[4256.2026, 3987.7041],
+			[4278.4458, 3617.1807],
+			[3811.5823, 3352.3765],
+			[3782.2229, 2991.4355],
+			[2796.7263, 1814.6265],
+			[3121.2034, 1679.9957],
+			[2620.1548, 612.56152]
 		];
 		// end of route one
-	}; 
-	case 2: {
-		// route 2
-		// starting positions for this route
-		_starts = 
-		[
-			[21676.070, 19098.602],
-			[21706.025, 19143.395]
-		];
-		// starting directions in which the vehicles are spawned on this route
-		_startdirs = 
-		[
-			215,
-			215,
-			215
-		];
-		// the routes
-		_waypoints = 
-		[
-			[21651.148, 18949.061],
-			[20927.098, 18642.852],
-			[19996.465, 18402.379],
-			[20469.039, 17205.830],
-			[20332.428, 16846.414],
-			[20768.957, 16632.809],
-			[18278.490, 14655.104],
-			[18335.752, 13940.664],
-			[18311.520, 13544.588],
-			[18257.242, 13530.432],
-			[20485.871, 10990.865],
-			[21824.990, 7174.1509]
-		];
-		// end of route two
-	}; 
-	case 3: {
-		// route 3
-		// starting positions for this route
-		_starts = 
-		[
-			[4358.6313, 21123.746],
-			[4353.8003, 21175.734]
-		];
-		// starting directions in which the vehicles are spawned on this route
-		_startdirs = 
-		[
-			157,
-			157,
-			157
-		];
-		// the routes
-		_waypoints = 
-		[
-			[4384.6670, 21031.820],
-			[6832.0098, 19443.926],
-			[7139.0513, 16877.182],
-			[6789.5913, 16126.018],
-			[8190.9907, 15869.275],
-			[9230.6670, 14191.858],
-			[9883.0000, 12795.109],
-			[10779.979, 10752.867],
-			[9573.9238, 8603.8203]
-		];
-		// end of route three
-	}; 
-	default {
-		// this shouldnt happen but just to be sure..
-		diag_log format["WASTELAND SERVER - WARNING! %1 encountered an error selecting routes - defaulting to route 1", _missionType];
-		// route 1
-		// starting positions for this route
-		_starts = 
-		[
-			[11877.198, 22464.334],
-			[11921.394, 22530.055]
-		];
-		// starting directions in which the vehicles are spawned on this route
-		_startdirs = 
-		[
-			210,
-			210,
-			210
-		];
-		// the routes
-		_waypoints = 
-		[
-			[11869.673, 22208.621],
-			[11125.767, 20896.094],
-			[12994.632, 19462.133],
-			[12748.146, 18834.535],
-			[11160.020, 17270.051],
-			[9703.3369, 16182.543],
-			[8348.6055, 15781.597],
-			[6614.5122, 15335.907],
-			[4709.3672, 13381.538]
-		];
-		// end of route one
-	}; 
+	};
 }; 
 
 _group = createGroup civilian;

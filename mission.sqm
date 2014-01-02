@@ -5070,63 +5070,63 @@ class Mission
 		};
 		class Item128
 		{
-			position[]={18295.152,-6.7252245,8136.5732};
+			position[]={6879.1875,0,5621.0146};
 			name="Treasure_0";
 			type="Empty";
 			colorName="ColorWhite";
 		};
 		class Item129
 		{
-			position[]={16985.289,-0.27175087,13616.465};
+			position[]={4749.2246,0,7745.7402};
 			name="Treasure_1";
 			type="Empty";
 			colorName="ColorWhite";
 		};
 		class Item130
 		{
-			position[]={9866.0479,0.014741103,11111.971};
+			position[]={2516.3438,-37.344223,6284.9761};
 			name="Treasure_2";
 			type="Empty";
 			colorName="ColorWhite";
 		};
 		class Item131
 		{
-			position[]={4992.7637,-0.020654676,9908.2881};
+			position[]={1250.3528,0,7205.6958};
 			name="Treasure_3";
 			type="Empty";
 			colorName="ColorWhite";
 		};
 		class Item132
 		{
-			position[]={3505.4102,-0.023277842,11439.938};
+			position[]={1200.1509,0,4427.4507};
 			name="Treasure_4";
 			type="Empty";
 			colorName="ColorWhite";
 		};
 		class Item133
 		{
-			position[]={3849.9155,0.00057628582,15028.444};
+			position[]={1166.6744,0,981.77002};
 			name="Treasure_5";
 			type="Empty";
 			colorName="ColorWhite";
 		};
 		class Item134
 		{
-			position[]={5281.2344,0.23328479,22658.328};
+			position[]={2038.4452,0,119.70508};
 			name="Treasure_6";
 			type="Empty";
 			colorName="ColorWhite";
 		};
 		class Item135
 		{
-			position[]={21207.197,0.20755874,20124.484};
+			position[]={3798.978,0,1149.0845};
 			name="Treasure_7";
 			type="Empty";
 			colorName="ColorWhite";
 		};
 		class Item136
 		{
-			position[]={24573.881,-0.0090859979,16154.248};
+			position[]={5745.9619,-0.28329986,3484.4819};
 			name="Treasure_8";
 			type="Empty";
 			colorName="ColorWhite";
