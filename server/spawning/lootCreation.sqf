@@ -364,7 +364,7 @@ randomweapon_itemlist =
 		{
 			if ((isPlayer _x) && (alive _x) && (vehicle _x == _x)) then {
 				_posPlayer = getPos _x;
-				usedtown_list = [];
+				//usedtown_list = [];
 				{
 					_posTown = (_x select 0);
 					_lastSpawned = (_x select 1);
@@ -374,9 +374,11 @@ randomweapon_itemlist =
 						usedtown_list set [count usedtown_list, [_forEachIndex, time]];
 					};
 				}forEach townarea_list;
+				/*
 				{
 					(townarea_list select (_x select 0)) set [1,(_x select 1)];
 				}forEach usedtown_list;
+				*/
 			};		
 		}forEach playableUnits;
 		sleep 10;
