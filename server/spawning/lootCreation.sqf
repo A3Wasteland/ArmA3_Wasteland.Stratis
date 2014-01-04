@@ -1,7 +1,7 @@
 //	Random weapons and items spawning script for wasteland missions.
-//	Authors: 
+//	Authors:
 //	original: Ed! (404Forums)
-//	Adjusted for Arma3 Wasteland use by: [GoT] JoSchaap (GoT2DayZ.nl), 
+//	Adjusted for Arma3 Wasteland use by: [GoT] JoSchaap (GoT2DayZ.nl),
 //	Player near town spawning concept by: Na_Palm (BIS-Forums)
 
 _odd1 = 45;					//The odds that a building is selected to place loot.
@@ -12,9 +12,9 @@ _oddfuelcan = 35;				//Chance of a spawned fuelcan to be full instead of empty
 _spawnradius = 25;				//Distance added to the radius around city's original marker to spawn loot (expands the radius with this value)
 _interval = 5400;				//Time (in sec.) to pass before a city spawns new loot (5400 - 1,5 hr)
 randomweapontestint = 0.05;			//Sets the intervals in which weaponpositions are tested. (Lower = slower, but more accurate. Higher = faster, but less accurate.)
-									
+
 //Array of buildings that are eligeble to spawn loot in :)
-_buildCIV = 
+_buildCIV =
 [
 	"Land_Airport_center_F",
 	"Land_Airport_left_F",
@@ -80,21 +80,21 @@ _buildCIV =
 	"Land_WIP_F"
 ];
 
-_buildMIL = 
+_buildMIL =
 [
 	"Land_MilOffices_V1_F",
 	"Land_i_Barracks_V1_F",
 	"Cargo_House_base_F",
 	"Cargo_Patrol_base_F",
-	"Cargo_HQ_base_F"
-	//"Land_Hangar_F",
+	"Cargo_HQ_base_F",
+	//"Land_Hangar_F"
 	//"Cargo_Tower_base_F",
 	//"Land_Dome_Big_F",
 	//"Land_Dome_Small_F"
 ];
 
 // weapons to be found in civilian buildings aside from items
-randomweapon_weaponlist = 
+randomweapon_weaponlist =
 [
 	["SMG_01_F"],
 	["SMG_02_F"],
@@ -123,7 +123,7 @@ randomweapon_weaponitemlist =
 ];
 
 // weapons to be found in military buildings
-randomweapon_milweaponlist = 
+randomweapon_milweaponlist =
 [
 	["arifle_TRG20_F"],
 	["arifle_TRG21_F"],
@@ -138,7 +138,7 @@ randomweapon_milweaponlist =
 ];
 
 
-randomweapon_itemlist = 
+randomweapon_itemlist =
 [
 	"Land_BakedBeans_F", // Food
 	"Land_BottlePlastic_V2_F", // Water
@@ -150,7 +150,7 @@ randomweapon_itemlist =
 
 //-------------------------------------------------------------------------------------
 
-    randomweaponspawnweapon = 
+    randomweaponspawnweapon =
 	{
 		_position = _this;
 		_selectedgroup = (floor(random(count randomweapon_weaponlist)));
@@ -161,13 +161,13 @@ randomweapon_itemlist =
 		//if((count((randomweapon_weaponlist) select _selectedgroup)) > 1) then {
 			for[{_rm = 0}, {_rm < (2 + floor(random(3)))}, {_rm = _rm + 1}] do {
 				_mag = ((getArray (configFile >> "CfgWeapons" >> _weapon >> "magazines")) select 0) call getBallMagazine;
-				_weaponholder addMagazineCargoGlobal [_mag, 1]; 
+				_weaponholder addMagazineCargoGlobal [_mag, 1];
 			};
 		//};
 		_weaponholder setPos _position;
     };
-	
-	randomweaponspawnweaponitem = 
+
+	randomweaponspawnweaponitem =
 	{
 		_position = _this;
 		_selectedgroup = (floor(random(count randomweapon_weaponitemlist)));
@@ -177,12 +177,12 @@ randomweapon_itemlist =
 		_weaponholder addItemCargoGlobal [_weapon, 1];
 		if((count((randomweapon_weaponitemlist) select _selectedgroup)) > 1) then {
 			_mag = randomweapon_weaponitemlist select _selectedgroup select ((floor(random((count(randomweapon_weaponitemlist select _selectedgroup) - 1)))) + 1);
-			_weaponholder addMagazineCargoGlobal [_mag, 1]; 
+			_weaponholder addMagazineCargoGlobal [_mag, 1];
 		};
 		_weaponholder setPos _position;
     };
-	
-	randomweaponspawnmilweapon = 
+
+	randomweaponspawnmilweapon =
 	{
 		_position = _this;
 		_selectedgroup = (floor(random(count randomweapon_milweaponlist)));
@@ -193,14 +193,14 @@ randomweapon_itemlist =
 		//if((count((randomweapon_milweaponlist) select _selectedgroup)) > 1) then {
 			for[{_rm = 0}, {_rm < (2 + floor(random(3)))}, {_rm = _rm + 1}] do {
 				_mag = ((getArray (configFile >> "CfgWeapons" >> _weapon >> "magazines")) select 0) call getBallMagazine;
-				_weaponholder addMagazineCargoGlobal [_mag, 1]; 
+				_weaponholder addMagazineCargoGlobal [_mag, 1];
 			};
 		//};
 		_weaponholder setPos _position;
     };
 
-	
-    randomweaponspawnitem = 
+
+    randomweaponspawnitem =
 	{
 		_position = _this;
 		_numf = 0;
@@ -237,9 +237,10 @@ randomweapon_itemlist =
     };
 
 //-------------------------------------------------------------------------------------
-	
+
 	spawnlootintown =
 	{
+	diag_log ("SPAWN LOOT");
     _pos = _this;
     randomweapon_buildings = nearestObjects [_pos, _buildCIV, _dospawnradius];
     sleep 10;
@@ -258,7 +259,7 @@ randomweapon_itemlist =
 		};
 		_num = (random 100);
 		if (_num < _odd1) then {
-			if (count _buildingpos > 0) then {  
+			if (count _buildingpos > 0) then {
 				for[{_r = 0}, {_r < count _buildingpos}, {_r = _r + 1}] do
 				{
 					_num2 = (random 100);
@@ -270,7 +271,7 @@ randomweapon_itemlist =
 						};
 						_z = 0;
 						_testpos = true;
-						while {_testpos} do 
+						while {_testpos} do
 						{
 							if((!lineIntersects[ATLtoASL(_pos), ATLtoASL([_pos select 0, _pos select 1, (_pos select 2) - (randomweapontestint * _z)])]) && (!terrainIntersect[(_pos), ([_pos select 0, _pos select 1, (_pos select 2) - (randomweapontestint * _z)])]) && (_pos select 2 > 0)) then {
 								_posnew = [_pos select 0, _pos select 1, (_pos select 2) - (randomweapontestint * _z)];
@@ -293,7 +294,7 @@ randomweapon_itemlist =
 						};
 					};
 				};
-			};    
+			};
 		};
     }foreach randomweapon_buildings;
 	randomweapon_milbuildings = nearestObjects [_pos, _buildMIL, _dospawnradius];
@@ -313,7 +314,7 @@ randomweapon_itemlist =
 		};
 		_num = (random 100);
 		if (_num < _odd1) then {
-			if (count _buildingpos > 0) then {  
+			if (count _buildingpos > 0) then {
 				for[{_r = 0}, {_r < count _buildingpos}, {_r = _r + 1}] do
 				{
 					_num2 = (random 100);
@@ -325,7 +326,7 @@ randomweapon_itemlist =
 						};
 						_z = 0;
 						_testpos = true;
-						while {_testpos} do 
+						while {_testpos} do
 						{
 							if((!lineIntersects[ATLtoASL(_pos), ATLtoASL([_pos select 0, _pos select 1, (_pos select 2) - (randomweapontestint * _z)])]) && (!terrainIntersect[(_pos), ([_pos select 0, _pos select 1, (_pos select 2) - (randomweapontestint * _z)])]) && (_pos select 2 > 0)) then {
 								_posnew = [_pos select 0, _pos select 1, (_pos select 2) - (randomweapontestint * _z)];
@@ -338,7 +339,7 @@ randomweapon_itemlist =
 						_posnew call randomweaponspawnmilweapon;
 					};
 				};
-			};    
+			};
 		};
     }foreach randomweapon_milbuildings;
 	};
@@ -353,31 +354,34 @@ randomweapon_itemlist =
 	{
 		_pos = getMarkerPos (_x select 0);
 		_tradius = (_x select 1);
-		townarea_list set [count townarea_list, [_pos, _lastSpawned]];
+		townarea_list set [count townarea_list, [_pos, _lastSpawned, _tradius]];
 	}forEach (call citylist);
 	{
 		_pos = getMarkerPos (_x select 0);
 		_tradius = 200;
-		townarea_list set [count townarea_list, [_pos, _lastSpawned]];
+		townarea_list set [count townarea_list, [_pos, _lastSpawned, _tradius]];
 	}forEach (call militarylist);
 	while {true} do {
 		{
 			if ((isPlayer _x) && (alive _x) && (vehicle _x == _x)) then {
 				_posPlayer = getPos _x;
-				usedtown_list = [];
+				//usedtown_list = [];
 				{
 					_posTown = (_x select 0);
 					_lastSpawned = (_x select 1);
+					_tradius = (_x select 2);
 					_dospawnradius = (_tradius + _spawnradius);
 					if (((_posTown distance _posPlayer) < _dospawnradius) && ((_interval < (time - _lastSpawned)) || (_lastSpawned == 0))) then {
 						_posTown call spawnlootintown;
-						usedtown_list set [count usedtown_list, [_forEachIndex, time]];
+						//usedtown_list set [count usedtown_list, [_forEachIndex, time]];
 					};
 				}forEach townarea_list;
+				/*
 				{
 					(townarea_list select (_x select 0)) set [1,(_x select 1)];
 				}forEach usedtown_list;
-			};		
+				*/
+			};
 		}forEach playableUnits;
 		sleep 10;
 	};
