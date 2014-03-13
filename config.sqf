@@ -13,7 +13,7 @@ cityList = compileFinal str
 	["Town_1", 200, "Air Station Mike-28"],
 	["Town_2", 100, "Agios Loannis"],
 	["Town_3", 100, "Agios Cephas"],
-	["Town_4", 200, "Girna"],			
+	["Town_4", 200, "Girna"],
 	["Town_5", 200, "Camp Tempest"],
 	["Town_6", 300, "Stratis Airbase Town"],
 	["Town_7", 250, "Stratis Airbase Runway"],
@@ -25,7 +25,7 @@ cityList = compileFinal str
 	["Town_13", 150, "ol-Kamino"],
 	["Town_14", 15, "Isla Pythos"],  // do not increase radius, else vehicles and objects will spawn on the island!
 	["Town_15", 100, "Baldy Barracks"],
-	["Town_16", 175, "ol-Keiros"],			
+	["Town_16", 175, "ol-Keiros"],
 	["Town_17", 175, "Tsoukalia"],
 	["Town_18", 100, "LZ Connor"],
 	["Town_19", 180, "Playa-del-Stragos"],
@@ -39,8 +39,6 @@ militarylist = compileFinal str
 	["milSpawn_3"]
 ];
 
-cityLocations = [];
-
 config_items_jerrycans_max = compileFinal "1";
 config_items_syphon_hose_max = compileFinal "1";
 
@@ -52,14 +50,13 @@ config_refuel_amounts = compileFinal str
 	["Air", 0.10]
 ];
 
-// Is player saving enabled?
-config_player_saving_enabled = compileFinal "0";
+// NOTE: Player saving and money settings moved to external config (A3Wasteland_settings\main_config.sqf), default values are set in server\default_config.sqf
 
-// Can players get extra in-game cash at spawn by donating?
-config_player_donations_enabled = compileFinal "0";
+// Is player saving enabled?
+// config_player_saving_enabled = compileFinal "0";
 
 // How much do players spawn with?
-config_initial_spawn_money = compileFinal "100";
+// config_initial_spawn_money = compileFinal "100";
 
 // Territory system definitions. See territory/README.md for more details.
 //
@@ -91,3 +88,4 @@ config_territory_markers = compileFinal str
 	["TERRITORY_PYTHOS", "Pythos Island", 200, "ISLAND"],
 	["TERRITORY_RADIO_TOWERS", "Radio Towers", 200, "MILITARY"]
 ];
+
