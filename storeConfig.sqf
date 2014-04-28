@@ -768,19 +768,18 @@ customPlayerItems = compileFinal str
 // Name, Building Position, Desk Direction Modifier, Excluded Buttons
 storeOwnerConfig = compileFinal str
 [
-	["GenStore1", 1, 178, []],
-	["GenStore2", 1, 95, []],
-	["GenStore3", 1, 30, []],
+	["GenStore1", 1, 270, []],
+	["GenStore2", 4, 310, []],
+	["GenStore3", 4, 340, []],
 	
-	["GunStore1", 1, 5, []],
+	["GunStore1", 0, 5, []],
 	["GunStore2", 1, 130, []],
-	["GunStore3", 2, 310, []],
-	["GunStore4", 1, 192, []]
+	["GunStore3", 5, 85, []],
+	["GunStore4", 1, 30, []],
 	
-//	["VehStore1", 1, 75, []],
-//	["VehStore2", 6, 45, ["Boats", "Submarines"]],
-//	["VehStore3", 4, 250, ["Boats", "Submarines"]],
-//	["VehStore4", 5, 155, ["Boats", "Submarines"]]
+	["VehStore1", 0, 195, ["Planes"]],
+	["VehStore2", 2, 285, ["Boats"]],
+	["VehStore3", 1, 245, ["Planes"]]
 ];
 	
 // Outfits for store owners
@@ -793,12 +792,11 @@ storeOwnerConfigAppearance = compileFinal str
 	['GunStore1', [['weapon', ''], ['uniform', 'U_B_SpecopsUniform_sgg']]],
 	['GunStore2', [['weapon', ''], ['uniform', 'U_O_SpecopsUniform_blk']]],
 	['GunStore3', [['weapon', ''], ['uniform', 'U_I_CombatUniform_tshirt']]],
-	['GunStore4', [['weapon', ''], ['uniform', 'U_IG_Guerilla1_1']]]
+	['GunStore4', [['weapon', ''], ['uniform', 'U_IG_Guerilla1_1']]],
 	
-//	['VehStore1', [['weapon', ''], ['uniform', 'U_Competitor']]],
-//	['VehStore2', [['weapon', ''], ['uniform', 'U_Competitor']]],
-//	['VehStore3', [['weapon', ''], ['uniform', 'U_Competitor']]],
-//	['VehStore4', [['weapon', ''], ['uniform', 'U_Competitor']]]
+	['VehStore1', [['weapon', ''], ['uniform', 'U_Competitor']]],
+	['VehStore2', [['weapon', ''], ['uniform', 'U_Competitor']]],
+	['VehStore3', [['weapon', ''], ['uniform', 'U_Competitor']]]
 ];
 
 storeConfigDone = compileFinal "true";

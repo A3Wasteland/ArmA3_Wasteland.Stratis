@@ -23,7 +23,7 @@ cityList = compileFinal str
 	["Town_11", 230, "Kamino Firing Range"],
 	["Town_12", 240, "Camp Maxwell"],
 	["Town_13", 150, "ol-Kamino"],
-	["Town_14", 15, "Isla Pythos"],  // do not increase radius, else vehicles and objects will spawn on the island!
+	//["Town_14", 15, "Isla Pythos"],  // do not increase radius, else vehicles and objects will spawn on the island! // who the heck thought a town on an island was a good idea!?
 	["Town_15", 100, "Baldy Barracks"],
 	["Town_16", 175, "ol-Keiros"],
 	["Town_17", 175, "Tsoukalia"],
@@ -32,12 +32,14 @@ cityList = compileFinal str
 	["Town_20", 250, "ol-Jay"]
 ];
 
+/*
 militarylist = compileFinal str
 [
 	["milSpawn_1"],
 	["milSpawn_2"],
 	["milSpawn_3"]
 ];
+*/
 
 config_items_jerrycans_max = compileFinal "1";
 config_items_syphon_hose_max = compileFinal "1";
