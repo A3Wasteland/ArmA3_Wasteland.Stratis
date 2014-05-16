@@ -4022,7 +4022,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=147;
+		items=150;
 		class Item0
 		{
 			position[]={4339.3457,226.45149,3824.2236};
@@ -5155,6 +5155,27 @@ class Mission
 			name="VehStore3_heliSpawn";
 			type="Empty";
 			colorName="ColorBlack";
+		};
+		class Item147
+		{
+			position[]={3753.5757,8.6889791,7955.9941};
+			name="respawn_west";
+			type="Empty";
+			colorName="ColorWEST";
+		};
+		class Item148
+		{
+			position[]={3754.6104,8.6014633,7955.9526};
+			name="respawn_east";
+			type="Empty";
+			colorName="ColorEAST";
+		};
+		class Item149
+		{
+			position[]={3755.7686,8.5013113,7955.9224};
+			name="respawn_guerrila";
+			type="Empty";
+			colorName="ColorGUER";
 		};
 	};
 };
