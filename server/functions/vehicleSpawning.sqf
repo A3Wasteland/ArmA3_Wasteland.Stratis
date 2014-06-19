@@ -66,7 +66,7 @@ _carPerMeters = (["A3W_vehicleQuantity", 200] call getPublicVar) / _totalRadius;
 	
 	while {_lcounter < _vehammount && _tradius > 35} do  //ignore towns with a radius under 30 (this ignores pythos island on stratis)
 	{
-		_lpos = [_pos, [[_maxrad, 0, 0], _langle] call BIS_fnc_rotateVector2D] call BIS_fnc_vectorAdd;
+		_lpos = _pos vectorAdd ([[_maxrad, 0, 0], _langle] call BIS_fnc_rotateVector2D);
 		_spawnedVehicles set [count _spawnedVehicles, [_lpos, _minrad, _maxrad, _counter] spawn _createRandomVehicle];
 		//_minrad = _minrad + 15;
 		//_maxrad = _maxrad + 15;
