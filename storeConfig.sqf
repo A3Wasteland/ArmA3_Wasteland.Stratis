@@ -807,7 +807,7 @@ storeOwnerConfig = compileFinal str
 	["GunStore1", 0, 5, []],
 	["GunStore2", 1, 130, []],
 	["GunStore3", 5, 85, []],
-	["GunStore4", 1, 30, []],
+	["GunStore4", 1, [30, 1.5], []],
 
 	["VehStore1", 0, 195, ["Planes"]],
 	["VehStore2", 2, 285, ["Boats"]],
