@@ -64,7 +64,7 @@ _carPerMeters = (["A3W_vehicleQuantity", 200] call getPublicVar) / _totalRadius;
 	_minrad = 0;
 	_maxrad = _tradius / 2;
 	
-	while {_lcounter < _vehammount && _tradius > 35} do  //ignore towns with a radius under 30 (this ignores pythos island on stratis)
+	while {_lcounter < _vehammount} do
 	{
 		_lpos = _pos vectorAdd ([[_maxrad, 0, 0], _langle] call BIS_fnc_rotateVector2D);
 		_spawnedVehicles pushBack ([_lpos, _minrad, _maxrad, _counter] spawn _createRandomVehicle);
@@ -83,4 +83,4 @@ _carPerMeters = (["A3W_vehicleQuantity", 200] call getPublicVar) / _totalRadius;
 	waitUntil {scriptDone _x};
 } forEach _spawnedVehicles;
 
-diag_log format["WASTELAND - Vehicle spawning completed - %1 Vehicles Spawned on Stratis",_counter];
+diag_log format["WASTELAND - Vehicle spawning completed - %1 Vehicles Spawned",_counter];
