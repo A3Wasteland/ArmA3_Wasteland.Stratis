@@ -31,10 +31,116 @@ _isSaveable =
 	} forEach _x;
 } forEach [objectList, call genObjectsArray];
 
+// Add Land vehicles to save array
+{
+	_index = _forEachIndex;
+
+	{
+		_obj = _x;
+		if (_index > 0) then { _obj = _x select 1 };
+		
+		if (!(_obj call _isSaveable)) then
+		{
+			_saveableObjects pushBack _obj;
+		};
+	} forEach _x;
+} forEach [objectList, call landArray];
+
+// Add armored vehicles to save array
+{
+	_index = _forEachIndex;
+
+	{
+		_obj = _x;
+		if (_index > 0) then { _obj = _x select 1 };
+		
+		if (!(_obj call _isSaveable)) then
+		{
+			_saveableObjects pushBack _obj;
+		};
+	} forEach _x;
+} forEach [objectList, call armoredArray];
+
+// Add tanks vehicles to save array
+{
+	_index = _forEachIndex;
+
+	{
+		_obj = _x;
+		if (_index > 0) then { _obj = _x select 1 };
+		
+		if (!(_obj call _isSaveable)) then
+		{
+			_saveableObjects pushBack _obj;
+		};
+	} forEach _x;
+} forEach [objectList, call tanksArray];
+
+// Add helicopters vehicles to save array
+{
+	_index = _forEachIndex;
+
+	{
+		_obj = _x;
+		if (_index > 0) then { _obj = _x select 1 };
+		
+		if (!(_obj call _isSaveable)) then
+		{
+			_saveableObjects pushBack _obj;
+		};
+	} forEach _x;
+} forEach [objectList, call helicoptersArray];
+
+// Add planes vehicles to save array
+{
+	_index = _forEachIndex;
+
+	{
+		_obj = _x;
+		if (_index > 0) then { _obj = _x select 1 };
+		
+		if (!(_obj call _isSaveable)) then
+		{
+			_saveableObjects pushBack _obj;
+		};
+	} forEach _x;
+} forEach [objectList, call planesArray];
+
+// Add planes vehicles to save array
+{
+	_index = _forEachIndex;
+
+	{
+		_obj = _x;
+		if (_index > 0) then { _obj = _x select 1 };
+		
+		if (!(_obj call _isSaveable)) then
+		{
+			_saveableObjects pushBack _obj;
+		};
+	} forEach _x;
+} forEach [objectList, call planesArray];
+
+// Add boats vehicles to save array
+{
+	_index = _forEachIndex;
+
+	{
+		_obj = _x;
+		if (_index > 0) then { _obj = _x select 1 };
+		
+		if (!(_obj call _isSaveable)) then
+		{
+			_saveableObjects pushBack _obj;
+		};
+	} forEach _x;
+} forEach [objectList, call boatsArray];
+
+
 // If file doesn't exist, create Info section at the top
 if !(_fileName call PDB_exists) then // iniDB_exists
 {
-	[_fileName, "Info", "ObjCount", 0] call PDB_write; // iniDB_write
+	[_fileName, "Info", "ObjCount", 0] call PDB_write;
 };
 
 _savingMethod = ["A3W_savingMethod", 1] call getPublicVar;
@@ -61,11 +167,12 @@ while {true} do
 			   {_beaconSavingOn && {_obj call _isBeacon}}) then
 			{
 				_netId = netId _obj;
+				//_pos = getPosWorld _obj;
 				_pos = getPosATL _obj;
 				_dir = [vectorDir _obj, vectorUp _obj];
 				_damage = damage _obj;
 				_allowDamage = if (_obj getVariable ["allowDamage", false]) then { 1 } else { 0 };
-
+				_texture = _obj getVariable ["A3W_objectTexture", ""];
 				if (isNil {_obj getVariable "baseSaving_spawningTime"}) then
 				{
 					_obj setVariable ["baseSaving_spawningTime", diag_tickTime];
@@ -94,6 +201,8 @@ while {true} do
 					_variables pushBack ["ownerUID", _owner];
 				};
 
+				//Save side for any object
+				_variables pushBack ["side", str (_obj getVariable ["side", sideUnknown])];
 				switch (true) do
 				{
 					case (_obj call _isBox):
@@ -104,16 +213,26 @@ while {true} do
 					{
 						_variables pushBack ["a3w_warchest", true];
 						_variables pushBack ["R3F_LOG_disabled", true];
-						_variables pushBack ["side", str (_obj getVariable ["side", sideUnknown])];
+						//_variables pushBack ["side", str (_obj getVariable ["side", sideUnknown])];
 					};
 					case (_obj call _isBeacon):
 					{
 						_variables pushBack ["a3w_spawnBeacon", true];
 						_variables pushBack ["R3F_LOG_disabled", true];
-						_variables pushBack ["side", str (_obj getVariable ["side", sideUnknown])];
+						//_variables pushBack ["side", str (_obj getVariable ["side", sideUnknown])];
 						_variables pushBack ["packing", false];
 						_variables pushBack ["groupOnly", _obj getVariable ["groupOnly", false]];
 						_variables pushBack ["ownerName", toArray (_obj getVariable ["ownerName", "[Beacon]"])];
+					};
+					case (_obj call _isStaticWeapon):
+					{	
+						//_variables pushBack ["side", str (_obj getVariable ["side", sideUnknown])];
+					};
+					case (_obj call _isVehicle):
+					{	
+						//save side and locked/unlocked state
+						//_variables pushBack ["side", str (_obj getVariable ["side", sideUnknown])];
+						_variables pushBack ["vehicleLocked", _obj getVariable ["vehicleLocked", 0]];
 					};
 				};
 
@@ -128,7 +247,6 @@ while {true} do
 				_magazines = [];
 				_items = [];
 				_backpacks = [];
-
 				if (_class call _hasInventory) then
 				{
 					// Save weapons & ammo
@@ -137,17 +255,42 @@ while {true} do
 					_items = (getItemCargo _obj) call cargoToPairs;
 					_backpacks = (getBackpackCargo _obj) call cargoToPairs;
 				};
-
+				
+				//Empty values
 				_turretMags = [];
-
+				_vehicleMags = [];
+				
+				_ammoCargo = "";
+				_fuelCargo = "";
+				_repairCargo = "";
+				_validChecksum = false;
+				
 				if (_staticWeaponSavingOn && {_class call _isStaticWeapon}) then
 				{
 					_turretMags = magazinesAmmo _obj;
 				};
+				
+				if (_class call _isVehicle) then
+				{				
+					_vehicleMags = magazinesAmmo _obj;
+					
+					//save flares. Little hacky. Restores full flares ;)
+					if ("CMFlareLauncher" in getArray (configFile >> "CfgVehicles" >> _class >> "weapons")) then
+					{
+						{
+							if (_x in ["60Rnd_CMFlare_Chaff_Magazine","120Rnd_CMFlareMagazine","240Rnd_CMFlareMagazine","60Rnd_CMFlare_Chaff_Magazine","120Rnd_CMFlare_Chaff_Magazine", "240Rnd_CMFlare_Chaff_Magazine","192Rnd_CMFlare_Chaff_Magazine","168Rnd_CMFlare_Chaff_Magazine","300Rnd_CMFlare_Chaff_Magazine"] ) then
+							{
+								_turretMags pushBack _x;
+							};
+						} forEach (_obj magazinesTurret [-1]);
+					};
+					
+					_ammoCargo = getAmmoCargo _obj;
+					_fuelCargo = getFuelCargo _obj;
+					_repairCargo = getRepairCargo _obj;
+					_validChecksum = _obj getVariable [call vChecksum, false];
+				};
 
-				_ammoCargo = getAmmoCargo _obj;
-				_fuelCargo = getFuelCargo _obj;
-				_repairCargo = getRepairCargo _obj;
 
 				// Save data
 
@@ -166,6 +309,7 @@ while {true} do
 					["Damage", _damage],
 					["AllowDamage", _allowDamage],
 					["Variables", _variables],
+					["Texture", _texture],
 
 					["Weapons", _weapons],
 					["Magazines", _magazines],
@@ -173,10 +317,14 @@ while {true} do
 					["Backpacks", _backpacks],
 
 					["TurretMagazines", _turretMags],
+					["VehicleMags", _vehicleMags],
 
-					["AmmoCargo", _turretMags],
-					["FuelCargo", _turretMags],
-					["RepairCargo", _turretMags]
+					["AmmoCargo", _ammoCargo],
+					["FuelCargo", _fuelCargo],
+					["RepairCargo", _repairCargo],
+					
+					["validChecksum", _validChecksum]
+					
 				];
 
 				sleep 0.01;
