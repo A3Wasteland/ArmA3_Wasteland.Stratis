@@ -28,10 +28,10 @@ diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
 
-_vehicleClass = ["T34","T55_TK_GUE_EP1","BMP3","M1128_MGS_EP1"] call BIS_fnc_selectRandom;
+_vehicleClass = ["B_APC_Tracked_01_rcws_F","B_APC_Tracked_01_crv_F","B_APC_Tracked_01_aa_F","I_APC_tracked_03_cannon_F","O_APC_Tracked_02_cannon_F"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
-_vehicle = [_vehicleClass,_randomPos,0,1,0.50,"NONE"] call createMissionVehicle;
+_vehicle = [_vehicleClass,_randomPos,1,1,0,"NONE"] call createMissionVehicle;
 
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");

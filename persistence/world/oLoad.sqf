@@ -64,6 +64,7 @@ if (!isNil "_exists" && {_exists}) then
 					_allowDamage = [_fileName, _objName, "AllowDamage", "NUMBER"] call PDB_read; // iniDB_read
 
 					_obj = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
+					//_obj setPosWorld _pos;
 					_obj setPosATL _pos;
 
 					if (!isNil "_dir") then
@@ -73,8 +74,70 @@ if (!isNil "_exists" && {_exists}) then
 
 					_obj setVariable ["baseSaving_hoursAlive", _hoursAlive];
 					_obj setVariable ["baseSaving_spawningTime", diag_tickTime];
-					_obj setVariable ["objectLocked", true, true]; // force lock
+					_obj disableTIEquipment true; // disables thermal equipment on loaded vehicles, comment out if you want thermals	
+					
+					//Lock obj again if it's not vehicle
+					if ({ _obj isKindOf _x } count ['Air','Tank','Motorcycle','Car','Ship'] > 0)then{
+						_obj setVariable ["objectLocked", false, true]; // loads the saved vehicle unlocked
+					}else{
+						_obj setVariable ["objectLocked", true, true]; // loads the saved vehicle locked
+					};
+					
+					if (_obj isKindOf "SUV_01_base_F") then
+					{
+					_centerOfMass = getCenterOfMass _vehicle;
+					_centerOfMass set [2, -0.657];
+					_obj setCenterOfMass _centerOfMass;
+					};	
+					
+					//Attempt to set the vehicle texture on the vehicle
+					private ["_veh", "_texture", "_selections"];
+					_veh = _obj;
+					_texture = [_fileName, _objName, "Texture", "STRING"] call PDB_read;
 
+					if (!isNull _obj && _texture != "") then
+					{
+						_veh setVariable ["BIS_enableRandomization", false, true];
+
+						// Apply texture to all appropriate parts
+						_selections = switch (true) do
+						{
+							case (_veh isKindOf "Van_01_base_F"):             { [0,1] };
+					
+							case (_veh isKindOf "MRAP_01_base_F"):            { [0,2] };
+							case (_veh isKindOf "MRAP_02_base_F"):            { [0,2] };
+							case (_veh isKindOf "MRAP_03_base_F"):            { [0,1] };
+
+							case (_veh isKindOf "Truck_01_base_F"):           { [0,1,2] };
+							case (_veh isKindOf "Truck_02_base_F"):           { [0,1] };
+							case (_veh isKindOf "Truck_03_base_F"):           { [0,1] };
+
+							case (_veh isKindOf "APC_Wheeled_01_base_F"):     { [0,2] };
+							case (_veh isKindOf "APC_Wheeled_02_base_F"):     { [0,2] };
+							case (_veh isKindOf "APC_Wheeled_03_base_F"):     { [0,2,3] };
+
+							case (_veh isKindOf "APC_Tracked_01_base_F"):     { [0,1,2,3] };
+							case (_veh isKindOf "APC_Tracked_02_base_F"):     { [0,1,2] };
+							case (_veh isKindOf "APC_Tracked_03_base_F"):     { [0,1] };
+
+							case (_veh isKindOf "MBT_01_base_F"):             { [0,1,2] };
+							case (_veh isKindOf "MBT_02_base_F"):             { [0,1,2,3] };
+							case (_veh isKindOf "MBT_03_base_F"):             { [0,1,2] };
+
+							case (_veh isKindOf "Heli_Transport_01_base_F"):  { [0,1] };
+							case (_veh isKindOf "Heli_Transport_02_base_F"):  { [0,1,2] };
+							case (_veh isKindOf "Heli_Attack_02_base_F"):     { [0,1] };
+
+							case (_veh isKindOf "Plane_Base_F"):              { [0,1] };
+
+							default                                           { [0] };
+						};
+				
+						  { _veh setObjectTextureGlobal [_x, _texture] } forEach _selections;
+							_veh setVariable ["A3W_objectTexture", _texture, true];				
+					};			
+					
+					
 					if (_allowDamage > 0) then
 					{
 						_obj setDamage _damage;
@@ -108,9 +171,17 @@ if (!isNil "_exists" && {_exists}) then
 									default { _value = "[Beacon]" };
 								};
 							};
+							//Запираем/отпираем технику
+							case "vehicleLocked":{
+								_obj lock _value;
+							}
 						};
 
 						_obj setVariable [_var, _value, true];
+						//AddAi to vehicle
+						if (getNumber(configFile >> "CfgVehicles" >> typeOf _obj >> "isUav") > 0) then{
+							createVehicleCrew _obj;
+						};
 					} forEach _variables;
 
 					clearWeaponCargoGlobal _obj;
@@ -175,14 +246,45 @@ if (!isNil "_exists" && {_exists}) then
 							{ _obj addMagazine _x } forEach _turretMags;
 						};
 					};
+					
 
-					_ammoCargo = [_fileName, _objName, "AmmoCargo", "NUMBER"] call PDB_read; // iniDB_read
-					_fuelCargo = [_fileName, _objName, "FuelCargo", "NUMBER"] call PDB_read; // iniDB_read
-					_repairCargo = [_fileName, _objName, "RepairCargo", "NUMBER"] call PDB_read; // iniDB_read
-
-					if (!isNil "_ammoCargo") then { _obj setAmmoCargo _ammoCargo };
-					if (!isNil "_fuelCargo") then { _obj setFuelCargo _fuelCargo };
-					if (!isNil "_repairCargo") then { _obj setRepairCargo _repairCargo };
+					if (_class call _isVehicle) then
+					{					
+						diag_log format["%1 is loading as vehicle. It it really vehicle?",_class];
+						//Load vehicle ammo
+						_vehicleMags = [_fileName, _objName, "VehicleMags", "ARRAY"] call PDB_read;
+						if (!isNil "_vehicleMags") then
+						{
+							_obj setVehicleAmmo 0;
+							{ _obj addMagazine _x } forEach _vehicleMags;
+						};
+						
+						//Load vehicle flares
+						_turretMags = [_fileName, _objName, "TurretMagazines", "ARRAY"] call PDB_read;
+						if (!isNil "_turretMags") then
+						{	
+							{ _obj addMagazineTurret [_x,[-1]]} forEach _turretMags;
+						};
+											
+						//Recreate checksumm for vehicle if valid
+						_validChecksum = [_fileName, _objName, "validChecksum", "BOOL"] call PDB_read;
+						if (_validChecksum=="true") then {
+							_obj setVariable [call vChecksum, true];	
+						}else{
+							diag_log("Hacked saved vehicle found!");
+							deleteVehicle _obj;	
+						};
+						
+						//Restore cargo
+						_ammoCargo = [_fileName, _objName, "AmmoCargo", "NUMBER"] call PDB_read; // iniDB_read
+						_fuelCargo = [_fileName, _objName, "FuelCargo", "NUMBER"] call PDB_read; // iniDB_read
+						_repairCargo = [_fileName, _objName, "RepairCargo", "NUMBER"] call PDB_read; // iniDB_read
+						
+						if (!isNil "_ammoCargo") then { _obj setAmmoCargo _ammoCargo };
+						if (!isNil "_fuelCargo") then { _obj setFuelCargo _fuelCargo };
+						if (!isNil "_repairCargo") then { _obj setRepairCargo _repairCargo };
+						
+					};
 				};
 			};
 		};
