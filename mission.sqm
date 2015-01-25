@@ -128,19 +128,18 @@ class Mission
 		briefingName="A3Wasteland Stratis v1.1"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
 		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
 		resistanceWest=0;
-		startWeather=0.10000001;
-		startWind=0.30000001;
-		startWaves=0.40000001;
-		forecastWeather=0.40000004;
-		forecastWind=0.69999999;
-		forecastWaves=0.89999998;
-		forecastLightnings=0.30000001;
+		timeOfChanges=3e+038;
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
 		year=2035;
 		month=6;
 		hour=6;
 		minute=0;
-		startFogDecay=0.0029333001;
-		forecastFogDecay=0.0039332998;
+		startFogDecay=0.001;
+		forecastFogDecay=0.001;
 	};
 	class Groups
 	{
@@ -5993,20 +5992,18 @@ class Intro
 	randomSeed=11737026;
 	class Intel
 	{
-		timeOfChanges=1800.0002;
-		startWeather=0.10000001;
-		startWind=0.30000001;
-		startWaves=0.40000001;
-		forecastWeather=0.40000004;
-		forecastWind=0.69999999;
-		forecastWaves=0.89999998;
-		forecastLightnings=0.30000001;
+		timeOfChanges=3e+038;
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
 		year=2035;
 		month=6;
 		hour=6;
 		minute=0;
-		startFogDecay=0.0029333001;
-		forecastFogDecay=0.0039332998;
+		startFogDecay=0.001;
+		forecastFogDecay=0.001;
 	};
 };
 class OutroWin
@@ -6022,20 +6019,18 @@ class OutroWin
 	randomSeed=16432731;
 	class Intel
 	{
-		timeOfChanges=1800.0002;
-		startWeather=0.10000001;
-		startWind=0.30000001;
-		startWaves=0.40000001;
-		forecastWeather=0.40000004;
-		forecastWind=0.69999999;
-		forecastWaves=0.89999998;
-		forecastLightnings=0.30000001;
+		timeOfChanges=3e+038;
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
 		year=2035;
 		month=6;
 		hour=6;
 		minute=0;
-		startFogDecay=0.0029333001;
-		forecastFogDecay=0.0039332998;
+		startFogDecay=0.001;
+		forecastFogDecay=0.001;
 	};
 };
 class OutroLoose
@@ -6051,19 +6046,17 @@ class OutroLoose
 	randomSeed=2588275;
 	class Intel
 	{
-		timeOfChanges=1800.0002;
-		startWeather=0.10000001;
-		startWind=0.30000001;
-		startWaves=0.40000001;
-		forecastWeather=0.40000004;
-		forecastWind=0.69999999;
-		forecastWaves=0.89999998;
-		forecastLightnings=0.30000001;
+		timeOfChanges=3e+038;
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
 		year=2035;
 		month=6;
 		hour=6;
 		minute=0;
-		startFogDecay=0.0029333001;
-		forecastFogDecay=0.0039332998;
+		startFogDecay=0.001;
+		forecastFogDecay=0.001;
 	};
 };
