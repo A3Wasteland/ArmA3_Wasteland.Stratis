@@ -13,6 +13,21 @@ player createDiarySubject ["credits", "Credits"];
 
 player createDiaryRecord ["changelog",
 [
+"GoT",
+"
+<br/> [Added] Holland Vehicle skin
+<br/> [Added] Multiplying money-reward for every 40 mins connected
+<br/> [Added] R.I.P. Marker on corpse location after first respawn
+<br/> [Changed] Reduced amount of concurrent missions to 4
+<br/> [Changed] Reduced mission timers and wait time
+<br/> [Changed] Reduced territory system timers and rewards
+<br/> [Changed] Time boosted 2x during day, 4x during night
+<br/> [Removed] Static guns from gunstore and disabled saving them
+"
+]];
+
+player createDiaryRecord ["changelog",
+[
 "v1.1",
 "
 <br/>[Added] ATMs
