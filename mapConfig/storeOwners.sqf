@@ -32,12 +32,12 @@ storeOwnerConfigAppearance = compileFinal str
 	["GenStore2", [["weapon", ""], ["uniform", "U_IG_Guerilla2_3"]]],
 	["GenStore3", [["weapon", ""], ["uniform", "U_IG_Guerilla3_1"]]],
 
-	["GunStore1", [["weapon", ""], ["uniform", "U_B_SpecopsUniform_sgg"]]],
-	["GunStore2", [["weapon", ""], ["uniform", "U_O_SpecopsUniform_blk"]]],
-	["GunStore3", [["weapon", ""], ["uniform", "U_I_CombatUniform_tshirt"]]],
-	["GunStore4", [["weapon", ""], ["uniform", "U_IG_Guerilla1_1"]]],
+	["GunStore1", [["weapon", "LMG_Zafir_F"], ["uniform", "U_B_SpecopsUniform_sgg"]]],
+	["GunStore2", [["weapon", "srifle_DMR_01_F"], ["uniform", "U_O_SpecopsUniform_blk"]]],
+	["GunStore3", [["weapon", "srifle_GM6_camo_SOS_F"], ["uniform", "U_I_CombatUniform_tshirt"]]],
+	["GunStore4", [["weapon", "arifle_Katiba_GL_F"], ["uniform", "U_IG_Guerilla1_1"]]],
 
-	["VehStore1", [["weapon", ""], ["uniform", "U_Competitor"]]],
-	["VehStore2", [["weapon", ""], ["uniform", "U_Competitor"]]],
+	["VehStore1", [["weapon", ""], ["uniform", "U_IG_leader"]]],
+	["VehStore2", [["weapon", ""], ["uniform", "U_Rangemaster"]]],
 	["VehStore3", [["weapon", ""], ["uniform", "U_Competitor"]]]
 ];
