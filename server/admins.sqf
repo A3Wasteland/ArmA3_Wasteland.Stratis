@@ -42,7 +42,6 @@ else
 	serverOwners = compileFinal str
 	[
 		// Put player UIDs here
-		"76561197960482553"
 	];
 
 	/********************************************************/
