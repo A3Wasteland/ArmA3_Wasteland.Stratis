@@ -96,33 +96,33 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 staticGunsArray = compileFinal str
 [
 	// ["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 2500],
-	// ["Static Titan AT 4Rnd (NATO)", "B_static_AT_F", 2500], // Static launchers only have 4 ammo, hence the low price
-	// ["Static Titan AT 4Rnd (CSAT)", "O_static_AT_F", 2500],
-	// ["Static Titan AT 4Rnd (AAF)", "I_static_AT_F", 2500],
-	// ["Static Titan AA 4Rnd (NATO)", "B_static_AA_F", 3000],
-	// ["Static Titan AA 4Rnd (CSAT)", "O_static_AA_F", 3000],
-	// ["Static Titan AA 4Rnd (AAF)", "I_static_AA_F", 3000],
-	// ["Mk30 HMG .50 Low tripod (NATO)", "B_HMG_01_F", 2000],
-	// ["Mk30 HMG .50 Low tripod (CSAT)", "O_HMG_01_F", 2000],
-	// ["Mk30 HMG .50 Low tripod (AAF)", "I_HMG_01_F", 2000],
+	["Static Titan AT 4Rnd (NATO)", "B_static_AT_F", 2500], // Static launchers only have 4 ammo, hence the low price
+	["Static Titan AT 4Rnd (CSAT)", "O_static_AT_F", 2500],
+	["Static Titan AT 4Rnd (AAF)", "I_static_AT_F", 2500],
+	["Static Titan AA 4Rnd (NATO)", "B_static_AA_F", 3000],
+	["Static Titan AA 4Rnd (CSAT)", "O_static_AA_F", 3000],
+	["Static Titan AA 4Rnd (AAF)", "I_static_AA_F", 3000],
+	["Mk30 HMG .50 Low tripod (NATO)", "B_HMG_01_F", 2000],
+	["Mk30 HMG .50 Low tripod (CSAT)", "O_HMG_01_F", 2000],
+	["Mk30 HMG .50 Low tripod (AAF)", "I_HMG_01_F", 2000],
 	// ["Mk30A HMG .50 Sentry (NATO)", "B_HMG_01_A_F", 5000], // "A" = Autonomous = Overpowered
 	// ["Mk30A HMG .50 Sentry (CSAT)", "O_HMG_01_A_F", 5000],
 	// ["Mk30A HMG .50 Sentry (AAF)", "I_HMG_01_A_F", 5000],
-	// ["Mk30 HMG .50 High tripod (NATO)", "B_HMG_01_high_F", 3000],
-	// ["Mk30 HMG .50 High tripod (CSAT)", "O_HMG_01_high_F", 3000],
-	// ["Mk30 HMG .50 High tripod (AAF)", "I_HMG_01_high_F", 3000],
-	// ["Mk32 GMG 20mm Low tripod (NATO)", "B_GMG_01_F", 5000],
-	// ["Mk32 GMG 20mm Low tripod (CSAT)", "O_GMG_01_F", 5000],
-	// ["Mk32 GMG 20mm Low tripod (AAF)", "I_GMG_01_F", 5000],
+	["Mk30 HMG .50 High tripod (NATO)", "B_HMG_01_high_F", 3000],
+	["Mk30 HMG .50 High tripod (CSAT)", "O_HMG_01_high_F", 3000],
+	["Mk30 HMG .50 High tripod (AAF)", "I_HMG_01_high_F", 3000],
+	["Mk32 GMG 20mm Low tripod (NATO)", "B_GMG_01_F", 5000],
+	["Mk32 GMG 20mm Low tripod (CSAT)", "O_GMG_01_F", 5000],
+	["Mk32 GMG 20mm Low tripod (AAF)", "I_GMG_01_F", 5000],
 	// ["Mk32A GMG 20mm Sentry (NATO)", "B_GMG_01_A_F", 10000],
 	// ["Mk32A GMG 20mm Sentry (CSAT)", "O_GMG_01_A_F", 10000],
 	// ["Mk32A GMG 20mm Sentry (AAF)", "I_GMG_01_A_F", 10000],
-	// ["Mk32 GMG 20mm High tripod (NATO)", "B_GMG_01_high_F", 6000],
-	// ["Mk32 GMG 20mm High tripod (CSAT)", "O_GMG_01_high_F", 6000],
-	// ["Mk32 GMG 20mm High tripod (AAF)", "I_GMG_01_high_F", 6000],
-	// ["Mk6 Mortar (NATO)", "B_Mortar_01_F", 12500],
-	// ["Mk6 Mortar (CSAT)", "O_Mortar_01_F", 12500],
-	// ["Mk6 Mortar (AAF)", "I_Mortar_01_F", 12500]
+	["Mk32 GMG 20mm High tripod (NATO)", "B_GMG_01_high_F", 6000],
+	["Mk32 GMG 20mm High tripod (CSAT)", "O_GMG_01_high_F", 6000],
+	["Mk32 GMG 20mm High tripod (AAF)", "I_GMG_01_high_F", 6000],
+	["Mk6 Mortar (NATO)", "B_Mortar_01_F", 12500],
+	["Mk6 Mortar (CSAT)", "O_Mortar_01_F", 12500],
+	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 12500]
 ];
 
 throwputArray = compileFinal str
