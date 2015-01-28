@@ -10,6 +10,13 @@ client_firstSpawn = true;
 
 [] execVM "client\functions\welcomeMessage.sqf";
 
+// GoT - if this is the first spawn start the loyalty timer
+if(format["%1",firstspawn] == format["%1","1"]) then 
+{
+	[] spawn fn_rewardLoyalty;
+	firstspawn = 0;
+};
+
 player addEventHandler ["Take",
 {
 	_vehicle = _this select 1;
