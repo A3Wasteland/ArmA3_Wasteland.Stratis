@@ -12,24 +12,15 @@
 // 4 - Territory category, currently unused. See territory/README.md for details.
 
 [
-	["TERRITORY_AGIA_NORTH", "North Agia Marina", 250, "TOWN"],
-	["TERRITORY_AGIA_SOUTH", "South Agia Marina", 250, "TOWN"],
-	["TERRITORY_AGIOS_CEPHAS", "Agios Cephas", 250, "TOWN"],
-	["TERRITORY_AGIOS_IOANNIS", "Agios Ioannis", 250, "TOWN"],
-	["TERRITORY_AIRBASE_NORTH", "North Stratis Airbase", 750, "AIRBASE"],
-	["TERRITORY_AIRBASE_SOUTH", "South Stratis Airbase", 750, "AIRBASE"],
-	["TERRITORY_AIRSTATION_MIKE", "Air Station Mike", 500, "MILITARY"],
-	["TERRITORY_CAMP_MAXWELL", "Camp Maxwell", 500, "MILITARY"],
-	["TERRITORY_CAMP_ROGAIN", "Camp Rogain", 500, "MILITARY"],
-	["TERRITORY_CAMP_TEMPEST", "Camp Tempest", 250, "MILITARY"],
-	["TERRITORY_GIRNA", "Girna", 250, "TOWN"],
-	["TERRITORY_JAY_COVE", "Jay Cove", 250, "TOWN"],
-	["TERRITORY_KAMINO_FIRING_RANGE", "Kamino Firing Range", 500, "MILITARY"],
-	["TERRITORY_KAMINO_SETTLEMENT", "Kamino Settlement", 250, "TOWN"],
-	["TERRITORY_KILL_FARM", "Kill Farm", 250, "TOWN"],
-	["TERRITORY_LIMERI_BAY", "Limeri Bay", 250, "TOWN"],
-	["TERRITORY_LZ_BALDY", "LZ Baldy", 250, "MILITARY"],
-	["TERRITORY_LZ_CONNOR", "LZ Connor", 250, "MILITARY"],
-	["TERRITORY_PYTHOS", "Pythos Island", 250, "ISLAND"],
-	["TERRITORY_RADIO_TOWERS", "Radio Towers", 250, "MILITARY"]
+	["TERRITORY_1", "Agia Marina", 500],
+	["TERRITORY_2", "Stratis Airbase", 1000],
+	["TERRITORY_3", "Airstation Mike", 1000],
+	["TERRITORY_4", "South West Remote", 500],
+	["TERRITORY_5", "Camp Maxwell", 500],
+	["TERRITORY_6", "Camp Rogain", 250],
+	["TERRITORY_7", "Kamino Firig Range", 750],
+	["TERRITORY_8", "Kill Farm", 500],
+	["TERRITORY_9", "Stratis Airbase Town", 500],
+	["TERRITORY_10", "Radar Station", 1000],
+	["TERRITORY_11", "Nisi Bay", 250]
 ]

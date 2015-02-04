@@ -32,8 +32,8 @@ Buildingstoloot_list =
 	//["Land_TBox_F", 0],                   //no positions
 	//["Land_TTowerBig_1_F", 2],            //no positions
 	//["Land_TTowerBig_2_F", 2],            //no positions
-	["Land_Airport_left_F", 0],
-	["Land_Airport_right_F", 0],
+	["Land_Airport_left_F", 3],
+	["Land_Airport_right_F", 3],
 	["Land_Airport_Tower_dam_F", 2],
 	["Land_Airport_Tower_F", 2],
 	["Land_cargo_house_slum_F", 0],
@@ -139,5 +139,5 @@ Buildingstoloot_list =
 	["Land_u_Shed_Ind_F", 2],
 	["Land_u_Shop_01_V1_F", 0],
 	["Land_u_Shop_02_V1_F", 0],
-	["Land_WIP_F", 2]
+	["Land_WIP_F", 3]
 ];

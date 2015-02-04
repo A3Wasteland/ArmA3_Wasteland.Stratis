@@ -1,5 +1,4 @@
 //	@file Author: [404] Costlyy
-//	@file Name: objectLockStateMachine.sqf
 //	@file Version: 1.0
 //  @file Date:	21/11/2012
 //	@file Description: Locks an object until the player disconnects.
@@ -57,9 +56,6 @@ switch (_lockState) do
 		{
 			_object setVariable ["objectLocked", true, true];
 			_object setVariable ["ownerUID", getPlayerUID player, true];
-
-			pvar_manualObjectSave = netId _object;
-			publicVariableServer "pvar_manualObjectSave";
 
 			["Object locked!", 5] call mf_notify_client;
 		};
@@ -140,9 +136,6 @@ switch (_lockState) do
 			_object setVariable ["ownerUID", nil, true];
 			_object setVariable ["baseSaving_hoursAlive", nil, true];
 			_object setVariable ["baseSaving_spawningTime", nil, true];
-
-			pvar_manualObjectSave = netId _object;
-			publicVariableServer "pvar_manualObjectSave";
 
 			["Object unlocked!", 5] call mf_notify_client;
 		};

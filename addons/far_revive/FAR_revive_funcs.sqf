@@ -224,11 +224,11 @@ FAR_public_EH =
 		{
 			if (isNil "_killerName") then
 			{
-				systemChat format ["%1 was injured", toString _unitName];
+				systemChat format ["%1 was wounded", toString _unitName];
 			}
 			else
 			{
-				systemChat format ["%1 was injured by %2", toString _unitName, toString _killerName];
+				systemChat format ["%1 was wounded by %2", toString _unitName, toString _killerName];
 			};
 		};
 	};

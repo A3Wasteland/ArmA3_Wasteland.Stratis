@@ -18,6 +18,7 @@ _setupVars =
 };
 
 _setupObjects =
+
 {
 	private ["_starts", "_startDirs", "_waypoints"];
 	call compile preprocessFileLineNumbers format ["mapConfig\convoys\%1.sqf", _missionLocation];
@@ -94,7 +95,7 @@ _setupObjects =
 	_aiGroup setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
 	_aiGroup setFormation "STAG COLUMN";
 
-	_speedMode = if (missionDifficultyHard) then { "NORMAL" } else { "LIMITED" };
+	_speedMode = if (missionDifficultyHard) then { "LIMITED" } else { "LIMITED" };
 
 	_aiGroup setSpeedMode _speedMode;
 
@@ -113,7 +114,7 @@ _setupObjects =
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _veh2 >> "picture");
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _veh2 >> "displayName");
 
-	_missionHintText = format ["A <t color='%2'>%1</t> transporting 2 weapon crates is being escorted. Stop the convoy!", _vehicleName, sideMissionColor];
+	_missionHintText = format ["A <t color='%2'>%1</t> transporting weapons is being escorted. Stop the convoy!", _vehicleName, sideMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -128,14 +129,16 @@ _failedExec = nil;
 
 _successExec =
 {
-	// Mission completed
-	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 2, "None"];
-	_box1 setDir random 360;
-	[_box1, "mission_USSpecial2"] call fn_refillbox;
 
-	_box2 = createVehicle ["Box_East_WpsSpecial_F", _lastPos, [], 2, "None"];
-	_box2 setDir random 360;
-	[_box2, "mission_USLaunchers"] call fn_refillbox;
+	_randomBox = ["mission_Mixed","mission_General","mission_USLaunchers","mission_USSpecial","mission_Main_A3snipers"] call BIS_fnc_selectRandom;
+	_box1 = createVehicle ["Box_NATO_WpsSpecial_F", _lastPos, [], 5, "None"];
+	_box1 setDir random 360;
+	[_box1, _randomBox] call fn_refillbox;
+
+	
+	
+	
+	
 
 	_successHintMessage = "The convoy has been stopped, the weapon crates and vehicles are now yours to take.";
 };

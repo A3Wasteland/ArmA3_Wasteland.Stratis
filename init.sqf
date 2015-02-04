@@ -38,7 +38,7 @@ if (!isDedicated) then
 	{
 		if (hasInterface) then // Normal player
 		{
-			9999 cutText ["Welcome to A3Wasteland, please wait for your client to initialize", "BLACK", 0.01];
+			9999 cutText ["Welcome to A3Wasteland ZA#101 Stratis, please wait. Press M and view the changelog =)", "BLACK", 0.01];
 
 			waitUntil {!isNull player};
 			removeAllWeapons player;
@@ -73,3 +73,7 @@ if (isServer) then
 [] execVM "addons\proving_ground\init.sqf";
 [] execVM "addons\scripts\DynamicWeatherEffects.sqf";
 [] execVM "addons\JumpMF\init.sqf";
+[] execVM "addons\outlw_magRepack\MagRepack_init_sv.sqf"; // Repack your near empty clips
+[] execVM "addons\statusBar\statusBar.sqf";   // shows FPS and teamspeak details
+[] execVM "addons\Explosives-To-Vehicle\init.sqf"; // addon for explosives to vehicles
+[] execVM "addons\laptop\init.sqf";		 // hack Laptop mission addon

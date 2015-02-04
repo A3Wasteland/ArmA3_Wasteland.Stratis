@@ -6,14 +6,12 @@
 //	@file Author: AgentRev
 //	@file Created: 08/06/2013 01:07
 
-private ["_chars", "_nChars", "_key", "_i"];
-_chars = toArray "abcdefghijklmnopqrstuvwxyz0123456789_";
-_nChars = count _chars;
-_key = [97 + floor random 26];
+private ["_key", "_i"];
+_key = "k";
 
-for "_i" from 1 to (16 + random 8) do
+for "_i" from 1 to 5 do
 {
-	_key pushBack (_chars select floor random _nChars);
+	_key = _key + str (100000 + random 899999);
 };
 
-toString _key
+_key

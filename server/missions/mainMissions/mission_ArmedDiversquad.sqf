@@ -20,13 +20,17 @@ _setupObjects =
 {
 	_missionPos = markerPos _missionLocation;
 
-	_box1 = createVehicle ["Box_IND_WpsSpecial_F", _missionPos, [], 5, "None"];
+	// Box Randomizer 
+	_randomBox = ["mission_UAV","mission_USLaunchers","mission_USSpecial","mission_Main_A3snipers"] call BIS_fnc_selectRandom;
+	_box1 = createVehicle ["Box_FIA_Support_F", _missionPos, [], 5, "None"];
 	_box1 setDir random 360;
-	[_box1, "mission_Main_A3snipers"] call fn_refillbox;
+	[_box1, _randomBox] call fn_refillbox;
 
-	_box2 = createVehicle ["Box_NATO_WpsSpecial_F", _missionPos, [], 5, "None"];
+	// Box Randomizer 
+	_randomBox = ["mission_UAV","mission_USLaunchers","mission_USSpecial","mission_Main_A3snipers"] call BIS_fnc_selectRandom;
+	_box2 = createVehicle ["Box_FIA_Support_F", _missionPos, [], 5, "None"];
 	_box2 setDir random 360;
-	[_box2, "mission_USSpecial2"] call fn_refillbox;
+	[_box2, _randomBox] call fn_refillbox;
 
 	{
 		_boxPos = getPosASL _x;

@@ -21,6 +21,10 @@ _setupVars =
 _setupObjects =
 {
 	_missionPos = markerPos _missionLocation;
+	
+		//delete existing base parts and vehicles at location
+	_baseToDelete = nearestObjects [_missionPos, ["All"], 25];
+	{ deleteVehicle _x } forEach _baseToDelete; 
 
 	_vehicleClass =
 	[
@@ -42,8 +46,10 @@ _setupObjects =
 	_vehicle = [_vehicleClass, _missionPos] call createMissionVehicle;
 	_vehicle call fn_refilltruck;
 
-	_aiGroup = createGroup CIVILIAN;
-	[_aiGroup, _missionPos, _nbUnits] call createCustomGroup;
+	// NPC Randomizer 
+_randomGroup = [createGroup1,createGroup2,createGroup3,createGroup4,createGroup5,createGroup6,createGroup7,createGroup8,createGroup9,createGroup10] call BIS_fnc_selectRandom;
+_aiGroup  = createGroup CIVILIAN;
+[_aiGroup, _missionPos] spawn _randomGroup;
 
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "picture");
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "displayName");

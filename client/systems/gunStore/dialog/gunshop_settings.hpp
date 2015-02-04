@@ -10,7 +10,7 @@ class gunshopd
 	idd = gunshop_DIALOG;
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[[0], populateGunStore] execFSM 'call.fsm'";
+	onLoad = "[0] execVM 'client\systems\gunStore\populateGunStore.sqf'";
 
 	class ControlsBackground
 	{
@@ -97,7 +97,7 @@ class gunshopd
 		class SelectionList: w_RscList
 		{
 			idc = gunshop_gun_list;
-			onLBSelChanged = "call weaponInfo";
+			onLBSelChanged = "[] execVM 'client\systems\gunStore\weaponInfo.sqf'";
 			sizeEx = 0.04 * TEXT_SCALE;
 			rowHeight = 0.05 * TEXT_SCALE;
 
@@ -135,7 +135,7 @@ class gunshopd
 		class BuyGun: w_RscButton
 		{
 			idc = -1;
-			action = "[0] execVM 'client\systems\gunStore\buyGuns.sqf'";
+			onButtonClick = "[0] execVM 'client\systems\gunStore\buyGuns.sqf'";
 			text = "Buy";
 			sizeEx = GunStoreButton_textSize;
 
@@ -148,7 +148,7 @@ class gunshopd
 		class BuyAmmo: w_RscButton
 		{
 			idc = gunshop_but_butammo;
-			action = "[0] execVM 'client\systems\gunStore\buyAmmo.sqf'";
+			onButtonClick = "[0] execVM 'client\systems\gunStore\buyAmmo.sqf'";
 			text = "Buy";
 			sizeEx = GunStoreButton_textSize;
 
@@ -161,7 +161,7 @@ class gunshopd
 		class StoreButton0: w_RscButton
 		{
 			idc = -1;
-			action = "[0] call populateGunStore";
+			onButtonClick = "[0] execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Handguns";
 			sizeEx = GunStoreButton_textSize;
 
@@ -174,7 +174,7 @@ class gunshopd
 		class StoreButton1: w_RscButton
 		{
 			idc = -1;
-			action = "[1] call populateGunStore";
+			onButtonClick = "[1] execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "SMGs";
 			sizeEx = GunStoreButton_textSize;
 
@@ -187,7 +187,7 @@ class gunshopd
 		class StoreButton2: w_RscButton
 		{
 			idc = -1;
-			action = "[2] call populateGunStore";
+			onButtonClick = "[2] execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Rifles";
 			sizeEx = GunStoreButton_textSize;
 
@@ -200,7 +200,7 @@ class gunshopd
 		class StoreButton3: w_RscButton
 		{
 			idc = -1;
-			action = "[3] call populateGunStore";
+			onButtonClick = "[3] execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "LMGs";
 			sizeEx = GunStoreButton_textSize;
 
@@ -210,10 +210,24 @@ class gunshopd
 			h = 0.040 * SZ_SCALE;
 		};
 
+		//when BI releases shotguns we can uncomment this line
+		/*class StoreButton4: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[4] execVM 'client\systems\gunStore\populateGunStore.sqf'";
+			text = "Shotguns";
+			sizeEx = GunStoreButton_textSize;
+
+			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
+			y = GunStoreMainBG_Y + (0.300 * SZ_SCALE);
+			w = 0.1173 * SZ_SCALE;
+			h = 0.040 * SZ_SCALE;
+		};*/
+
 		class StoreButton5: w_RscButton
 		{
 			idc = -1;
-			action = "[5] call populateGunStore";
+			onButtonClick = "[5] execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Launchers";
 			sizeEx = GunStoreButton_textSize;
 
@@ -226,7 +240,7 @@ class gunshopd
 		class StoreButton6: w_RscButton
 		{
 			idc = -1;
-			action = "[6] call populateGunStore";
+			onButtonClick = "[6] execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Ordnance";
 			sizeEx = GunStoreButton_textSize;
 
@@ -239,7 +253,7 @@ class gunshopd
 		class StoreButton7: w_RscButton
 		{
 			idc = -1;
-			action = "[7] call populateGunStore";
+			onButtonClick = "[7] execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Accessories";
 			sizeEx = GunStoreButton_textSize;
 
@@ -253,7 +267,7 @@ class gunshopd
 		class StoreButton8: w_RscButton
 		{
 			idc = -1;
-			action = "[8] call populateGunStore";
+			onButtonClick = "[8] execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Armament";
 			sizeEx = GunStoreButton_textSize;
 
@@ -266,7 +280,7 @@ class gunshopd
 		class SellWeapon: w_RscButton
 		{
 			idc = -1;
-			action = "[] execVM 'client\systems\selling\sellWeapon.sqf'";
+			onButtonClick = "[] execVM 'client\systems\selling\sellWeapon.sqf'";
 			text = "Sell Weapon";
 			sizeEx = GunStoreButton_textSize;
 
@@ -279,7 +293,7 @@ class gunshopd
 		class SellUniform: w_RscButton
 		{
 			idc = -1;
-			action = "[] execVM 'client\systems\selling\sellUniform.sqf'";
+			onButtonClick = "[] execVM 'client\systems\selling\sellUniform.sqf'";
 			text = "Sell Uniform";
 			sizeEx = GunStoreButton_textSize;
 
@@ -292,7 +306,7 @@ class gunshopd
 		class SellVest: w_RscButton
 		{
 			idc = -1;
-			action = "[] execVM 'client\systems\selling\sellVest.sqf'";
+			onButtonClick = "[] execVM 'client\systems\selling\sellVest.sqf'";
 			text = "Sell Vest";
 			sizeEx = GunStoreButton_textSize;
 
@@ -305,7 +319,7 @@ class gunshopd
 		class SellBackpack: w_RscButton
 		{
 			idc = -1;
-			action = "[] execVM 'client\systems\selling\sellBackpack.sqf'";
+			onButtonClick = "[] execVM 'client\systems\selling\sellBackpack.sqf'";
 			text = "Sell Backpack";
 			sizeEx = GunStoreButton_textSize;
 
@@ -318,7 +332,7 @@ class gunshopd
 		class CancelButton: w_RscButton
 		{
 			idc = -1;
-			action = "closeDialog 0";
+			onButtonClick = "closeDialog 0";
 			text = "Cancel";
 			sizeEx = GunStoreButton_textSize;
 

@@ -1,6 +1,3 @@
-// ******************************************************************************************
-// * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
-// ******************************************************************************************
 //	@file Version: 1.0
 //	@file Name: getDefaultClothing.sqf
 //	@file Author: AgentRev
@@ -30,14 +27,15 @@ _result = "";
 
 switch (_side) do
 {
-	case BLUFOR:
+	case BLUFOR: 
 	{
 		switch (true) do
 		{
 			case (_isSniper):
 			{
-				if (_item == "uniform") then { _result = "U_B_Ghilliesuit" };
-				if (_item == "vest") then { _result = _defaultVest };
+				if (_item == "uniform") then { _result = "U_BG_Guerilla3_2" };
+				if (_item == "vest") then { _result = "V_Chestrig_khk" };
+	//			if (_item == "goggles") then { _result = "G_Spectacles" };
 			};
 			case (_isDiver):
 			{
@@ -47,12 +45,13 @@ switch (_side) do
 			};
 			default
 			{
-				if (_item == "uniform") then { _result = "U_B_CombatUniform_mcam" };
-				if (_item == "vest") then { _result = _defaultVest };
+				if (_item == "uniform") then { _result = "U_BG_Guerilla3_2" };
+				if (_item == "vest") then { _result = "V_Chestrig_khk" };
+//				if (_item == "goggles") then { _result = "G_Spectacles" };
 			};
 		};
-
-		if (_item == "headgear") then { _result = "H_MilCap_mcamo" };
+		
+		if (_item == "headgear") then { _result = "H_Bandanna_khk" };
 	};
 	case OPFOR:
 	{
@@ -60,8 +59,9 @@ switch (_side) do
 		{
 			case (_isSniper):
 			{
-				if (_item == "uniform") then { _result = "U_O_Ghilliesuit" };
-				if (_item == "vest") then { _result = _defaultVest };
+				if (_item == "uniform") then { _result = "U_OG_Guerilla2_3" };
+				if (_item == "vest") then { _result = "V_HarnessO_gry"  };
+//				if (_item == "goggles") then { _result = "G_Spectacles" };
 			};
 			case (_isDiver):
 			{
@@ -71,12 +71,13 @@ switch (_side) do
 			};
 			default
 			{
-				if (_item == "uniform") then { _result = "U_O_CombatUniform_ocamo" };
-				if (_item == "vest") then { _result = _defaultVest };
+				if (_item == "uniform") then { _result = "U_OG_Guerilla2_3" };
+				if (_item == "vest") then { _result = "V_HarnessO_gry" };
+//				if (_item == "goggles") then { _result = "G_Spectacles" };
 			};
 		};
-
-		if (_item == "headgear") then { _result = "H_MilCap_ocamo" };
+		
+		if (_item == "headgear") then { _result = "H_Booniehat_mcamo" };
 	};
 	default
 	{
@@ -84,8 +85,9 @@ switch (_side) do
 		{
 			case (_isSniper):
 			{
-				if (_item == "uniform") then { _result = "U_I_Ghilliesuit" };
-				if (_item == "vest") then { _result = _defaultVest };
+				if (_item == "uniform") then { _result = "U_I_CombatUniform" };
+				if (_item == "vest") then { _result = "V_BandollierB_rgr" };
+	//			if (_item == "goggles") then { _result = "G_Spectacles" };
 			};
 			case (_isDiver):
 			{
@@ -96,11 +98,12 @@ switch (_side) do
 			default
 			{
 				if (_item == "uniform") then { _result = "U_I_CombatUniform" };
-				if (_item == "vest") then { _result = _defaultVest };
+				if (_item == "vest") then { _result = "V_BandollierB_rgr" };
+//			if (_item == "goggles") then { _result = "G_Spectacles" };
 			};
 		};
-
-		if (_item == "headgear") then { _result = "H_MilCap_dgtl" };
+		
+		if (_item == "headgear") then { _result = "H_ShemagOpen_khk" };
 	};
 };
 

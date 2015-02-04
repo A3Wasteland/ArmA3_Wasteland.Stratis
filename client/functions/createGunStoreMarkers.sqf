@@ -51,7 +51,7 @@ _col_mixed = "ColorOrange";
 		// _npcPos set [1, (_npcPos select 1) - 100];
 		_marker = createMarkerLocal [_markerName, _npcPos];
 		_markerName setMarkerShapeLocal "ICON";
-		_markerName setMarkerTypeLocal "mil_dot";
+		_markerName setMarkerTypeLocal "KIA";
 		_markerName setMarkerColorLocal _col_empty;
 		_markerName setMarkerSizeLocal [1,1];
 		_markerName setMarkerTextLocal "GUN STORE";

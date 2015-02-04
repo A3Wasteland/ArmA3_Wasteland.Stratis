@@ -27,11 +27,11 @@ _truckItems =
 	["itm", "Toolkit", RANDOM_BETWEEN(0,1)],
 	["itm", ["muzzle_snds_M", "muzzle_snds_H", "muzzle_snds_H_MG", "muzzle_snds_B", "muzzle_snds_acp"], RANDOM_BETWEEN(0,3)],
 	["itm", ["optic_Aco", "optic_ACO_grn", "optic_MRCO", "optic_Hamr", "optic_Arco"], RANDOM_BETWEEN(2,4)],
-	["wep", ["SMG_01_F", "SMG_02_F"], RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(3,5)],
-	["wep", ["arifle_Mk20_GL_F", "arifle_TRG21_GL_F", "arifle_Katiba_GL_F", "arifle_MX_GL_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(4,5)],
+	["wep", ["arifle_mas_saiga", "arifle_mas_m1014"], RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(3,5)],
+	["wep", ["arifle_mas_m4_m203_d", "arifle_mas_mk16_l_gl", "arifle_mas_hk417c_d", "arifle_mas_akms"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(4,5)],
 	["mag", "1Rnd_HE_Grenade_shell", RANDOM_BETWEEN(5,10)],
-	["wep", ["srifle_GM6_SOS_F", "srifle_LRR_SOS_F"], RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(4,6)],
-	["wep", ["launch_RPG32_F", "launch_Titan_short_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(1,2)],
+	["wep", ["srifle_mas_sr25_h", "srifle_mas_m110_h"], RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(4,6)],
+	["wep", ["launch_RPG32_F", "mas_launch_RPG7_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(1,2)],
 	["mag", "HandGrenade", RANDOM_BETWEEN(0,5)],
 	["mag", ["APERSTripMine_Wire_Mag", "APERSBoundingMine_Range_Mag", "SLAMDirectionalMine_Wire_Mag", "ATMine_Range_Mag"], RANDOM_BETWEEN(2,6)]
 ];

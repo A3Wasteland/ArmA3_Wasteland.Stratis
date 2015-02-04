@@ -12,7 +12,14 @@ _preCheck = {{player distance _x < 10 max (sizeOf typeOf _x)} count (player near
 
 if (call _preCheck) then
 {
-	call fn_forceOpenParachute;
+	if (_this isEqualTo true) then
+	{
+		call fn_forceOpenParachute; // called from onKeyPress, already non-scheduled
+	}
+	else
+	{
+		[[], fn_forceOpenParachute] execFSM "call.fsm"; // force non-scheduled
+	};
 }
 else
 {

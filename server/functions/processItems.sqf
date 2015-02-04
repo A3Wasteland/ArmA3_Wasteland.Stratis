@@ -81,6 +81,66 @@ _items = _this select 1;
 					_vehicle addItemCargoGlobal [_class, _quantity];
 				};
 			};
+			case "B":
+			{
+				if (typeName _class == "ARRAY") then
+				{
+					for "_i" from 1 to _quantity do
+					{
+						_randomClass = _class call BIS_fnc_selectRandom;
+						_vehicle addBackpackCargoGlobal [_randomClass, 1];
+					};
+				}
+				else
+				{
+					_vehicle addBackpackCargoGlobal [_class, _quantity];
+				};
+			};
+				case "V":
+			{
+				if (typeName _class == "ARRAY") then
+				{
+					for "_i" from 1 to _quantity do
+					{
+						_randomClass = _class call BIS_fnc_selectRandom;
+						_vehicle addvest [_randomClass, 1];
+					};
+				}
+				else
+				{
+					_vehicle addvest [_class, _quantity];
+				};
+			};
+				case "U":
+			{
+				if (typeName _class == "ARRAY") then
+				{
+					for "_i" from 1 to _quantity do
+					{
+						_randomClass = _class call BIS_fnc_selectRandom;
+						_vehicle addUniform [_randomClass, 1];
+					};
+				}
+				else
+				{
+					_vehicle addUniform [_class, _quantity];
+				};
+			};
+				case "H":
+			{
+				if (typeName _class == "ARRAY") then
+				{
+					for "_i" from 1 to _quantity do
+					{
+						_randomClass = _class call BIS_fnc_selectRandom;
+						_vehicle addheadgear [_randomClass, 1];
+					};
+				}
+				else
+				{
+					_vehicle addheadgear [_class, _quantity];
+				};
+			};
 		};
 	};
 } forEach _items;

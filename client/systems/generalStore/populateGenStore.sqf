@@ -18,6 +18,8 @@ _itemlist = _dialog displayCtrl genstore_item_list;
 _itemlisttext = _dialog displayCtrl genstore_item_TEXT;
 _itemDesc = _dialog displayCtrl genstore_item_desc;
 
+[] execVM "client\systems\generalStore\getInventory.sqf";
+
 //Clear the list
 lbClear _itemlist;
 _itemlist lbSetCurSel -1;
@@ -179,5 +181,3 @@ _playerSideNum = switch (playerSide) do
 		_itemlist lbSetData [_listIndex, _weaponClass];
 	};
 } forEach _itemsArray;
-
-call getInventory;

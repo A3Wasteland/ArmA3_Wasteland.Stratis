@@ -21,63 +21,86 @@ lootWeapon_list =
 			"Binocular",
 			"hgun_PDW2000_F",
 			"SMG_01_F",                         // Vermin .45 ACP
-			"SMG_02_F"                          // Sting 9mm
+			"SMG_02_F",
+			"hgun_mas_sa61_F",
+			"arifle_mas_bizon",
+			"hgun_mas_uzi_F",
+			"arifle_mas_m1014",
+			"arifle_mas_mp5"			
 		]
 	],
 	[ // MILITARY
 		1,
 		[
-			"arifle_Katiba_C_F",
-			"arifle_Katiba_F",
-			"arifle_Katiba_GL_F",
-			"arifle_Mk20C_F",
-			"arifle_Mk20_F",
-			"arifle_Mk20_GL_F",
-			"arifle_MXC_F",
-			"arifle_MXM_F",
-			"arifle_MX_F",
-			"arifle_MX_GL_F",
-			"arifle_MX_SW_F",
-			"arifle_SDAR_F",
-			"arifle_TRG20_F",
-			"arifle_TRG21_F",
-			"arifle_TRG21_GL_F",
-			"Binocular",
-			"hgun_PDW2000_F",
+			"arifle_mas_hk416_e",
+			"arifle_mas_hk416_sd", 
+			"arifle_mas_hk416_gl", 
+			"arifle_mas_hk416_gl_h", 
+			"arifle_mas_hk416_gl_a", 
+			"arifle_mas_hk416_gl_e", 
+			"arifle_mas_hk416_gl_sd", 
+			"arifle_mas_hk416_m203", 
+			"arifle_mas_hk416_m203_h",
 			"LMG_Mk200_F",
 			"LMG_Zafir_F",
 			"Rangefinder",
-			"SMG_01_F",                         // Vermin .45 ACP
-			"SMG_02_F",                         // Sting 9mm
 			"srifle_EBR_F",
 			"srifle_GM6_F",
-			"srifle_LRR_F"
+			"srifle_LRR_F",
+			"arifle_mas_fa",
+			"LMG_mas_pkm_F",
+			"arifle_mas_ak_74m", 
+			"arifle_mas_ak_74m_h", 
+			"arifle_mas_ak_74m_a", 
+			"arifle_mas_ak_74m_sd"
 		]
 	],
 	[ // INDUSTRIAL
 		2,
 		[
-			"arifle_Mk20C_F",
-			"arifle_Mk20_F",
-			"arifle_TRG20_F",
-			"arifle_TRG21_F",
-			"arifle_Katiba_C_F",
-			"arifle_MXC_F",
-			"Binocular",
-			"SMG_01_F",                         // Vermin .45 ACP
-			"SMG_02_F"                          // Sting 9mm
+			"arifle_mas_ak_74m_c_a",
+			"arifle_mas_ak_74m_c_sd",
+			"arifle_mas_akms", 
+			"arifle_mas_akms_h", 
+			"arifle_mas_akms_a", 
+			"arifle_mas_akms_sd",
+			"arifle_mas_hk416_e",
+			"arifle_mas_hk416_sd", 
+			"arifle_mas_hk416_gl", 
+			"arifle_mas_hk416_gl_h", 
+			"arifle_mas_hk416_gl_a", 
+			"arifle_mas_hk416_gl_e", 
+			"arifle_mas_hk416_gl_sd", 
+			"arifle_mas_hk416_m203", 
+			"arifle_mas_hk416_m203_h"
+
 		]
 	],
 	[ // RESEARCH
 		3,
 		[
-			"arifle_Katiba_GL_F",
-			"arifle_MXC_F",
-			"arifle_MXM_F",
-			"arifle_MX_GL_F",
+
 			"Rangefinder",
-			"srifle_GM6_F",
-			"srifle_LRR_F"
+			"srifle_mas_ksvk_h",
+			"LMG_mas_M249_F_t",
+			"arifle_mas_l119_d_a",
+			"arifle_mas_ak_74m", 
+			"arifle_mas_ak_74m_h", 
+			"arifle_mas_ak_74m_a", 
+			"arifle_mas_ak_74m_sd", 
+			"arifle_mas_ak_74m_gl",
+			"arifle_mas_akms_a", 
+			"arifle_mas_akms_sd",
+			"arifle_mas_hk416_e",
+			"arifle_mas_hk416_sd", 
+			"arifle_mas_hk416_gl", 
+			"arifle_mas_hk416_gl_h", 
+			"arifle_mas_hk416_gl_a", 
+			"arifle_mas_hk416_gl_e", 
+			"arifle_mas_hk416_gl_sd", 
+			"arifle_mas_hk416_m203", 
+			"arifle_mas_hk416_m203_h"
+		
 		]
 	]
 ];
@@ -161,7 +184,8 @@ lootMagazine_list =
 			"HandGrenade",
 			"MiniGrenade",
 			"SatchelCharge_Remote_Mag",
-			"SLAMDirectionalMine_Wire_Mag"
+			"SLAMDirectionalMine_Wire_Mag",
+			"5Rnd_mas_127x108_mag"
 		]
 	],
 	[ // INDUSTRIAL
@@ -174,11 +198,8 @@ lootMagazine_list =
 			"30Rnd_65x39_caseless_green",
 			"30Rnd_65x39_caseless_green_mag_Tracer",
 			"30Rnd_65x39_caseless_mag",
-			"30Rnd_65x39_caseless_mag_Tracer"/*,
-			"Chemlight_blue",
-			"Chemlight_green",
-			"Chemlight_red",
-			"Chemlight_yellow"*/
+			"30Rnd_65x39_caseless_mag_Tracer",
+			"5Rnd_mas_127x108_mag"
 		]
 	],
 	[ // RESEARCH
@@ -192,7 +213,9 @@ lootMagazine_list =
 			"30Rnd_65x39_caseless_green",
 			"30Rnd_65x39_caseless_green",
 			"5Rnd_127x108_Mag",
-			"7Rnd_408_Mag"
+			"7Rnd_408_Mag",
+			"5Rnd_mas_127x108_mag"
+			
 		]
 	]
 ];
@@ -226,17 +249,12 @@ lootItem_list =
 			"acc_flashlight",
 			"acc_pointer_IR",
 			"FirstAidKit",
-			"ItemGPS",
-			"Medikit",
 			"muzzle_snds_acp",                  // .45 ACP
 			"muzzle_snds_B",                    // 7.62mm
 			"muzzle_snds_H",                    // 6.5mm
 			"muzzle_snds_H_MG",                 // 6.5mm LMG
 			"muzzle_snds_L",                    // 9mm
 			"muzzle_snds_M",                    // 5.56mm
-			"NVGoggles",
-			//"NVGoggles_INDEP",
-			//"NVGoggles_OPFOR",
 			"optic_Aco",
 			"optic_ACO_grn",
 			"optic_aco_smg",
@@ -245,40 +263,100 @@ lootItem_list =
 			"optic_Holosight",
 			"optic_Holosight_smg",
 			"optic_SOS",
-			"ToolKit",
 			"H_HelmetB",
 			"H_HelmetIA",
 			"H_HelmetO_ocamo",
 			"V_PlateCarrier1_rgr",
 			"V_PlateCarrierIA1_dgtl",
-			"V_HarnessO_brn"
+			"V_HarnessO_brn",
+			"optic_mas_pso",
+			"optic_mas_acog_rd_c",
+			"muzzle_mas_snds_L", 
+			"muzzle_mas_snds_LM", 
+			"muzzle_mas_snds_C", 
+			"muzzle_mas_snds_M",
+			"muzzle_mas_snds_Mc", 
+			"muzzle_mas_snds_AK", 
+			"muzzle_mas_snds_SM", 
+			"muzzle_mas_snds_SMc", 
+			"muzzle_mas_snds_SH", 
+			"muzzle_mas_snds_SHc", 
+			"muzzle_mas_snds_SV", 
+			"muzzle_mas_snds_SVc", 
+			"muzzle_mas_snds_SVD", 
+			"muzzle_mas_snds_KSVK", 
+			"optic_mas_zeiss", 
+			"optic_mas_zeiss_c", 
+			"optic_mas_zeiss_eo", 
+			"optic_mas_zeiss_eo_c", 
+			"optic_mas_acog", 
+			"optic_mas_acog_c", 
+			"optic_mas_acog_eo", 
+			"optic_mas_acog_eo_c", 
+			"optic_mas_acog_rd", 
+			"optic_mas_acog_rd_c", 
+			"optic_mas_handle", 
+			"optic_mas_aim", 
+			"optic_mas_aim_c", 
+			"optic_mas_pso",
+			"optic_mas_pso_c", 
+			"optic_mas_pso_eo", 
+			"optic_mas_pso_eo_c", 
+			"optic_mas_pso_nv",
+			"optic_mas_pso_nv_c", 
+			"optic_mas_pso_nv_eo", 
+			"optic_mas_pso_nv_eo_c", 
+			"optic_mas_term"
 		]
 	],
 	[ // INDUSTRIAL
 		2,
 		[
-			"FirstAidKit",
-			"FirstAidKit",
-			"Medikit",
-			"ToolKit",
-			"ToolKit"
+			"FirstAidKit"
 		]
 	],
 	[ // RESEARCH
 		3,
 		[
-			"FirstAidKit",
-			"FirstAidKit",
-			"FirstAidKit",
-			"ItemGPS",
-			"Medikit",
-			"NVGoggles",
-			//"NVGoggles_INDEP",
-			//"NVGoggles_OPFOR",
 			"optic_Nightstalker",
 			"optic_NVS",
 			"optic_SOS",
-			"V_RebreatherB"
+			"optic_Arco",
+			"optic_Hamr",
+			"optic_Holosight",
+			"optic_mas_pso",
+			"optic_mas_acog_rd_c",
+			"muzzle_mas_snds_L", 
+			"muzzle_mas_snds_LM", 
+			"muzzle_mas_snds_C", 
+			"muzzle_mas_snds_M",
+			"muzzle_mas_snds_Mc", 
+			"muzzle_mas_snds_AK", 
+			"muzzle_mas_snds_SM", 
+			"muzzle_mas_snds_SMc", 
+			"muzzle_mas_snds_SH", 
+			"muzzle_mas_snds_SHc", 
+			"muzzle_mas_snds_SV", 
+			"muzzle_mas_snds_SVc", 
+			"muzzle_mas_snds_SVD", 
+			"muzzle_mas_snds_KSVK", 
+			"optic_mas_zeiss", 
+			"optic_mas_zeiss_c", 
+			"optic_mas_acog", 
+			"optic_mas_acog_c", 
+			"optic_mas_acog_eo", 
+			"optic_mas_acog_eo_c", 
+			"optic_mas_acog_rd", 
+			"optic_mas_acog_rd_c", 
+			"optic_mas_handle", 
+			"optic_mas_aim", 
+			"optic_mas_aim_c", 
+			"optic_mas_pso",
+			"optic_mas_pso_c", 
+			"optic_mas_pso_eo", 
+			"optic_mas_pso_eo_c", 
+			"optic_mas_term"
+			
 		]
 	]
 ];

@@ -22,13 +22,10 @@ if !(_class isKindOf "AllVehicles") exitWith {}; // if not actual vehicle, finis
 
 clearBackpackCargoGlobal _vehicle;
 
-// Disable thermal on all manned vehicles
-if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") < 1) then
+if !(_vehicle isKindOf "UAV_02_base_F") then
 {
 	_vehicle disableTIEquipment true;
 };
-
-_vehicle setUnloadInCombat [true, false]; // Prevent AI gunners from getting out of vehicle while in combat if it's in working condition
 
 {
 	_vehicle setVariable ["A3W_hitPoint_" + getText (_x >> "name"), configName _x, true];
@@ -67,11 +64,6 @@ _vehicle addEventHandler ["Killed",
 	};
 }];
 
-if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
-{
-	[netId _vehicle, "A3W_fnc_setupAntiExplode", true] call A3W_fnc_MP;
-};
-
 // Vehicle customization
 switch (true) do
 {
@@ -82,12 +74,24 @@ switch (true) do
 		_centerOfMass set [2, -0.657]; // original = -0.557481
 		_vehicle setCenterOfMass _centerOfMass;
 	};
-	case ({_class isKindOf _x} count ["B_Heli_Light_01_F", "B_Heli_Light_01_armed_F", "O_Heli_Light_02_unarmed_F"] > 0):
+	
+	case (_class == "B_Heli_Light_01_F"):
 	{
 		// Add flares to those poor helis
 		_vehicle addWeaponTurret ["CMFlareLauncher", [-1]];
 		_vehicle addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
 	};
+	
+	case (_class == "B_Heli_Light_01_armed_F"):
+	{
+		// Add DAGRs and flares to Pawnee's
+		_vehicle addWeaponTurret ["CMFlareLauncher", [-1]];
+		_vehicle addMagazineTurret ["60Rnd_CMFlare_Chaff_Magazine", [-1]];
+		_vehicle  addWeaponTurret ["missiles_DAGR", [-1]];
+		sleep 0.5;
+		_vehicle addMagazineTurret ["24Rnd_PG_missiles", [-1]];
+	};
+	
 	case (_class isKindOf "Plane_Fighter_03_base_F"):
 	{
 		_vehicle addMagazine "300Rnd_20mm_shells";

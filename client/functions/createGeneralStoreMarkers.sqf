@@ -18,8 +18,8 @@
 		deleteMarkerLocal _markerName;
 		_marker = createMarkerLocal [_markerName, _npcPos];
 		_markerName setMarkerShapeLocal "ICON";
-		_markerName setMarkerTypeLocal "mil_dot";
-		_markerName setMarkerColorLocal "ColorBlue";
+		_markerName setMarkerTypeLocal "loc_Tourism";
+		_markerName setMarkerColorLocal "ColorBlack";
 		_markerName setMarkerSizeLocal [1,1];
 		_markerName setMarkerTextLocal "General Store";
 	};

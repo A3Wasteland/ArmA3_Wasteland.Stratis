@@ -8,8 +8,7 @@
 
 if (!isServer) exitWith {};
 
-private ["_flagChecksum", "_serverID", "_cheatFlag", "_unit"];
-_flagChecksum = _this select 0;
+private ["_serverID", "_cheatFlag", "_unit"];
 
 waitUntil {!isNil "bis_functions_mainscope"};
 _serverID = owner bis_functions_mainscope;

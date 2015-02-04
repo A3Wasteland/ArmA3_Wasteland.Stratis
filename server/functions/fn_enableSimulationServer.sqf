@@ -12,7 +12,7 @@ if (typeName _object == "STRING") then { _object = objectFromNetId _object };
 
 if (isServer) then
 {
-	_object enableSimulation _simul;
+	_object enableSimulationGlobal _simul;
 }
 else
 {

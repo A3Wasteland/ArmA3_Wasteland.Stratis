@@ -10,34 +10,37 @@
 // Name, Building Position, Desk Direction (or [Desk Direction, Front Offset]), Excluded Buttons
 storeOwnerConfig = compileFinal str
 [
-	["GenStore1", 1, 270, []],
-	["GenStore2", 4, 310, []],
-	["GenStore3", 4, 340, []],
+	["GenStore1", 1, [270,0.25], []],
+	["GenStore2", 4, [310,0.25], []],
+	["GenStore3", 4, [340,0.25], []],
 
-	["GunStore1", 0, 5, []],
-	["GunStore2", 1, 130, []],
-	["GunStore3", 5, 85, []],
-	["GunStore4", 1, [30, 1.5], []],
+	["GunStore2", 1, [138,0.25], []],
+	["GunStore3", 4, [130,0.25], []],
+	["GunStore4", 3, [209,0.25], []],
+	["GunStore5", 1, [320,0.25], []],
 
-	// Buttons you can disable: "Land", "Armored", "Tanks", "Helicopters", "Boats", "Planes"
-	["VehStore1", 0, 195, ["Planes"]],
-	["VehStore2", 2, 285, ["Boats"]],
-	["VehStore3", 1, 245, ["Planes"]]
+	["VehStore1", 0, [195,0.25], ["Planes"]],
+	["VehStore2", 2, [285,0.25], ["Boats"]],
+	["VehStore3", 1, [245,0.25], ["Planes"]],
+	["VehStore4", 1, [175,0.25], ["Planes"]]
 ];
 
 // Outfits for store owners
 storeOwnerConfigAppearance = compileFinal str
 [
-	["GenStore1", [["weapon", ""], ["uniform", "U_IG_Guerilla2_2"]]],
-	["GenStore2", [["weapon", ""], ["uniform", "U_IG_Guerilla2_3"]]],
-	["GenStore3", [["weapon", ""], ["uniform", "U_IG_Guerilla3_1"]]],
+	['GenStore1', [['weapon', ''], ['uniform', 'U_B_PilotCoveralls']]],
+	['GenStore2', [['weapon', ''], ['uniform', 'U_O_PilotCoveralls']]],
+	['GenStore3', [['weapon', ''], ['uniform', 'U_I_pilotCoveralls']]],
 
-	["GunStore1", [["weapon", ""], ["uniform", "U_B_SpecopsUniform_sgg"]]],
-	["GunStore2", [["weapon", ""], ["uniform", "U_O_SpecopsUniform_blk"]]],
-	["GunStore3", [["weapon", ""], ["uniform", "U_I_CombatUniform_tshirt"]]],
-	["GunStore4", [["weapon", ""], ["uniform", "U_IG_Guerilla1_1"]]],
+	
+	["GunStore2", [["weapon", "LMG_mas_M249_F_t"], ["uniform", "U_B_SpecopsUniform_sgg"]]],
+	["GunStore3", [["weapon", "srifle_mas_m91_l"], ["uniform", "U_O_SpecopsUniform_blk"]]],
+	["GunStore4", [["weapon", "srifle_mas_m107_h"], ["uniform", "U_I_CombatUniform_tshirt"]]],
+	["GunStore5", [["weapon", "arifle_mas_m4_m203c_v"], ["uniform", "U_IG_Guerilla1_1"]]],	
+	
 
-	["VehStore1", [["weapon", ""], ["uniform", "U_Competitor"]]],
-	["VehStore2", [["weapon", ""], ["uniform", "U_Competitor"]]],
-	["VehStore3", [["weapon", ""], ["uniform", "U_Competitor"]]]
+	['VehStore1', [['weapon', ''], ['uniform', 'U_BG_Guerilla2_1']]],
+	['VehStore2', [['weapon', ''], ['uniform', 'U_Rangemaster']]],
+	['VehStore3', [['weapon', ''], ['uniform', 'U_B_HeliPilotCoveralls']]],
+	['VehStore4', [['weapon', ''], ['uniform', 'U_Competitor']]]
 ];

@@ -149,30 +149,18 @@ staticPlaneList =
 //Random Weapon List - Change this to what you want to spawn in cars.
 vehicleWeapons =
 [
-//	"hgun_P07_F",
-//	"hgun_Rook40_F",
-//	"hgun_ACPC2_F",
-//	"arifle_SDAR_F",
-	"SMG_01_F",	// Vermin .45 ACP
-	"SMG_02_F",	// Sting 9mm
+	"SMG_01_F",	
+	"SMG_02_F",	
 	"hgun_PDW2000_F",
-	"arifle_TRG20_F",
-	"arifle_TRG21_F",
-	"arifle_TRG21_GL_F",
-	"arifle_Mk20C_F",
-	"arifle_Mk20_F",
-	"arifle_Mk20_GL_F",
-	"arifle_Katiba_F",
-	"arifle_Katiba_C_F",
-	"arifle_Katiba_GL_F",
-	"arifle_MXC_F",
-	"arifle_MX_F",
-	"arifle_MX_GL_F",
-	"arifle_MX_SW_F",
-	"arifle_MXM_F",
-	"srifle_EBR_F",
-	"LMG_Mk200_F",
-	"LMG_Zafir_F"
+	"hgun_mas_sa61_F",
+	"arifle_mas_bizon",
+	"hgun_mas_uzi_F",
+	"arifle_mas_m1014",
+	"arifle_mas_mp5",
+	"hgun_mas_glocksf_F_sd",
+	"hgun_mas_grach_F_sd",
+	"hgun_mas_mp7_F_a",
+	"arifle_mas_lee"
 ];
 
 vehicleAddition =

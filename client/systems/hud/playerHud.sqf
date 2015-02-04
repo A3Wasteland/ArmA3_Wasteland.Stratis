@@ -101,7 +101,7 @@ while {true} do
 {
 	private ["_ui","_vitals","_hudVehicle","_health","_tempString","_yOffset","_vehicle"];
 
-	1000 cutRsc ["WastelandHud","PLAIN",1e10];
+	1000 cutRsc ["WastelandHud","PLAIN"];
 	_ui = uiNameSpace getVariable "WastelandHud";
 	_vitals = _ui displayCtrl hud_status_idc;
 	_hudVehicle = _ui displayCtrl hud_vehicle_idc;
@@ -140,8 +140,8 @@ while {true} do
 
 	if (_atmEnabled) then { _strArray pushBack format ["%1 <img size='0.7' image='client\icons\suatmm_icon.paa'/>", [player getVariable ["bmoney", 0]] call fn_numbersText] };
 	_strArray pushBack format ["%1 <img size='0.7' image='client\icons\money.paa'/>", [player getVariable ["cmoney", 0]] call fn_numbersText];
-	_strArray pushBack format ["%1 <img size='0.7' image='client\icons\water.paa'/>", ceil (thirstLevel max 0)];
-	_strArray pushBack format ["%1 <img size='0.7' image='client\icons\food.paa'/>", ceil (hungerLevel max 0)];
+	_strArray pushBack format ["%1 <img size='0.7' image='client\icons\energydrink.paa'/>", ceil (thirstLevel max 0)];
+	_strArray pushBack format ["%1 <img size='0.7' image='client\icons\cannedfood.paa'/>", ceil (hungerLevel max 0)];
 	if (!_unlimitedStamina) then { _strArray pushBack format ["%1 <img size='0.7' image='client\icons\running_man.paa'/>", 100 - ceil ((getFatigue player) * 100)] };
 	_strArray pushBack format ["<t color='%1'>%2</t> <img size='0.7' image='client\icons\health.paa'/>", _healthTextColor, _health];
 

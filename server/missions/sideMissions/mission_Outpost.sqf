@@ -21,12 +21,20 @@ _setupVars =
 _setupObjects =
 {
 	_missionPos = markerPos _missionLocation;
+	
+		//delete existing base parts and vehicles at location
+	_baseToDelete = nearestObjects [_missionPos, ["All"], 25];
+		{ deleteVehicle _x } forEach _baseToDelete; 
 
 	_outpost = (call compile preprocessFileLineNumbers "server\missions\outposts\outpostsList.sqf") call BIS_fnc_selectRandom;
 	_objects = [_outpost, _missionPos, 0] call createOutpost;
 
-	_aiGroup = createGroup CIVILIAN;
-	[_aiGroup, _missionPos, _nbUnits, 5] call createCustomGroup;
+	
+	// NPC Randomizer 
+_randomGroup = [createGroup1,createGroup2,createGroup3,createGroup4,createGroup5,createGroup6,createGroup7,createGroup8,createGroup9,createGroup10] call BIS_fnc_selectRandom;
+_aiGroup  = createGroup CIVILIAN;
+[_aiGroup, _missionPos] spawn _randomGroup;
+	
 
 	_missionHintText = format ["An armed <t color='%1'>outpost</t> containing weapon crates has been spotted near the marker, go capture it!", sideMissionColor]
 };

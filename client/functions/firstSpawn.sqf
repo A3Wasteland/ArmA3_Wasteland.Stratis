@@ -8,7 +8,55 @@
 
 client_firstSpawn = true;
 
-[] execVM "client\functions\welcomeMessage.sqf";
+// BLUFOR WHITELISTING FOR SWWD CLAN MEMBERS !
+_BLUFOR_Whitelist = [
+"76561198010859952", // Hagar
+"76561198011008664", // Blasie
+"76561198011088763", // Crusty
+"76561198030714684", // Diesel
+"76561198032758675", // Saadsel
+"76561198048862475", // Badger
+"76561198057051280", // AcidBuddy
+"76561198101478573", // BAASMANS
+"76561198106526709", // Frank0
+"76561198117632922", // Panga
+"76561198126770614", // Wolf
+"76561198139502677", // SL3T
+"76561198147195498", // ACHMED
+"76561198147245553", // PUNISHER
+"76561198022113458", // GreyTear
+"76561198021080452" //Dugg
+];
+
+if(playerSide == BLUFOR) then
+{
+	if(!((getPlayerUID player) in _BLUFOR_Whitelist)) then
+	{
+		hint "BLUFOR is Whitelisted for Sierra Whiskey Wild Dogs Only!";
+		titleFadeOut 9999;
+		titleText [format["BLUFOR is Whitelisted for Sierra Whiskey Wild Dogs Only!"],"PLAIN",0];
+		[] spawn{
+			sleep 5;
+			endMission "Enquire on Teamspeak! CPTTS.GAMESERVERS.COM:9194";
+		}
+	};
+};
+
+
+// display server watermark
+["<img size='1' image='client\images\logo.paa'/>",(safezoneX- 1.10)/2,-(safezoneY-2.1)/2,99999999,0,0,3054] spawn bis_fnc_dynamicText;
+
+
+//set client side view distance on spawn
+systemChat format["Optimizing Video Settings"];
+setViewDistance 1000;
+setObjectViewDistance 900;
+setTerrainGrid 40;
+
+[] execVM "addons\credits\welcome.sqf";
+
+//play intro sound
+ playsound "kickass"; 
 
 player addEventHandler ["Take",
 {
@@ -53,7 +101,10 @@ player addEventHandler ["Put",
 	};
 }];
 
-player addEventHandler ["WeaponDisassembled", { _this spawn weaponDisassembledEvent }];
+if (!isServer) then
+{
+	player addEventHandler ["WeaponDisassembled", { _this spawn weaponDisassembledEvent }];
+};
 
 player addEventHandler ["InventoryOpened",
 {
@@ -85,15 +136,15 @@ player addEventHandler ["InventoryClosed",
 	_obj setVariable ["inventoryIsOpen", nil];
 }];
 
+// Manual GetIn/GetOut check because BIS is too lazy to implement GetInMan/GetOutMan, among a LOT of other things
 [] spawn
 {
 	_lastVeh = vehicle player;
 
-	waitUntil
+	while {true} do
 	{
 		_currVeh = vehicle player;
 
-		// Manual GetIn/GetOut check because BIS is too lazy to implement GetInMan/GetOutMan
 		if (_lastVeh != _currVeh) then
 		{
 			if (_currVeh != player) then
@@ -107,14 +158,7 @@ player addEventHandler ["InventoryClosed",
 		};
 
 		_lastVeh = _currVeh;
-
-		// Prevent usage of commander camera
-		if (cameraView == "GROUP") then
-		{
-			cameraOn switchCamera "EXTERNAL";
-		};
-
-		false
+		uiSleep 0.25;
 	};
 };
 

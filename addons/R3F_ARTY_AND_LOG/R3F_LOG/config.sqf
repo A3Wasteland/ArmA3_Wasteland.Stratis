@@ -5,18 +5,9 @@
  */
 R3F_LOG_CFG_remorqueurs =
 [
-	"SUV_01_base_F",
-	"Offroad_01_base_F",
-	"Van_01_base_F",
-	"MRAP_01_base_F",
-	"MRAP_02_base_F",
-	"MRAP_03_base_F",
-	"Truck_01_base_F",
-	"Truck_02_base_F",
-	"Truck_03_base_F",
-	"Wheeled_APC_F",
-	"Tank_F",
-	"Boat_Armed_01_base_F"
+	"Car_F",
+	"Ship_F",
+	"Tank_F"
 ];
 
 /**
@@ -24,19 +15,12 @@ R3F_LOG_CFG_remorqueurs =
  */
 R3F_LOG_CFG_objets_remorquables =
 [
-	"Hatchback_01_base_F",
-	"SUV_01_base_F",
-	"Offroad_01_base_F",
-	"Van_01_base_F",
-	"MRAP_01_base_F",
-	"MRAP_02_base_F",
-	"MRAP_03_base_F",
-	"UGV_01_base_F",
-	"SDV_01_base_F",
-	"Boat_Civil_01_base_F",
-	"Boat_Armed_01_base_F",
-	"Helicopter_Base_F",
-	"Plane"
+	"Car_F",
+	"Ship_F",
+	"Tank_F",
+	"Plane",
+	"Helicopter_Base_F"
+
 ];
 
 /****** LIFT WITH VEHICLE  ******/
@@ -54,17 +38,13 @@ R3F_LOG_CFG_heliporteurs =
  */
 R3F_LOG_CFG_objets_heliportables =
 [
-	"Hatchback_01_base_F",
-	"SUV_01_base_F",
-	"Offroad_01_base_F",
-	"Van_01_base_F",
-	"MRAP_01_base_F",
-	"MRAP_02_base_F",
-	"MRAP_03_base_F",
-	"UGV_01_base_F",
-	"SDV_01_base_F",
-	"Boat_Civil_01_base_F",
-	"Boat_Armed_01_base_F"
+	"Car_F",
+	"Ship_F",
+	"Tank_F",
+	"Plane",
+	"Helicopter_Base_F",
+	"Land_Cargo20_grey_F",
+	"Land_Cargo40_grey_F"
 ];
 
 
@@ -98,10 +78,17 @@ R3F_LOG_CFG_transporteurs =
 	["I_Heli_light_03_base_F", 20],
 	["Heli_Transport_01_base_F", 25],
 	["Heli_Transport_02_base_F", 30],
-	["B_Heli_Transport_03_base_F", 30],
-	["Heli_Transport_04_base_F", 30],
 	["Heli_Attack_01_base_F", 10],
-	["Heli_Attack_02_base_F", 20]
+	["Heli_Attack_02_base_F", 20],
+	["B_Heli_Transport_03_base_F", 300],
+	["Heli_Transport_04_base_F", 300],
+	["Land_Cargo20_grey_F", 1000],
+	["Land_Cargo40_grey_F", 2000]
+	
+	
+	
+	
+	
 ];
 
 
@@ -110,6 +97,7 @@ R3F_LOG_CFG_objets_transportables =
 	["StaticWeapon", 5],
 	["Box_NATO_AmmoVeh_F", 10],
 	["B_supplyCrate_F", 5],
+	["Land_LampHalogen_F",2],
 	["ReammoBox_F", 3],
 	["Kart_01_Base_F", 5],
 	["Quadbike_01_base_F", 10],
@@ -153,12 +141,18 @@ R3F_LOG_CFG_objets_transportables =
 	["Land_RampConcreteHigh_F", 6],
 	["Land_RampConcrete_F", 5],
 	["Land_Razorwire_F", 5],
-	["Land_Sacks_goods_F", 2],
 	["Land_Scaffolding_F", 5],
+	["Land_GH_Platform_F", 5],
 	["Land_Shoot_House_Wall_F", 3],
 	["Land_Stone_8m_F", 5],
 	["Land_ToiletBox_F", 2],
-	["Land_BarrelWater_F", 2]
+	["Land_FirePlace_F", 2],
+	["Land_BC_Court_F", 10],
+	["BlockConcrete_F", 5],
+	["Land_Sacks_goods_F", 25],
+	["Land_BarrelWater_F", 25],
+	["Land_Atm_01_F", 50]
+
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
@@ -212,8 +206,17 @@ R3F_LOG_CFG_objets_deplacables =
 	"Land_Razorwire_F",
 	"Land_Sacks_goods_F",
 	"Land_Scaffolding_F",
+	"Land_GH_Platform_F",
 	"Land_Shoot_House_Wall_F",
 	"Land_Stone_8m_F",
 	"Land_ToiletBox_F",
-	"Land_BarrelWater_F"
+	"Land_BarrelWater_F",
+	"Land_LampHalogen_F",
+	"Land_GH_Platform_F", 
+	"Land_FirePlace_F",
+	"BlockConcrete_F",
+	"Land_BC_Court_F",
+	"Land_Atm_01_F",
+	"Land_Cargo20_grey_F",
+	"Land_Cargo40_grey_F"
 ];

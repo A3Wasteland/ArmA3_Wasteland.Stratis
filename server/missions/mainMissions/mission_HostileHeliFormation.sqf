@@ -11,7 +11,7 @@ private ["_heliChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicl
 
 _setupVars =
 {
-	_missionType = "Hostile Helicopters";
+	_missionType = "Hostile Helicopers";
 	_locationsArray = nil; // locations are generated on the fly from towns
 };
 
@@ -148,7 +148,7 @@ _successExec =
 {
 	// Mission completed
 
-	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 5, "None"];
+	_box1 = createVehicle ["Box_FIA_Support_F", _lastPos, [], 5, "None"];
 	_box1 setDir random 360;
 	[_box1, "mission_USSpecial"] call fn_refillbox;
 

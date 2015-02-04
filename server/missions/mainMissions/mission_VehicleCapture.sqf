@@ -13,10 +13,15 @@ private ["_vehicle", "_vehicleName", "_vehDeterminer"];
 
 // setupVars must be defined in the top mission file
 
+
 _setupObjects =
 {
 	_missionPos = markerPos _missionLocation;
 
+	//delete existing base parts and vehicles at location
+_baseToDelete = nearestObjects [_missionPos, ["All"], 25];
+{ deleteVehicle _x } forEach _baseToDelete; 
+	
 	// Class, Position, Fuel, Ammo, Damage, Special
 	_vehicle = [_vehicleClass, _missionPos] call createMissionVehicle;
 
@@ -165,15 +170,19 @@ _setupObjects =
 
 	reload _vehicle;
 
-	_aiGroup = createGroup CIVILIAN;
-	[_aiGroup, _missionPos, _nbUnits] call createCustomGroup;
+	
+	// NPC Randomizer 
+_randomGroup = [createGroup1,createGroup2,createGroup3,createGroup4,createGroup5,createGroup6,createGroup7,createGroup8,createGroup9,createGroup10] call BIS_fnc_selectRandom;
+_aiGroup  = createGroup CIVILIAN;
+[_aiGroup, _missionPos] spawn _randomGroup;
+	
 
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "picture");
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "displayName");
 
 	_vehDeterminer = if ("AEIMO" find (_vehicleName select [0,1]) != -1) then { "An" } else { "A" };
 
-	_missionHintText = format ["%1 <t color='%3'>%2</t> has been immobilized, go get it for your team!", _vehDeterminer, _vehicleName, mainMissionColor];
+	_missionHintText = format ["%1 <t color='%3'>%2</t> has been abandoned by arms dealers, get it before the enemy does!", _vehDeterminer, _vehicleName, mainMissionColor];
 };
 
 _waitUntilMarkerPos = nil;
@@ -192,7 +201,7 @@ _successExec =
 	_vehicle lock 1;
 	_vehicle setVariable ["R3F_LOG_disabled", false, true];
 
-	_successHintMessage = format ["The %1 has been captured, well done.", _vehicleName];
+	_successHintMessage = format ["The %1 has been secured, well done.", _vehicleName];
 };
 
 _this call mainMissionProcessor;
