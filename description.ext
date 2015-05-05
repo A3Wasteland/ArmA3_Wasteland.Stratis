@@ -77,3 +77,14 @@ class CfgNotifications
 {
 	#include "client\CfgNotifications.hpp"
 };
+
+class CfgSounds
+{
+	sounds[] = {Intro};
+	class Intro
+	{
+		name = "Intro";
+		sound[] = {\client\sounds\intro.ogg,.2,1};
+		titles[] = {};
+	};
+};
