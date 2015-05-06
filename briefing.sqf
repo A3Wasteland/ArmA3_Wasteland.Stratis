@@ -279,6 +279,11 @@ player createDiaryRecord ["credits",
 [
 "Credits",
 "
+<br/><font size='16' color='#BBBBBB'>Edited by Patrulla Z:</font>
+<br/>	* Tito (Z)
+<br/>	* JotaZeta (Z)
+<br/>	* CouMarkus (Z)
+<br/>
 <br/><font size='16' color='#BBBBBB'>Developed by A3Wasteland.com:</font>
 <br/>	* AgentRev (TeamPlayerGaming)
 <br/>	* JoSchaap (GoT/Tweakers.net)
