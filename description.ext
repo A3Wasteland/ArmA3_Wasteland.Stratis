@@ -84,7 +84,7 @@ class CfgSounds
 	class Intro
 	{
 		name = "Intro";
-		sound[] = {\client\sounds\intro.ogg,.2,1};
+		sound[] = {\client\sounds\intro.ogg,.15,1};
 		titles[] = {};
 	};
 };
