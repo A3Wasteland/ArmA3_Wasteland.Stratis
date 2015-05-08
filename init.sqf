@@ -74,4 +74,5 @@ if (isServer) then
 [] execVM "addons\proving_ground\init.sqf";
 [] execVM "addons\scripts\DynamicWeatherEffects.sqf";
 [] execVM "addons\JumpMF\init.sqf";
+[] execVM "addons\HvT\HvT.sqf"; // High Value Target
 [] execVM "addons\outlw_magRepack\MagRepack_init.sqf";
