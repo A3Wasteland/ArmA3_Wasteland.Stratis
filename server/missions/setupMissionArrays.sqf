@@ -29,7 +29,8 @@ SideMissions =
 	//["mission_AirWreck", 1.5],
 	//["mission_WepCache", 1.5],
 	["mission_Outpost", 3],
-	["mission_Truck", 1]
+	["mission_Truck", 1],
+	["mission_GeoCache", 1]
 ];
 
 MoneyMissions =
