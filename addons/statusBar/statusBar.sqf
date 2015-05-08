@@ -25,6 +25,6 @@ _rscLayer cutRsc["osefStatusBar","PLAIN"];
 		_hours   = (floor(_time/60));
 		_minutes = (_time - (_hours * 60));
 
-		((uiNamespace getVariable "osefStatusBar")displayCtrl 1000)ctrlSetText format["RaidCall: 9875436 | JUGADORES VIVOS: %1 | MEDIA DE FPS: %2", count playableUnits, round diag_fps];
+		((uiNamespace getVariable "osefStatusBar")displayCtrl 1000)ctrlSetText format["RaidCall: 9875436 | JUGANDO: %1 | MEDIA DE FPS: %2", count playableUnits, round diag_fps];
 	};
 };
