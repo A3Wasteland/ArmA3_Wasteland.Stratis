@@ -62,6 +62,7 @@ class RscTitles
 	#include "client\systems\hud\dialog\hud.hpp"
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\scoreboard\score_gui.hpp"
+	#include "addons\statusBar\statusBar.hpp"
 };
 
 class CfgFunctions

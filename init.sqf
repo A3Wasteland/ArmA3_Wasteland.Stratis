@@ -76,3 +76,4 @@ if (isServer) then
 [] execVM "addons\JumpMF\init.sqf";
 [] execVM "addons\HvT\HvT.sqf"; // High Value Target
 [] execVM "addons\outlw_magRepack\MagRepack_init.sqf";
+[] execVM "addons\statusBar\statusBar.sqf"; // shows FPS, player count, etc.
