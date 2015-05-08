@@ -19,12 +19,13 @@ _rscLayer cutRsc["osefStatusBar","PLAIN"];
 
 	while {true} do
 	{
-		sleep 1;
 		_counter = _counter - 1;
 		_time    = (round(180-(serverTime)/60)); //edit the '240' (60*4=240) to change the countdown timer if your server restarts are shorter or longer than 4 hour intervals
 		_hours   = (floor(_time/60));
 		_minutes = (_time - (_hours * 60));
 
-		((uiNamespace getVariable "osefStatusBar")displayCtrl 1000)ctrlSetText format["RaidCall: 9875436 | JUGANDO: %1 | MEDIA DE FPS: %2", count playableUnits, round diag_fps];
+		((uiNamespace getVariable "osefStatusBar")displayCtrl 1000)ctrlSetText format["TERRITORIO Z | Wasteland Stratis #1 | RaidCall: 9875436 | JUGANDO: %1 | FPS: %2", count playableUnits, round diag_fps];
+
+		uiSleep 1;
 	};
 };
