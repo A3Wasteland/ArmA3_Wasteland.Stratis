@@ -22,7 +22,7 @@ _setupVars =
 _setupObjects =
 {
 	_missionPos = markerPos _missionLocation;
-	_geoPos = _missionPos vectorAdd ([[25 + random 20, 0, 0], random 360] call BIS_fnc_rotateVector2D);	
+	_geoPos = _missionPos vectorAdd ([[25 + random 20, 0, 0], random 360] call BIS_fnc_rotateVector2D);
 	_geoCache = createVehicle ["Land_SurvivalRadio_F",[(_geoPos select 0), (_geoPos select 1),0],[], 0, "NONE"];
 
 	_missionHintText = "a GeoCache has been marked on the map. There is a small object hidden near the marker. Find it and a reward will be delivered by air!";
@@ -45,17 +45,17 @@ _successExec =
 {
 	// Mission completed
 	{ deleteVehicle _x } forEach [_GeoCache];
-	
+
 	_randomBox = ["mission_USLaunchers","mission_USSpecial","mission_Main_A3snipers"] call BIS_fnc_selectRandom;
 	_randomCase = ["Box_FIA_Support_F","Box_FIA_Wps_F","Box_FIA_Ammo_F"] call BIS_fnc_selectRandom;
-	
+
 	_box1 = createVehicle [_randomCase,[(_geoPos select 0), (_geoPos select 1),150],[], 0, "NONE"];
 	_box1 setDir random 360;
 	[_box1, _randomBox] call fn_refillbox;
 	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1];
 
-	playSound3D ["A3\data_f_curator\sound\cfgsounds\air_raid.wss", _box1, false, _box1, 25, 1, 0];
-	
+	playSound3D ["A3\data_f_curator\sound\cfgsounds\air_raid.wss", _box1, false, _box1, 10, 1, 0];
+
 	_para = createVehicle [format ["I_parachute_02_F"], [0,0,999999], [], 0, ""];
 
 	_para setDir getDir _box1;
@@ -73,7 +73,7 @@ _successExec =
 		_para setVelocity [0, 0, (velocity _para) select 2];
 		uiSleep 0.1;
 	};
-	
+
 	_successHintMessage = "The GeoCache supplies have been delivered by parachute!";
 };
 
