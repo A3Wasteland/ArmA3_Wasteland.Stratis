@@ -14,12 +14,12 @@ class osefStatusBar {
 	class controls {
 		class statusBarText {
 			idc = 1000;
-			w = safezoneW * 0.5;                // 50% width
-			x = safezoneX + (safezoneW * 0.25); // 25% position from left
-			h = 0.04;                           // 4% height
-			y = safezoneY + safezoneH - 0.035;  // 3.5% position from bottom
+			w = safezoneW * 0.6;               // 60% width
+			x = safezoneX + (safezoneW * 0.2); // 20% position from left
+			h = 0.04;                          // 4% height
+			y = safezoneY + safezoneH - 0.035; // 3.5% position from bottom
 			shadow = 1;
-			colorBackground[] = { 0, 0, 0, 0.3 };  // uncomment and increase 4th number to have a background
+			colorBackground[] = { 0, 0, 0, 0.3 }; // uncomment and increase 4th number to have a background
 			font = "PuristaSemibold";
 			size = 0.035;
 			type = 13;
