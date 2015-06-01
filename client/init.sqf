@@ -7,6 +7,8 @@
 //@file Created: 20/11/2012 05:19
 //@file Description: The client init.
 
+playSound "Intro";
+
 if (isDedicated) exitWith {};
 
 if (!isServer) then

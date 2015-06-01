@@ -130,7 +130,7 @@ _purchasedVehicleSavingOn = ["A3W_purchasedVehicleSaving"] call isConfigOn;
 _missionVehicleSavingOn = ["A3W_missionVehicleSaving"] call isConfigOn;
 
 _objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn);
-_vehicleSavingOn = (_purchasedVehicleSavingOn || _purchasedVehicleSavingOn);
+_vehicleSavingOn = (_purchasedVehicleSavingOn || _missionVehicleSavingOn);
 
 _setupPlayerDB = scriptNull;
 
