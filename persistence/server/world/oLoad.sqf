@@ -6,7 +6,7 @@
 
 #include "functions.sqf"
 
-private ["_strToSide", "_maxLifetime", "_isWarchestEntry", "_isBeaconEntry", "_worldDir", "_methodDir", "_objCount", "_objects", "_exclObjectIDs"];
+private ["_strToSide", "_maxLifetime", "_isWarchestEntry", "_isBeaconEntry", "_isCameraEntry", "_worldDir", "_methodDir", "_objCount", "_objects", "_exclObjectIDs"];
 
 _strToSide =
 {
@@ -25,6 +25,7 @@ _maxLifetime = ["A3W_objectLifetime", 0] call getPublicVar;
 
 _isWarchestEntry = { [_variables, "a3w_warchest", false] call fn_getFromPairs };
 _isBeaconEntry = { [_variables, "a3w_spawnBeacon", false] call fn_getFromPairs };
+_isCameraEntry = { [_variables, "a3w_cctv_camera", false] call fn_getFromPairs };
 
 _worldDir = "persistence\server\world";
 _methodDir = format ["%1\%2", _worldDir, call A3W_savingMethodDir];
@@ -51,6 +52,7 @@ _exclObjectIDs = [];
 		{
 			case (call _isWarchestEntry):       { _warchestSavingOn };
 			case (call _isBeaconEntry):         { _beaconSavingOn };
+			case (call _isCameraEntry):         { _cameraSavingOn };
 			case (_class call _isBox):          { _boxSavingOn };
 			case (_class call _isStaticWeapon): { _staticWeaponSavingOn };
 			default                             { _baseSavingOn };
@@ -127,6 +129,17 @@ _exclObjectIDs = [];
 			_obj setVariable [_var, _value, true];
 		} forEach _variables;
 
+		
+		// CCTV Camera
+		if (isNil "cctv_cameras" || {typeName cctv_cameras != typeName []}) then {
+			cctv_cameras = [];
+			};
+			
+			 if (_obj getVariable ["a3w_cctv_camera",false]) then {
+				cctv_cameras pushBack _obj;
+				publicVariable "cctv_cameras";
+		};
+		
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;
 		clearItemCargoGlobal _obj;
@@ -145,52 +158,49 @@ _exclObjectIDs = [];
 			default { false };
 		};
 
-		if (_unlock) then
+		if (_unlock) exitWith
 		{
 			_obj setVariable ["objectLocked", false, true];
-		}
-		else
-		{
-			if (_boxSavingOn && {_class call _isBox}) then
-			{
-				if (!isNil "_weapons") then
-				{
-					{ _obj addWeaponCargoGlobal _x } forEach _weapons;
-				};
-				if (!isNil "_magazines") then
-				{
-					[_obj, _magazines] call processMagazineCargo;
-				};
-				if (!isNil "_items") then
-				{
-					{ _obj addItemCargoGlobal _x } forEach _items;
-				};
-				if (!isNil "_backpacks") then
-				{
-					{
-						_bpack = _x select 0;
-
-						if (!(_bpack isKindOf "Weapon_Bag_Base") || {{_bpack isKindOf _x} count ["B_UAV_01_backpack_F", "B_Static_Designator_01_weapon_F", "O_Static_Designator_02_weapon_F"] > 0}) then
-						{
-							_obj addBackpackCargoGlobal _x;
-						};
-					} forEach _backpacks;
-				};
-			};
-
-			if (!isNil "_turretMags" && _staticWeaponSavingOn && {_class call _isStaticWeapon}) then
-			{
-				_obj setVehicleAmmo 0;
-				{ _obj addMagazine _x } forEach _turretMags;
-			};
-
-			if (!isNil "_ammoCargo") then { _obj setAmmoCargo _ammoCargo };
-			if (!isNil "_fuelCargo") then { _obj setFuelCargo _fuelCargo };
-			if (!isNil "_repairCargo") then { _obj setRepairCargo _repairCargo };
-
-			reload _obj;
 		};
 
+		if (_boxSavingOn && {_class call _isBox}) then
+		{
+			if (!isNil "_weapons") then
+			{
+				{ _obj addWeaponCargoGlobal _x } forEach _weapons;
+			};
+			if (!isNil "_magazines") then
+			{
+				[_obj, _magazines] call processMagazineCargo;
+			};
+			if (!isNil "_items") then
+			{
+				{ _obj addItemCargoGlobal _x } forEach _items;
+			};
+			if (!isNil "_backpacks") then
+			{
+				{
+					_bpack = _x select 0;
+
+					if (!(_bpack isKindOf "Weapon_Bag_Base") || {{_bpack isKindOf _x} count ["B_UAV_01_backpack_F", "B_Static_Designator_01_weapon_F", "O_Static_Designator_02_weapon_F"] > 0}) then
+					{
+						_obj addBackpackCargoGlobal _x;
+					};
+				} forEach _backpacks;
+			};
+		};
+
+		if (!isNil "_turretMags" && _staticWeaponSavingOn && {_class call _isStaticWeapon}) then
+		{
+			_obj setVehicleAmmo 0;
+			{ _obj addMagazine _x } forEach _turretMags;
+		};
+
+		if (!isNil "_ammoCargo") then { _obj setAmmoCargo _ammoCargo };
+		if (!isNil "_fuelCargo") then { _obj setFuelCargo _fuelCargo };
+		if (!isNil "_repairCargo") then { _obj setRepairCargo _repairCargo };
+
+		reload _obj;
 		_obj hideObjectGlobal false;
 	};
 

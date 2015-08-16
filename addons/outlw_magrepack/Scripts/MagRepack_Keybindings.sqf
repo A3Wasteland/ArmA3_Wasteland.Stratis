@@ -3,26 +3,26 @@ outlw_MR_openKeybindings =
 {
 	createDialog "MagRepack_Dialog_Keybindings";
 	outlw_MR_keybindingMenuActive = true;
-
+	
 	outlw_KB_cShift = outlw_MR_shift;
 	outlw_KB_cCtrl = outlw_MR_ctrl;
 	outlw_KB_cAlt = outlw_MR_alt;
 	outlw_KB_cKey = outlw_MR_keybinding;
-
+	
 	call outlw_KB_updateKeyText;
-
+	
 	((uiNamespace getVariable "outlw_MR_Dialog_Keybindings") displayCtrl 2401) ctrlEnable false;
-
+	
 	if (outlw_KB_cShift) then
 	{
 		((uiNamespace getVariable "outlw_MR_Dialog_Keybindings") displayCtrl 2500) ctrlSetBackgroundColor [1, 1, 1, 0.25];
 	};
-
+	
 	if (outlw_KB_cCtrl) then
 	{
 		((uiNamespace getVariable "outlw_MR_Dialog_Keybindings") displayCtrl 2501) ctrlSetBackgroundColor [1, 1, 1, 0.25];
 	};
-
+	
 	if (outlw_KB_cAlt) then
 	{
 		((uiNamespace getVariable "outlw_MR_Dialog_Keybindings") displayCtrl 2502) ctrlSetBackgroundColor [1, 1, 1, 0.25];
@@ -32,15 +32,15 @@ outlw_MR_openKeybindings =
 outlw_MR_applyKeybinding =
 {
 	private ["_systemString"];
-
+	
 	outlw_MR_keyList =+ (_this select 0);
 	profileNamespace setVariable ["outlw_MR_keyList_profile", outlw_MR_keyList];
-
+	
 	outlw_MR_shift = outlw_MR_keyList select 0;
 	outlw_MR_ctrl = outlw_MR_keyList select 1;
 	outlw_MR_alt = outlw_MR_keyList select 2;
 	outlw_MR_keybinding = outlw_MR_keyList select 3;
-
+	
 	if (count _this > 1 && {_this select 1}) then
 	{
 		_systemString = "Mag Repack keybinding has been reset to ";
@@ -50,8 +50,8 @@ outlw_MR_applyKeybinding =
 		_systemString = "Mag Repack keybinding has been updated to ";
 		closeDialog 0;
 	};
-
-	systemChat (_systemString + (call outlw_MR_keyListToString));
+	
+	systemChat (_systemString + (call outlw_MR_keyListToString));	
 };
 
 outlw_KB_keyDown =
@@ -61,7 +61,7 @@ outlw_KB_keyDown =
 		outlw_KB_cKey = _this select 1;
 		call outlw_KB_updateKeyText;
 		call outlw_KB_enableApply;
-
+		
 		true;
 	};
 };
@@ -86,7 +86,7 @@ outlw_KB_updateKeyText =
 outlw_KB_modifierSwitch =
 {
 	_mod = _this select 0;
-
+	
 	if (_mod == 0) then
 	{
 		if (!outlw_KB_cShift) then
@@ -132,7 +132,7 @@ outlw_KB_modifierSwitch =
 			};
 		};
 	};
-
+	
 	call outlw_KB_updateKeyText;
 	call outlw_KB_enableApply;
 };

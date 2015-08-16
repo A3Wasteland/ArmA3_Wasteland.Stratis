@@ -10,4 +10,4 @@
 #define RevBarText_IDC 27913
 #define RevSuicideBtn_IDC 27914
 #define RevText_IDC 27915
-#define RevLastResortBtn_IDC 27916
+//#define RevLastResortBtn_IDC 27916

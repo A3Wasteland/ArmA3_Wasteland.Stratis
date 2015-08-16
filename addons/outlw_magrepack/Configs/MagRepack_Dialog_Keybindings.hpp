@@ -6,13 +6,13 @@ class MagRepack_Dialog_Keybindings
 	onUnload = "outlw_MR_keybindingMenuActive = false;";
 	onKeyDown = "_this call outlw_KB_keyDown;";
 	onKeyUp = "_this call outlw_KB_keyUp;";
-
+	
 	class Controls
 	{
 		class KB_BG_Main: outlw_MR_IGUIBack
 		{
 			idc = 2200;
-
+			
 			x = 10 * GUI_GRID_W + GUI_GRID_X;
 			y = 10.5 * GUI_GRID_H + GUI_GRID_Y;
 			w = 20 * GUI_GRID_W;
@@ -23,7 +23,7 @@ class MagRepack_Dialog_Keybindings
 		{
 			idc = 1000;
 			text = "Mag Repack: Keybindings";
-
+			
 			x = 10 * GUI_GRID_W + GUI_GRID_X;
 			y = 9.375 * GUI_GRID_H + GUI_GRID_Y;
 			w = 20 * GUI_GRID_W;
@@ -35,14 +35,14 @@ class MagRepack_Dialog_Keybindings
 			idc = 2400;
 			text = "Cancel";
 			action = "closeDialog 0";
-
+			
 			x = 22.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 14.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 7.5 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
-
+			
 			default = false;
-
+			
 			class Attributes
 			{
 				align = "right";
@@ -51,7 +51,7 @@ class MagRepack_Dialog_Keybindings
 		class KB_BG_MiddleBottom: outlw_MR_IGUIBack
 		{
 			idc = 2405;
-
+			
 			x = 17.625 * GUI_GRID_W + GUI_GRID_X;
 			y = 14.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 4.7225 * GUI_GRID_W;
@@ -63,18 +63,18 @@ class MagRepack_Dialog_Keybindings
 			idc = 2401;
 			text = "Apply";
 			action = "[[outlw_KB_cShift, outlw_KB_cCtrl, outlw_KB_cAlt, outlw_KB_cKey]] call outlw_MR_applyKeybinding;";
-
+			
 			x = 10 * GUI_GRID_W + GUI_GRID_X;
 			y = 14.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 7.5 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
-
+			
 			default = false;
 		};
 		class KB_BG_Keybinding: outlw_MR_IGUIBack
 		{
 			idc = 2498;
-
+			
 			x = 20.125 * GUI_GRID_W + GUI_GRID_X;
 			y = 11.375 * GUI_GRID_H + GUI_GRID_Y;
 			w = 9 * GUI_GRID_W;
@@ -86,14 +86,14 @@ class MagRepack_Dialog_Keybindings
 		{
 			idc = 2499;
 			text = "";
-
+			
 			x = 20.125 * GUI_GRID_W + GUI_GRID_X;
 			y = 11.375 * GUI_GRID_H + GUI_GRID_Y;
 			w = 9 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
-
+			
 			colorBackground[] = {0,0,0,0};
-
+			
 			class Attributes
 			{
 				align = "center";
@@ -104,7 +104,7 @@ class MagRepack_Dialog_Keybindings
 		class KB_BG_Shift: outlw_MR_IGUIBack
 		{
 			idc = 2500;
-
+			
 			x = 20.125 * GUI_GRID_W + GUI_GRID_X;
 			y = 12.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 2.875 * GUI_GRID_W;
@@ -115,7 +115,7 @@ class MagRepack_Dialog_Keybindings
 		class KB_BG_Ctrl: outlw_MR_IGUIBack
 		{
 			idc = 2501;
-
+			
 			x = 23.1875 * GUI_GRID_W + GUI_GRID_X;
 			y = 12.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 2.75 * GUI_GRID_W;
@@ -126,7 +126,7 @@ class MagRepack_Dialog_Keybindings
 		class KB_BG_Alt: outlw_MR_IGUIBack
 		{
 			idc = 2502;
-
+			
 			x = 26.1875 * GUI_GRID_W + GUI_GRID_X;
 			y = 12.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 2.875 * GUI_GRID_W;
@@ -138,19 +138,19 @@ class MagRepack_Dialog_Keybindings
 		{
 			idc = 2550;
 			text = "Shift";
-
+			
 			action = "[0] call outlw_KB_modifierSwitch;";
-
+			
 			x = 20.125 * GUI_GRID_W + GUI_GRID_X;
 			y = 12.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 2.875 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
-
+			
 			colorFocused[] = {1,1,1,0.5};
 			colorBackgroundFocused[] = {0,0,0,0};
 			colorBackground[] = {0,0,0,0};
 			colorBackground2[] = {1,1,1,0.5};
-
+			
 			textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
 			animTextureNormal = "#(argb,8,8,3)color(1,1,1,0)";
 			animTextureDisabled = "#(argb,8,8,3)color(1,1,1,0)";
@@ -158,7 +158,7 @@ class MagRepack_Dialog_Keybindings
 			animTextureFocused = "#(argb,8,8,3)color(0,0,0,0)";
 			animTexturePressed = "#(argb,8,8,3)color(1,1,1,0)";
 			animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
-
+			
 			class Attributes
 			{
 				align = "center";
@@ -169,19 +169,19 @@ class MagRepack_Dialog_Keybindings
 		{
 			idc = 2551;
 			text = "Ctrl";
-
+			
 			action = "[1] call outlw_KB_modifierSwitch;";
-
+			
 			x = 23.1875 * GUI_GRID_W + GUI_GRID_X;
 			y = 12.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 2.75 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
-
+			
 			colorFocused[] = {1,1,1,0.5};
 			colorBackgroundFocused[] = {0,0,0,0};
 			colorBackground[] = {0,0,0,0};
 			colorBackground2[] = {1,1,1,0.5};
-
+			
 			textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
 			animTextureNormal = "#(argb,8,8,3)color(1,1,1,0)";
 			animTextureDisabled = "#(argb,8,8,3)color(1,1,1,0)";
@@ -189,7 +189,7 @@ class MagRepack_Dialog_Keybindings
 			animTextureFocused = "#(argb,8,8,3)color(0,0,0,0)";
 			animTexturePressed = "#(argb,8,8,3)color(1,1,1,0)";
 			animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
-
+			
 			class Attributes
 			{
 				align = "center";
@@ -200,19 +200,19 @@ class MagRepack_Dialog_Keybindings
 		{
 			idc = 2552;
 			text = "Alt";
-
+			
 			action = "[2] call outlw_KB_modifierSwitch;";
-
+			
 			x = 26.1875 * GUI_GRID_W + GUI_GRID_X;
 			y = 12.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 2.875 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
-
+			
 			colorFocused[] = {1,1,1,0.5};
 			colorBackgroundFocused[] = {0,0,0,0};
 			colorBackground[] = {0,0,0,0};
 			colorBackground2[] = {1,1,1,0.5};
-
+			
 			textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
 			animTextureNormal = "#(argb,8,8,3)color(1,1,1,0)";
 			animTextureDisabled = "#(argb,8,8,3)color(1,1,1,0)";
@@ -220,7 +220,7 @@ class MagRepack_Dialog_Keybindings
 			animTextureFocused = "#(argb,8,8,3)color(0,0,0,0)";
 			animTexturePressed = "#(argb,8,8,3)color(1,1,1,0)";
 			animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
-
+			
 			class Attributes
 			{
 				align = "center";
@@ -230,8 +230,8 @@ class MagRepack_Dialog_Keybindings
 		class KB_BG_KeyDescription: outlw_MR_RscPicture
 		{
 			idc = 2570;
-			text = "addons\outlw_magrepack\Images\MR_TargetGradient.paa";
-
+			text = "addons\outlw_magRepack\Images\MR_TargetGradient.paa";
+			
 			x = 10.875 * GUI_GRID_W + GUI_GRID_X;
 			y = 11.375 * GUI_GRID_H + GUI_GRID_Y;
 			w = 9 * GUI_GRID_W;
@@ -240,8 +240,8 @@ class MagRepack_Dialog_Keybindings
 		class KB_BG_ModDescription: outlw_MR_RscPicture
 		{
 			idc = 2571;
-			text = "addons\outlw_magrepack\Images\MR_TargetGradient.paa";
-
+			text = "addons\outlw_magRepack\Images\MR_TargetGradient.paa";
+			
 			x = 10.875 * GUI_GRID_W + GUI_GRID_X;
 			y = 12.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 9 * GUI_GRID_W;
@@ -251,12 +251,12 @@ class MagRepack_Dialog_Keybindings
 		{
 			idc = 2572;
 			text = "Keybinding:";
-
+			
 			x = 10.875 * GUI_GRID_W + GUI_GRID_X;
 			y = 11.375 * GUI_GRID_H + GUI_GRID_Y;
 			w = 9 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
-
+			
 			class Attributes
 			{
 				align = "right";
@@ -266,12 +266,12 @@ class MagRepack_Dialog_Keybindings
 		{
 			idc = 2573;
 			text = "Modifiers:";
-
+			
 			x = 10.875 * GUI_GRID_W + GUI_GRID_X;
 			y = 12.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 9 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
-
+			
 			class Attributes
 			{
 				align = "right";

@@ -8,7 +8,8 @@
 
 client_firstSpawn = true;
 
-[] execVM "client\functions\welcomeMessage.sqf";
+[] execVM "addons\TOParmaInfo\loadTOParmaInfo.sqf";
+//[] execVM "client\functions\welcomeMessage.sqf";
 
 player addEventHandler ["Take",
 {

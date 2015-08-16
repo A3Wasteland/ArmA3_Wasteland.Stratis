@@ -3,15 +3,16 @@
 | Mag Repack |
 --------------
 
-	- Version: 3.1.1
+	- Version: 3.1.2
 	- Created: 7 March 2013
-	- Updated: 5 December 2014
+	- Updated: 7 August 2015
 
 ----------
 | Author |
 ----------
 
 	- Outlawled (outlawled@gmail.com)
+	- Special thanks to GiPPO for updating Mag Repack to 3.1.2 to get it working again!
 
 ---------------
 | Description |
@@ -26,22 +27,31 @@
 | Notes |
 ---------
 
-	- This mod requires CBA.
-	- Feel free to unpack the PBO and look through the code and change stuff, but please don't steal anything. That would not be tits. Just email me if you want to use any of my code in your own public release.
+	- You can change the repack times for individual bullets and belt magazines via the outlw_MR_bulletTime and outlw_MR_beltTime variables located in the MagRepack_init_sv.sqf.
 
 ----------------
 | Installation |
 ----------------
 
-	- Extract "@outlw_magRepack" folder to your ArmA 3 directory.
-		- "C:\Program Files (x86)\Steam\steamapps\common\Arma 3" for 64-bit Windows.
-		- "C:\Program Files\Steam\steamapps\common\Arma 3" for 32-bit Windows.
+	- Place the "outlw_magRepack" folder into your mission folder.
+
+	- Add the following to your init.sqf
+		- [] execVM "outlw_magRepack\MagRepack_init_sv.sqf";
+
+	- Add the following to your description.ext
+		- #include "outlw_magRepack\MagRepack_config.hpp"
 
 -------------
 | Changelog |
 -------------
+
+	- 3.1.2 (thanks to GiPPO)
+		- Fixed: GUI bugs caused by the latest ArmA 3 update.
+		- Fixed: Not all belt magazines were recognized as belt magazines (anything with 100 or more bullets will count as a belt now).
+		- Fixed: Tracer ammo and non-tracer ammo were able to be mixed together.
+
 	- 3.1.1
-		- Fixed: RPT Error.
+		- Fixed: RPT error.
 
 	- 3.1.0
 		- Fixed: Error dialogs popping up about the scrollbars.
@@ -54,6 +64,7 @@
 	- 3.0.2
 		- Fixed: Updated UI classnames to be unique so as to avoid possible conflicts.
 		- Fixed: An issue with the keybinding not being recognized if another key wasn't pressed between keybinding presses.
+		- Changed "MagRepack_config.cpp" file extension to ".hpp".
 
 	- 3.0.1
 		- New: Pressing the keybinding while the dialog is open will now close the dialog.
@@ -62,7 +73,7 @@
 		- Fixed: Now uses the keyName command to get the Strings associated with each keyboard key instead of having them hardcoded like an idiot.
 		- New: Can now change the bullet and belt repack times via outlw_MR_bulletTime and outlw_MR_beltTime variables (script version).
 		- All default repack times slightly increased.
-		- Fixed: Changed script version init file name to "MagRepack_init_sv.sqf" to avoid conflict when user has the addon version installed while playing on a server running the script version. 
+		- Fixed: Changed script version init file name to "MagRepack_init_sv.sqf" to avoid conflict when user has the addon version installed while playing on a server running the script version.
 
 	- 3.0.0
 		- Removed: Everything.

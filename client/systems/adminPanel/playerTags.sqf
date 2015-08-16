@@ -8,7 +8,7 @@
 //	@file Args:
 
 _uid = getPlayerUID player;
-if (_uid call isAdmin) then
+/*if (_uid call isAdmin) then
 {
 	if (isNil "adminPlayerMarkers") then { adminPlayerMarkers = false };
 
@@ -16,11 +16,13 @@ if (_uid call isAdmin) then
 	{
 		adminPlayerMarkers = true;
 		hint "Player Markers ON";
+		if (!isNil "notifyAdminMenu") then { ["PlayerTags", "On"] call notifyAdminMenu };
 	}
 	else
 	{
 		adminPlayerMarkers = false;
 		hint "Player Markers OFF";
+		if (!isNil "notifyAdminMenu") then { ["PlayerTags", "Off"] call notifyAdminMenu };
 	};
 
 	setGroupIconsVisible [true, true];
@@ -50,3 +52,4 @@ if (_uid call isAdmin) then
 
 	{ clearGroupIcons group _x } forEach playableUnits;
 };
+*/

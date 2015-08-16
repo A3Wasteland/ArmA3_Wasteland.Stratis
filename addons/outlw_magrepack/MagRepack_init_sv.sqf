@@ -1,10 +1,10 @@
 
 /*
 	|----
-		-Author: Outlawled
+		-Author: Outlawled (updated to 3.1.2 by GiPPO)
 		-Created: 7 March 2013
-		-Updated: 5 December 2014
-		-Version: 3.1.1 (Addon)
+		-Updated: 7 August 2015
+		-Version: 3.1.2 (Script)
 		-Description:	- Allows the player to repack the ammo in his magazines.
 						- Default keybinding to open the Mag Repack dialog is "Ctrl+R", this can be customized via the options menu in the Mag Repack dialog.
 						- Pressing "Shift+Ctrl+Alt+Backspace" will reset the keybinding to the default setting (in case the player forgets what he changed his keybinding to).
@@ -19,10 +19,12 @@ outlw_MR_beltTime = 4; // Seconds per belt magazine.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+if (isClass(configFile >> "CfgPatches" >> "outlw_magRepack")) exitWith {};
+
 disableSerialization;
 
-outlw_MR_version = "3.1.1";
-outlw_MR_date = "5 December 2014";
+outlw_MR_version = "3.1.2";
+outlw_MR_date = "7 August 2015";
 
 outlw_MR_defaultKeybinding = [false, true, false, 19];
 
@@ -43,9 +45,9 @@ outlw_MR_ctrl = outlw_MR_keyList select 1;
 outlw_MR_alt = outlw_MR_keyList select 2;
 outlw_MR_keybinding = outlw_MR_keyList select 3;
 
-[] execVM "addons\outlw_magrepack\Scripts\MagRepack_Main.sqf";
-[] execVM "addons\outlw_magrepack\Scripts\MagRepack_Keybindings.sqf";
-[] execVM "addons\outlw_magrepack\Scripts\MagRepack_Misc.sqf";
+[] execVM "addons\outlw_magRepack\Scripts\MagRepack_Main.sqf";
+[] execVM "addons\outlw_magRepack\Scripts\MagRepack_Keybindings.sqf";
+[] execVM "addons\outlw_magRepack\Scripts\MagRepack_Misc.sqf";
 
 waitUntil {!(isNil "outlw_MR_getIDCs")};
 
@@ -57,3 +59,11 @@ waitUntil {!(isNull (findDisplay 46))};
 
 systemChat "Mag Repack Initialized";
 systemChat ("Keybinding: " + (call outlw_MR_keyListToString));
+
+
+
+
+
+
+
+

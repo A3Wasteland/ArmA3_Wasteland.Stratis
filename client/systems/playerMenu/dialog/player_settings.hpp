@@ -27,7 +27,7 @@ class playerSettings {
 			idc = -1;
 			colorText[] = {1, 1, 1, 1};
 			colorBackground[] = {0,0,0,0};
-			text = "#(argb,8,8,3)color(0.25,0.51,0.96,0.8)";
+			text = "#(argb,8,8,3)color(0.275,0.322,0.235,0.8)";
 
 			x = 0;
 			y = 0.1;
@@ -65,6 +65,13 @@ class playerSettings {
 			w = 0.04 / (4/3); h = 0.04;
 		};
 
+		class serverLogo : w_RscPicture {
+			idc = -1;
+			text = "mapconfig\Fractured.paa";
+			x = 0.225; y = 0.20;
+			w = 0.32 / (4/3); h = 0.32;
+		};	
+		
 		class waterText : w_RscText {
 			idc = water_text;
 			text = "";
@@ -163,7 +170,7 @@ class playerSettings {
 		class btnDistanceNear : w_RscButton {
 			idc = -1;
 			text = "Near";
-			onButtonClick = "setViewDistance 1100;";
+			onButtonClick = "setViewDistance 1200; setObjectViewDistance 900; setTerrainGrid 45;";
 			x = 0.02; y = 0.43;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
@@ -171,7 +178,7 @@ class playerSettings {
 		class btnDistanceMedium : w_RscButton {
 			idc = -1;
 			text = "Medium";
-			onButtonClick = "setViewDistance 2200;";
+			onButtonClick = "setViewDistance 1500; setObjectViewDistance 1275; setTerrainGrid 25;";
 			x = 0.02; y = 0.5;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
@@ -179,14 +186,38 @@ class playerSettings {
 		class btnDistanceFar : w_RscButton {
 			idc = -1;
 			text = "Far";
-			onButtonClick = "setViewDistance 3300;";
+			onButtonClick = "setViewDistance 2000; setObjectViewDistance 1750; setTerrainGrid 12.5;";
 			x = 0.02; y = 0.57;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
+		
+		class btnDistanceCustom : w_RscButton {
+			idc = -1;
+			text = "Custom";
+			onButtonClick = "call CHVD_fnc_openDialog";
+			x = 0.158; y = 0.57;
+			w = 0.125; h = 0.033 * safezoneH;
+		};
 
+		class btnDistanceEffects : w_RscButton {
+			idc = -1;
+			text = "Effects";
+			onButtonClick = "[] execVM 'addons\disableEnvironment\disableEnvironment.sqf'";
+			x = 0.158; y = 0.5;
+			w = 0.125; h = 0.033 * safezoneH;
+		};
+		
+			class TOParmaInfoButton : w_RscButton {
+			idc = -1;
+			text = "Fractured-Gaming Info";
+			onButtonClick = "[] execVM 'addons\TOParmaInfo\loadTOParmaInfo.sqf'";
+			x = 0.225; y = 0.2;
+			w = 0.225; h = 0.033 * safezoneH;
+		};
+		
 		class btnDistanceInsane : w_RscButton {
 			text = "Insane";
-			onButtonClick = "setViewDistance 5000;";
+			onButtonClick = "setViewDistance 3000;";
 			x = 0.02; y = 0.60;
 			w = 0.125; h = 0.033 * safezoneH;
 		};

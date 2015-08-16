@@ -78,7 +78,7 @@
 
 #define SL_TEXTURES       0x10
 
-// progress bar
+// progress bar 
 #define ST_VERTICAL       0x01
 #define ST_HORIZONTAL     0
 
@@ -171,7 +171,7 @@ class outlw_MR_RscListBox
 	colorSelectBackground[] = {0.95,0.95,0.95,1};
 	colorSelectBackground2[] = {1,1,1,0.5};
 	colorBackground[] = {0,0,0,0};
-	soundSelect[] =
+	soundSelect[] = 
 	{
 		"\A3\ui_f\data\sound\RscListbox\soundSelect",
 		0.09,
@@ -208,7 +208,6 @@ class outlw_MR_RscActiveText
 	type = 11;
 	color[] = {1,1,1,0.7};
 	colorActive[] = {1,1,1,1};
-	colorDisabled[] = {1,1,1,0.7};
 	colorText[] = {1,1,1,0.7};
 	soundClick[] = {"",0.1,1};
 	soundEnter[] = {"",0.1,1};
@@ -231,7 +230,7 @@ class outlw_MR_IGUIBack
 	y = 0.1;
 	w = 0.1;
 	h = 0.1;
-	colorbackground[] =
+	colorbackground[] = 
 	{
 		"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])",
 		"(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])",
@@ -246,6 +245,7 @@ class outlw_MR_RscButtonMenu
 	style = "0x02 + 0xC0";
 	default = 0;
 	shadow = 0;
+	font = "PuristaMedium";
 	x = 0;
 	y = 0;
 	w = 0.095589;
@@ -275,7 +275,6 @@ class outlw_MR_RscButtonMenu
 	period = 1.2;
 	periodFocus = 1.2;
 	periodOver = 1.2;
-	font = "PuristaMedium";
 	size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	class TextPos
@@ -299,25 +298,25 @@ class outlw_MR_RscButtonMenu
 		w = 0.0225;
 		h = 0.03;
 	};
-	soundEnter[] =
+	soundEnter[] = 
 	{
 		"\A3\ui_f\data\sound\RscButtonMenu\soundEnter",
 		0.09,
 		1
 	};
-	soundPush[] =
+	soundPush[] = 
 	{
 		"\A3\ui_f\data\sound\RscButtonMenu\soundPush",
 		0.09,
 		1
 	};
-	soundClick[] =
+	soundClick[] = 
 	{
 		"\A3\ui_f\data\sound\RscButtonMenu\soundClick",
 		0.09,
 		1
 	};
-	soundEscape[] =
+	soundEscape[] = 
 	{
 		"\A3\ui_f\data\sound\RscButtonMenu\soundEscape",
 		0.09,
@@ -369,19 +368,19 @@ class outlw_MR_RscCombo
 	colorText[] = {1,1,1,1};
 	colorBackground[] = {0,0,0,1};
 	colorScrollbar[] = {1,0,0,1};
-	soundSelect[] =
+	soundSelect[] = 
 	{
 		"\A3\ui_f\data\sound\RscCombo\soundSelect",
 		0.1,
 		1
 	};
-	soundExpand[] =
+	soundExpand[] = 
 	{
 		"\A3\ui_f\data\sound\RscCombo\soundExpand",
 		0.1,
 		1
 	};
-	soundCollapse[] =
+	soundCollapse[] = 
 	{
 		"\A3\ui_f\data\sound\RscCombo\soundCollapse",
 		0.1,

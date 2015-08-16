@@ -36,7 +36,7 @@ class GroupManagement {
 			idc = -1;
 			colorText[] = {1, 1, 1, 1};
 			colorBackground[] = {0,0,0,0};
-			text = "#(argb,8,8,3)color(0.25,0.51,0.96,0.8)";
+			text = "#(argb,8,8,3)color(0.275,0.322,0.235,0.8)";
 
 			x = 0.0; y = 0.1;
 			w = 0.745; h = 0.05;

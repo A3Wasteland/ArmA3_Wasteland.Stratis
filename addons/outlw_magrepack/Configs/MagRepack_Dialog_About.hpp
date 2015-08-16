@@ -3,7 +3,7 @@ class MagRepack_Dialog_About
 {
 	idd = -1;
 	onLoad = "uiNamespace setVariable ['outlw_MR_Dialog_About', (_this select 0)]";
-
+	
 	class Controls
 	{
 		class A_BG_Main: outlw_MR_IGUIBack
@@ -34,9 +34,9 @@ class MagRepack_Dialog_About
 			y = 14.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 7.5 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
-
+			
 			default = false;
-
+			
 			class Attributes
 			{
 				align = "right";
@@ -58,7 +58,7 @@ class MagRepack_Dialog_About
 			y = 14.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 7.5 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
-
+			
 			colorBackground[] = {0,0,0,0.75};
 		};
 		class A_Author: outlw_MR_RscText
@@ -69,7 +69,7 @@ class MagRepack_Dialog_About
 			y = 10.75 * GUI_GRID_H + GUI_GRID_Y;
 			w = 19 * GUI_GRID_W;
 			h = 0.8 * GUI_GRID_H;
-
+					
 			sizeEx = 0.8 * GUI_GRID_H;
 		};
 		class A_Version: outlw_MR_RscText
@@ -80,7 +80,7 @@ class MagRepack_Dialog_About
 			y = 11.55 * GUI_GRID_H + GUI_GRID_Y;
 			w = 19 * GUI_GRID_W;
 			h = 0.8 * GUI_GRID_H;
-
+				
 			sizeEx = 0.8 * GUI_GRID_H;
 		};
 		class A_Date: outlw_MR_RscText
@@ -91,7 +91,7 @@ class MagRepack_Dialog_About
 			y = 12.35 * GUI_GRID_H + GUI_GRID_Y;
 			w = 19 * GUI_GRID_W;
 			h = 0.8 * GUI_GRID_H;
-
+			
 			sizeEx = 0.8 * GUI_GRID_H;
 		};
 		class A_ForumLink: outlw_MR_RscText
@@ -113,11 +113,11 @@ class MagRepack_Dialog_About
 			y = 13.25 * GUI_GRID_H + GUI_GRID_Y;
 			w = 4 * GUI_GRID_W;
 			h = 0.8 * GUI_GRID_H;
-
+			
 			tooltip = "http://forums.bistudio.com/showthread.php?151402-Mag-Repack";
-
+			
 			default = true;
-
+			
 			class Attributes
 			{
 				align = "center";

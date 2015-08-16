@@ -25,6 +25,9 @@ groupManagmentActive = false;
 pvar_PlayerTeamKiller = objNull;
 doCancelAction = false;
 
+//AJ Beacondetector
+BeaconScanInProgress = false;
+
 //Initialization Variables
 playerCompiledScripts = false;
 playerSetupComplete = false;
@@ -134,10 +137,19 @@ if (["A3W_survivalSystem"] call isConfigOn) then
 
 A3W_scriptThreads pushBack execVM "addons\fpsFix\vehicleManager.sqf";
 A3W_scriptThreads pushBack execVM "addons\Lootspawner\LSclientScan.sqf";
+if(hasInterface) then{[] execVM "addons\statusBar\statusbar.sqf"}; //Status Bar
 [] execVM "client\functions\drawPlayerIcons.sqf";
 [] execVM "addons\far_revive\FAR_revive_init.sqf";
 [] execVM "addons\camera\functions.sqf";
 [] execVM "addons\UAV_Control\functions.sqf";
+[] execVM "addons\disableThermal\disablethermal.sqf";  //disable thermal vision
+[] execVM "addons\water_edge\functions.sqf";
+[] execVM "addons\cctv\functions.sqf";
+
+// View Distance Settings 
+CHVD_allowNoGrass = true; // Set 'false' if you want to disable "None" option for terrain (default: true)
+CHVD_maxView = 3000; // Set maximum view distance (default: 12000)
+CHVD_maxObj = 3000; // Set maximimum object view distance (default: 12000)
 
 call compile preprocessFileLineNumbers "client\functions\generateAtmArray.sqf";
 [] execVM "client\functions\drawPlayerMarkers.sqf";

@@ -52,7 +52,7 @@ switch (_side) do
 			};
 		};
 
-		if (_item == "headgear") then { _result = "H_MilCap_mcamo" };
+		if (_item == "headgear") then { _result = "H_Watchcap_blk" };
 	};
 	case OPFOR:
 	{
@@ -71,12 +71,12 @@ switch (_side) do
 			};
 			default
 			{
-				if (_item == "uniform") then { _result = "U_O_CombatUniform_ocamo" };
+				if (_item == "uniform") then { _result = "U_O_OfficerUniform_ocamo" };
 				if (_item == "vest") then { _result = _defaultVest };
 			};
 		};
 
-		if (_item == "headgear") then { _result = "H_MilCap_ocamo" };
+		if (_item == "headgear") then { _result = "H_MilCap_mcamo" };
 	};
 	default
 	{
@@ -100,7 +100,7 @@ switch (_side) do
 			};
 		};
 
-		if (_item == "headgear") then { _result = "H_MilCap_dgtl" };
+		if (_item == "headgear") then { _result = "H_Watchcap_camo" };
 	};
 };
 

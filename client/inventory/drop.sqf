@@ -57,3 +57,5 @@ else
 	[_id, 1] call mf_inventory_remove;
 	_obj
 };
+
+_obj

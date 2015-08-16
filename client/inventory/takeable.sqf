@@ -30,9 +30,11 @@ _takeable = objNull;
 
 	switch (true) do {
 		case (_lineOfSightBroken): {};
+		case (_x getVariable ["objectLocked", false]): {};
 		case (_id call mf_inventory_is_full): {};
 		case (_x getVariable ["mf_item_id", ""] != _id): {};
 		default {_takeable = _x};
 	};
+	
 } forEach (nearestObjects [player, [_type], MF_INVENTORY_TAKE_DISTANCE]);
 _takeable;

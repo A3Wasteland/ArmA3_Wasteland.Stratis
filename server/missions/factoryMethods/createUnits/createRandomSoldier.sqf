@@ -24,11 +24,12 @@ _weaponTypes = ["arifle_TRG20_F","LMG_Mk200_F","arifle_MXM_F","arifle_MX_GL_F"];
 
 _group = _this select 0;
 _position = _this select 1;
-_rank = [_this, 2, "", [""]] call BIS_fnc_param;
+_rank = param [2, "", [""]];
 
 _soldier = _group createUnit [_soldierTypes call BIS_fnc_selectRandom, _position, [], 0, "NONE"];
 _soldier addUniform (_uniformTypes call BIS_fnc_selectRandom);
 _soldier addVest (_vestTypes call BIS_fnc_selectRandom);
+_soldier addMagazine "HandGrenade";
 [_soldier, _weaponTypes call BIS_fnc_selectRandom, 3] call BIS_fnc_addWeapon;
 
 if (_rank != "") then

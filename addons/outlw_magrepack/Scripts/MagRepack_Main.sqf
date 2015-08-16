@@ -97,7 +97,7 @@ outlw_MR_createDialog =
 
 		while {!(IsNull (uiNamespace getVariable "outlw_MR_Dialog_Main"))} do
 		{
-			sleep 0.05;
+			UIsleep 0.05;
 
 			_b = magazinesAmmo player;
 
@@ -201,34 +201,60 @@ outlw_MR_populateMagListBox =
 		{
 			_magCountStr = " " + _magCountStr;
 		};
+		
+		//Added: ListBox version for 1.48 - GiPPO
+		private ["_magname","_text"];
+		_magName = ([(getText(configFile >> "cfgMagazines" >> _magTypes select _n >> "DisplayName")), 25] call outlw_MR_shortString);
+		_text = (format ["%1x  %2 %3",_magCountStr,_magname]);
 
+
+		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500) lbadd _text;
+		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500) lbSetPicture [_n, format ["addons\outlw_magRepack\Images\bulletCount\%1.paa", round((_magAmmoCounts select _n)/(_magAmmoCaps select _n)*30)]];
+		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500)	lbsetpicturecolor [_n,[1,1,1,1]];
+		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500)	lbsetpicturecolorSelected [_n,[1,1,1,1]];
+
+		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500) lbSetValue [_n, _magAmmoCounts select _n];
+		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500) lbSetData [_n, _magTypes select _n];
+		//
+		
+		
+		/* Removed: ListNbox is not draggable in 1.48 - GiPPO
+		
 		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500) lnbAddRow [([(getText(configFile >> "cfgMagazines" >> _magTypes select _n >> "DisplayName")), 25] call outlw_MR_shortString), "", "", _magCountStr];
-		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500) lnbSetPicture [[_n, 1], format ["addons\outlw_magrepack\Images\bulletCount\%1.paa", round((_magAmmoCounts select _n)/(_magAmmoCaps select _n)*30)]];
+		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500) lnbSetPicture [[_n, 1], format ["addons\outlw_magRepack\Images\bulletCount\%1.paa", round((_magAmmoCounts select _n)/(_magAmmoCaps select _n)*30)]];
 		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500) lnbSetPicture [[_n, 2], (getText(configFile >> "cfgMagazines" >> _magTypes select _n >> "picture"))];
-
+			
 		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500) lbSetValue [_n*4, _magAmmoCounts select _n];
 		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1500) lbSetData [_n*4, _magTypes select _n];
+		*/
 	};
 };
 
 outlw_MR_filter =
 {
-	private ["_this", "_magTypes", "_magAmmoCounts", "_magAmmoCaps", "_ammoType", "_returnTypes", "_returnCounts", "_returnCaps"];
+	// Added additional tracer check to avoid repacks between some tracer and non-tracer variants - GiPPO
+	
+	private ["_this", "_magTypes", "_magAmmoCounts", "_magAmmoCaps", "_ammoType", "_returnTypes", "_returnCounts", "_returnCaps", "_ammoTracer","_userFilter"];
 
 	_magTypes = _this select 0;
 	_magAmmoCounts = _this select 1;
 	_magAmmoCaps = _this select 2;
 
 	_ammoType = (getText(configFile >> "cfgMagazines" >> outlw_MR_sourceType >> "ammo"));
-
+	_ammoTracer = 0;
+	_ammoTracer = (getNumber(configFile >> "cfgMagazines" >> outlw_MR_sourceType >> "tracersEvery"));
+	_userfilter = false;
+	
 	if (_ammoType == "") then
 	{
 		_ammoType = (getText(configFile >> "cfgMagazines" >> outlw_MR_targetType >> "ammo"));
+		_ammoTracer = (getNumber(configFile >> "cfgMagazines" >> outlw_MR_targetType >> "tracersEvery"));
 	};
 
 	if (_ammoType == "") then
 	{
 		_ammoType = outlw_MR_currentFilter;
+		_userFilter = true;
 	};
 
 	_returnTypes = [];
@@ -237,7 +263,7 @@ outlw_MR_filter =
 
 	for "_n" from 0 to ((count _magTypes) - 1) do
 	{
-		if ((getText (configFile >> "cfgMagazines" >> _magTypes select _n >> "ammo")) == _ammoType) then
+		if (((getText (configFile >> "cfgMagazines" >> _magTypes select _n >> "ammo")) == _ammoType) && (((getNumber (configFile >> "cfgMagazines" >> _magTypes select _n >> "tracersEvery")) == _ammoTracer) || {_userFilter}  )) then
 		{
 			_returnTypes set [count _returnTypes, _magTypes select _n];
 			_returnCounts set [count _returnCounts, _magAmmoCounts select _n];
@@ -327,7 +353,7 @@ outlw_MR_repack =
 
 	while {time < _sleepTime && call _keepRepacking} do
 	{
-		sleep 0.05;
+		UIsleep 0.05;
 	};
 
 	while _keepRepacking do
@@ -341,7 +367,7 @@ outlw_MR_repack =
 
 		while {time < _sleepTime && call _keepRepacking} do
 		{
-			sleep 0.05;
+			UIsleep 0.05;
 		};
 	};
 
@@ -378,7 +404,7 @@ outlw_MR_repackingText =
 
 		((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1008) ctrlSetText _repacking;
 
-		sleep 1;
+		UIsleep 1;
 	};
 
 	((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1008) ctrlSetText "";
@@ -769,7 +795,7 @@ outlw_MR_clearTarget =
 {
 	if (outlw_MR_doAddToMagazines) then
 	{
-		player addMagazine [outlw_MR_targetType, outlw_MR_targetCount];
+			player addMagazine [outlw_MR_targetType, outlw_MR_targetCount];
 	};
 
 	lnbClear ((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl 1502);
@@ -816,7 +842,7 @@ outlw_MR_optionsMenu =
 		[] spawn
 		{
 			{((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl _x) ctrlCommit 0.15;} forEach [9006,9001,9000,8999];
-			sleep 0.15;
+			UIsleep 0.15;
 			{((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl _x) ctrlCommit 0.1;} forEach [8998,8997];
 		};
 	}
@@ -834,7 +860,7 @@ outlw_MR_optionsMenu =
 		[] spawn
 		{
 			{((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl _x) ctrlCommit 0.1;} forEach [8998,8997];
-			sleep 0.1;
+			UIsleep 0.1;
 			{((uiNamespace getVariable "outlw_MR_Dialog_Main") displayCtrl _x) ctrlCommit 0.15;} forEach [9006,9001,9000,8999];
 		};
 	};
@@ -879,17 +905,17 @@ outlw_MR_onDialogDestroy =
 	private ["_endingInfo", "_sTCA", "_eTCA", "_snTCA", "_enTCA", "_output", "_toAdd", "_dif", "_difStr", "_n", "_a"];
 
 	ppEffectDestroy outlw_MR_blur;
+	
+		if (outlw_MR_sourceType != "") then
+		{
+			call outlw_MR_clearSource;
+		};
 
-	if (outlw_MR_sourceType != "") then
-	{
-		call outlw_MR_clearSource;
-	};
-
-	if (outlw_MR_targetType != "") then
-	{
-		call outlw_MR_clearTarget;
-	};
-
+		if (outlw_MR_targetType != "") then
+		{
+			call outlw_MR_clearTarget;
+		};
+		
 	if (outlw_MR_debugMode) then
 	{
 		_endingInfo = call outlw_MR_debugInfo;
@@ -959,7 +985,7 @@ outlw_MR_onDialogDestroy =
 
 	[] spawn
 	{
-		sleep 0.5;
+		UIsleep 0.5;
 		outlw_MR_canCreateDialog = true;
 	};
 };

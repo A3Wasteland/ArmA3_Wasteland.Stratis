@@ -69,6 +69,24 @@
 		<Key ID="STR_WL_ShopDescriptions_RepairKit">
 			<English>With this kit, you won't need an engineer!</English>
 		</Key>
+		<Key ID="STR_WL_ShopDescriptions_Marijuana">
+			<English>Get Relaxed!</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_LSD">
+			<English>WOAH! WHAT WAS THAT!</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_Cocaine">
+			<English>Get your twitch on!</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_Heroin">
+			<English>At this Stage, you may want to go to rehab.</English>
+		</Key>
+		<Key ID="STR_WL_ShopDescriptions_CCTV_Camera">
+            <English>This is the remote camera for a television system in which the video signals are transmitted from one or more cameras via Wifi to a restricted set of base stations.</English>
+        </Key>
+        <Key ID="STR_WL_ShopDescriptions_CCTV_Base">
+            <English>This is the base station for a television system in which the video signals are transmitted from one or more cameras via Wifi.</English>
+		</Key>
 		<Key ID="STR_WL_ShopDescriptions_MedKit">
 			<English>With this kit, you won't need a medic!</English>
 		</Key>
@@ -113,4 +131,58 @@
 			<English>You cannot take more spawn beacons!</English>
 		</Key>
 	</Package>
+	<Package name="Main">
+		<Key ID="STR_chvd_title">
+			<Original>View Distance Settings</Original>
+			<Russian>Настройки Дальности Обзора</Russian>
+		</Key>
+		<Key ID="STR_chvd_foot">
+			<Original>ON FOOT</Original>
+			<Russian>ПЕШКОМ</Russian>
+		</Key>
+		<Key ID="STR_chvd_car">
+			<Original>IN CAR</Original>
+			<Russian>В МАШИНЕ</Russian>
+		</Key>
+		<Key ID="STR_chvd_air">
+			<Original>IN AIR</Original>
+			<Russian>В ВОЗДУХЕ</Russian>
+		</Key>
+		<Key ID="STR_chvd_view">
+			<Original>VIEW:</Original>
+			<Russian>ОБЩЕЕ:</Russian>
+		</Key>
+		<Key ID="STR_chvd_object">
+			<Original>OBJECT:</Original>
+			<Russian>ОБЪЕКТЫ:</Russian>
+		</Key>
+		<Key ID="STR_chvd_terrain">
+			<Original>TERRAIN:</Original>
+			<Russian>ЛАНДШАФТ:</Russian>
+		</Key>
+		<Key ID="STR_chvd_sync">
+			<Original>Sync object with view</Original>
+			<Russian>Синхронизировать</Russian>
+		</Key>
+		<Key ID="STR_chvd_close">
+			<Original>Close</Original>
+			<Russian>Закрыть</Russian>
+		</Key>		
+		<Key ID="STR_chvd_low">
+			<Original>Low</Original>
+			<Russian>Низкое</Russian>
+		</Key>
+		<Key ID="STR_chvd_standard">
+			<Original>Standard</Original>
+			<Russian>Стандартное</Russian>
+		</Key>
+		<Key ID="STR_chvd_high">
+			<Original>High</Original>
+			<Russian>Высокое</Russian>
+		</Key>
+		<Key ID="STR_chvd_veryHigh">
+			<Original>Very High</Original>
+			<Russian>Очень высокое</Russian>
+		</Key>
+	</package>
 </Project>

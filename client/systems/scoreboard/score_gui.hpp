@@ -49,7 +49,7 @@ class ScoreGUI : IGUIBack
 		class PListTopBG : IGUIBack
 		{
 			idc = -1;
-			colorBackground[] = {0.25, 0.51, 0.96, 0.8};
+			colorBackground[] = {0.275,0.322,0.235,0.8};
 
 			#define PListTopBG_H (0.05 * Y_SCALE)
 
@@ -394,7 +394,7 @@ class ScoreGUI : IGUIBack
 		class TListTopBG : IGUIBack
 		{
 			idc = -1;
-			colorBackground[] = {0.25, 0.51, 0.96, 0.8};
+			colorBackground[] = {0.275,0.322,0.235,0.8};
 
 			#define TListTopBG_H (0.05 * Y_SCALE)
 
