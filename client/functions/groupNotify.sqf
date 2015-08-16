@@ -6,13 +6,13 @@
 
 private ["_type", "_sender", "_msg"];
 
-_type = param [0, "", [""]];
+_type = [_this, 0, "", [""]] call BIS_fnc_param;
 
 switch (_type) do
 {
 	case "invite":
 	{
-		_sender = param [1, objNull, [objNull]];
+		_sender = [_this, 1, objNull, [objNull]] call BIS_fnc_param;
 
 		if (isPlayer _sender) then
 		{

@@ -7,7 +7,7 @@
 private ["_team", "_isOwner", "_markerColor"];
 
 _team = _this select 0;
-_isOwner = param [1, false];
+_isOwner = [_this, 1, false] call BIS_fnc_param;
 
 //diag_log format["getTeamMarkerColor called with %1", _this];
 

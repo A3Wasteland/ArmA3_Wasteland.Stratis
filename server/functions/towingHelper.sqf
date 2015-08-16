@@ -6,8 +6,8 @@
 
 private ["_type", "_veh", "_pos"];
 
-_type = param [0, "", [""]];
-_veh = param [1, objNull, ["",objNull]];
+_type = [_this, 0, "", [""]] call BIS_fnc_param;
+_veh = [_this, 1, objNull, ["",objNull]] call BIS_fnc_param;
 
 if (typeName _veh == "STRING") then
 {
