@@ -337,7 +337,7 @@ player createDiaryRecord ["changelog",
 [
 "v0.9b",
 "
-<br/> [Initial release] - Welcome to Stratis!
+<br/>[Initial release] - Welcome to Altis!
 "
 ]];
 

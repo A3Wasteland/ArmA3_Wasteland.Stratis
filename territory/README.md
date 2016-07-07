@@ -39,7 +39,7 @@ Each territory has a marker name, a descriptive name, a value and a category, an
 
 <pre>
 [
-	["TERRITORY_AIRPORT", "Stratis airport", 500, "AIRFIELD"],
+	["TERRITORY_AIRPORT", "Altis airport", 500, "AIRFIELD"],
 ]
 </pre>
 
