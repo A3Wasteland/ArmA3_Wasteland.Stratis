@@ -8946,7 +8946,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="[this, true, false, {_this setVariable ['is_storage',true,true]}] call A3W_fnc_setupMissionObject";
+						init="[this] call A3W_fnc_setupMissionObject; this setVariable ['is_storage', true]";
 					};
 					id=589;
 					type="Land_Pallet_MilBoxes_F";
@@ -8963,7 +8963,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="[this, true, false, {_this setVariable ['is_storage',true,true]}] call A3W_fnc_setupMissionObject";
+						init="[this] call A3W_fnc_setupMissionObject; this setVariable ['is_storage', true]";
 					};
 					id=590;
 					type="Land_PaperBox_open_full_F";
@@ -8981,7 +8981,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="[this, true, false, {_this setVariable ['is_storage',true,true]}] call A3W_fnc_setupMissionObject";
+						init="[this] call A3W_fnc_setupMissionObject; this setVariable ['is_storage', true]";
 					};
 					id=591;
 					type="Land_PaperBox_open_full_F";
@@ -8998,7 +8998,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="[this, true, false, {_this setVariable ['is_storage',true,true]}] call A3W_fnc_setupMissionObject";
+						init="[this] call A3W_fnc_setupMissionObject; this setVariable ['is_storage', true]";
 					};
 					id=592;
 					type="Land_Pallet_MilBoxes_F";
@@ -9015,7 +9015,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="[this, true, false, {_this setVariable ['is_storage',true,true]}] call A3W_fnc_setupMissionObject";
+						init="[this] call A3W_fnc_setupMissionObject; this setVariable ['is_storage', true]";
 					};
 					id=593;
 					type="Land_Pallet_MilBoxes_F";
@@ -9033,7 +9033,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="[this, true, false, {_this setVariable ['is_storage',true,true]}] call A3W_fnc_setupMissionObject";
+						init="[this] call A3W_fnc_setupMissionObject; this setVariable ['is_storage', true]";
 					};
 					id=594;
 					type="Land_Pallet_MilBoxes_F";
