@@ -8,11 +8,11 @@ class EditorData
 	toggles=14;
 	class ItemIDProvider
 	{
-		nextID=639;
+		nextID=641;
 	};
 	class MarkerIDProvider
 	{
-		nextID=161;
+		nextID=162;
 	};
 	class LayerIndexProvider
 	{
@@ -8967,7 +8967,7 @@ class Mission
 			name="VanillaLayer";
 			class Entities
 			{
-				items=49;
+				items=51;
 				class Item0
 				{
 					dataType="Object";
@@ -9744,35 +9744,32 @@ class Mission
 				class Item45
 				{
 					dataType="Marker";
-					position[]={2759,0,307.75};
+					position[]={2759,23.389175,307.75};
 					name="VehStore4_heliSpawn";
 					type="Empty";
 					colorName="ColorBlack";
 					angle=213.06194;
 					id=634;
-					atlOffset=27.1525;
 				};
 				class Item46
 				{
 					dataType="Marker";
-					position[]={2798.375,0,348.25};
+					position[]={2798.375,23.389175,348.25};
 					name="VehStore4_landSpawn";
 					type="Empty";
 					colorName="ColorBlack";
 					angle=33.061985;
 					id=635;
-					atlOffset=31.040625;
 				};
 				class Item47
 				{
 					dataType="Marker";
-					position[]={2811.5,0,309.5};
+					position[]={2812.4092,23.389175,308.90811};
 					name="VehStore4_planeSpawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=213.06194;
+					angle=213.11559;
 					id=636;
-					atlOffset=32.866253;
 				};
 				class Item48
 				{
@@ -9784,6 +9781,38 @@ class Mission
 					id=637;
 					atlOffset=22.85;
 				};
+				class Item49
+				{
+					dataType="Marker";
+					position[]={2734.5,23.389175,230.5};
+					name="TERRITORY_AIRCRAFT_CARRIER";
+					markerType="RECTANGLE";
+					type="Empty";
+					colorName="ColorYellow";
+					fillName="DiagGrid";
+					a=190.39799;
+					b=46.667999;
+					angle=131.08398;
+					id=638;
+				};
+				class Item50
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2783.1953,24.70026,337.83667};
+						angles[]={0,5.4155645,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						init="[this] call A3W_fnc_setupMissionATM";
+					};
+					id=639;
+					type="Land_Atm_01_F";
+					atlOffset=0.030492783;
+				};
 			};
 			id=588;
 			atlOffset=17.430435;
@@ -9792,7 +9821,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="CustomLayer";
-			id=638;
+			id=640;
 			atlOffset=142.91;
 		};
 	};

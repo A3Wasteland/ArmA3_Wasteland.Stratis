@@ -18,6 +18,7 @@
 	["TERRITORY_AGIOS_IOANNIS", "Agios Ioannis", 250, "TOWN"],
 	["TERRITORY_AIRBASE_NORTH", "North Stratis Airbase", 750, "AIRBASE"],
 	["TERRITORY_AIRBASE_SOUTH", "South Stratis Airbase", 750, "AIRBASE"],
+	["TERRITORY_AIRCRAFT_CARRIER", "Aircraft Carrier", 2500, "AIRBASE"],
 	["TERRITORY_AIRSTATION_MIKE", "Air Station Mike", 500, "MILITARY"],
 	["TERRITORY_CAMP_MAXWELL", "Camp Maxwell", 500, "MILITARY"],
 	["TERRITORY_CAMP_ROGAIN", "Camp Rogain", 500, "MILITARY"],
