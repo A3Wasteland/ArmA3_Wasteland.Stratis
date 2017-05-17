@@ -69,16 +69,15 @@ addons[]=
 	"A3_Structures_F_EPA_Mil_Scrapyard",
 	"A3_Soft_F_Gamma_Truck_02",
 	"A3_Boat_F_Jets_Carrier_01",
-	"A3_Structures_F_Exp_Naval_Piers",
 	"A3_Structures_F_Training",
-	"A3_Structures_F_Exp_Civilian_Accessories",
-	"A3_Structures_F_EPC_Dominants_GhostHotel"
+	"A3_Structures_F_EPC_Dominants_GhostHotel",
+	"A3_Structures_F_Kart_Civ_SportsGrounds"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=13;
+		items=12;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -158,15 +157,8 @@ class AddonsMetaData
 		};
 		class Item11
 		{
-			className="A3_Structures_F_Exp";
-			name="Arma 3 Apex - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item12
-		{
-			className="A3_Structures_F_Exp_Civilian";
-			name="Arma 3 Apex - Civilian Buildings";
+			className="A3_Structures_F_Kart";
+			name="Arma 3 Karts - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
