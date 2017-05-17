@@ -8,7 +8,7 @@ class EditorData
 	toggles=14;
 	class ItemIDProvider
 	{
-		nextID=641;
+		nextID=644;
 	};
 	class MarkerIDProvider
 	{
@@ -8967,7 +8967,7 @@ class Mission
 			name="VanillaLayer";
 			class Entities
 			{
-				items=51;
+				items=54;
 				class Item0
 				{
 					dataType="Object";
@@ -9303,7 +9303,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2802.5098,23.69652,362.32336};
+						position[]={2787.7305,23.69652,345.27585};
 						angles[]={0,2.2878547,0};
 					};
 					side="Empty";
@@ -9744,7 +9744,7 @@ class Mission
 				class Item45
 				{
 					dataType="Marker";
-					position[]={2759,23.389175,307.75};
+					position[]={2755.061,23.389175,301.453};
 					name="VehStore4_heliSpawn";
 					type="Empty";
 					colorName="ColorBlack";
@@ -9754,7 +9754,7 @@ class Mission
 				class Item46
 				{
 					dataType="Marker";
-					position[]={2798.375,23.389175,348.25};
+					position[]={2799.4138,23.389175,350.69656};
 					name="VehStore4_landSpawn";
 					type="Empty";
 					colorName="ColorBlack";
@@ -9813,6 +9813,63 @@ class Mission
 					type="Land_Atm_01_F";
 					atlOffset=0.030492783;
 				};
+				class Item51
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2804.696,18.867027,354.53409};
+						angles[]={0,2.2878475,0};
+					};
+					side="Empty";
+					flags=1;
+					class Attributes
+					{
+						init="hideObject this; [this] call A3W_fnc_setupMissionObject";
+						description="hidden pier allows vehicles to spawn correctly on carrier";
+					};
+					id=640;
+					type="Land_Pier_F";
+					atlOffset=49.784901;
+				};
+				class Item52
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2813.9182,18.866688,308.13644};
+						angles[]={0,2.1487794,0};
+					};
+					side="Empty";
+					flags=1;
+					class Attributes
+					{
+						init="hideObject this; [this] call A3W_fnc_setupMissionObject";
+						description="hidden pier allows vehicles to spawn correctly on carrier";
+					};
+					id=641;
+					type="Land_Pier_F";
+					atlOffset=54.437805;
+				};
+				class Item53
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2757.0891,18.867329,299.89801};
+						angles[]={0,2.2878475,0};
+					};
+					side="Empty";
+					flags=1;
+					class Attributes
+					{
+						init="hideObject this; [this] call A3W_fnc_setupMissionObject";
+						description="hidden pier allows vehicles to spawn correctly on carrier";
+					};
+					id=642;
+					type="Land_Pier_F";
+					atlOffset=48.212997;
+				};
 			};
 			id=588;
 			atlOffset=17.430435;
@@ -9821,7 +9878,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="CustomLayer";
-			id=640;
+			id=643;
 			atlOffset=142.91;
 		};
 	};
