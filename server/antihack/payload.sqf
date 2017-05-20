@@ -108,8 +108,8 @@ if (isNil "_cheatFlag") then
 
 			if (!isNull (findDisplay 49 displayCtrl 0)) exitWith { _cheatFlag = "RscDisplayInterruptEditorPreview" };
 			if (!isNull findDisplay 17 && !isServer && !_isAdmin) exitWith { _cheatFlag = "RscDisplayRemoteMissions (Wookie)" };
-			if (!isNull findDisplay 316000 && !_isAdmin) exitWith { _cheatFlag = "Debug console" }; // RscDisplayDebugPublic
-			if (!isNull (uiNamespace getVariable ["RscDisplayArsenal", displayNull]) && !_isAdmin) exitWith { _cheatFlag = "Virtual Arsenal" };
+			//if (!isNull findDisplay 316000 && !_isAdmin) exitWith { _cheatFlag = "Debug console" }; // RscDisplayDebugPublic
+			//if (!isNull (uiNamespace getVariable ["RscDisplayArsenal", displayNull]) && !_isAdmin) exitWith { _cheatFlag = "Virtual Arsenal" };
 			if (!isNull findDisplay 157 && isNull (uiNamespace getVariable ["RscDisplayModLauncher", displayNull])) exitWith { _cheatFlag = "RscDisplayPhysX3Debug" };
 
 			_display = findDisplay 54;
@@ -308,12 +308,12 @@ while { true } do
 		_loopCount = 0;
 	};
 
-	if (isNil "_cheatFlag") then
+/*	if (isNil "_cheatFlag") then
 	{
 		// diag_log "ANTI-HACK: Recoil hack check started!";
 
 		_currentRecoil = unitRecoilCoefficient player;
-		_minRecoil = ((["A3W_antiHackMinRecoil", 1.0] call getPublicVar) max 0.02) - 0.001;
+		_minRecoil = ((["A3W_antiHackMinRecoil", 0.0] call getPublicVar) max 0.02) - 0.001;
 
 		if (_currentRecoil < _minRecoil && _currentRecoil != -1) then
 		{
@@ -321,7 +321,7 @@ while { true } do
 
 			_cheatFlag = ["recoil hack", str ceil (_currentRecoil * 100) + "% recoil"];
 		};
-	};
+	};*/
 
 	if (!isNil "_cheatFlag") exitWith
 	{

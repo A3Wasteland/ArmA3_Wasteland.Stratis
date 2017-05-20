@@ -28,4 +28,4 @@ _titleColor = param [4, "", [""]];
 		_text,
 		_titleColor
 	]
-] call hintBroadcast;
+];// call hintBroadcast;

@@ -16,7 +16,7 @@ _alt = _this select 4;
 
 _handled = false;
 
-// ********** Hardcoded keys **********
+/// ********** Hardcoded keys **********
 // keycodes are defined in client\clientEvents\customKeys.sqf
 switch (true) do
 {
@@ -24,6 +24,18 @@ switch (true) do
 	case (_key in A3W_customKeys_adminMenu):
 	{
 		execVM "client\systems\adminPanel\checkAdmin.sqf";
+	};
+	
+	// f10 key
+	case (_key in A3W_customKeys_spec):
+	{
+		SpecateLoopActive = nil;
+	};	
+
+	// f09 key
+	case (_key in A3W_customKeys_targetMenu):
+	{
+		execVM "client\systems\adminPanel\playerMenu.sqf";
 	};
 
 	// Tilde (key above Tab)
@@ -51,6 +63,23 @@ switch (true) do
 		{
 			0.5 fadeSound 1;
 			["You've taken out your earplugs.", 5] call mf_notify_client;
+		};
+	};
+	
+	// Holster - unholster weapon (H key)
+	case (_key in A3W_customKeys_holster):
+	{
+		if (vehicle player == player && currentWeapon player != "") then
+		{
+			curWep_h = currentWeapon player;
+			player action ["SwitchWeapon", player, player, 100];
+		}
+		else
+		{
+			if (curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then
+			{
+				player selectWeapon curWep_h;
+			};
 		};
 	};
 };

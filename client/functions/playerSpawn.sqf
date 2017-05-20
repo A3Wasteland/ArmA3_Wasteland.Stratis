@@ -63,6 +63,8 @@ if (isNil "playerData_alive" || !isNil "playerData_resetPos") then
 	[player, "AmovPknlMstpSnonWnonDnon"] call switchMoveGlobal;
 
 	9999 cutText ["Loading...", "BLACK", 0.01];
+	
+	_this call vaforall;
 
 	true spawn client_respawnDialog;
 
@@ -80,6 +82,8 @@ playerData_alive = nil;
 playerData_resetPos = nil;
 
 player enableSimulation true;
+
+player setCustomAimCoef 0.08;
 
 if (!isNil "playerData_spawnPos") then
 {

@@ -206,6 +206,7 @@ staticGunsArray = compileFinal str
 
 throwputArray = compileFinal str
 [
+	["Toxic Gas Grenade", "SmokeShellYellow", 750],
 	["RGN Mini Grenade", "MiniGrenade", 50],
 	["RGO Frag Grenade", "HandGrenade", 100],
 	["APERS Tripwire Mine", "APERSTripMine_Wire_Mag", 200],
@@ -220,7 +221,6 @@ throwputArray = compileFinal str
 	["Smoke Grenade (Purple)", "SmokeShellPurple", 50],
 	["Smoke Grenade (Blue)", "SmokeShellBlue", 50],
 	["Smoke Grenade (Green)", "SmokeShellGreen", 50],
-	["Smoke Grenade (Yellow)", "SmokeShellYellow", 50],
 	["Smoke Grenade (Orange)", "SmokeShellOrange", 50],
 	["Smoke Grenade (Red)", "SmokeShellRed", 50]
 ];
@@ -290,13 +290,13 @@ ammoArray = compileFinal str
 	["Titan Anti-Tank Missile", "Titan_AT", 350],             // Direct damage: high      | Splash damage: low    | Guidance: mouse, laser, ground vehicles
 	["Titan Anti-Personnel Missile", "Titan_AP", 350],        // Direct damage: low       | Splash damage: high   | Guidance: mouse, laser
 	["Titan Anti-Air Missile", "Titan_AA", 350],              // Direct damage: low       | Splash damage: medium | Guidance: aircraft
+	["40mm Toxic Gas Round", "1Rnd_SmokeYellow_Grenade_shell", 125],
 	["40mm HE Grenade Round", "1Rnd_HE_Grenade_shell", 125],
 	["40mm 3Rnd HE Grenades", "3Rnd_HE_Grenade_shell", 250],
 	["40mm Smoke Round (White)", "1Rnd_Smoke_Grenade_shell", 50],
 	["40mm Smoke Round (Purple)", "1Rnd_SmokePurple_Grenade_shell", 50],
 	["40mm Smoke Round (Blue)", "1Rnd_SmokeBlue_Grenade_shell", 50],
 	["40mm Smoke Round (Green)", "1Rnd_SmokeGreen_Grenade_shell", 50],
-	["40mm Smoke Round (Yellow)", "1Rnd_SmokeYellow_Grenade_shell", 50],
 	["40mm Smoke Round (Orange)", "1Rnd_SmokeOrange_Grenade_shell", 50],
 	["40mm Smoke Round (Red)", "1Rnd_SmokeRed_Grenade_shell", 50],
 	["40mm 3Rnd Smokes (White)", "3Rnd_Smoke_Grenade_shell", 100],
@@ -735,9 +735,9 @@ genItemArray = compileFinal str
 	["Compact NVG (Urban)", "O_NVGoggles_urb_F", 150, "nvg"],
 	["Binoculars", "Binocular", 50, "binoc"],
 	["Rangefinder", "Rangefinder", 150, "binoc"],
-	["Laser Designator (Sand)", "Laserdesignator", 250, "binoc", "noDLC"], // Increase price to 2500 if A3W_disableBuiltInThermal = 0
-	["Laser Designator (Hex)", "Laserdesignator_02", 300, "binoc", "noDLC"],
-	["Laser Designator (Olive)", "Laserdesignator_03", 250, "binoc", "noDLC"],
+	["Laser Designator (Sand)", "Laserdesignator", 250, "binoc"], // Increase price to 2500 if A3W_disableBuiltInThermal = 0
+	["Laser Designator (Hex)", "Laserdesignator_02", 300, "binoc"],
+	["Laser Designator (Olive)", "Laserdesignator_03", 250, "binoc"],
 	["IR Grenade", "B_IR_Grenade", 50, "mag", "WEST"],
 	["IR Grenade", "O_IR_Grenade", 50, "mag", "EAST"],
 	["IR Grenade", "I_IR_Grenade", 50, "mag", "GUER"],
@@ -831,8 +831,6 @@ genObjectsArray = compileFinal str
 	["Bag Bunker (Small)", "Land_BagBunker_Small_F", 250, "object"],
 	["Bag Bunker (Large)", "Land_BagBunker_Large_F", 500, "object"],
 	["Bag Bunker Tower", "Land_BagBunker_Tower_F", 1000, "object"],
-	["Military Cargo Post", "Land_Cargo_Patrol_V1_F", 800, "object"],
-	["Military Cargo Tower", "Land_Cargo_Tower_V1_F", 10000, "object"],
 	["Concrete Ramp", "Land_RampConcrete_F", 350, "object"],
 	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 500, "object"],
 	["Scaffolding", "Land_Scaffolding_F", 250, "object"]
@@ -963,7 +961,7 @@ helicoptersArray = compileFinal str
 	["AH-9 Pawnee (Gun-Only)", "B_Heli_Light_01_dynamicLoadout_F", 15000, "vehicle", "variant_pawneeGun"], // Armed AH-6 (no missiles)
 	["AH-9 Pawnee", "B_Heli_Light_01_dynamicLoadout_F", 35000, "vehicle", "variant_pawneeNormal"], // Armed AH-6
 	["PO-30 Orca (DAR)", "O_Heli_Light_02_dynamicLoadout_F", 30000, "vehicle", "variant_orcaDAR"], // Armed Ka-60
-	["PO-30 Orca (DAGR)", "O_Heli_Light_02_dynamicLoadout_F", 40000, "vehicle", "variant_orcaDAGR"], // Armed Ka-60, add "HIDDEN" if you don't want it, but don't remove the line!
+	["PO-30 Orca (DAGR)", "O_Heli_Light_02_dynamicLoadout_F", 40000, "vehicle", "variant_orcaDAGR"], // Armed Ka-60
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle"], // Armed AW159
 	["AH-99 Blackfoot", "B_Heli_Attack_01_dynamicLoadout_F", 50000, "vehicle"], // RAH-66 with gunner
 	["Mi-48 Kajman", "O_Heli_Attack_02_dynamicLoadout_F", 60000, "vehicle"], // Mi-28 with gunner 
@@ -1376,13 +1374,19 @@ customPlayerItems = compileFinal str
 [
 	["Water Bottle", "water", localize "STR_WL_ShopDescriptions_Water", "client\icons\waterbottle.paa", 30, 15],
 	["Canned Food", "cannedfood", localize "STR_WL_ShopDescriptions_CanFood", "client\icons\cannedfood.paa", 30, 15],
+	
+		["LSD", "lsd", localize "STR_WL_ShopDescriptions_LSD", "client\icons\lsd.paa", 12500, 6250],
+	["Marijuana", "marijuana", localize "STR_WL_ShopDescriptions_Marijuana", "client\icons\marijuana.paa", 10000, 5000],
+	["Cocaine", "cocaine", localize "STR_WL_ShopDescriptions_Cocaine", "client\icons\cocaine.paa", 14000, 7000],
+	["Heroin", "heroin", localize "STR_WL_ShopDescriptions_Heroin", "client\icons\heroin.paa", 15000, 7500],
+	
 	["Repair Kit", "repairkit", localize "STR_WL_ShopDescriptions_RepairKit", "client\icons\briefcase.paa", 500, 250],
 	["Jerry Can (Full)", "jerrycanfull", localize "STR_WL_ShopDescriptions_fuelFull", "client\icons\jerrycan.paa", 150, 75],
 	["Jerry Can (Empty)", "jerrycanempty", localize "STR_WL_ShopDescriptions_fuelEmpty", "client\icons\jerrycan.paa", 50, 25],
 	["Spawn Beacon", "spawnbeacon", localize "STR_WL_ShopDescriptions_spawnBeacon", "client\icons\spawnbeacon.paa", 1500, 750],
 	["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 200, 100],
 	["Syphon Hose", "syphonhose", localize "STR_WL_ShopDescriptions_SyphonHose", "client\icons\syphonhose.paa", 200, 100],
-	["Energy Drink", "energydrink", localize "STR_WL_ShopDescriptions_Energy_Drink", "client\icons\energydrink.paa", 100, 50],
+	//["Energy Drink", "energydrink", localize "STR_WL_ShopDescriptions_Energy_Drink", "client\icons\energydrink.paa", 100, 50],
 	["Warchest", "warchest", localize "STR_WL_ShopDescriptions_Warchest", "client\icons\warchest.paa", 1000, 500]
 ];
 

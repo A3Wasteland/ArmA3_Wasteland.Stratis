@@ -1,0 +1,1 @@
+onMapSingleClick {createMarker ["bluspawner", _pos];};

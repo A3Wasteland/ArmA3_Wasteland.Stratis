@@ -68,7 +68,14 @@ if (_packetName == "BIS_fnc_MP_packet") then
 			forEach
 			[
 				"A3W_fnc_",
-				"mf_remote_"
+				"mf_remote_",
+				"BH_fnc_",
+				"BIS_fnc_spawn",
+				"hint",
+				"APOC_srv_",
+				"BIS_fnc_arsenal",
+				"bis_fnc_setidentity",
+				"Virtual Arsenal"
 			];
 		};
 	};

@@ -33,9 +33,7 @@ fn_addManagedAction = "client\functions\fn_addManagedAction.sqf" call mf_compile
 fn_canTakeOwnership = "client\actions\canTakeOwnership.sqf" call mf_compile;
 fn_ctrlOverlapCheck = "client\functions\fn_ctrlOverlapCheck.sqf" call mf_compile;
 fn_disableCollision = "client\functions\fn_disableCollision.sqf" call mf_compile;
-fn_disableDriverAssist = "client\functions\fn_disableDriverAssist.sqf" call mf_compile;
 fn_emergencyEject = "client\functions\fn_emergencyEject.sqf" call mf_compile;
-fn_enableDriverAssist = "client\functions\fn_enableDriverAssist.sqf" call mf_compile;
 fn_encodeText = "client\functions\fn_encodeText.sqf" call mf_compile;
 fn_fitsInventory = "client\functions\fn_fitsInventory.sqf" call mf_compile;
 fn_forceSaveObject = "client\functions\fn_forceSaveObject.sqf" call mf_compile;
@@ -74,6 +72,11 @@ spawnAction = "client\functions\spawnAction.sqf" call mf_compile;
 spawnInTown = "client\functions\spawnInTown.sqf" call mf_compile;
 spawnOnBeacon = "client\functions\spawnOnBeacon.sqf" call mf_compile;
 spawnRandom = "client\functions\spawnRandom.sqf" call mf_compile;
+
+//ccg stuff
+vaforall = "addons\scripts\vaforall.sqf" call mf_compile;
+supporters = "addons\supporters\supporters.sqf" call mf_compile;
+
 // placeSpawnBeacon = "client\systems\playerMenu\placeSpawnBeacon.sqf" call mf_compile;
 // refuelVehicle = "client\systems\playerMenu\refuel.sqf" call mf_compile;
 // repairVehicle = "client\systems\playerMenu\repair.sqf" call mf_compile;
