@@ -11,7 +11,7 @@ class MarkerLog
 	idd = markerLogDialog;
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "execVM 'client\systems\adminPanel\markerLog.sqf'";
+	onLoad = "execVM 'client\systems\adminPanel\tools\markerLog.sqf'";
 
 	class controlsBackground {
 
@@ -67,7 +67,7 @@ class MarkerLog
 		{
 			idc = -1;
 			text = "Refresh";
-			onButtonClick = "call compile preprocessFileLineNumbers 'client\systems\adminPanel\markerLog.sqf'";
+			onButtonClick = "call compile preprocessFileLineNumbers 'client\systems\adminPanel\tools\markerLog.sqf'";
 			x = 0.2 * (4/3) * SZ_SCALE_ABS + safezoneX;
 			y = 0.748 * SZ_SCALE_ABS + safezoneY;
 			w = 0.05 * (4/3) * SZ_SCALE_ABS;
@@ -75,4 +75,3 @@ class MarkerLog
 		};
 	};
 };
-

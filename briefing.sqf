@@ -24,7 +24,6 @@ player createDiaryRecord ["changelog",
 <br/>[Added] Jets DLC
 <br/>[Added] Aircraft carrier on Stratis
 <br/>[Added] Resupply trucks on Altis and Stratis
-<br/>[Added] Driver assist
 <br/>[Changed] Aircraft prices
 <br/>[Changed] Blocked explosives near parking and storage
 <br/>[Changed] Migrated saving system from extDB2 to extDB3
@@ -412,6 +411,60 @@ player createDiaryRecord ["changelog",
 "
 ]];
 
+player createDiaryRecord ["changelog",
+ [
+"NL United",
+"
+<br/> [Added] Base locker (It is hackable and destroyable)
+<br/> [Added] Safe with keypad to General Store
+<br/> [Added] Ability to change uniform texture
+<br/> [Added] Ability to mark your owned vehicles and objects on the map
+<br/> [Added] Show R.I.P. map marker on corpse location after death
+<br/> [Added] Multiplying money reward for players that stay on the server
+<br/> [Added] Changed the appearance of the store NPCs
+<br/> [Added] Sell, Change Ownership and Resupply trucks
+<br/> [Added] Vehicle locking and info script by Micovery
+<br/> [Added] Vehicle lock state saving
+<br/> [Added] Locked vehicle break in and hot wire at a cost
+<br/> [Added] Heal self script
+<br/> [Added] Access to DLC Helicopter pilot seat without DLC
+<br/> [Added] New main missions: Hackers, Abandoned Jet, Hostile Jet Formation
+<br/> [Added] New side missions: Snipers, DrugsRunners, Roadblock
+<br/> [Added] New side missions: Geocache, Smugglers, Hostile Jet
+<br/> [Added] New money missions: Military patrol and Altis-Stratis patrol
+<br/> [Added] Intro script
+<br/> [Added] Player controlled IP cameras
+<br/> [Added] Device detector (IP Cameras, Spawn Beacons and Base Lockers)
+<br/> [Added] Donator bases with donator lock state
+<br/> [Added] BluFor and OpFor Base
+<br/> [Added] Mortar to one mission as reward
+<br/> [Added] High value target and Drugs runner
+<br/> [Added] Gas Grenades and Gas Masks by Mokey
+<br/> [Added] Logging to all admin commands
+<br/> [Added] Airdrop system by Apoc
+<br/> [Added] Teamlock to independent
+<br/> [Added] Voiceblock to side channel
+<br/> [Added] New welcome screen by Lodac from TOP Arma
+<br/> [Added] Drugs by Micovery
+<br/> [Added] Wateredge fix by Micovery
+<br/> [Added] Maximum spawnbeacon option
+<br/> [Added] Delete spawnbeacon ability
+<br/> [Added] 3D Markers
+<br/> [Added] ZLT Fastrope
+<br/> [Added] Explosives to vehicles
+<br/> [Added] Fix for spawnbeacons placed above water
+<br/> [Added] IEDs to stores and vehicles.
+<br/> [Added] Several new objects to General store for base building
+<br/> [Removed] Mortar from store
+<br/> [Changed] Starting gear
+<br/> [Changed] Only 2 vehicle stores sell planes (Altis)
+<br/> [Changed] Disabled Fog
+<br/> [Changed] Changed prices
+<br/> [Changed] Vehicles spawn in locked and with engine on
+<br/> [Changed] Spawnbeacon insertion to 0 mtrs
+<br/> [Changed] Old R3F script to version 3.1
+"
+]];
 
 player createDiaryRecord ["credits",
 [
@@ -443,7 +496,6 @@ player createDiaryRecord ["credits",
 <br/>	* Austerror (GitHub)
 <br/>	* AWA (OpenDayZ)
 <br/>	* bodybag (Gameaholic.se)
-<br/>	* Champ-1 (CHVD)
 <br/>	* code34 (iniDBI)
 <br/>	* Das Attorney (Jump MF)
 <br/>	* Ed! (404Games forums)
@@ -454,7 +506,7 @@ player createDiaryRecord ["credits",
 <br/>	* k4n30 (GitHub)
 <br/>	* Killzone_Kid (KillzoneKid.com)
 <br/>	* Krunch (GitHub)
-<br/>	* LouDnl (GitHub)
+<br/>	* LouDnl (GitHub / A3W forums)
 <br/>	* madbull (R3F)
 <br/>	* Mainfrezzer (Magnon)
 <br/>	* meat147 (GitHub)
@@ -475,11 +527,37 @@ player createDiaryRecord ["credits",
 <br/>	* wiking.at (A3W forums)
 <br/>	* xx-LSD-xx (Armaholic)
 <br/>	* Zenophon (BIS Forums)
+<br/>	* Cael817 (A3W forums)
+<br/>	* Micovery (A3W forums)
+<br/>	* BadVolt (A3W forums)
+<br/>	* Cuntee` (NYCwasteland.com)
 <br/>
 <br/><font size='16'>Thanks A LOT to everyone involved for the help and inspiration!</font>
 "
 ]];
 
+
+player createDiaryRecord ["infos",
+[
+"Cuntee`s Tips",
+"
+<br/><font size='18'>A3Wasteland</font>
+<br/>
+<br/>* Vehicle Locking/Unlocking is a very important feature of wasteland. Captured mission vehicles must be locked and unlocked for the wasteland inventory to show. Also remember to unlock your UAV's to gain manual control of them!
+<br/>
+<br/>* When picking a base location, it is best advised to pick a place that is out of the way and not so obvious such as airports, cities, map-bound bases, etc. remember, players randomly spawn in and around towns and could even spawn inside your base should you set it up in a town.
+<br/>
+<br/>* Place Spawn Beacon Strategically.
+<br/>
+<br/>* Vehicles, if left untouched will only save for 3 days.
+<br/>
+<br/>* When you set up a base, never leave your supplies unguarded or unlocked, your items will be stolen. It's best to build a structure that keeps them safe if you do not intend to be guarding your items at all times.
+<br/>
+<br/>* There are very aggressive random AI character squads that spawn almost anywhere on the map and will protect themselves with deadly force, be aware of them.
+<br/>
+<br/>* Somewhere on the map is a guarded virtual arsenal box every personal item in the game resides there in unlimited quantities, good luck on your hunt.
+"
+]];
 
 _WASD = AKEYNAME("MoveForward") + "," + AKEYNAME("MoveBack") + "," + AKEYNAME("TurnLeft") + "," + AKEYNAME("TurnRight");
 
@@ -487,22 +565,7 @@ player createDiaryRecord ["infos",
 [
 "Admin Spectate keys",
 "
-<br/>Admin menu Spectate camera controls:
-<br/>
-<br/>Shift + " + AKEYNAME("NextChannel") + " (next player)
-<br/>Shift + " + AKEYNAME("PrevChannel") + " (previous player)
-<br/>Ctrl + " + NKEYNAME(18) + " (exit camera)
-<br/>Ctrl + " + AKEYNAME("Chat") + " (attach/detach camera from target)
-<br/>Ctrl + " + NKEYNAME(35) + " (toggle target HUD)
-<br/>" + AKEYNAME("NightVision") + " (nightvision, thermal)
-<br/>" + _WASD + " (move camera around)
-<br/>" + NKEYNAME(16) + " (move camera up)
-<br/>" + NKEYNAME(44) + " (move camera down)
-<br/>Mouse Move (rotate camera)
-<br/>Mouse Wheel Up (increase camera speed)
-<br/>Mouse Wheel Down (decrease camera speed)
-<br/>Shift + " + _WASD + " (move camera around faster)
-<br/>" + AKEYNAME("ShowMap") + " (open/close map - click on map to teleport camera)
+<br/>LOL you actually thought I was going to tell you!
 "
 ]];
 
@@ -518,37 +581,20 @@ player createDiaryRecord ["infos",
 <br/>Ctrl + " + AKEYNAME("GetOut") + " (emergency eject)
 <br/>" + AKEYNAME("GetOver") + " (open parachute)
 <br/>Shift + " + NKEYNAME(201) + " / " + NKEYNAME(209) + " (adjust nightvision)
-<br/>" + NKEYNAME(22) + " (admin menu)
 "
 ]];
 
 player createDiaryRecord ["infos",
 [
-"Hints and Tips",
+"About Cuntee`s Wasteland",
 "
-<br/><font size='18'>A3Wasteland</font>
+<br/>Cuntee`s Wasteland is an Independent Only group versus group versus group sandbox survival experience. The objective of this mission is to rally your faction, scavenge supplies, weapons, and vehicles, capture territories, work the missions, and destroy the other factions. It is survival at its best! Keep in mind this is a work in progress, please direct your reports to http://www.nycwasteland.com/
 <br/>
-<br/>* At the start of the game, spread out and find supplies before worrying about where to establish a meeting place or a base, supplies are important and very valuable.
-<br/>
-<br/>* When picking a base location, it is best advised to pick a place that is out of the way and not so obvious such as airports, cities, map-bound bases, etc. remember, players randomly spawn in and around towns and could even spawn inside your base should you set it up in a town.
-<br/>
-<br/>* If you spawn in an area with no vehicles or supplies in the immediate area, DO NOT just click respawn from the pause menu, chances are if you search an area of a few hundred meters, you will find something.
-<br/>
-<br/>* Always be on the lookout for nightvision. they are located in the ammo crates, and there are pairs scattered throughout vehicles. You can also purchase them from the gunstores. Nighttime without them SUCKS, and if you have them, you can conduct stealth raids on enemy bases under the cover of complete darkness.
-<br/>
-<br/>* When you set up a base, never leave your supplies unguarded, one guard will suffice, but it is recommended you have at least 2, maybe 3 guards at base at all times.
-<br/>
-<br/>* There are very aggressive AI characters that spawn with most missions and will protect the mission objectives with deadly force, be aware of them.
-"
-]];
-
-player createDiaryRecord ["infos",
-[
-"About Wasteland",
-"
-<br/>Wasteland is a team versus team versus team sandbox survival experience. The objective of this mission is to rally your faction, scavenge supplies, weapons, and vehicles, and destroy the other factions. It is survival at its best! Keep in mind this is a work in progress, please direct your reports to http://forums.a3wasteland.com/
+<br/>!!!!WARNING EXTREME AI SERVER!!!!!
 <br/>
 <br/>FAQ:
+<br/>Q. What does extreme AI server mean?
+<br/>A. There are MANY extremely skilled AI bandits roving the server you will be killed. They are not impossible and the rewards can be great if you keep your head on a swivel.
 <br/>
 <br/>Q. What am I supposed to do here?
 <br/>A. See the above description
@@ -559,14 +605,20 @@ player createDiaryRecord ["infos",
 <br/>Q. What are the blue circles on the map?
 <br/>A. The circles represent town limits. If friendly soldiers are in a town, you can spawn there from the re-spawn menu; however if there is an enemy presence, you will not be able to spawn there.
 <br/>
+<br/>Q. Can I build a base?
+<br/>A. Yes. In the General store are all the items you need to build a custom base including base doors, keypads, and base lockers! Be sure to change your pin! Default pin is 0000
+<br/>
+<br/>Q. How do I make money in here?
+<br/>A. There are many ways to make money here. Capture and hold territories (yellow crosshatched areas on your map), Work the missions the rewards are great! All ai killed drop a random amount of cash, and hiding any body will give $500, and of course killing players and looting them works too!
+<br/>
 <br/>Q. Why is it so dark, I cant see.
 <br/>A. The server has a day/night cycle just like in the real world, and as such, night time is a factor in your survival. It is recommended that you find sources of light or use your Nightvision Goggles as the darkness sets in.
 <br/>
 <br/>Q. Is it ok for me to shoot my team mates?
-<br/>A. If you are member of BLUFOR or OPFOR teams, then you are NOT allowed to shoot or steal items and vehicles from other players. If you play as Independent, you are free to engage anyone as well as team up with anyone you want.
+<br/>A. You play as Independent, you are free to engage anyone as well as team up with anyone you want. Just be sure you trust whom you team up with.
 <br/>
 <br/>Q. Whats with the canisters, baskets and big bags?
-<br/>A. This game has a food and water system that you must stay on top of if you hope to survive. You can collect food and water from food sacks and wells, or baskets and plastic canisters dropped by dead players. Food and water will also randomly spawn around the map.
+<br/>A. This game has a food and water system that you must stay on top of if you hope to survive. You can collect food and water from food sacks and wells, or baskets and plastic canisters dropped by dead players.
 <br/>
 <br/>Q. I saw someone breaking a rule, what do I do?
 <br/>A. Simply go into global chat and get the attention of one of the admins or visit our forums, and make a report if the offense is serious.

@@ -7,7 +7,7 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-private ["_marker", "_preload", "_pos", "_rad", "_townName", "_playerPos"];
+private ["_marker", "_preload", "_pos", "_rad", "_townName", "_playerPos", "_supporterLevel"];
 _marker = _this select 0;
 _preload = param [1, false, [false]];
 

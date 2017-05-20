@@ -20,13 +20,27 @@ if ([_uid, 3] call isAdmin) then {
 
 	_panelOptions = ["Player Management",
 					"Vehicle Management",
-					"Map Markers Log",
-					"Group Leader Markers",
+					"Heal Self",
+					"No Recoil",
+					"Toggle Vehicle Markers",
 					"Teleport",
+					"Toggle Map ESP",
+					"Toggle ESP",
 	                "Money",
 	                "Debug Menu",
 					"Object Search",
-	                "Toggle God-mode"
+	                "Toggle God-mode",
+					"Toggle Invisible-mode",
+					"Toggle Vehicle God-mode",
+					"Artillery Strike on map target",
+					"Toggle Rocket Bullets",
+	                "Load Gun Store Menu",
+	                "Load Gen Store Menu",
+	                "Load ATM Menu",
+	                "Toggle AI ESP",
+					"BIS FreeRoam Cam (Pres ESCAPE to exit)",
+					"Toggle Spawn Beacon Map Markers",
+					"Unlimited Ammo"
 	];
 
 	{

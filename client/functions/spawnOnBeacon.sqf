@@ -7,7 +7,7 @@
 //	@file Created: 08/12/2012 18:30
 //	@file Args:
 
-private ["_data", "_beacon", "_pos", "_owner", "_preload", "_height", "_playerPos"];
+private ["_data", "_beacon", "_pos", "_owner", "_preload", "_height", "_playerPos", "_supporterLevel"];
 _data = _this select 0;
 _beacon = objectFromNetId (_data select 0);
 _pos = _data select 1;

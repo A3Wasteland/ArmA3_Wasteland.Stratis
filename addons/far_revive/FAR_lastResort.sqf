@@ -18,13 +18,20 @@ if !(player getVariable ["performingDuty", false]) then
 		{
 			titleText [format ["ERROR: invalid class '%1'", _mineType], "PLAIN", 0.5];
 		};
+		
+		_shout = 
+	[ // ["filename", volume, bomb timer]
+		["lastresort", 0.7, 1.75],
+		["yililili", 0.5, 1.9]
+	] call BIS_fnc_selectRandom;
 
 		if (["Perform your duty?", "", "Yes", "No"] call BIS_fnc_guiMessage) then
 		{
 			player setVariable ["performingDuty", true];
 
 			player removeMagazine _magType;
-			playSound3D [call currMissionDir + "client\sounds\lastresort.ogg", player, false, getPosASL player, 1, 1, 500];
+			//playSound3D [call currMissionDir + "client\sounds\lastresort.ogg", player, false, getPosASL player, 1, 1, 500];
+			playSound3D [call currMissionDir + "client\sounds\" + (_shout select 0) + ".wss", player, false, getPosASL player, (_shout select 1), 1, 1000];
 
 			sleep 1.5;
 

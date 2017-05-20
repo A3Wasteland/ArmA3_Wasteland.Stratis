@@ -10,6 +10,7 @@ if(player != leader group player) exitWith {player globalChat format["you are no
 
 #define groupManagementDialog 55510
 #define groupManagementPlayerList 55511
+#define MAX_GROUP_COUNT 4
 
 disableSerialization;
 
@@ -26,6 +27,21 @@ _hasInvite = false;
 { if (getPlayerUID _x == _playerData) exitWith { _target = _x } } forEach allPlayers;
 
 diag_log "Invite to group: Before the checks";
+_groupCount = count units player;
+
+if (_groupCount < MAX_GROUP_COUNT) then
+{
+	{
+		_senderUID = _x select 0;
+
+		if ({getPlayerUID _x == _senderUID} count units player > 0) then
+		{
+			_groupCount = _groupCount + 1;
+		};
+	} forEach currentInvites;
+};
+
+if (_groupCount >= MAX_GROUP_COUNT) exitWith { [format ["You cannot have more than %1 group members, including pending invites.", MAX_GROUP_COUNT]] spawn BIS_fnc_guiMessage };
 
 //Checks
 if(isNil "_target") exitWith {player globalChat "you must select someone to invite first"};

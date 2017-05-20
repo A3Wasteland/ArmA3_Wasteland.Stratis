@@ -1,0 +1,1 @@
+grp = [getMarkerPos "bluspawner", west, ["B_Soldier_F", "B_Soldier_F", "B_Soldier_F", "B_Soldier_F", "B_Soldier_F"],[], ["SERGEANT", "PRIVATE", "PRIVATE", "PRIVATE", "PRIVATE"],[0.5,0.5,0.5,0.5,0.5],[],[],round (random 360)] call BIS_fnc_spawnGroup; null=[grp,(getMarkerPos "bluspawner"),500]

@@ -60,7 +60,7 @@ while {true} do
 			subTextColor,
 			_missionDelay / 60
 		]
-	] call hintBroadcast;
+	]; //call hintBroadcast;
 
 	uiSleep _missionDelay;
 

@@ -22,15 +22,20 @@ spawnActionHandle = (_this select 1) spawn
 {
 	disableSerialization;
 
-	private ["_switch", "_data"];
+	private ["_switch", "_data", "_supporterLevel"];
 	_switch = _this select 0;
 	_data = [_this select 1, false];
+	_supporterLevel = player getVariable ["supporter", 0];
 
 	if (isNil "playerData_resetPos") then
 	{
 		// Deal with money here
 		_baseMoney = ["A3W_startingMoney", 100] call getPublicVar;
-		player setVariable ["cmoney", _baseMoney, true];
+		switch (_supporterLevel) do
+		{
+			case 1: { player setVariable ["cmoney", _baseMoney + 5000, true]; [MF_ITEMS_REPAIR_KIT, 1] call mf_inventory_add; [MF_ITEMS_SPAWN_BEACON, 1] call mf_inventory_add; };
+			default { player setVariable ["cmoney", _baseMoney, true]; };
+		};
 
 		if (["A3W_survivalSystem"] call isConfigOn) then
 		{

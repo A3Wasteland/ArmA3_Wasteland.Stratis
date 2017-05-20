@@ -29,6 +29,7 @@ _getValue =
 	};
 };
 
+["supporter", "NUMBER", "PlayerInfo"] call _getValue;
 ["Donator", "NUMBER", "PlayerInfo"] call _getValue;
 ["BankMoney", "NUMBER", "PlayerInfo"] call _getValue;
 ["Bounty", "NUMBER", "PlayerInfo"] call _getValue;

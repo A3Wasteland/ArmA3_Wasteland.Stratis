@@ -132,9 +132,8 @@ A3W_mapDraw_thread = [] spawn
 				if (IS_FRIENDLY_PLAYER(_x) && !(_x getVariable ["playerSpawning", false])) then
 				{
 					_veh = vehicle _x;
-					_driver = (crew _veh) select 0;
 
-					if (_driver == _x || {isAgent teamMember _driver && effectiveCommander _veh == _x}) then
+					if ((crew _veh) select 0 == _x) then
 					{
 						_icon = getText (configFile >> "CfgVehicles" >> typeOf _veh >> "icon");
 						if (_icon == "") then { _icon = "iconMan" };

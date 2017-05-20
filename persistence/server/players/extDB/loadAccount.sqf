@@ -7,7 +7,21 @@
 if (!isServer) exitWith {};
 
 params ["_UID", "_player"];
-private ["_result", "_data", "_location", "_dataTemp", "_ghostingTimer", "_secs", "_columns", "_pvar", "_pvarG"];
+private ["_result", "_data", "_location", "_dataTemp", "_ghostingTimer", "_secs", "_columns", "_pvar", "_pvarG", "_supporters", "_supportersEnabled"];
+
+_supporters = 0;
+_PlayerSupporterLevel = 0;
+_supportersEnabled = ["A3W_supportersEnabled"] call isConfigOn;
+
+if (_supportersEnabled) then
+{
+	_result = ["getPlayerSupporterLevel:" + _UID, 2] call extDB_Database_async;
+
+	if (count _result > 0) then
+	{
+		_supporters = _result select 0;
+	};
+};
 
 private _moneySaving = ["A3W_moneySaving"] call isConfigOn;
 private _crossMap = ["A3W_extDB_playerSaveCrossMap"] call isConfigOn;
@@ -19,7 +33,11 @@ _result = ([_query, 2] call extDB_Database_async) param [0,false];
 
 if (!_result) then
 {
-	_data = [["PlayerSaveValid", false]/*, ["BankMoney", _bank]*/];
+	_data = 
+	[
+		["PlayerSaveValid", false], 
+		["SupporterLevel", _supporters]
+	];
 
 	// prevent constraint fail on first save
 	private _sqlValues = [[["Name", name _player]], [0,1], false] call extDB_pairsToSQL;
@@ -124,6 +142,7 @@ else
 	};
 
 	_data append _dataTemp;
+	_data pushBack ["SupporterLevel", _supporters];
 	//_data pushBack ["BankMoney", _bank];
 };
 

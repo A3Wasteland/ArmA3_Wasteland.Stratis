@@ -1,0 +1,1 @@
+player setUnitRecoilCoefficient 0;

@@ -30,8 +30,8 @@ X_JIP = false;
 
 CHVD_allowNoGrass = false;
 CHVD_allowTerrain = false; // terrain option has been disabled out from the menu due to terrible code, this variable has currently no effect
-CHVD_maxView = 3000; // Set maximum view distance (default: 12000)
-CHVD_maxObj = 3000; // Set maximimum object view distance (default: 12000)
+CHVD_maxView = 12000; // Set maximum view distance (default: 12000)
+CHVD_maxObj = 12000; // Set maximimum object view distance (default: 12000)
 
 // versionName = ""; // Set in STR_WL_WelcomeToWasteland in stringtable.xml
 
@@ -100,8 +100,19 @@ if (hasInterface || isServer) then
 	[] execVM "addons\outlw_magrepack\MagRepack_init.sqf";
 	[] execVM "addons\lsd_nvg\init.sqf";
 	[] execVM "addons\stickyCharges\init.sqf";
+	[] execVM "addons\ToxicGasGrenades\ToxicGas.sqf"; //Toxic Gas Grenades (Hand)
+	[] execVM "addons\ToxicGasGrenades\ToxicGasGL.sqf"; //Toxic Gas Grenades (launcher)
+	[] execVM "fusionsmenu\admin\loop.sqf";						// Fusions adminmenu
+    [] execVM "fusionsmenu\admin\activate.sqf";					// Fusions adminmenu
+	[] execVM "addons\scripts\HvT.sqf";                   // High Value Target
+	[] execVM "addons\scripts\HvD.sqf";                   // High Value DrugRunner
+	[] execVM "addons\scripts\logo.sqf";                  // CNT Logo
+	[] execVM "addons\scripts\intro.sqf";						// Welcome intro added comment for test
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 };
+
+//get rid of the animals
+enableEnvironment [false, true];
 
 // Remove line drawings from map
 (createTrigger ["EmptyDetector", [0,0,0], false]) setTriggerStatements
