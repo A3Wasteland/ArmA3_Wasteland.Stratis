@@ -8,11 +8,11 @@ class EditorData
 	toggles=14;
 	class ItemIDProvider
 	{
-		nextID=649;
+		nextID=651;
 	};
 	class MarkerIDProvider
 	{
-		nextID=162;
+		nextID=164;
 	};
 	class LayerIndexProvider
 	{
@@ -8959,7 +8959,7 @@ class Mission
 			name="VanillaLayer";
 			class Entities
 			{
-				items=59;
+				items=61;
 				class Item0
 				{
 					dataType="Object";
@@ -9470,7 +9470,7 @@ class Mission
 				class Item31
 				{
 					dataType="Marker";
-					position[]={2812.4092,23.389175,308.90811};
+					position[]={2810.0439,23.389175,305.2821};
 					name="VehStore4_planeSpawn";
 					type="Empty";
 					colorName="ColorBlack";
@@ -9543,7 +9543,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2813.9182,18.866688,308.13644};
+						position[]={2820.0076,18.866688,317.47144};
 						angles[]={0,2.1487794,0};
 					};
 					side="Empty";
@@ -9555,7 +9555,7 @@ class Mission
 					};
 					id=625;
 					type="Land_Pier_F";
-					atlOffset=54.437805;
+					atlOffset=53.529354;
 				};
 				class Item37
 				{
@@ -9952,6 +9952,26 @@ class Mission
 					type="Land_PierLadder_F";
 					atlOffset=11.948874;
 				};
+				class Item59
+				{
+					dataType="Marker";
+					position[]={2734,0,230.22998};
+					name="Parking4";
+					type="Empty";
+					colorName="ColorBlack";
+					id=648;
+					atlOffset=29.152699;
+				};
+				class Item60
+				{
+					dataType="Marker";
+					position[]={2827.3689,23.389175,331.84399};
+					name="Parking4_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=213.11598;
+					id=649;
+				};
 			};
 			id=588;
 			atlOffset=17.430435;
@@ -9960,7 +9980,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="CustomLayer";
-			id=648;
+			id=650;
 			atlOffset=142.91;
 		};
 	};
