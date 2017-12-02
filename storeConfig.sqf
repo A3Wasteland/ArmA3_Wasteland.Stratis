@@ -745,9 +745,9 @@ genItemArray = compileFinal str
 	["Laser Designator (Sand)", "Laserdesignator", 250, "binoc", "noDLC"], // Increase price to 2500 if A3W_disableBuiltInThermal = 0
 	["Laser Designator (Hex)", "Laserdesignator_02", 300, "binoc", "noDLC"],
 	["Laser Designator (Olive)", "Laserdesignator_03", 250, "binoc", "noDLC"],
-	["IR Grenade", "B_IR_Grenade", 50, "mag", "WEST"],
-	["IR Grenade", "O_IR_Grenade", 50, "mag", "EAST"],
-	["IR Grenade", "I_IR_Grenade", 50, "mag", "GUER"],
+	["IR Designator Grenade", "B_IR_Grenade", 50, "mag", "WEST"],
+	["IR Designator Grenade", "O_IR_Grenade", 50, "mag", "EAST"],
+	["IR Designator Grenade", "I_IR_Grenade", 50, "mag", "GUER"],
 	["Chemlight (Blue)", "Chemlight_blue", 25, "mag"],
 	["Chemlight (Green)", "Chemlight_green", 25, "mag"],
 	["Chemlight (Yellow)", "Chemlight_yellow", 25, "mag"],
@@ -803,6 +803,8 @@ allStoreGear = compileFinal str (call headArray + call uniformArray + call vestA
 
 genObjectsArray = compileFinal str
 [
+	["Camo Net", "CamoNet_INDP_open_F", 200, "object", "HIDDEN"], // unlisted, only for object saving
+
 	["Pier Ladder", "Land_PierLadder_F", 250, "object"],
 	["Ammo Cache", "Box_FIA_Support_F", 250, "ammocrate"],
 	//["Metal Barrel", "Land_MetalBarrel_F", 25, "object"],
@@ -881,6 +883,8 @@ landArray = compileFinal str
 
 	["Van Cargo", "C_Van_02_vehicle_F", 1000, "vehicle", "SKIPSAVE"],
 	["Van Transport", "C_Van_02_transport_F", 1000, "vehicle", "SKIPSAVE"],
+	["Van Police Cargo", "B_GEN_Van_02_vehicle_F", 1250, "vehicle", "SKIPSAVE"],
+	["Van Police Transport", "B_GEN_Van_02_transport_F", 1250, "vehicle", "SKIPSAVE"],
 	["Van Ambulance", "C_Van_02_medevac_F", 1500, "vehicle", "SKIPSAVE"],
 	["Van Repair", "C_Van_02_service_F", 2000, "vehicle", "SKIPSAVE"],
 
@@ -1290,9 +1294,12 @@ colorsArray = compileFinal str
 			["Tan (Strider)", ["Blufor"]]
 		]
 	],
-	[ // Gorgon NATO color
+	[ // Gorgon paintjobs
 		"APC_Wheeled_03_base_F",
 		[
+			["Guerilla 1 (Gorgon)", ["Guerilla_01"]],
+			["Guerilla 2 (Gorgon)", ["Guerilla_02"]],
+			["Guerilla 3 (Gorgon)", ["Guerilla_03"]],
 			["Tan (Gorgon)", [
 				[0, _gorgonDir + "apc_wheeled_03_ext_co.paa"],
 				[1, _gorgonDir + "apc_wheeled_03_ext2_co.paa"],
