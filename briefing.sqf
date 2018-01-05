@@ -16,6 +16,20 @@ waitUntil {!isNull player};
 player createDiarySubject ["infos", "Infos and Help"];
 player createDiarySubject ["changelog", "Changelog"];
 player createDiarySubject ["credits", "Credits"];
+player createDiarySubject ["admins", "Admin List"];
+player createDiarySubject ["gearlevel", "Gear Level Info"];
+
+player createDiaryRecord ["changelog",
+[
+"FRACTURED Logs",
+"
+<br/>][REMOVED] Bounty System by Centrifugal
+<br/>[FIXED] Optimizations for Server
+<br/>[NEW VERSION] Server Updated and re-released as 2.0
+
+"
+]];
+
 
 player createDiaryRecord ["changelog",
 [
@@ -28,23 +42,6 @@ player createDiaryRecord ["changelog",
 <br/>[Changed] Improved antihack
 <br/>[Fixed] Prone reload freeze
 <br/>[Fixed] Many minor changes and fixes
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v1.3c",
-"
-<br/>[Added] Jets DLC
-<br/>[Added] Aircraft carrier on Stratis
-<br/>[Added] Resupply trucks on Altis and Stratis
-<br/>[Added] Driver assist
-<br/>[Changed] Aircraft prices
-<br/>[Changed] Blocked explosives near parking and storage
-<br/>[Changed] Migrated saving system from extDB2 to extDB3
-<br/>[Fixed] Fast revive exploits
-<br/>[Fixed] Could perform your duty after being revived
-<br/>[Fixed] Other minor changes and fixes
 "
 ]];
 
@@ -109,323 +106,6 @@ br/> [Added] Heavy towing and airlifting
 <br/>[Fixed] Various minor bugfixes and optimizations
 "
 ]];
-
-player createDiaryRecord ["changelog",
-[
-"v1.2b",
-"
-<br/>[Added] Scoreboard scrolling via mousewheel
-<br/>[Added] New paintjobs for Kajman, Strider, Gorgon, Hatchback
-<br/>[Changed] Hostile Heli (single) crates now spawn on touchdown
-<br/>[Changed] Lowered Ifrit center of mass to reduce rollovers
-<br/>[Changed] Updated antihack database
-<br/>[Fixed] Saved grenades not throwable on rejoin
-<br/>[Fixed] Corpses not ejecting from vehicle wrecks
-<br/>[Fixed] Items not dropping from vehicle wreck corpses
-<br/>[Fixed] Revive not triggering properly on fatal shot
-<br/>[Fixed] Vehicle turret ammo saving issues
-<br/>[Fixed] Too low damage resistance during revive mode
-<br/>[Fixed] UGVs not airliftable via R3F
-<br/>[Fixed] Revive broken after getting run over by vehicles
-<br/>[Fixed] Veh respawn not being delayed when owner is within 1km
-<br/>[Fixed] All armor values showing 0 in general store
-<br/>[Fixed] Supplies category in general store sometimes empty
-<br/>[Fixed] Server rules not showing anymore in map menu
-<br/>[Fixed] Territory info overlapping with vehicle HUD
-<br/>[Fixed] Vehicle contents selling money exploit
-<br/>[Fixed] Antihack kicks not always working properly
-<br/>[Fixed] Various minor bugfixes and optimizations
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v1.2",
-"
-<br/>[Added] Mag Repack by Outlawled (Ctrl + " + NKEYNAME(19) + ")
-<br/>[Added] Adjustable NV by xx-LSD-xx (Shift + PageUp/Down)
-<br/>[Added] New vehicle store paintjobs
-<br/>[Added] Town spawn cooldown
-<br/>[Added] Ghosting timer
-<br/>[Added] Object lock restriction near stores and missions
-<br/>[Added] Headless client object saving
-<br/>[Added] Time and weather saving
-<br/>[Changed] Expanded UAV control restriction to quadcopters
-<br/>[Changed] Injured players no longer count as town enemies
-<br/>[Changed] Upgraded extDB to extDB2 by Torndeco
-<br/>[Changed] Updated antihack
-<br/>[Fixed] Old spawn beacons no longer shown on spawn menu
-<br/>[Fixed] Multiple money duping exploits
-<br/>[Fixed] Vehicles and objects sometimes disappearing from DB
-<br/>[Fixed] Severe injuries caused by jumping over small ledges
-<br/>[Fixed] Antihack kicks due to RHS, MCC, AGM, ACE3, ALiVE
-<br/>[Fixed] Various minor bugfixes and optimizations
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v1.1b",
-"
-<br/>[Added] Marksmen DLC content
-<br/>[Added] Prevent usage of commander camera
-<br/>[Added] Emergency eject hotkey (Ctrl + " + AKEYNAME("GetOut") + ")
-<br/>[Added] Restricted UAV connection to owner's group
-<br/>[Changed] Improved purchased vehicle setup time
-<br/>[Changed] Admins can now use global voice chat
-<br/>[Changed] Updated antihack
-<br/>[Fixed] Corpses not being ejected from vehicles
-<br/>[Fixed] Thermal imaging not working for UAVs
-<br/>[Fixed] Various minor bugfixes and optimizations
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v1.1",
-"
-<br/>[Added] ATMs
-<br/>[Added] Union Jack vehicle color
-<br/>[Added] Skins hidden in gamefiles for MH-9, Mohawk, and Taru
-<br/>[Added] Improved admin spectate camera by micovery
-<br/>[Added] Earplugs (End key)
-<br/>[Changed] Full rewrite of vehicle respawning system
-<br/>[Fixed] Player moved to position too early during save restore
-<br/>[Fixed] Mission timeout not extending on AI kill
-<br/>[Fixed] Admin teamkill unlocking
-<br/>[Fixed] Improved FPS fix
-<br/>[Fixed] Running animation parachute glitch
-<br/>[Fixed] Various other minor bugfixes and optimizations
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v1.0c",
-"
-<br/>[Added] MySQL support via extDB extension
-<br/>[Added] Town Invasion mission
-<br/>[Added] Chain-reaction player kill tracking
-<br/>[Added] Force Save action for purchased and captured vehicles
-<br/>[Added] Autokick players previously detected by antihack
-<br/>[Added] Entity caching script for headless client
-<br/>[Added] Tron suits to general store
-<br/>[Added] Red lines on map for AIs wandering away from missions
-<br/>[Changed] Mission timeout gets extended on AI kill
-<br/>[Changed] Transport Heli mission Taru variant to Bench
-<br/>[Changed] Spawn beacon item drop to sleeping bag
-<br/>[Fixed] More money exploits
-<br/>[Fixed] Scoreboard ordering
-<br/>[Fixed] Vehicle repair and refuel sometimes not working
-<br/>[Fixed] Injured players' corpses being deleted on disconnect
-<br/>[Fixed] Static weapon disassembly prevention
-<br/>[Fixed] Excess bought rockets ending up in uniform or vest
-<br/>[Fixed] Various other minor bugfixes and optimizations
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v1.0b",
-"
-<br/>[Added] Helicopters DLC content
-<br/>[Added] Revamped respawn menu
-<br/>[Added] 250m altitude limit for territory capture
-<br/>[Added] HALO insertion on spawn beacons
-<br/>[Added] New vehicle store textures
-<br/>[Changed] Increased damage done to planes by 50%
-<br/>[Changed] Plane engines shutdown when above 90% damage
-<br/>[Changed] Player names can also be toggled with Home key
-<br/>[Changed] Increased ATGM UAV price
-<br/>[Changed] Increased prices from thermal scopes again
-<br/>[Changed] Minor edits to spawn loadouts
-<br/>[Fixed] FPS drop that began in v0.9h
-<br/>[Fixed] Saved UAVs not being connectable
-<br/>[Fixed] Indies unable to get in UGVs
-<br/>[Fixed] Blinking fog
-<br/>[Fixed] Clipped numbers on scoreboard
-<br/>[Fixed] Minor other optimizations and fixes
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v1.0",
-"
-<br/>[Added] Custom scoreboard
-<br/>[Added] Mission and store vehicle saving
-<br/>[Added] Player markers on GPS and UAV Terminal
-<br/>[Added] Holster actions
-<br/>[Changed] Full rewrite of side mission system
-<br/>[Changed] Windows key toggles player marker names too
-<br/>[Changed] New loading picture by Gameaholic.se
-<br/>[Fixed] Weapon sometimes disppearing when moving objects
-<br/>[Fixed] More money duping exploits
-<br/>[Fixed] Store menu sizes on smaller aspect ratios
-<br/>[Fixed] Hunger and thirst reset on rejoin
-<br/>[Fixed] Other minor optimizations and fixes
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v0.9h",
-"
-<br/>[Added] Custom revive system based on Farooq's Revive
-<br/>[Added] Territory payroll at regular intervals
-<br/>[Added] Emergency eject and free parachutes (jump key)
-<br/>[Added] Player names toggled with Windows key
-<br/>[Added] Increased missile damage against tanks and helis
-<br/>[Added] Ability to stash money in weapon crates
-<br/>[Added] Ability to sell vehicle inventory at stores
-<br/>[Added] More money shipment mission variants
-<br/>[Added] Reduced wheel damage from collisions
-<br/>[Added] Wreck salvaging
-<br/>[Added] Selling bin in stores
-<br/>[Added] Karts DLC content in stores
-<br/>[Added] Camo sniper rifles in gunstore
-<br/>[Added] Repair Offroad in vehicle store
-<br/>[Added] Team players on map as server option
-<br/>[Added] Unlimited stamina server option
-<br/>[Added] Static weapon saving server option
-<br/>[Added] More push vehicle actions
-<br/>[Added] Paradrop option for airlifted vehicles
-<br/>[Added] Preload checkbox on respawn menu
-<br/>[Added] Remote explosives store distance restriction
-<br/>[Added] Server time multipliers for day and night
-<br/>[Added] Addon-less profileNamespace server persistence
-<br/>[Added] Linux server compatibility
-<br/>[Added] Basic support for headless client
-<br/>[Changed] Independent territory capture is now group-based
-<br/>[Changed] Towns blocked if more enemies than friendlies
-<br/>[Changed] Increased ammo/fuel/repair cargo for resupply trucks
-<br/>[Changed] Increased territory capture rewards for Altis
-<br/>[Changed] Increased money mission rewards
-<br/>[Changed] Weapon loot in buildings now disabled by default
-<br/>[Changed] Mission crates loot was made more random
-<br/>[Changed] Thermal imaging is now available on UAVs
-<br/>[Changed] Increased vehicle store prices
-<br/>[Changed] Increased prices for thermal optics
-<br/>[Changed] Increased player icons up to 2000m
-<br/>[Changed] Improved antihack
-<br/>[Changed] Improved FPS
-<br/>[Fixed] Vehicle store purchase errors due to server lag
-<br/>[Fixed] Corpse created when leaving with player saving
-<br/>[Fixed] Custom vehicle damage handling not working
-<br/>[Fixed] Indie-indie spawn beacon stealing
-<br/>[Fixed] Repair kit and jerrycan distance limit
-<br/>[Fixed] Spawn beacon packing and stealing restrictions
-<br/>[Fixed] Not able to lock static weapons
-<br/>[Fixed] Unbreakable store windows
-<br/>[Fixed] Stratis airbase gunstore desk glitches
-<br/>[Fixed] Missions sometimes completing instantaneously
-<br/>[Fixed] Object ammo/fuel/repair cargo not saving
-<br/>[Fixed] Respawn menu aspect ratio on some resolutions
-<br/>[Fixed] Minor bugs with group system
-<br/>[Fixed] Minor bugs with player items
-<br/>[Fixed] Various other minor bugfixes and optimizations
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v0.9g",
-"
-<br/>[Added] - Vehicle stores
-<br/>[Added] - New lootspawner by Na_Palm, stuff in ALL buildings
-<br/>[Added] - New jets and truck added in A3 v1.14
-<br/>[Added] - New AAF vehicles added in A3 v1.08
-<br/>[Added] - New camos for Mk20 and MX in gunstores
-<br/>[Added] - Ability to push plane backwards
-<br/>[Added] - Ability to sell quadbike contents like crates
-<br/>[Added] - Abort delay during combat when player saving on
-<br/>[Changed] - Improved respawn menu
-<br/>[Changed] - Respawn now longer to preload destination
-<br/>[Changed] - Optimized player icons
-<br/>[Changed] - Optimized FPS fix
-<br/>[Changed] - Improved server persistence (requires iniDBI v1.4+)
-<br/>[Changed] - Improved player saving (server-specific)
-<br/>[Changed] - Improved base saving (server-specific)
-<br/>[Changed] - Reduced starting gear
-<br/>[Changed] - Modified some store prices
-<br/>[Changed] - Reduced initial fuel in cars and helis
-<br/>[Changed] - Removed Buzzard jet from too short runways
-<br/>[Changed] - Removed Kavala castle territory for use as base
-<br/>[Changed] - Increased vehicle repair time to 20 sec.
-<br/>[Changed] - Increased owner unlocking time to 10 sec.
-<br/>[Changed] - Toggling spawn beacon perms is now instant
-<br/>[Changed] - Improved Take option for player items
-<br/>[Changed] - Added option to cancel towing selection
-<br/>[Changed] - Added machine gunner to main mission NPCs
-<br/>[Changed] - Added grenadier to side mission NPCs
-<br/>[Fixed] - Error messages in various menus
-<br/>[Fixed] - Crash when toggling spawn beacon perms
-<br/>[Fixed] - Error when hacking warchests
-<br/>[Fixed] - Vehicle towing and lifting positions
-<br/>[Fixed] - Repair Vehicle option showing for brand new vehicles
-<br/>[Fixed] - Vest purchase price
-<br/>[Fixed] - Vest and helmet armor value
-<br/>[Fixed] - NPC leader now has launcher ammo
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v0.9f",
-"
-<br/>[Added] - Money missions
-<br/>[Added] - Sell Crate Items option at stores when moving crate
-<br/>[Changed] - Reorganized loots for crates and trucks
-<br/>[Fixed] - Broken Warchest menu
-<br/>[Fixed] - Spawn beacons not working for Independent groups
-<br/>[Fixed] - Player icons position inside buildings
-<br/>[Fixed] - MRAPs and quadbikes not spawning
-<br/>[Fixed] - Broken money rewards for territories
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v0.9e",
-"
-<br/>[Added] - Territory system
-<br/>[Added] - Jumping option (step over while running)
-<br/>[Added] - New weapons from v1.04 update
-<br/>[Changed] - Water and food now use water bottles and baked beans
-<br/>[Fixed] - Store object purchases not operating as intended
-<br/>[Fixed] - Objects purchased from stores not saving properly
-<br/>[Fixed] - Minor server-side memory leak
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v0.9d",
-"
-<br/>[Added] - Store object purchases
-<br/>[Changed] - New UI by KoS
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v0.9c",
-"
-<br/>[Changed] - Instant money pickup and drop
-<br/>[Changed] - Increased plane and heli spawning odds
-<br/>[Fixed] - FPS fix improvements
-<br/>[Fixed] - Vehicles disappearing when untowed or airdropped
-"
-]];
-
-player createDiaryRecord ["changelog",
-[
-"v0.9b",
-"
-<br/>[Initial release] - Welcome to Altis!
-"
-]];
-
 
 player createDiaryRecord ["credits",
 [
@@ -568,7 +248,7 @@ player createDiaryRecord ["infos",
 <br/>A. See the above description
 <br/>
 <br/>Q. Where can I get a gun?
-<br/>A. Weapons are found in one of three places, first in ammo crates that come as rewards from missions, inside and outside buildings, and second, in the gear section of the vehicles, which also randomly spawn around the map. The last place to find a gun would be at the gunshops located throughout the map. You can also find them on dead players whose bodies have not yet been looted.
+<br/>A. Weapons are found in one of three places, first in ammo crates that come as rewards from missions, , and second, in the gear section of the vehicles, which also randomly spawn around the map. The last place to find a gun would be at the gunshops located throughout the map. You can also find them on dead players whose bodies have not yet been looted.
 <br/>
 <br/>Q. What are the blue circles on the map?
 <br/>A. The circles represent town limits. If friendly soldiers are in a town, you can spawn there from the re-spawn menu; however if there is an enemy presence, you will not be able to spawn there.
@@ -584,5 +264,332 @@ player createDiaryRecord ["infos",
 <br/>
 <br/>Q. I saw someone breaking a rule, what do I do?
 <br/>A. Simply go into global chat and get the attention of one of the admins or visit our forums, and make a report if the offense is serious.
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Gear Levels",
+"
+<br/> When you have enough $ for A gear level, Go and apply here http://fractured-gaming.com/application-forms.php?appid=4
+<br/> When your application is recieved your gear level will be changed within 48 hours.
+<br/> Your Money will then be deducted from your account.
+<br/> To revieve a gear level, Fill out a gear level application on the forums to upgrade your gear level.
+<br/> There are 10 Levels in total.
+<br/> There are 5 Prestiege Levels. (after the 1st 10 levels)
+<br/> Prestiege Gear Levels allow you to spawn with either nothing or the bare minimum. 
+<br/> Prestiege Gear Levels are $10,000,000 per level and Prestiege level 5 is $25,000,000
+<br/> Prestiege Gear Levels are for the hardcore wasteland players with a big payoff at the end.
+<br/> The Final Prestiege level allows you to pick weapons from the VR before spawning. 
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Prestiege Level 5",
+"
+<br/><font size='16'>Prestiege Level 5</font>
+<br/><font size='15'>Cost: $25,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> Virtural Arsenal With almost every weapon in it.
+
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Prestiege Level 4",
+"
+<br/><font size='16'>Prestiege Level 3</font>
+<br/><font size='15'>Cost: $10,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> Bergen Backpack
+<br/> 45 ACP and 4 Magazines
+<br/> 2 Grenades
+
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Prestiege Level 3",
+"
+<br/><font size='16'>Prestiege Level 3</font>
+<br/><font size='15'>Cost: $10,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> Bergen Backpack
+<br/> 45 ACP and 2 Magazines
+<br/> 1 Grenade
+
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Prestiege Level 2",
+"
+<br/><font size='16'>Prestiege Level 2</font>
+<br/><font size='15'>Cost: $10,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> Bergen Backpack
+<br/> 45 ACP and 1 Magazine
+
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Prestiege Level 1",
+"
+<br/><font size='16'>Prestiege Level 1</font>
+<br/><font size='15'>Cost: $10,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> Bergen Backpack
+
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Gear Level 10",
+"
+<br/><font size='16'>Gear Level 10</font>
+<br/><font size='15'>Cost: $10,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> An Olive Carryall
+<br/> A Plate Carrier GL Rig
+<br/> A GPS
+<br/> A pair of Binoculars
+<br/> 4 Grenades
+<br/> A First Aid Kit
+<br/> A pair of Red Goggles
+<br/> An ECH Light Helmet
+<br/> A MK 14 with 5 Standard Mags a RCO and a suppressor instead of a MX Marksmen Rifle
+<br/> A 4-five .45 Pistol with an MRD Sight and suppressor instead of the ACP .45
+<br/> An RPG-42 Alamut with 1 Rocket
+<br/> You also get extra mags for the 4-five .45
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Gear Level 9",
+"
+<br/><font size='16'>Gear Level 9</font>
+<br/><font size='15'>Cost: $9,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> An Olive Carryall
+<br/> A Plate Carrier GL Rig
+<br/> A GPS
+<br/> A pair of Binoculars
+<br/> An Extra Grenade
+<br/> A First Aid Kit
+<br/> A pair of Red Goggles
+<br/> An ECH Light Helmet
+<br/> An MX Marksmen rifle with 4 Mags an RCO and a suppressor instead of a MX Carbine
+<br/> A 4-five .45 Pistol with an MRD Sight and Suppressor instead of the ACP .45
+<br/> An RPG-42 Alamut with 1 Rocket
+<br/> You also get extra mags for the 4-five .45
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Gear Level 8",
+"
+<br/><font size='16'>Gear Level 8</font>
+<br/><font size='15'>Cost: $8,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $800
+<br/> An Olive Carryall
+<br/> An Olive Tactical Vest
+<br/> A GPS
+<br/> A pair of Binoculars
+<br/> An Extra Grenade
+<br/> A First Aid Kit
+<br/> A pair of Red Goggles
+<br/> An ECH Light Helmet
+<br/> An MX Carbine with 2 Mags and a Hologsight instead of a TRG-20
+<br/> A 4-five .45 Pistol with an MRD Sight instead of the ACP .45
+<br/> An RPG-42 Alamut with 1 Rocket
+<br/> You also get extra mags for the 4-five .45
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Gear Level 7",
+"
+<br/><font size='16'>Gear Level 7</font>
+<br/><font size='15'>Cost: $7,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $700
+<br/> An Olive Carryall
+<br/> An Olive Tactical Vest
+<br/> A GPS
+<br/> A pair of Binoculars
+<br/> An Extra Grenade
+<br/> A First Aid Kit
+<br/> A pair of Red Goggles
+<br/> An ECH Light Helmet
+<br/> A TRG-20 with 2 Mags and a Hologsight and Suppressor instead of a Vermin
+<br/> A 4-five .45 Pistol with an MRD Sight instead of the ACP .45
+<br/> An RPG-42 Alamut with 1 Rocket
+<br/> You also get extra mags for the 4-five .45
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Gear Level 6",
+"
+<br/><font size='16'>Gear Level 6</font>
+<br/><font size='15'>Cost: $6,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $600
+<br/> An Olive Carryall
+<br/> An Olive Tactical Vest
+<br/> A GPS
+<br/> A pair of Binoculars
+<br/> An Extra Grenade
+<br/> A First Aid Kit
+<br/> A pair of Red Goggles
+<br/> An ECH Light Helmet
+<br/> A TRG-20 with 2 Mags and a Hologsight instead of a Vermin
+<br/> A 4-five .45 Pistol instead of the ACP .45
+<br/> An RPG-42 Alamut with 1 Rocket
+<br/> You also get extra mags for the 4-five .45
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Gear Level 5",
+"
+<br/><font size='16'>Gear Level 5</font>
+<br/><font size='15'>Cost: $5,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $500
+<br/> An Olive Carryall
+<br/> A GPS
+<br/> A pair of Binoculars
+<br/> An Extra Grenade
+<br/> A First Aid Kit
+<br/> A pair of Red Goggles
+<br/> A TRG-20 with 2 Mags and a Hologsight instead of a Vermin
+<br/> A 4-five .45 Pistol instead of the ACP .45
+<br/> An RPG-42 Alamut with 1 Rocket
+<br/> You also get extra mags for the 4-five .45
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Gear Level 4",
+"
+<br/><font size='16'>Gear Level 4</font>
+<br/><font size='15'>Cost: $4,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $400
+<br/> An Olive Carryall
+<br/> A GPS
+<br/> A pair of Binoculars
+<br/> An Extra Grenade
+<br/> A First Aid Kit
+<br/> A pair of Red Goggles
+<br/> A holosight and Suppressor on your Vermin
+<br/> A 4-five .45 Pistol instead of the ACP .45
+<br/> An RPG-42 Alamut with 1 Rocket
+<br/> You also get extra mags for the Vermin and 4-five .45
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Gear Level 3",
+"
+<br/><font size='16'>Gear Level 3</font>
+<br/><font size='15'>Cost: 3,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $300
+<br/> An Olive Carryall
+<br/> A GPS
+<br/> A pair of Binoculars
+<br/> An Extra Grenade
+<br/> A First Aid Kit
+<br/> A pair of Red Goggles
+<br/> A holosight for your Vermin
+<br/> A 4-five .45 Pistol instead of the ACP .45
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Gear Level 2",
+"
+<br/><font size='16'>Gear Level 2</font>
+<br/><font size='15'>Cost: $2,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $200
+<br/> An Olive Carryall
+<br/> A GPS
+<br/> A pair of Binoculars
+<br/> An Extra Grenade
+<br/> A First Aid Kit
+<br/> A pair of Red Goggles
+<br/> A Vermin .45 ACP + 3 Mags
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Gear Level 1",
+"
+<br/><font size='16'>Gear Level 1</font>
+<br/><font size='15'>Cost: $1,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $100
+<br/> An Olive Carryall
+<br/> A GPS
+<br/> A pair of Binoculars
+<br/> An Extra Grenade
+<br/> A First Aid Kit
+<br/> A holosight for the Sting
+<br/> You will also get extra mags for both your Sting and ACP .45
+"
+]];
+
+player createDiaryRecord ["admins",
+[
+"Admin List",
+"
+<br/><font color='#00FFEF' size='18'>Super Admins</font>
+<br/><font color='#00FFEF' size='12'>All Functions Activated (No Player Markers or Invisiblilty)</font>
+<br/> * Mokey
+<br/> * Ghostyy
+<br/> * OutlawII
+<br/> * Shine_Dwarf
+<br/> * StinkySneeze (Second Best Canadian/Third Best Sniper)
+
+<br/><font color='#0066FF' size='18'>High Admins</font>
+<br/><font color='#00FFEF' size='12'>Teleport, Spectate, Slay Delete Hacked objects</font>
+<br/> * Harry
+<br/> * Donkey
+<br/> * Zenkiton
+<br/> * Rabidtroop
+
+
+<br/><font color='#002FFF' size='18'>Low Admins</font>
+<br/><font color='#00FFEF' size='12'>Spectate, Slay, Delete Hacked Objects</font>
+<br/> * 
+<br/> * 
+
 "
 ]];

@@ -86,16 +86,13 @@ else
 /*if (UNCONSCIOUS(_unit) && !_reviveReady) then
 {
 	_headshotQueue = _unit getVariable "FAR_headshotHitPartEH_queued";
-
 	if (!isNil "_headshotQueue") then
 	{
 		_headshotQueue params [["_time",0], ["_hitPart",[]]];
-
 		if (time - _time < 0.25) then
 		{
 			_hitPart call FAR_headshotHitPartEH;
 		};
-
 		_unit setVariable ["FAR_headshotHitPartEH_queued", nil];
 	};
 };*/

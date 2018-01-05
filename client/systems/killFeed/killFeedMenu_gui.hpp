@@ -451,4 +451,3 @@ class A3W_killFeedMenu
 		};
 	};
 };
-

@@ -32,6 +32,13 @@ A3W_vehicleManagerEventCode =
 	_vehicle setVariable ["fpsFix_simulationCooloff", diag_tickTime + 20];
 } call mf_compile;
 
+A3W_incomingMissileCode =
+ {
+ 	_vehicle = _this select 0;
+	
+ 	if (player in (crew _vehicle) && (alive player)) then { playsound "alarm";};
+ } call mf_compile;
+ 
 A3W_vehicleManager =
 {
 	private ["_vehicle", "_isAnimal", "_isMotorVehicle", "_tryEnable", "_dist"];
@@ -68,6 +75,10 @@ A3W_vehicleManager =
 		{
 			_vehicle enableSimulation true;
 		};
+
+ 		if (_vehicle isKindOf "B_Heli_Light_01_dynamicLoadout_F") then {
+ 		  	_vehicle addEventHandler ["IncomingMissile", A3W_incomingMissileCode];
+ 		};
 
 		if !(_vehicle getVariable ["fpsFix_eventHandlers", false]) then
 		{

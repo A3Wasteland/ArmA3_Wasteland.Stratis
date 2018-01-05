@@ -220,6 +220,7 @@ _unit spawn
 
 		if !(_unit getVariable ["FAR_cancelAutoEject", false]) then
 		{
+		
 			if (_veh != _unit) then
 			{
 				if (_veh isKindOf "ParachuteBase") then
@@ -269,7 +270,6 @@ if (isPlayer _unit) then
 
 		ReviveGUI_IDD cutRsc ["ReviveGUI", "PLAIN"];
 		/*_reviveGUI = uiNamespace getVariable ["ReviveGUI", displayNull];
-
 		if (!isNull _reviveGUI && !FAR_Debugging) then
 		{
 			_reviveGUI displayAddEventHandler ["KeyDown", { _this select 1 == 1 }]; // blocks Esc to prevent closing

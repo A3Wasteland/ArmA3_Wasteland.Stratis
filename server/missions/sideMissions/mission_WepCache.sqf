@@ -14,7 +14,7 @@ private ["_nbUnits", "_box1", "_box2"];
 _setupVars =
 {
 	_missionType = "Aircraft Wreck";
-	_locationsArray = [ForestMissionMarkers, MissionSpawnMarkers] select (ForestMissionMarkers isEqualTo []);
+	_locationsArray = ForestMissionMarkers;
 	_nbUnits = if (missionDifficultyHard) then { AI_GROUP_LARGE } else { AI_GROUP_MEDIUM };
 };
 
@@ -24,11 +24,11 @@ _setupObjects =
 
 	_box1 = createVehicle ["Box_NATO_Wps_F", _missionPos, [], 5, "None"];
 	_box1 setDir random 360;
-	[_box1, "mission_USSpecial"] call fn_refillbox;
+	[_box1, "mission_USSpecial"] call randomCrateLoadOut;
 
 	_box2 = createVehicle ["Box_East_Wps_F", _missionPos, [], 5, "None"];
 	_box2 setDir random 360;
-	[_box2, "mission_USLaunchers"] call fn_refillbox;
+	[_box2, "mission_USLaunchers"] call randomCrateLoadOut;
 
 	{ _x setVariable ["R3F_LOG_disabled", true, true] } forEach [_box1, _box2];
 

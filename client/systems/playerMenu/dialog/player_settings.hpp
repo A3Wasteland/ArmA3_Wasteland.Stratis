@@ -188,7 +188,7 @@ class playerSettings {
 			onButtonClick = "setViewDistance 5000;";
 			x = 0.02; y = 0.60;
 			w = 0.125; h = 0.033 * safezoneH;
-		};*/
+		};
 
 		class btnDistanceCHVD : w_RscButton {
 			idc = -1;
@@ -196,7 +196,7 @@ class playerSettings {
 			onButtonClick = "call CHVD_fnc_openDialog";
 			x = 0.02; y = 0.57;
 			w = 0.125; h = 0.033 * safezoneH;
-		};
+		};*/
 
 		class btnKillfeed : w_RscButton {
 			idc = -1;
@@ -204,6 +204,21 @@ class playerSettings {
 			onButtonClick = "with missionNamespace do { [] call A3W_fnc_killFeedMenu }";
 			x = 0.158; y = 0.57;
 			w = 0.125; h = 0.033 * safezoneH;
+		};
+		class btnDistanceEffects : w_RscButton {
+			idc = -1;
+			text = "Effects";
+			onButtonClick = "[] execVM 'addons\disableEnvironment\disableEnvironment.sqf'";
+			x = 0.158; y = 0.5;
+			w = 0.125; h = 0.033 * safezoneH;
+		};
+		
+		class TOParmaInfoButton : w_RscButton {
+			idc = 1;
+			text = "FG Rules";
+			onButtonClick = "[] execVM 'addons\TOParmaInfo\loadToparmaInfo.sqf'";
+			x = 0.228; y = 0.254;
+			w = 0.225; h = 0.033 * safezoneH;
 		};
 	};
 };

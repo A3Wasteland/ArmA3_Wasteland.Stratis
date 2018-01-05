@@ -46,6 +46,9 @@ if (hasInterface) then
 		case (["VehStore", _npcName] call _startsWith):
 		{
 			_npc addAction ["<img image='client\icons\store.paa'/> Open Vehicle Store", "client\systems\vehicleStore\loadVehicleStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION];
+			_npc addAction ["<img image='client\icons\repair.paa'/> Service Vehicle", "client\systems\selling\serviceVehicle.sqf", [], 0.97, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
+			_npc addAction ["<img image='client\icons\r3f_unlock.paa'/> License Vehicle", "client\systems\selling\licenseVehicle.sqf", [], 0.97, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
+			_npc addAction ["<img image='client\icons\money.paa'/> Sell Vehicle", "client\systems\selling\sellVehicle.sqf", [], 0.97, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
 		};
 	};
 
@@ -192,7 +195,7 @@ if (isServer) then
 			else
 			{
 				_bPos = AGLtoASL _bPos;
-
+				
 				if (!isNil "_frontOffset") then
 				{
 					_bPos = _bPos vectorAdd ([[0, _frontOffset, 0], -_pDir] call BIS_fnc_rotateVector2D);
@@ -206,7 +209,7 @@ if (isServer) then
 			_npc enableSimulation false;
 
 			_desk = [_npc, getPosASL _npc, _pDir, _deskDirMod] call _createStoreFurniture;
-			_npc setVariable ["storeNPC_cashDesk", netId _desk, true];
+ 			_npc setVariable ["storeNPC_cashDesk", netId _desk, true];
 		};
 	} forEach (call storeOwnerConfig);
 };

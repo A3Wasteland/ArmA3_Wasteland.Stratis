@@ -7,6 +7,11 @@
 private ["_player", "_uniform", "_vest", "_headgear", "_goggles"];
 _player = _this;
 
+ // Gear Loadout  
+ _gearsEnabled = ["A3W_gearsEnabled"] call isConfigOn;
+ _gearLevel = player getVariable ["gear", 0];
+
+
 // Clothing is now defined in "client\functions\getDefaultClothing.sqf"
 
 _uniform = [_player, "uniform"] call getDefaultClothing;
@@ -33,15 +38,17 @@ if (hmd _player != "") then { _player unlinkItem hmd _player };
 // Add NVG
 _player linkItem "NVGoggles";
 
-_player addBackpack "B_AssaultPack_rgr";
+_player addBackpack "B_Bergen_rgr";
 
+_player addMagazine "30Rnd_9x21_Mag";
 _player addMagazine "9Rnd_45ACP_Mag";
+_player addWeapon "SMG_02_F";
+_player addMagazine "30Rnd_9x21_Mag";
 _player addWeapon "hgun_ACPC2_F";
 _player addMagazine "9Rnd_45ACP_Mag";
-_player addMagazine "9Rnd_45ACP_Mag";
-_player addMagazine "9Rnd_45ACP_Mag";
 _player addItem "FirstAidKit";
-_player selectWeapon "hgun_ACPC2_F";
+_player selectWeapon "SMG_02_F";
+_player addMagazine "HandGrenade";
 
 switch (true) do
 {
@@ -60,6 +67,12 @@ switch (true) do
 		_player addWeapon "Rangefinder";
 	};
 };
+
+if (_gearsEnabled && _gearLevel > 0) then
+	
+	{ 
+		execVM "addons\gear\gearCheck.sqf" ;
+	};
 
 if (_player == player) then
 {

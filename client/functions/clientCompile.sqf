@@ -64,6 +64,7 @@ unitHandleDamage = "client\functions\unitHandleDamage.sqf" call mf_compile;
 updateTerritoryMarkers = "territory\client\updateTerritoryMarkers.sqf" call mf_compile;
 vehicleSideCfg = "client\functions\vehicleSideCfg.sqf" call mf_compile;
 weaponDisassembledEvent = "client\functions\weaponDisassembledEvent.sqf" call mf_compile;
+deleteBeacon = "client\items\beacon\deleteBeacon.sqf" call mf_compile;
 
 // Player details and actions
 loadPlayerMenu = "client\systems\playerMenu\init.sqf" call mf_compile;
@@ -91,6 +92,7 @@ teamkillAction = "client\functions\doTeamKillAction.sqf" call mf_compile;
 teamkillMessage = "client\functions\showTeamKillMessage.sqf" call mf_compile;
 
 // Dialog compiles
+loadTOParmaInfo = "addons\TOParmaInfo\loadTOParmaInfo.sqf" call mf_compile;
 client_respawnDialog = "client\systems\playerMenu\dialog\loadRespawnDialog.sqf" call mf_compile;
 fn_checkStoreItemDLC = "client\functions\fn_checkStoreItemDLC.sqf" call mf_compile;
 fn_respawnTimer = "client\systems\scoreboard\fn_respawnTimer.sqf" call mf_compile;

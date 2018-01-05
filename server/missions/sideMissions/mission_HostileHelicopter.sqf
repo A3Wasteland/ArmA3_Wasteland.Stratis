@@ -37,18 +37,18 @@ _setupObjects =
 		_direction = _this select 2;
 		_variant = _type param [1,"",[""]];
 
-		if (_type isEqualType []) then
-		{
-			_type = _type select 0;
-		};
+ 		if (_type isEqualType []) then
+ 		{
+ 			_type = _type select 0;
+ 		};
 
 		_vehicle = createVehicle [_type, _position, [], 0, "FLY"];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 
 		if (_variant != "") then
-		{
-			_vehicle setVariable ["A3W_vehicleVariant", _variant, true];
-		};
+ 		{
+ 			_vehicle setVariable ["A3W_vehicleVariant", _variant, true];
+ 		};
 
 		[_vehicle] call vehicleSetup;
 
@@ -124,7 +124,7 @@ _setupObjects =
 	_missionPos = getPosATL leader _aiGroup;
 
 	_missionPicture = getText (configFile >> "CfgVehicles" >> (_vehicleClass param [0,""]) >> "picture");
-	_vehicleName = getText (configFile >> "CfgVehicles" >> (_vehicleClass param [0,""]) >> "displayName");
+ 	_vehicleName = getText (configFile >> "CfgVehicles" >> (_vehicleClass param [0,""]) >> "displayName");
 
 	_missionHintText = format ["An armed <t color='%2'>%1</t> is patrolling the island. Intercept it and recover its cargo!", _vehicleName, sideMissionColor];
 
@@ -157,11 +157,11 @@ _successExec =
 
 		_box1 = createVehicle ["Box_NATO_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
 		_box1 setDir random 360;
-		[_box1, "mission_USSpecial"] call fn_refillbox;
+		[_box1, "mission_USSpecial"] call randomCrateLoadOut;
 
 		_box2 = createVehicle ["Box_East_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
 		_box2 setDir random 360;
-		[_box2, "mission_USLaunchers"] call fn_refillbox;
+		[_box2, "mission_USLaunchers"] call randomCrateLoadOut;
 	};
 
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";

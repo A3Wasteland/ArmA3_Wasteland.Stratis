@@ -86,22 +86,23 @@ _loadedMags = [];
 } forEach magazinesAmmoFull _player;
 
 ((uniformContainer _player) call fn_containerCargoToPairs) params ["_uniWeps", "_uniMags", "_uniItems"];
-((vestContainer _player) call fn_containerCargoToPairs) params ["_vestWeps", "_vestMags", "_vestItems"];
-((backpackContainer _player) call fn_containerCargoToPairs) params ["_backWeps", "_backMags", "_backItems"];
+ ((vestContainer _player) call fn_containerCargoToPairs) params ["_vestWeps", "_vestMags", "_vestItems"];
+ ((backpackContainer _player) call fn_containerCargoToPairs) params ["_backWeps", "_backMags", "_backItems"];
+ 
 
 { _data pushBack _x } forEach
 [
 	["UniformWeapons", _uniWeps],
-	["UniformItems", _uniItems],
-	["UniformMagazines", _uniMags],
+ 	["UniformItems", _uniItems],
+ 	["UniformMagazines", _uniMags],
 
 	["VestWeapons", _vestWeps],
-	["VestItems", _vestItems],
-	["VestMagazines", _vestMags],
+ 	["VestItems", _vestItems],
+ 	["VestMagazines", _vestMags],
 
 	["BackpackWeapons", _backWeps],
-	["BackpackItems", _backItems],
-	["BackpackMagazines", _backMags],
+ 	["BackpackItems", _backItems],
+ 	["BackpackMagazines", _backMags],
 
 	["LoadedMagazines", _loadedMags]
 ];

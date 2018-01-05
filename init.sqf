@@ -15,6 +15,7 @@
 #endif
 
 enableSaving [false, false];
+
 A3W_sessionTimeStart = diag_tickTime;
 
 _descExtPath = str missionConfigFile;
@@ -96,6 +97,12 @@ if (hasInterface || isServer) then
 	[] execVM "addons\outlw_magrepack\MagRepack_init.sqf";
 	[] execVM "addons\lsd_nvg\init.sqf";
 	[] execVM "addons\stickyCharges\init.sqf";
+	[] execVM "addons\HvT\HvT.sqf";
+	[] execVM "addons\scripts\servercredits.sqf";
+	[] execVM "addons\laptop\init.sqf";
+	[] execVM "addons\Grenades\initGrenades.sqf";
+	[] execVM "addons\outOfBounds\outOfBounds.sqf";
+	
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 };
 
@@ -106,3 +113,4 @@ if (hasInterface || isServer) then
 	"thisTrigger setTriggerTimeout [30,30,30,false]",
 	"{if (markerShape _x == 'POLYLINE') then {deleteMarker _x}} forEach allMapMarkers"
 ];
+

@@ -42,7 +42,7 @@ _minimumFog = 0;
 
 // Fog intensity never exceeds this value. Must be between 0 and 1 and greater than or equal to _minimumFog
 // (0 = no fog, 1 = pea soup). (Suggested value: 0.2).
-_maximumFog = 0.2;
+_maximumFog = 0;
 
 // New ArmA3 facilities added by Bewilderbeest - not currently taken into account due to engine syncing bugs and weird behavior
 _minimumFogDecay = 0.0;
@@ -60,11 +60,11 @@ _maximumOvercast = 1;
 
 // When raining, rain intensity never falls below this value. Must be between 0 and 1 and less than or equal to _maximumRain
 // (0 = no rain, 1 = maximum rain intensity). (Suggested value: 0.1);
-_minimumRain = 0.1;
+_minimumRain = 0;
 
 // When raining, rain intensity never exceeds this value. Must be between 0 and 1 and greater than or equal to _minimumRain
 // (0 = no rain, 1 = maximum rain intensity). (Suggested value: 1);
-_maximumRain = 1;
+_maximumRain = 0.05;
 
 // Wind vector strength never falls below this value. Must be greater or equal to 0 and less than or equal to _maximumWind.
 // (Suggested value: 0);

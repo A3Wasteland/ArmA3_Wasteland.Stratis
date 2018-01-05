@@ -31,7 +31,6 @@
 		CHVD_footTerrain = profileNamespace getVariable ["CHVD_footTerrain", getTerrainGrid];
 		CHVD_carTerrain = profileNamespace getVariable ["CHVD_carTerrain", getTerrainGrid];
 		CHVD_airTerrain = profileNamespace getVariable ["CHVD_airTerrain", getTerrainGrid];
-
 		if (!CHVD_allowNoGrass) then
 		{
 			CHVD_footTerrain = CHVD_footTerrain min 10 max 3.125;

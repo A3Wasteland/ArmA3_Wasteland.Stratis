@@ -154,6 +154,7 @@ if (isServer) then
 		"A3W_uavControl",
 		"A3W_disableUavFeed",
 		"A3W_townSpawnCooldown",
+		"A3W_maxSpawnBeacons",
 		"A3W_survivalSystem",
 		"A3W_extDB_GhostingAdmins",
 		"A3W_extDB_SaveUnlockedObjects",
@@ -171,7 +172,8 @@ if (isServer) then
 		"A3W_vehicleLocking",
 		"A3W_disableBuiltInThermal",
 		"A3W_customDeathMessages",
-		"A3W_headshotNoRevive"
+		"A3W_headshotNoRevive",
+		"gearLevel"
 	];
 
 	addMissionEventHandler ["PlayerConnected", fn_onPlayerConnected];
@@ -551,4 +553,6 @@ if !(["A3W_hcObjCleanup"] call isConfigOn) then
 {
 	// Start clean-up loop
 	execVM "server\WastelandServClean.sqf";
+	
 };
+[] ExecVM "addons\cleanStores\cleanStores.sqf";

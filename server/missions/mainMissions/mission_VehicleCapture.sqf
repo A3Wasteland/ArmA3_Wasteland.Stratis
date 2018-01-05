@@ -21,10 +21,10 @@ _setupObjects =
 	_vehicle = [_vehicleClass, _missionPos] call createMissionVehicle;
 
 	if (_vehicleClass isEqualType []) then
-	{
-		_variant = _vehicleClass param [1,"",[""]];
-		_vehicleClass = _vehicleClass select 0;
-	};
+ 	{
+ 		_variant = _vehicleClass param [1,"",[""]];
+ 		_vehicleClass = _vehicleClass select 0;
+ 	};
 
 	/*switch (true) do
 	{

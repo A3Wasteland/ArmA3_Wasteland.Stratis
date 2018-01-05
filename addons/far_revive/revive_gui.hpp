@@ -82,17 +82,14 @@ class ReviveGUI : IGUIBack
 		text = "Give up";
 		sizeEx = 0.04 * TEXT_SCALE;
 		action = "execVM 'client\functions\confirmSuicide.sqf'";
-
 		colorFocused[] = {0.3,0,0,1};
 		colorBackground[] = {0.5,0,0,1};
 		colorBackgroundActive[] = {0.8,0,0,1};
-
 		// below RevProgBar
 		#define RevSuicideBtn_W (0.10 * X_SCALE)
 		#define RevSuicideBtn_H (0.035 * Y_SCALE)
 		#define RevSuicideBtn_X (RevProgBar_X + CENTER(RevProgBar_W, RevSuicideBtn_W)) // centered under RevProgBar
 		#define RevSuicideBtn_Y (RevProgBar_Y + RevProgBar_H + RevBORDER_Y) // below RevProgBar
-
 		x = RevSuicideBtn_X;
 		y = RevSuicideBtn_Y;
 		w = RevSuicideBtn_W;
@@ -164,18 +161,15 @@ class ReviveGUI : IGUIBack
 	{
 		idc = RevLastResortBtn_IDC;
 		action = "execVM 'addons\far_revive\FAR_lastResort.sqf'";
-
 		colorFocused[] = {0,0,0,0};
 		colorBackground[] = {0,0,0,0};
 		colorBackgroundActive[] = {1,0,0,1};
 		colorShadow[] = {0,0,0,0};
-
 		// top right
 		#define RevLastResortBtn_W (0.02 * X_SCALE)
 		#define RevLastResortBtn_H (0.02 * Y_SCALE)
 		#define RevLastResortBtn_X ((safeZoneXAbs + safeZoneWAbs) - (RevLastResortBtn_W / 2))
 		#define RevLastResortBtn_Y (SZ_TOP - (RevLastResortBtn_H / 2))
-
 		x = RevLastResortBtn_X;
 		y = RevLastResortBtn_Y;
 		w = RevLastResortBtn_W;

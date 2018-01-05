@@ -36,6 +36,19 @@ setLocationObjects = [_path, "setLocationObjects.sqf"] call mf_compile;
 setLocationState = [_path, "setLocationState.sqf"] call mf_compile;
 setMissionState = [_path, "setMissionState.sqf"] call mf_compile;
 
+//non-vanilla missions
+createsniperGroup = [_path, "createUnits\sniperGroup.sqf"] call mf_compile; 
+createsmugglerGroup = [_path, "createUnits\smugglerGroup.sqf"] call mf_compile;
+createCustomGroup3 = [_path, "createUnits\customGroup3.sqf"] call mf_compile;
+createRandomPilot = [_path, "createUnits\createRandomPilot.sqf"] call mf_compile;
+createWaitCondition = [_path, "createWaitCondition.sqf"] call mf_compile;
+createGroup1= [_path, "createUnits\Group1.sqf"] call mf_compile;
+createGroup2= [_path, "createUnits\Group2.sqf"] call mf_compile;
+createGroup3= [_path, "createUnits\Group3.sqf"] call mf_compile;
+createGroup4= [_path, "createUnits\Group4.sqf"] call mf_compile;
+createGroup5= [_path, "createUnits\Group5.sqf"] call mf_compile;
+randomSoldierLoadOut = [_path, "createUnits\randomSoldierLoadOut.sqf"] call mf_compile;
+
 //Function Compiles
 _path = "server\functions";
 A3W_fnc_checkHackedVehicles = [_path, "checkHackedVehicles.sqf"] call mf_compile;
@@ -59,9 +72,8 @@ fn_refillTruck = [_path, "fn_refilltruck.sqf"] call mf_compile;
 fn_replaceMagazines = [_path, "fn_replaceMagazines.sqf"] call mf_compile;
 fn_replaceWeapons = [_path, "fn_replaceWeapons.sqf"] call mf_compile;
 fn_updatePlayerScore = [_path, "fn_updatePlayerScore.sqf"] call mf_compile;
-fn_vehicleGetInOutServer = [_path, "fn_vehicleGetInOutServer.sqf"] call mf_compile;
-fn_vehicleKilledServer = [_path, "fn_vehicleKilledServer.sqf"] call mf_compile;
 hintBroadcast = [_path, "hintBroadcast.sqf"] call mf_compile;
+fn_invis = [_path, "invis.sqf"] call mf_compile;
 parachuteLiftedVehicle = [_path, "parachuteLiftedVehicle.sqf"] call mf_compile;
 playerRespawnServer = [_path, "playerRespawnServer.sqf"] call mf_compile;
 processGroupInvite = [_path, "processGroupInvite.sqf"] call mf_compile;
@@ -79,8 +91,11 @@ teamSwitchUnlock = [_path, "teamSwitchUnlock.sqf"] call mf_compile;
 updateConnectingClients = "territory\client\updateConnectingClients.sqf" call mf_compile;
 vehicleRepair = [_path, "vehicleRepair.sqf"] call mf_compile;
 vehicleSetup = [_path, "vehicleSetup.sqf"] call mf_compile;
+fn_vehicleGetInOutServer = [_path, "fn_vehicleGetInOutServer.sqf"] call mf_compile;
+fn_vehicleKilledServer = [_path, "fn_vehicleKilledServer.sqf"] call mf_compile;
 waitUntilBagTaken = [_path, "waitUntilBagTaken.sqf"] call mf_compile;
 weaponDisassembledServer = [_path, "weaponDisassembledServer.sqf"] call mf_compile;
+randomCrateLoadOut = [_path, "randomCrateLoadOut.sqf"] call mf_compile;
 
 //Player Management
 server_playerDied = [_path, "serverAiDied.sqf"] call mf_compile;

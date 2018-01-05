@@ -82,7 +82,7 @@ switch (true) do
 	{
 		_vehicle animate ["HideServices", 0];
 	};
-	case ({_class isKindOf _x} count ["B_Heli_Light_01_F", "B_Heli_Light_01_armed_F"] > 0):
+	case ({_class isKindOf _x} count ["B_Heli_Light_01_F", "B_Heli_Light_01_dynamicLoadout_F"] > 0):
 	{
 		// Add flares to poor MH-9's
 		_vehicle addWeaponTurret ["CMFlareLauncher", [-1]];
@@ -129,4 +129,28 @@ switch (true) do
 		// Add quadbike horn to karts
 		_vehicle addWeaponTurret ["MiniCarHorn", [-1]];
 	};
+};
+
+// Double minigun ammo to compensate for Bohemia's incompetence (http://feedback.arma3.com/view.php?id=21613)
+if (_brandNew) then
+{
+	{
+		_x params ["_mag", "_path"];
+
+		if (_mag select [0,5] != "Pylon" && (toLower getText (configFile >> "CfgMagazines" >> _mag >> "ammo")) find "_minigun_" != -1) then
+		{
+			_vehicle addMagazineTurret [_mag, _path];
+		};
+	} forEach magazinesAllTurrets _vehicle;
+
+	private "_magCfg";
+
+	{
+		_magCfg = configFile >> "CfgMagazines" >> _x;
+
+		if ((toLower getText (_magCfg >> "ammo")) find "_minigun_" != -1) then
+		{
+			_vehicle setAmmoOnPylon [_forEachIndex + 1, 2 * getNumber (_magCfg >> "count")];
+		};
+	} forEach getPylonMagazines _vehicle;
 };

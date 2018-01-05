@@ -505,6 +505,64 @@ class w_RscXSliderH
 	//onSliderPosChanged = "call stuff";
 };
 
+class RscHTML
+{
+     idc = -1;
+ 	 type = CT_HTML;
+ 	 style = ST_LEFT;
+ 	 colorText[] = {Dlg_Color_White, 1};
+     colorLink[] = {0.05, 0.2, 0.05, 1};
+     colorBold[] = {0, 1, 1, 1};
+     colorBackground[] = {0, 0, 0, 0};
+     colorLinkActive[] = {0, 0, 0.2, 1};
+     colorPicture[] = {Dlg_Color_Black, 1};
+     colorPictureLink[] = {Dlg_Color_Black, 1};
+     colorPictureSelected[] = {Dlg_Color_Black, 1};
+     colorPictureBorder[] = {Dlg_Color_Black, 1};
+ 	 x = 0;
+ 	 y = 0;
+ 	 w = 1;
+ 	 h = 1;
+ 	 filename = "";
+ 	 prevPage = "\ca\ui\data\arrow_left_ca.paa";
+     nextPage = "\ca\ui\data\arrow_right_ca.paa";
+ 
+     
+     class HeadingStyle {
+         font = "PuristaBold";
+         fontBold = "TahomaB";
+         sizeEx = Dlg_TEXTHGT;
+     };
+     
+     class H1: HeadingStyle {
+         sizeEx = Dlg_TEXTHGT * 1.5;
+     };
+     
+     class H2: HeadingStyle {
+         sizeEx = Dlg_TEXTHGT * 1.4;
+     };
+     
+     class H3: HeadingStyle {
+         sizeEx = Dlg_TEXTHGT * 1.3;
+     };
+     
+     class H4: HeadingStyle {
+         sizeEx = Dlg_TEXTHGT * 1.2;
+     };
+     
+     class H5: HeadingStyle {
+         sizeEx = Dlg_TEXTHGT * 1.1;
+     };
+     
+     class H6: HeadingStyle {
+         sizeEx = Dlg_TEXTHGT;
+     };
+     
+     class P: HeadingStyle {
+        sizeEx = Dlg_TEXTHGT;
+     };
+ };
+ 
 class w_RscMapControl
 {
 	type = CT_MAP_MAIN;
