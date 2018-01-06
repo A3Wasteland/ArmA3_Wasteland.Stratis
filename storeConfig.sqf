@@ -118,21 +118,21 @@ rifleArray = compileFinal str
 	["Cyrus Rifle (Tan)", "srifle_DMR_05_tan_f", 1750],
 
 	// Sniper Rifles
-<<<<<<< HEAD
+
 	["M320 LRR Sniper", "srifle_LRR_LRPS_F", 2000],
 	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_LRPS_F", 2000],
 	["M320 LRR Sniper (Tropic)", "srifle_LRR_tna_LRPS_F", 2000],
 	["GM6 Lynx Sniper", "srifle_GM6_LRPS_F", 2100],
 	["GM6 Lynx Sniper (Camo)", "srifle_GM6_camo_LRPS_F", 2100],
 	["GM6 Lynx Sniper (G Hex)", "srifle_GM6_ghex_LRPS_F", 2100],
-=======
+
 	["M320 LRR Sniper", "srifle_LRR_LRPS_F", 1000],
 	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_LRPS_F", 1200],
 	["M320 LRR Sniper (Tropic)", "srifle_LRR_tna_LRPS_F", 1200, "noDLC"],
 	["GM6 Lynx Sniper", "srifle_GM6_LRPS_F", 1250],
 	["GM6 Lynx Sniper (Camo)", "srifle_GM6_camo_LRPS_F", 1500],
 	["GM6 Lynx Sniper (G Hex)", "srifle_GM6_ghex_LRPS_F", 1500, "noDLC"],
->>>>>>> upstream/dev
+
 
 	["ASP-1 Kir Rifle", "srifle_DMR_04_F", 2000],
 	["ASP-1 Kir Rifle (Tan)", "srifle_DMR_04_tan_F", 2000]
@@ -346,7 +346,7 @@ accessoriesArray = compileFinal str
 	["Suppressor 6.5mm (Khaki)", "muzzle_snds_H_khk_F", 100, "item", "noDLC"],
 	["Suppressor 6.5mm (Sand)", "muzzle_snds_H_snd_F", 100, "item", "noDLC"],
 	["Suppressor 6.5mm LMG", "muzzle_snds_H_MG", 125, "item"],
-<<<<<<< HEAD
+
 	["Suppressor 6.5mm LMG (Black)", "muzzle_snds_H_MG_blk_F", 125, "item"],
 	["Suppressor 6.5mm LMG (Khaki)", "muzzle_snds_H_MG_khk_F", 125, "item"],
 	["Suppressor Type 115", "muzzle_snds_65_TI_blk_F", 125, "item"],
@@ -360,7 +360,7 @@ accessoriesArray = compileFinal str
 	["Suppressor .338 (Sand)", "muzzle_snds_338_sand", 500, "item"],
 	["Suppressor 9.3mm", "muzzle_snds_93mmg", 600, "item"],
 	["Suppressor 9.3mm (Tan)", "muzzle_snds_93mmg_tan", 600, "item"],
-=======
+
 	["Suppressor 6.5mm LMG (Black)", "muzzle_snds_H_MG_blk_F", 125, "item", "noDLC"],
 	["Suppressor 6.5mm LMG (Khaki)", "muzzle_snds_H_MG_khk_F", 125, "item", "noDLC"],
 	["Suppressor 6.5mm Stealth", "muzzle_snds_65_TI_blk_F", 125, "item"],
@@ -374,7 +374,7 @@ accessoriesArray = compileFinal str
 	["Suppressor .338 (Sand)", "muzzle_snds_338_sand", 175, "item"],
 	["Suppressor 9.3mm", "muzzle_snds_93mmg", 175, "item"],
 	["Suppressor 9.3mm (Tan)", "muzzle_snds_93mmg_tan", 175, "item"],
->>>>>>> upstream/dev
+
 	["Bipod (NATO)", "bipod_01_F_blk", 100, "item", "noDLC"],
 	["Bipod (CSAT)", "bipod_02_F_blk", 100, "item", "noDLC"],
 	["Bipod (AAF)", "bipod_03_F_blk", 100, "item", "noDLC"],
@@ -1087,15 +1087,15 @@ boatsArray = compileFinal str
 	["Speedboat HMG (CSAT)", "O_Boat_Armed_01_hmg_F", 4000, "boat", "SKIPSAVE"],
 	["Speedboat Minigun (NATO)", "B_Boat_Armed_01_minigun_F", 4000, "boat", "SKIPSAVE"],
 	["Speedboat Minigun (AAF)", "I_Boat_Armed_01_minigun_F", 4000, "boat", "SKIPSAVE"],
-<<<<<<< HEAD
+
 	["SDV Submarine (NATO Assault)", "B_SDV_01_F", 5000, "submarine", "SKIPSAVE"],
 	["SDV Submarine (CSAT)", "O_SDV_01_F", 1000, "submarine", "SKIPSAVE"],
 	["SDV Submarine (AAF)", "I_SDV_01_F", 1000, "submarine", "SKIPSAVE"]
-=======
+
 	["SDV Submarine (NATO)", "B_SDV_01_F", 1500, "submarine", "SKIPSAVE"],
 	["SDV Submarine (CSAT)", "O_SDV_01_F", 1500, "submarine", "SKIPSAVE"],
 	["SDV Submarine (AAF)", "I_SDV_01_F", 1500, "submarine", "SKIPSAVE"]
->>>>>>> upstream/dev
+
 ];
 
 allVehStoreVehicles = compileFinal str (call landArray + call armoredArray + call tanksArray + call helicoptersArray + call planesArray + call boatsArray);
@@ -1340,8 +1340,8 @@ colorsArray = compileFinal str
 		"APC_Wheeled_03_base_F",
 		[
 			["Guerilla 1 (Gorgon)", ["Guerilla_01"]],
-+			["Guerilla 2 (Gorgon)", ["Guerilla_02"]],
-+			["Guerilla 3 (Gorgon)", ["Guerilla_03"]],
+			["Guerilla 2 (Gorgon)", ["Guerilla_02"]],
+			["Guerilla 3 (Gorgon)", ["Guerilla_03"]],
 			["Tan (Gorgon)", [
 				[0, _gorgonDir + "apc_wheeled_03_ext_co.paa"],
 				[1, _gorgonDir + "apc_wheeled_03_ext2_co.paa"],

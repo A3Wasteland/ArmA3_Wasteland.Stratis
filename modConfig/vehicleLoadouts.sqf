@@ -369,7 +369,7 @@ switch (true) do
 		};	
 	};
 	
-	// Subs NATO
+/*	// Subs NATO
 	case (_class isKindOf "B_SDV_01_F"):
 	{
 		_mags =
@@ -393,7 +393,7 @@ switch (true) do
 			["Laserdesignator_mounted", [0]]
 			
 		];
-	};
+	};*/
 	//Ghosthawk
 	case (_class isKindOf "B_Heli_Transport_01_camo_F"):
 	{
@@ -415,9 +415,9 @@ switch (true) do
 			
 		];
 	};
-<<<<<<< HEAD
+
 };
-=======
+
 
 	// SDV SDAR turret
 	case (_class isKindOf "SDV_01_base_F"):
@@ -442,4 +442,4 @@ switch (true) do
 		];
 	};
 };
->>>>>>> upstream/dev
+
