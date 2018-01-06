@@ -369,8 +369,8 @@ switch (true) do
 		};	
 	};
 	
-/*	// Subs NATO
-	case (_class isKindOf "B_SDV_01_F"):
+	// Subs NATO
+	/*case (_class isKindOf "B_SDV_01_F"):
 	{
 		_mags =
 		[
@@ -416,7 +416,7 @@ switch (true) do
 		];
 	};
 
-};
+
 
 
 	// SDV SDAR turret
