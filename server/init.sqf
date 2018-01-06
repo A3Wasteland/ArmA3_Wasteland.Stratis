@@ -171,9 +171,13 @@ if (isServer) then
 		"A3W_privateParkingCost",
 		"A3W_vehicleLocking",
 		"A3W_disableBuiltInThermal",
+<<<<<<< HEAD
 		"A3W_customDeathMessages",
 		"A3W_headshotNoRevive",
 		"gearLevel"
+=======
+		"A3W_headshotNoRevive"
+>>>>>>> upstream/dev
 	];
 
 	addMissionEventHandler ["PlayerConnected", fn_onPlayerConnected];
