@@ -74,7 +74,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			if (count _results > 0) then
 			{
 				_itemEntry = _results select 0;
-				_marker = _marker + "_seaSpawn";
+				_marker = _marker + (["_seaSpawn","_landSpawn"] select (markerType (_marker + "_seaSpawn") isEqualTo "")); // allow boat on landSpawn if no seaSpawn
 				_seaSpawn = true;
 			};
 		};
@@ -136,9 +136,10 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			}
 			else // normal spawn
 			{
-				_safePos = _markerPos findEmptyPosition [0, 50, _class];
+				_safePos = _markerPos findEmptyPosition [0, 50, [_class, "B_Truck_01_transport_F"] select (!surfaceIsWater _markerPos && _seaSpawn)]; // use HEMTT in findEmptyPosition for boats on lands 
 				if (count _safePos == 0) then { _safePos = _markerPos };
 				_spawnPosAGL = _safePos;
+				if (_seaSpawn) then { _safePos vectorAdd [0,0,0.05] };
 			};
 
 			// delete wrecks near spawn
@@ -238,6 +239,34 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			_object setVariable ["allowDamage", _isDamageable, true];
 
 			clearBackpackCargoGlobal _object;
+
+			// give diving gear to RHIB, Speedboat, and SDV
+			if ({_object isKindOf _x} count ["Boat_Transport_02_base_F","Boat_Armed_01_base_F","SDV_01_base_F"] > 0) then
+			{
+				switch (side _player) do
+				{
+					case BLUFOR:
+					{
+						_object addItemCargoGlobal ["U_B_Wetsuit", 1];
+						_object addItemCargoGlobal ["V_RebreatherB", 1];
+					};
+					case OPFOR:
+					{
+						_object addItemCargoGlobal ["U_O_Wetsuit", 1];
+						_object addItemCargoGlobal ["V_RebreatherIR", 1];
+					};
+					default
+					{
+						_object addItemCargoGlobal ["U_I_Wetsuit", 1];
+						_object addItemCargoGlobal ["V_RebreatherIA", 1];
+					};
+				};
+
+				_object addItemCargoGlobal ["G_Diving", 1];
+				_object addWeaponCargoGlobal ["arifle_SDAR_F", 1];
+				_object addMagazineCargoGlobal ["20Rnd_556x45_UW_mag", 4];
+				_object addMagazineCargoGlobal ["30Rnd_556x45_Stanag", 2];
+			};
 
 			if (_skipSave) then
 			{
