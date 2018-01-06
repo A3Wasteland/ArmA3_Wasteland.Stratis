@@ -50,7 +50,8 @@ if (hasInterface) then
 		_loopForever = true;
 		while {_loopForever} do
 		{
-			waitUntil {uiSleep 0.1; alive player && !playerSpawning && !respawnDialogActive};
+			//waitUntil {uiSleep 0.1; alive player && !playerSpawning && !respawnDialogActive};
+			waitUntil {uiSleep 0.1; alive player && !(player getVariable ["playerSpawning",true]) && !respawnDialogActive};
 			if (alive player) then
 			{
 				_outOfBounds = !(player inArea "playableArea");
