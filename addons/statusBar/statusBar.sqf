@@ -20,7 +20,7 @@ ZGO_StatusEnabled = true; // LOL ^^
 
 	while {true} do
 	{
-		uisleep 5;
+		uisleep 1;
 		if !(ZGO_StatusEnabled) then
 		{
 			_rscLayer = "RscWastelandStatusBar" call BIS_fnc_rscLayer;
