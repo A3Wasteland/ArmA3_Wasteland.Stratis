@@ -13,7 +13,7 @@ private ["_MoneyShipment", "_moneyAmount", "_convoys", "_vehChoices", "_moneyTex
 
 _setupVars =
 {
-	_locationsArray = LandConvoyPaths;
+	// _locationsArray = nil;
 
 	// Money Shipments settings
 	// Difficulties : Min = 1, Max = infinite
@@ -24,7 +24,7 @@ _setupVars =
 	[
 		// Easy
 		[
-			"Light Money Shipment", // Marker text
+			"Small Money Shipment", // Marker text
 			100000, // Money
 			[
 				[ // NATO convoy
@@ -127,7 +127,7 @@ _setupVars =
 _setupObjects =
 {
 	private ["_starts", "_startDirs", "_waypoints"];
-	call compile preprocessFileLineNumbers format ["mapConfig\convoys\%1.sqf", _missionLocation];
+	// call compile preprocessFileLineNumbers format ["mapConfig\convoys\%1.sqf", _missionLocation];
 
 	_createVehicle =
 	{
@@ -173,10 +173,24 @@ _setupObjects =
 	};
 
 	_aiGroup = createGroup CIVILIAN;
+	_town = selectRandom (call cityList);
+	_missionPos = markerPos (_town select 0);
+	_radius = (_town select 1);
+	// _vehiclePosArray = [_missionPos,(_radius / 2),_radius,5,0,0,0] call findSafePos;
 
+	// _vehicles = [];
+	// {
+		// _vehicles pushBack ([_x, _vehiclePosArray, 0, _aiGroup] call _createVehicle);
 	_vehicles = [];
+	_vehiclePosArray = nil;
 	{
-		_vehicles pushBack ([_x, _starts select 0, _startdirs select 0, _aiGroup] call _createVehicle);
+		_vehiclePosArray = getPos ((_missionPos nearRoads _radius) select _forEachIndex);
+		if (isNil "_vehiclePosArray") then
+		{
+			_vehiclePosArray = [_missionPos,(_radius / 2),_radius,5,0,0,0] call findSafePos;
+		};
+		_vehicles pushBack ([_x, _vehiclePosArray, 0, _aiGroup] call _createVehicle);
+		_vehiclePosArray = nil;
 	} forEach _vehClasses;
 
 	_veh2 = _vehClasses select (1 min (count _vehClasses - 1));
@@ -184,23 +198,23 @@ _setupObjects =
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup selectLeader _leader;
 
-	_aiGroup setCombatMode "YELLOW"; // units will defend themselves
+	_aiGroup setCombatMode "GREEN"; // units will defend themselves
 	_aiGroup setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
-	_aiGroup setFormation "STAG COLUMN";
+	_aiGroup setFormation "COLUMN";
 
 	_speedMode = if (missionDifficultyHard) then { "NORMAL" } else { "LIMITED" };
 
 	_aiGroup setSpeedMode _speedMode;
 
 	{
-		_waypoint = _aiGroup addWaypoint [_x, 0];
+		_waypoint = _aiGroup addWaypoint [markerPos (_x select 0), 0];
 		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointCompletionRadius 25;
-		_waypoint setWaypointCombatMode "YELLOW";
+		_waypoint setWaypointCompletionRadius 100;
+		_waypoint setWaypointCombatMode "GREEN";
 		_waypoint setWaypointBehaviour "SAFE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
-		_waypoint setWaypointFormation "STAG COLUMN";
+		_waypoint setWaypointFormation "COLUMN";
 		_waypoint setWaypointSpeed _speedMode;
-	} forEach _waypoints;
+	} forEach ((call cityList) call BIS_fnc_arrayShuffle);
 
 	_missionPos = getPosATL leader _aiGroup;
 
