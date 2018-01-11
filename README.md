@@ -16,7 +16,7 @@ x64 bit version. extDB3 Required.
 * [X] Mine Detector
 * [X] buryDeadBody(fixed)
 * [X] cleanStores
-* [] disable Environment
+* [X] disable Environment
 * [X] disable Thermal
 * [X] Arma Info (On connect)
 * [] Fast rope
