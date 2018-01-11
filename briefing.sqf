@@ -576,7 +576,7 @@ player createDiaryRecord ["admins",
 <br/> * Ghostyy
 <br/> * OutlawII
 <br/> * Shine_Dwarf
-<br/> * StinkySneeze (Second Best Canadian/Third Best Sniper)
+<br/> * StinkySneeze (Third Best Canadian/Third Best Sniper)
 
 <br/><font color='#0066FF' size='18'>High Admins</font>
 <br/><font color='#00FFEF' size='12'>Teleport, Spectate, Slay Delete Hacked objects</font>
