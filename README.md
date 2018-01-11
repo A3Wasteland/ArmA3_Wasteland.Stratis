@@ -16,7 +16,7 @@ x64 bit version. extDB3 Required.
 * [X] Mine Detector
 * [X] buryDeadBody(fixed)
 * [X] cleanStores
-* [] disable Environment
+* [X] disable Environment
 * [X] disable Thermal
 * [X] Arma Info (On connect)
 * [] Fast rope
@@ -24,6 +24,8 @@ x64 bit version. extDB3 Required.
 * [X] View Distance Menu Update
 * [X] OutofBounds activated
 
+HAI MOKEY
+Mokey is pushy
 # A3Wasteland Stratis
 
 A3Wasteland is a survival-like combat sandbox, which incorporates elements of team deathmatch and sector control in one big fun-to-play package. Similar to DayZ, the objectives are to scavenge weapons and vehicles, team up with fellow players, and engage in combat to obtain control of the landscape. Best experienced with 50 or more players. 
@@ -54,3 +56,4 @@ This project is licensed under the [GNU Affero GPL v3](http://tldrlegal.com/l/ag
 
 
 
+Testing Git Pushes to forums      

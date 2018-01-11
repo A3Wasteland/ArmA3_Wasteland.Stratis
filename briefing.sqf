@@ -576,19 +576,19 @@ player createDiaryRecord ["admins",
 <br/> * Ghostyy
 <br/> * OutlawII
 <br/> * Shine_Dwarf
-<br/> * StinkySneeze (Second Best Canadian/Third Best Sniper)
+<br/> * StinkySneeze (Third Best Canadian/Third Best Sniper)
+<br/> * Donkey
 
 <br/><font color='#0066FF' size='18'>High Admins</font>
 <br/><font color='#00FFEF' size='12'>Teleport, Spectate, Slay Delete Hacked objects</font>
 <br/> * Harry
-<br/> * Donkey
 <br/> * Zenkiton
 <br/> * Rabidtroop
 
 
 <br/><font color='#002FFF' size='18'>Low Admins</font>
 <br/><font color='#00FFEF' size='12'>Spectate, Slay, Delete Hacked Objects</font>
-<br/> * 
+<br/> * Logan
 <br/> * 
 
 "
