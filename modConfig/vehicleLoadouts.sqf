@@ -337,15 +337,13 @@ switch (true) do
 				_mags =
 				[
 					["60Rnd_CMFlare_Chaff_Magazine", [-1]],
-					["10Rnd_762x54_Mag", [0]],
-					["10Rnd_762x54_Mag", [0]],
-					["10Rnd_762x54_Mag", [0]],
+					["200Rnd_556x45_Box_Tracer_Red_F", [0]],
 					["Laserbatteries", [0]]
 				];
 				_weapons =
 				[
 					["CMFlareLauncher", [-1]],
-					["srifle_DMR_01_DMS_snds_BI_F", [0]],
+					["LMG_03_F", [0]],
 					["Laserdesignator_mounted", [0]]
 				];
 				_pylons = ["PylonRack_Missile_BIM9X_x2","PylonRack_1Rnd_LG_scalpel","PylonRack_1Rnd_LG_scalpel","PylonRack_Missile_BIM9X_x2"]
@@ -356,17 +354,14 @@ switch (true) do
 				_mags =
 				[
 					["60Rnd_CMFlare_Chaff_Magazine", [-1]],
-					["5Rnd_127x108_APDS_Mag", [0]],
-					["5Rnd_127x108_APDS_Mag", [0]],
-					["5Rnd_127x108_APDS_Mag", [0]],
-					["5Rnd_127x108_APDS_Mag", [0]],
-					["5Rnd_127x108_APDS_Mag", [0]],
+					["130Rnd_338_Mag", [0]],
+					["130Rnd_338_Mag", [0]],
 					["Laserbatteries", [0]]
 				];
 				_weapons =
 				[
 					["CMFlareLauncher", [-1]],
-					["srifle_GM6_LRPS_F", [0]],
+					["MMG_02_black_F", [0]],
 					["Laserdesignator_mounted", [0]]
 				]; 
 				_pylons = ["PylonRack_Missile_BIM9X_x2","PylonMissile_1Rnd_BombCluster_01_F","PylonRack_12Rnd_PG_missiles","PylonRack_3Rnd_LG_scalpel"];
