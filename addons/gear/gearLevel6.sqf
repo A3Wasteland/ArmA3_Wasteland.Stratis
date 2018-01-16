@@ -31,7 +31,7 @@ _player addWeapon "hgun_Pistol_heavy_01_F";
 
 _player addMagazines ["30Rnd_556x45_Stanag", 2];
 _player addWeapon "arifle_TRG20_F";
-_player addPrimaryWeaponItem "optic_Holosight_smg";
+_player addPrimaryWeaponItem "optic_Holosight";
 
 _player addMagazines ["RPG32_F", 1];
 _player addWeapon "launch_RPG32_F";

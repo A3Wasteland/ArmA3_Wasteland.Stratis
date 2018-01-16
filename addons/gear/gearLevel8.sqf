@@ -38,7 +38,7 @@ _player addhandGunItem "optic_MRD"; //Handgun Attachments
 
 _player addMagazines ["30Rnd_65x39_caseless_mag", 2]; //Add primary weapon magazines first so one gets loaded
 _player addWeapon "arifle_MXC_F"; //Primary Weapon
-_player addPrimaryWeaponItem "optic_Holosight_smg"; //Primary Weapon Attachments
+_player addPrimaryWeaponItem "optic_Holosight"; //Primary Weapon Attachments
 //_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
 //_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
 
