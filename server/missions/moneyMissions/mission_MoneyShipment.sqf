@@ -196,9 +196,9 @@ _setupObjects =
     };
   
 	_aiGroup = createGroup CIVILIAN;
-	_town = selectRandom (call cityList);
-	_missionPos = markerPos (_town select 0);
-	_radius = (_town select 1);
+	//_town = selectRandom (call cityList);
+	//_missionPos = markerPos (_town select 0);
+	//_radius = (_town select 1);
 	// _vehiclePosArray = [_missionPos,(_radius / 2),_radius,5,0,0,0] call findSafePos;
 
 	// _vehicles = [];
