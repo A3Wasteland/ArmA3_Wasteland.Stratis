@@ -235,6 +235,7 @@ class Mission
 	class Intel
 	{
 		briefingName="A3Wasteland Stratis v1.4c";
+		briefingName="A3Wasteland Stratis v1.4b"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
 		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
 		resistanceWest=0;
 		timeOfChanges=3e+038;
