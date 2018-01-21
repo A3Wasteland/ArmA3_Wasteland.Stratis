@@ -23,7 +23,7 @@ forEach
 	["A3W_customKeys_adminMenu", [22]], // 22 = U
 	["A3W_customKeys_playerMenu", [41]], // 41 = Tilde (above Tab)
 	["A3W_customKeys_playerNames", [199,219,220]], // 199 = Home, 219 = LWin, 220 = RWin
-	["A3W_customKeys_earPlugs", [207,210]] // 207 = End 210 = Insert
+	["A3W_customKeys_earPlugs", [207]] // 207 = End
 ];
 
 _voiceKeys = [];
