@@ -1019,7 +1019,7 @@ helicoptersArray = compileFinal str
 	["AH-9 Pawnee (Gun-Only)", "B_Heli_Light_01_dynamicLoadout_F", 20000, "vehicle", "variant_pawneeGun"], // Armed AH-6 (no missiles)
 	["AH-9 Pawnee (SkyHunter)", "B_Heli_Light_01_dynamicLoadout_F", 35000, "vehicle", "variant_PawneeSkyHunter"],
 	["AH-9 Pawnee (Ground Assault)", "B_Heli_Light_01_dynamicLoadout_F", 35000, "vehicle", "variant_PawneeGround"], // Armed AH-6
-	//["AH-9 Pawnee (Mission)", "B_Heli_Light_01_dynamicLoadout_F", 30000, "vehicle"], // Armed AH-6
+	["AH-9 Pawnee (Mission)", "B_Heli_Light_01_dynamicLoadout_F", 30000, "vehicle", "HIDDEN"], // Armed AH-6
 	["PO-30 Orca (DAR)", "O_Heli_Light_02_dynamicLoadout_F", 40000, "vehicle", "variant_orcaDAR"], // Armed Ka-60
 	["PO-30 Orca (DAGR)", "O_Heli_Light_02_dynamicLoadout_F", 50000, "vehicle", "variant_orcaDAGR"], // Armed Ka-60
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 60000, "vehicle"], // Armed AW159
