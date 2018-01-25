@@ -65,5 +65,5 @@ if (round getNumber (configFile >> "CfgVehicles" >> _uavClass >> "attendant") > 
 {
 	_uav animateSource ["LED_lights_hide", 0, true]; // show medical beacons
 };
-
+[_uav] execVM "addons\outOfBounds\uavOutOfBounds.sqf";
 _grp

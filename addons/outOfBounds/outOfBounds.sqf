@@ -19,8 +19,8 @@
 	----------------------------------------------------------------------------------------------
 */
 
-_maxTime = 20; // 20 seconds max default
-_maxHeight = 2500; // 1500m height max default
+_maxTime = 30; // 20 seconds max default
+_maxHeight = 2200; // 1500m height max default
 
 /*	------------------------------------------------------------------------------------------
 	DO NOT EDIT BELOW HERE!
@@ -48,14 +48,31 @@ if (hasInterface) then
 		respawnDialogActive = false;
 		_inLoop = false;
 		_loopForever = true;
+		_playerObject = objNull;
+		_outOfBounds = false;
+		_outOfBoundsAltitude = false;
+		_outOfBoundsText = "";
+		_outOfBoundsTextDeath = "";
 		while {_loopForever} do
 		{
-			//waitUntil {uiSleep 0.1; alive player && !playerSpawning && !respawnDialogActive};
 			waitUntil {uiSleep 0.1; alive player && !(player getVariable ["playerSpawning",true]) && !respawnDialogActive};
 			if (alive player) then
 			{
-				_outOfBounds = !(player inArea "playableArea");
-				_outOfBoundsAltitude = (getPos player select 2 > _maxHeight);
+				_connectedUAV = getConnectedUAV player;
+				if (!isNull _connectedUAV) then
+				{
+					_outOfBounds = !(_connectedUAV inArea "playableArea") || !(player inArea "playableArea");
+					_outOfBoundsAltitude = (getPos _connectedUAV select 2 > _maxHeight) || (getPos player select 2 > _maxHeight);
+					_outOfBoundsText = "YOU OR YOUR REMOTE VEHICLE ARE";
+					_outOfBoundsTextDeath = "YOU AND YOUR REMOTE VEHICLE WILL BE KILLED!";
+				}
+				else
+				{
+					_outOfBounds = !(player inArea "playableArea");
+					_outOfBoundsAltitude = (getPos player select 2 > _maxHeight);
+					_outOfBoundsText = "YOU ARE";
+					_outOfBoundsTextDeath = "YOU WILL BE KILLED!";
+				};
 				if (((_outOfBounds) || (_outOfBoundsAltitude)) && (!_inLoop)) then
 				{
 					_inLoop = true;
@@ -71,28 +88,61 @@ if (hasInterface) then
 						{
 							_secondsText = "SECOND";
 						};
-						_oobText = format ["YOU ARE OUTSIDE OF THE PLAYABLE AREA!\n\nYOU HAVE %1 %2 TO BE INSIDE THE PLAYABLE AREA AND UNDER %3M ALTITUDE!",_inLoopTimer,_secondsText,_maxHeight];
+						_oobText = format ["%1 OUTSIDE OF THE PLAYABLE AREA!\n\nYOU HAVE %2 %3 TO GET INSIDE THE PLAYABLE AREA AND BE UNDER %4M ALTITUDE\nOR\n%5",_outOfBoundsText,_inLoopTimer,_secondsText,_maxHeight,_outOfBoundsTextDeath];
 						[_oobText, 1] call mf_notify_client;
 						// playSound "Alarm";
 						uiSleep 1;
 						_inLoopTimer = _inLoopTimer - 1;
 						if (_inLoopTimer isEqualTo 0) exitWith
 						{
-							vehicle player setDamage 1;
-							player setDamage 1;
+							if (!isNull _connectedUAV) then
+							{
+								vehicle _connectedUAV setDamage 1; // kill the remote vehicle if connected and oob.
+								_connectedUAV setDamage 1; // kill the remote vehicle if connected and oob.
+							};
+							vehicle player setDamage 1; // kill the player vehicle if oob.
+							player setDamage 1;// kill the player if oob.
 						};
-						_outOfBounds = !(player inArea "playableArea");
-						_outOfBoundsAltitude = (getPos player select 2 > _maxHeight);
+						_connectedUAV = getConnectedUAV player;
+						if (!isNull _connectedUAV) then
+						{
+							_outOfBounds = !(_connectedUAV inArea "playableArea") || !(player inArea "playableArea");
+							_outOfBoundsAltitude = (getPos _connectedUAV select 2 > _maxHeight) || (getPos player select 2 > _maxHeight);
+							_outOfBoundsText = "YOU OR YOUR REMOTE VEHICLE ARE";
+						}
+						else
+						{
+							_outOfBounds = !(player inArea "playableArea");
+							_outOfBoundsAltitude = (getPos player select 2 > _maxHeight);
+							_outOfBoundsText = "YOU ARE";
+						};
 					};
-					if (alive player) then
+					_connectedUAV = getConnectedUAV player;
+					if (!isNull _connectedUAV) then
 					{
-						_oobText = "YOU ARE BACK INSIDE THE PLAYABLE AREA!";
-						[_oobText, 10] call mf_notify_client;
+						if (alive _connectedUAV) then
+						{
+							_oobText = "YOU AND YOUR REMOTE VEHICLE ARE BACK INSIDE THE PLAYABLE AREA!";
+							[_oobText, 10] call mf_notify_client;
+						}
+						else
+						{
+							_oobText = "YOU AND YOUR REMOTE VEHICLE WERE OUTSIDE OF THE PLAYABLE AREA FOR TOO LONG AND HAVE BEEN KILLED!";
+							[_oobText, 10] call mf_notify_client;
+						};
 					}
 					else
 					{
-						_oobText = "YOU WERE OUTSIDE OF THE PLAYABLE AREA FOR TOO LONG AND HAVE BEEN KILLED!";
-						[_oobText, 10] call mf_notify_client;
+						if (alive player) then
+						{
+							_oobText = "YOU ARE BACK INSIDE THE PLAYABLE AREA!";
+							[_oobText, 10] call mf_notify_client;
+						}
+						else
+						{
+							_oobText = "YOU WERE OUTSIDE OF THE PLAYABLE AREA FOR TOO LONG AND HAVE BEEN KILLED!";
+							[_oobText, 10] call mf_notify_client;
+						};
 					};
 					_inLoop = false;
 					_outOfBounds = false;
