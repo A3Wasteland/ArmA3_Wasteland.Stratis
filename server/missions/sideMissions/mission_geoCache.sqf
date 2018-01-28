@@ -71,6 +71,10 @@ _successExec =
 		uiSleep 0.1;
 	};
 	
+	waitUntil {isTouchingGround _box1};
+	_box1 setVectorUp surfaceNormal position _box1;
+	
+	
 	_successHintMessage = "The GeoCache supplies have been delivered by parachute!";
 };
 
