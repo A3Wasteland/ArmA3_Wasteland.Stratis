@@ -92,7 +92,7 @@ _setupObjects =
 		};
 
 		// remove flares because it overpowers AI choppers
-		if (_type isKindOf "Air") then
+		/*if (_type isKindOf "Air") then
 		{
 			{
 				if (["CMFlare", _x] call fn_findString != -1) then
@@ -100,7 +100,7 @@ _setupObjects =
 					_vehicle removeMagazinesTurret [_x, [-1]];
 				};
 			} forEach getArray (configFile >> "CfgVehicles" >> _type >> "magazines");
-		};
+		};*/
 
 		[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
 		_vehicle
@@ -166,11 +166,11 @@ _successExec =
 
 	_box2 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
 	_box2 setDir random 360;
-	[_box2, "mission_USLaunchers"] call randomCrateLoadOut;
+	[_box2, "mission_USLaunchers"] call fn_refillbox;
 
 	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
 	_box3 setDir random 360;
-	[_box3, "mission_Main_A3snipers"] call randomCrateLoadOut;
+	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
 
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };

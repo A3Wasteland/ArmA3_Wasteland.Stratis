@@ -43,7 +43,7 @@ _successExec =
 	
 	_box1 = createVehicle ["Box_NATO_Wps_F", _missionPos, [], 5, "None"];
 	_box1 setDir random 360;
-	_box1 call randomCrateLoadOut;
+	_box1 call fn_refillbox;
 	_box1 allowDamage false;
 	_box1 setVariable ["R3F_LOG_disabled", false, true];
 
