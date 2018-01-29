@@ -348,7 +348,7 @@ switch (true) do
 				];
 				_pylons = ["PylonRack_Missile_BIM9X_x2","PylonRack_1Rnd_LG_scalpel","PylonRack_1Rnd_LG_scalpel","PylonRack_Missile_BIM9X_x2"]
 			};
-			case "FalconAT": { _pylons = ["PylonMissile_1Rnd_LG_scalpel","PylonRack_12Rnd_PG_missiles","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_LG_scalpel"] };
+			case "FalconAT": { _pylons = ["PylonMissile_1Rnd_LG_scalpel","PylonRack_20Rnd_Rocket_03_AP_F","PylonRack_20Rnd_Rocket_03_AP_F","PylonMissile_1Rnd_LG_scalpel"] };
 			case "Falcon+":
 			{
 				_mags =
