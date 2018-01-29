@@ -137,6 +137,7 @@ if (isServer) then
 		"A3W_teamPlayersMap",
 		"A3W_remoteBombStoreRadius",
 		"A3W_vehiclePurchaseCooldown",
+		"A3W_vehicleRemotePurchaseCooldown",
 		"A3W_disableGlobalVoice",
 		"A3W_antiHackMinRecoil",
 		"A3W_spawnBeaconCooldown",

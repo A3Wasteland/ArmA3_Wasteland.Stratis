@@ -22,6 +22,18 @@ if (!isNil "vehicleStore_lastPurchaseTime") then
 	};
 };
 
+if (!isNil "vehicleStore_lastRemotePurchaseTime") then
+{
+	_timeLeft = (["A3W_vehicleRemotePurchaseCooldown", 60] call getPublicVar) - (diag_tickTime - vehicleStore_lastRemotePurchaseTime);
+
+	if (_timeLeft > 0) then
+	{
+		hint format ["You need to wait %1s before buying another remote vehicle", ceil _timeLeft];
+		playSound "FD_CP_Not_Clear_F";
+		breakOut "buyVehicles";
+	};
+};
+
 #include "dialog\vehiclestoreDefines.hpp";
 
 storePurchaseHandle = _this spawn
@@ -90,6 +102,8 @@ storePurchaseHandle = _this spawn
 		// If UAV or UGV, fill vehicle with UAV AI, give UAV terminal to our player, and connect it to the vehicle
 		if (round getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") > 0) then
 		{
+			vehicleStore_lastRemotePurchaseTime = diag_tickTime;
+			
 			switch (playerSide) do
 			{
 				case BLUFOR: { _uavTerminal = "B_UavTerminal" };
