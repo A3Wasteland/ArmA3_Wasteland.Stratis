@@ -74,8 +74,7 @@ if (!isNil "_uav") then
 		params ["_uav","_maxTime","_maxHeight"];
 		respawnDialogActive = false;
 		_inLoop = false;
-		_loopForever = true;
-		while {_loopForever} do
+		while {alive _uav} do
 		{
 			waitUntil {uiSleep 0.1; alive _uav};
 			if (alive _uav) then
