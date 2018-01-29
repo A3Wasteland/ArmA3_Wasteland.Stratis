@@ -1,7 +1,7 @@
 // ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
-//	@file Name: mission_HostileJetFormationTest.sqf
+//	@file Name: mission_HostileJetFormation.sqf
 //	@file Author: JoSchaap, AgentRev
 
 if (!isServer) exitwith {};
@@ -11,7 +11,7 @@ private ["_planeChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehic
 
 _setupVars =
 {
-	_missionType = "Hostile Jets Test";
+	_missionType = "Hostile Jet Squadron";
 	//_locationsArray = nil; // locations are generated on the fly from towns
 };
 
@@ -21,16 +21,18 @@ _setupObjects =
 
 	_planeChoices =
 	[
-		["B_Plane_CAS_01_F", "B_Plane_CAS_01_F"],
- 		["O_Plane_CAS_02_F", "O_Plane_CAS_02_F"],
- 		["O_Plane_Fighter_02_F", "O_Plane_Fighter_02_F"]
+		["B_Plane_CAS_01_dynamicLoadout_F", "B_Plane_Fighter_01_Stealth_F"],
+ 		["O_Plane_CAS_02_dynamicLoadout_F", "O_Plane_CAS_02_F"],
+ 		["O_T_VTOL_02_infantry_dynamicLoadout_F", "I_Plane_Fighter_03_AA_F"],
+		["O_Plane_Fighter_02_F", "I_Plane_Fighter_04_F"]
 	];
 
 	if (missionDifficultyHard) then
 	{
-		(_planeChoices select 0) set [0, "O_T_VTOL_02_infantry_dynamicLoadout_F"];
- 		(_planeChoices select 1) set [0, "I_Plane_Fighter_04_F"];
- 		(_planeChoices select 2) set [0, "I_Plane_Fighter_04_F"];
+		(_planeChoices select 0) set [0, "B_Plane_CAS_01_dynamicLoadout_F"];
+ 		(_planeChoices select 1) set [0, "O_Plane_CAS_02_dynamicLoadout_F"];
+ 		(_planeChoices select 2) set [0, "O_T_VTOL_02_infantry_F"];
+		(_planeChoices select 3) set [0, "O_Plane_Fighter_02_F"];
 	};
 
 	_convoyVeh = _planeChoices call BIS_fnc_selectRandom;
