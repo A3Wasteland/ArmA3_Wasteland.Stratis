@@ -99,6 +99,14 @@ switch (true) do
 			_vehicle addMagazineTurret ["300Rnd_20mm_shells", [-1]];
 		};
 	};
+	case ({_class isKindOf _x} count ["Heli_Attack_02_dynamicLoadout_base_F", "VTOL_02_infantry_dynamicLoadout_base_F", "VTOL_02_vehicle_dynamicLoadout_base_F"] > 0):
+	{
+		_vehicle removeWeaponTurret ["rockets_Skyfire",[0]];
+		_vehicle removeMagazinesTurret ["38Rnd_80mm_rockets",[0]];
+		
+		_vehicle addWeaponTurret ["rockets_Skyfire", [-1]];
+		_vehicle addMagazineTurret ["38Rnd_80mm_rockets", [-1]];
+	};
 };
 
 _weapons = getArray (configFile >> "CfgVehicles" >> _class >> "weapons");
