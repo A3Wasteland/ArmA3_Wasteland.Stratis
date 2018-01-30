@@ -162,7 +162,7 @@ A3W_scriptThreads pushBack execVM "addons\fpsFix\vehicleManager.sqf";
 A3W_scriptThreads pushBack execVM "addons\Lootspawner\LSclientScan.sqf";
 //frac stuff
 if(hasInterface) then{[] execVM "addons\statusBar\statusBar.sqf"};
-//[] execVM "addons\disableThermal\disablethermal.sqf";  //disable thermal vision
+[] execVM "addons\disableThermal\disablethermal.sqf";  //disable thermal vision
 //[] execVM "addons\water_edge\functions.sqf";
 //frac stuff
 [] execVM "client\functions\drawPlayerIcons.sqf";
@@ -176,7 +176,7 @@ inGameUISetEventHandler ["Action", "_this call A3W_fnc_inGameUIActionEvent"];
 
 { [_x] call fn_remotePlayerSetup } forEach allPlayers;
 
-// update player's spawn beaoon
+// update player's spawn beacon
 {
 	if (_x getVariable ["ownerUID",""] == getPlayerUID player) then
 	{
