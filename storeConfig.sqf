@@ -1031,7 +1031,7 @@ helicoptersArray = compileFinal str
 
 	["MQ-12 Falcon Scout UAV", "B_T_UAV_03_dynamicLoadout_F", 80000, "vehicle", "variant_FalconScout"],
 	["MQ-12 Falcon AT UAV", "B_T_UAV_03_dynamicLoadout_F", 130000, "vehicle", "variant_FalconAT"],
-	["MQ-12 Falcon Plus UAV", "B_T_UAV_03_dynamicLoadout_F", 180000, "vehicle", "variant_Falcon+"]	// Do NOT use "B_T_UAV_03_dynamicLoadout_F" (doesn't support ASRAAM pylons)
+	["MQ-12 Falcon Plus UAV", "B_T_UAV_03_dynamicLoadout_F", 200000, "vehicle", "variant_Falcon+"]	// Do NOT use "B_T_UAV_03_dynamicLoadout_F" (doesn't support ASRAAM pylons)
 ];
 
 planesArray = compileFinal str
