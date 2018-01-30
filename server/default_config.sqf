@@ -50,6 +50,7 @@ A3W_gunStoreIntruderWarning = 1;   // Warn players in gunstore areas of enemy in
 A3W_remoteBombStoreRadius = 70;    // Prevent players from placing any kind of explosive on the ground within this distance from any store (0 = disabled)
 A3W_poiObjLockDistance = 100;      // Prevent players from locking objects within this distance from points of interest (stores & mission spawns)
 A3W_vehiclePurchaseCooldown = 60;  // Number of seconds to wait before allowing someone to purchase another vehicle, don't bother setting it too high because it can be bypassed by rejoining
+A3W_vehicleRemotePurchaseCooldown = 2700;
 
 // ATM settings
 A3W_atmEnabled = 1;                // Enable ATM system (0 = no, 1 = yes)

@@ -10,30 +10,6 @@ scriptName "buyVehicles";
 
 if (!isNil "storePurchaseHandle" && {typeName storePurchaseHandle == "SCRIPT"} && {!scriptDone storePurchaseHandle}) exitWith {hint "Please wait, your previous purchase is being processed"};
 
-if (!isNil "vehicleStore_lastPurchaseTime") then
-{
-	_timeLeft = (["A3W_vehiclePurchaseCooldown", 60] call getPublicVar) - (diag_tickTime - vehicleStore_lastPurchaseTime);
-
-	if (_timeLeft > 0) then
-	{
-		hint format ["You need to wait %1s before buying another vehicle", ceil _timeLeft];
-		playSound "FD_CP_Not_Clear_F";
-		breakOut "buyVehicles";
-	};
-};
-
-if (!isNil "vehicleStore_lastRemotePurchaseTime") then
-{
-	_timeLeft = (["A3W_vehicleRemotePurchaseCooldown", 60] call getPublicVar) - (diag_tickTime - vehicleStore_lastRemotePurchaseTime);
-
-	if (_timeLeft > 0) then
-	{
-		hint format ["You need to wait %1s before buying another remote vehicle", ceil _timeLeft];
-		playSound "FD_CP_Not_Clear_F";
-		breakOut "buyVehicles";
-	};
-};
-
 #include "dialog\vehiclestoreDefines.hpp";
 
 storePurchaseHandle = _this spawn
@@ -85,6 +61,34 @@ storePurchaseHandle = _this spawn
 		hint format ["""%1"" has been spawned outside, in front of the store.", _itemText];
 		playSound "FD_Finish_F";
 	};
+	
+	_checkLastPurchase =
+	{
+		_canPurchase = true;
+		if (!isNil "vehicleStore_lastPurchaseTime") then
+		{
+			_timeLeft = (["A3W_vehiclePurchaseCooldown", 60] call getPublicVar) - (diag_tickTime - vehicleStore_lastPurchaseTime);
+			if (_timeLeft > 0) then
+			{
+				_canPurchase = false;
+			};
+		};
+		_canPurchase
+	};
+		
+	_checkLastRemotePurchase =
+	{
+		_canRemotePurchase = true;
+		if (!isNil "vehicleStore_lastRemotePurchaseTime") then
+		{
+			_timeLeft = (["A3W_vehicleRemotePurchaseCooldown", 60] call getPublicVar) - (diag_tickTime - vehicleStore_lastRemotePurchaseTime);
+			if (_timeLeft > 0) then
+			{
+				_canRemotePurchase = false;
+			};
+		};
+		_canRemotePurchase
+	};
 
 	_applyVehProperties =
 	{
@@ -98,7 +102,7 @@ storePurchaseHandle = _this spawn
 		{
 			[_vehicle, _colorData] call applyVehicleTexture;
 		};
-
+		
 		// If UAV or UGV, fill vehicle with UAV AI, give UAV terminal to our player, and connect it to the vehicle
 		if (round getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") > 0) then
 		{
@@ -139,10 +143,10 @@ storePurchaseHandle = _this spawn
 				};
 			};
 		};
-
 		_vehicle
 	};
 
+	
 	if (_itemData isEqualType []) then
 	{
 		_class = _itemData param [1];
@@ -153,18 +157,49 @@ storePurchaseHandle = _this spawn
 		{
 			[_itemText] call _showInsufficientFundsError;
 		};
-
-		_requestKey = call A3W_fnc_generateKey;
-		_itemData call requestStoreObject;
-
-		_vehicle = objectFromNetId (missionNamespace getVariable _requestKey);
-
-		if (!isNil "_vehicle" && {!isNull _vehicle}) then
+		
+		///////////////////////////////////////////////////////////////////////////////////////////
+		_purchaseAllowed = true; // set the default to true
+		_isRemote = false; // set the default to false
+		if (round getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") > 0) then // check if is UAV/UGV/REMOTE vehicle BEFORE vehicle creation!
 		{
-			[_vehicle, _colorText, if (!isNil "_colorData") then { _colorData } else { "" }] call _applyVehProperties;
+			_purchaseAllowed = call _checkLastRemotePurchase; // returns true or false
+			_isRemote = true;
+		}
+		else
+		{
+			_purchaseAllowed = call _checkLastPurchase; // returns true or false
+			_isRemote = false;
 		};
+		if (_purchaseAllowed) then
+		{
+			_requestKey = call A3W_fnc_generateKey;
+			_itemData call requestStoreObject;
+			_vehicle = objectFromNetId (missionNamespace getVariable _requestKey);
+			if (!isNil "_vehicle" && {!isNull _vehicle}) then
+			{
+				[_vehicle, _colorText, if (!isNil "_colorData") then { _colorData } else { "" }] call _applyVehProperties;
+			};
+		}
+		else
+		{
+			if (_isRemote) then
+			{
+				_timeLeft = (["A3W_vehicleRemotePurchaseCooldown", 60] call getPublicVar) - (diag_tickTime - vehicleStore_lastRemotePurchaseTime);
+				hint format ["You need to wait %1s before buying another remote vehicle", ceil _timeLeft];
+				playSound "FD_CP_Not_Clear_F";
+				_price = -1;
+			}
+			else
+			{
+				_timeLeft = (["A3W_vehiclePurchaseCooldown", 60] call getPublicVar) - (diag_tickTime - vehicleStore_lastPurchaseTime);
+				hint format ["You need to wait %1s before buying another vehicle", ceil _timeLeft];
+				playSound "FD_CP_Not_Clear_F";
+				_price = -1;
+			};
+		};
+		///////////////////////////////////////////////////////////////////////////////////////////	
 	};
-
 	if (!isNil "_price" && {_price > -1}) then
 	{
 		_playerMoney = player getVariable ["cmoney", 0];
