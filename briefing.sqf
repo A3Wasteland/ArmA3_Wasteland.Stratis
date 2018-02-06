@@ -18,6 +18,7 @@ player createDiarySubject ["changelog", "Changelog"];
 player createDiarySubject ["credits", "Credits"];
 player createDiarySubject ["admins", "Admin List"];
 player createDiarySubject ["gearlevel", "Gear Level Info"];
+player createDiarySubject ["Rules", "Rules"];
 
 player createDiaryRecord ["changelog",
 [
@@ -619,7 +620,86 @@ player createDiaryRecord ["admins",
 <br/><font color='#002FFF' size='18'>Low Admins</font>
 <br/><font color='#00FFEF' size='12'>Spectate, Slay, Delete Hacked Objects</font>
 <br/> * Logan
-<br/> * 
+<br/> * Weber
+<br/> * Caveman
+<br/> * Reaper
 
 "
 ]];
+
+player createDiaryRecord ["Rules",
+[
+"Discord Rules & Info",
+"
+<br/> * (These are rules that apply to Fractured Gaming's Discord Server) Failure to follow these rules will result in a kick/ban with or without warning.
+<br/> 
+<br/> * No Channel Spamming, do not join different channels in a short period of time. A lot of people run dual monitors and spamming channels will catch their eye. Causing issues with gameplay. This is also annoying for people in the channels.
+<br/> * DO NOT Spam message anyone or any channel.
+<br/> * If you use voice activation or continuous transmission and you have a lot of background noise you will be asked to fix it. If it is not fixed YOU WILL be put on forced PTT (push to talk). Admins will apply or remove this at their own discretion.
+<br/> * No music transmission, unless used in conversation. We use Discord to communicate, *not listen to your music.
+<br/> * New Discord users will be granted (Approved Guest) once the rules have been explained to you and verification that you understand the rules.
+<br/> * Use of the @Everyone command is restricted to FRAC Staff for official announcements only. The @Here may be used in channels sparingly for important topics only. Misuse or spamming of these commands will result in a ban.
+<br/> * Basic etiquette should be used when joining channels including:
+<br/> * - Listening to the channel first to not cut off people 
+<br/> * - Refraining from loud introductory noise (i.e. don't join a room yelling (GOOODDDDD MORRNINGGGG!!!!!)
+<br/> * - Giving priority of in-game communications in respective game channels over (chit chat). 
+<br/> * - Any channel with a player limit lock is specifically designated for gameplay and anyone joining these channels should take care not to speak over players in game or cause distractions.
+"
+]];
+
+player createDiaryRecord ["Rules",
+[
+"Arma Rules & Info",
+"
+<br/> * (Theses rules apply to the ARMA 3 Stratis Wasteland Server) Failure to follow these rules will result in a kick and or ban, with or without warning.
+<br/> 
+<br/> * Keep away from and stay off of Spawn Island located at Grid [037079] North of the map.
+<br/> * STAY OFF of Global VON (Voice Over Network or Voice) , this is activated buy hitting -Caps Lock- (default.) If you are on Global VON hit . (period) to change your channel.
+<br/> * You are allowed to talk in Side VON (Voice Over Network or Voice),  DO NOT Spam side chat in VON. If people say to stop, most likely you are over using side chat and will be considered as spam.
+<br/> * Only English may be used in Global, Side and Direct VON and/or Chats. Other languages may be used in Group VON/chats.
+<br/> * DO NOT advertise or type another community, Clan, or Personal Teamspeak/Discord information in global/side chat. If you are grouped up with another player, you are allowed to type it in group.
+<br/> * If a player is invisible tell him to relog on the server, If he does not we will kill then kick him from the server. (This is a glitch on the server that occasionally happens)
+<br/> * If you are in 1st person mode and you attempt to go into 3rd person mode (Num Pad Enter : Default) and cannot go into 3rd person or do not see your character, log off and reconnect. If this does not fix it ask an admin to slay you, or commit suicide.
+<br/> * Camping stores is allowed. Wasteland is a HARSH survival map. Learn to deal with it and go on your way.
+<br/> * We will not refund any money for any reason UNLESS you have video evidence that a fluke on our server caused you to lose something of value. (flukes) are NOT to include Server Restarts or Server Wipes.
+<br/> * Remember, combat is not a regulated sport. If you die because you think it was unfair (aside from cheating, hacking, or exploiting). Re-spawn and try again.
+<br/> * Ammo resupply vehicles are used for resupply, NOT for spamming. If you are caught spamming while using an ammo vehicle, this is considered an exploit, you will be banned from the server.
+<br/> * No combat logging. If you are caught doing this you will face punishment. If you log off and come back in a brief amount of time to gain an advantage we will punish you. You may not log off while a (Sugar Daddy/HVT) after completing a (Hackers) mission type, doing so will result in punishment.
+<br/> * Ghosting is forbidden. This means changing teams with players in the area with the intent to come back and kill them. This also applies to Independent groups kicking and killing other players.
+"
+]];
+
+player createDiaryRecord ["Rules",
+[
+"Game Server Rules",
+"
+<br/> * (These rules apply to any server owned by Fractured Gaming, this is to include any server that has been approved to be a Fractured Gaming server while being owned by someone other than Server Owners or Founders) Failure to follow these rules can and or will result in a kick/ban, with or without warning.
+<br/> * 0 Tolerance for Cheating, Hacking, or Exploiting, regardless of the game. Doing so will result in a ban from anything owned by fractured.
+<br/> * DO NOT harass any player on the server you are playing on. We understand people rage, but as soon as you get out of hand you will be told to stop. If you do not stop, you will be banned from the server.
+<br/> * If you are on a server where voting to be an Admin is enabled, DO NOT vote anyone to be an Admin UNLESS there is no available Admin on-line, in which case you are only allowed to vote Fractured Gaming Members as Admins. If neither is on the server, please post any concerns on the forums.
+<br/> * DO NOT abuse the vote kick system implemented on servers, doing so will result in an immediate ban.
+<br/> * Admins can and will ban at their own discretion. If you were banned and would like to appeal it. You can do it on the forums @ https://Fractured-Gaming.com/
+<br/> * If you want to suggest a change on the server post it in the appropriate forum area (Suggestions) that pertains to your game
+"
+]];
+
+player createDiaryRecord ["Rules",
+[
+"Community Rules",
+"
+<br/> * (These rules apply to anything owned by Fractured Gaming, to include Discord Server, Website/Forums, and Game Servers.) Failure to follow these rules will result in an immediate ban
+<br/>
+<br/> * If members or staff of Fractured Gaming do not like you for reasons that seem legit, you will be confronted and/or banned from our community. If you are already a member this rule still applies to you.
+<br/> * 0 tolerance policy for racism, religionism, sexism, or heterosexism (if it wasn't clear this obviously includes homophobia).This is to include using any words that fall under any of the categories listed in the rule above.
+<br/> * Respect our staff, running Fractured is a job we don't get paid for. We don't have to have our servers, but we do.
+<br/> * Respect our members, although in a lot of communities members are just another number, here at Fractured Gaming our members are our family. They are what make the community.
+<br/> * All names must match on the forums, Discord, and Game Servers prior to applying to be a member of our community.
+<br/> * DO NOT put [FRAC] in your name at all. This is a title granted by Server Owners, Founders, Admins, and Recruiters.
+<br/> * No trolling. We understand what jokes are. But if it seems your jokes are too much, you will be confronted and/or banned.
+<br/> * Members under the age of 18 are allowed in the community. Minors have no exemptions from our rules.
+<br/> * NO ADVERTISING any other Discord or community/clan/guild. We work hard enough to keep Fractured up. We don't need people leeching off our community. We didn't do it, you don't need to.
+<br/> * If you own your own server DO NOT tag it with Fractured, Fractured Gaming, or anything made by Fractured until given permission by a Server Owner. (Mokey). If granted this permission, your server must follow ALL rules of Fractured Gaming. NO EXCEPTIONS!
+<br/> * Donations are greatly appreciated (located on the main page https://fractured-gaming.com however, donations WILL NOT grant you any more power than what you already have. 
+"
+]];
+
