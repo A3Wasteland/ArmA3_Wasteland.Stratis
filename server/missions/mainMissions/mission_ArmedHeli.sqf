@@ -15,7 +15,7 @@ _setupVars =
 {
 	_vehicleClass = selectRandom
 	[
-		["B_Heli_Light_01_dynamicLoadout_F", "pawneeNormal"],
+		["B_Heli_Light_01_dynamicLoadout_F", "PawneeSkyHunter"],
 		"B_Heli_Transport_01_F",
 		"B_Heli_Attack_01_dynamicLoadout_F",
 		["O_Heli_Light_02_dynamicLoadout_F", "orcaDAGR"],

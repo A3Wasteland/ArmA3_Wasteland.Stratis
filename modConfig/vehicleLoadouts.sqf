@@ -36,8 +36,8 @@ switch (true) do
 		switch (_variant) do
 		{
 			case "HellGun": { _pylons = ["",""] };
-			case "HellShrieker": { _pylons = ["PylonRack_7Rnd_Rocket_04_HE_F","PylonRack_7Rnd_Rocket_04_AP_F"] };
-			case "HellAT": { _pylons = ["PylonRack_12Rnd_PG_missiles","PylonRack_3Rnd_LG_scalpel"] };
+			case "HellAT": { _pylons = ["PylonRack_3Rnd_LG_scalpel","PylonRack_7Rnd_Rocket_04_AP_F"] };
+			case "HellAA": { _pylons = ["PylonRack_Missile_BIM9X_x2","PylonRack_Missile_BIM9X_x2"] };
 		};
 	};
 	
@@ -47,6 +47,7 @@ switch (true) do
 		switch (_variant) do
 		{
 			case "orcaDAGR": { _pylons = ["PylonWeapon_2000Rnd_65x39_belt","PylonRack_12Rnd_PG_missiles"] };
+			case "orcaAA": { _pylons = ["PylonWeapon_2000Rnd_65x39_belt","PylonRack_Missile_BIM9X_x2"] };
 			default          { _pylons = ["PylonWeapon_2000Rnd_65x39_belt","PylonRack_12Rnd_missiles"] };
 		};
 	};

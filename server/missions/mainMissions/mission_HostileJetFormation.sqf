@@ -22,16 +22,16 @@ _setupObjects =
 	_planeChoices =
 	[
 		["B_Plane_CAS_01_dynamicLoadout_F", "B_Plane_Fighter_01_Stealth_F"],
- 		["O_Plane_CAS_02_dynamicLoadout_F", "O_Plane_CAS_02_F"],
+ 		["O_Plane_CAS_02_dynamicLoadout_F", "I_Plane_Fighter_04_F"],
  		["O_T_VTOL_02_infantry_dynamicLoadout_F", "I_Plane_Fighter_03_AA_F"],
-		["O_Plane_Fighter_02_F", "I_Plane_Fighter_04_F"]
+		["B_Plane_Fighter_01_Stealth_F", "O_Plane_Fighter_02_F"]
 	];
 
 	if (missionDifficultyHard) then
 	{
-		(_planeChoices select 0) set [0, "B_Plane_CAS_01_dynamicLoadout_F"];
- 		(_planeChoices select 1) set [0, "O_Plane_CAS_02_dynamicLoadout_F"];
- 		(_planeChoices select 2) set [0, "O_T_VTOL_02_infantry_F"];
+		(_planeChoices select 0) set [0, "B_Plane_Fighter_01_Stealth_F"];
+ 		(_planeChoices select 1) set [0, "I_Plane_Fighter_04_F"];
+ 		(_planeChoices select 2) set [0, "I_Plane_Fighter_03_AA_F"];
 		(_planeChoices select 3) set [0, "O_Plane_Fighter_02_F"];
 	};
 

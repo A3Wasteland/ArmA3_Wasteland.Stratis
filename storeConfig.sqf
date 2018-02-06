@@ -1020,10 +1020,10 @@ helicoptersArray = compileFinal str
 	["AH-9 Pawnee (SkyHunter)", "B_Heli_Light_01_dynamicLoadout_F", 35000, "vehicle", "variant_PawneeSkyHunter"],
 	["AH-9 Pawnee (Ground Assault)", "B_Heli_Light_01_dynamicLoadout_F", 35000, "vehicle", "variant_PawneeGround"], // Armed AH-6
 	["AH-9 Pawnee (Mission)", "B_Heli_Light_01_dynamicLoadout_F", 30000, "vehicle", "HIDDEN"], // Armed AH-6
-	["PO-30 Orca (DAR)", "O_Heli_Light_02_dynamicLoadout_F", 40000, "vehicle", "variant_orcaDAR"], // Armed Ka-60
+	["PO-30 Orca (Anti-Air)", "O_Heli_Light_02_dynamicLoadout_F", 30000, "vehicle", "variant_orcaAA"], // Armed Ka-60
 	["PO-30 Orca (DAGR)", "O_Heli_Light_02_dynamicLoadout_F", 50000, "vehicle", "variant_orcaDAGR"], // Armed Ka-60
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 60000, "vehicle"], // Armed AW159
-	["WY-55 Hellcat (Shrieker)", "I_Heli_light_03_dynamicLoadout_F", 50000, "vehicle", "variant_HellShrieker"], // Armed AW159
+	["WY-55 Hellcat (Anti-Air)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle", "variant_HellAA"], // Armed AW159
 	["WY-55 Hellcat (AT)", "I_Heli_light_03_dynamicLoadout_F", 70000, "vehicle", "variant_HellAT"], // Armed AW159
 	["AH-99 Blackfoot", "B_Heli_Attack_01_dynamicLoadout_F", 175000, "vehicle"], // RAH-66 with gunner
 	["Mi-48 Kajman", "O_Heli_Attack_02_dynamicLoadout_F", 200000, "vehicle"], // Mi-28 with gunner 
