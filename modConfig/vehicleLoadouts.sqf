@@ -400,6 +400,7 @@ switch (true) do
 	{
 		_mags =
 		[
+			["120Rnd_CMFlare_Chaff_Magazine", [-1]],
 			["32Rnd_40mm_G_belt", [1]],
 			["2000Rnd_65x39_Belt_Tracer_Green_Splash", [1]],
 			["32Rnd_40mm_G_belt", [2]],
@@ -409,6 +410,7 @@ switch (true) do
 		_weapons =
 		[
 		
+			["CMFlareLauncher", [-1]],
 			["GMG_40mm", [1]],
 			["LMG_Minigun_Transport", [1]],
 			["GMG_40mm", [2]],

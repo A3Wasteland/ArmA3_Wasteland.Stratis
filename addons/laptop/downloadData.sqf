@@ -156,7 +156,7 @@ T8_fnc_ActionLaptop =
 			if (isPlayer _x) then {
 			_bmoney = _x getVariable ["bmoney",0];
 			if ( _bmoney > 0 ) then { //might as well check for zero's
-			_fivePercent = round(0.005*_bmoney);
+			_fivePercent = round(0.01*_bmoney);
 			_x setVariable [ "bmoney", (_bmoney - _fivePercent), true ];
 			_totalMoney = _totalMoney + _fivePercent;
 		}
@@ -166,7 +166,7 @@ T8_fnc_ActionLaptop =
 		   }; 
 							};
 			
-			if (_totalMoney > 25000) then {
+			if (_totalMoney > 100000) then {
 			player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + _totalMoney, true];
 			systemChat format["You have hacked players bank accounts to the value of $%1",_totalMoney];	
 			}
