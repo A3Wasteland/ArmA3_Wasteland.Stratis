@@ -20,7 +20,8 @@ MainMissions =
 	["mission_CivHeli", 1],
 	["mission_Hackers",0.5],
 	["mission_HostileJetFormation", .75],
-	["mission_AbandonedJet", .5]
+	["mission_AbandonedJet", .5],
+	["mission_ArmedPatrol", .75]
 ];
 
 SideMissions =
@@ -43,7 +44,8 @@ SideMissions =
 MoneyMissions =
 [
 	["mission_MoneyShipment", 1],
-	["mission_SunkenTreasure", 1]
+	["mission_SunkenTreasure", 1],
+	["mission_SkySmuggler", 1]
 ];
 
 MissionSpawnMarkers = (allMapMarkers select {["Mission_", _x] call fn_startsWith}) apply {[_x, false]};
