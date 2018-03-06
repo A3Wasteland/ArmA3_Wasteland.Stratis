@@ -102,6 +102,7 @@ if (hasInterface || isServer) then
 	[] execVM "addons\laptop\init.sqf";
 	[] execVM "addons\Grenades\initGrenades.sqf";
 	[] execVM "addons\outOfBounds\outOfBounds.sqf";
+	[] execVM "addons\Fuel\Fuelconsumption.sqf";
 	
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 };
