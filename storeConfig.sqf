@@ -1016,18 +1016,31 @@ helicoptersArray = compileFinal str
 
 	["UH-80 Ghost Hawk", "B_Heli_Transport_01_F", 10000, "vehicle"], // UH-60 Stealth with 2 side minigunsB_Heli_Transport_01_camo_F
 	["UH-80 Grenade Hawk", "B_Heli_Transport_01_camo_F", 22500, "vehicle"], // UH-60 Stealth with 2 side miniguns
+	
 	["AH-9 Pawnee (Gun-Only)", "B_Heli_Light_01_dynamicLoadout_F", 20000, "vehicle", "variant_pawneeGun"], // Armed AH-6 (no missiles)
 	["AH-9 Pawnee (SkyHunter)", "B_Heli_Light_01_dynamicLoadout_F", 35000, "vehicle", "variant_PawneeSkyHunter"],
-	["AH-9 Pawnee (Ground Assault)", "B_Heli_Light_01_dynamicLoadout_F", 35000, "vehicle", "variant_PawneeGround"], // Armed AH-6
-	["AH-9 Pawnee (Mission)", "B_Heli_Light_01_dynamicLoadout_F", 30000, "vehicle", "HIDDEN"], // Armed AH-6
+	["AH-9 Pawnee (Mission)", "B_Heli_Light_01_dynamicLoadout_F", 200000, "vehicle", "variant_PawneeMission", "HIDDEN"], // Armed AH-6
+	
 	["PO-30 Orca (Anti-Air)", "O_Heli_Light_02_dynamicLoadout_F", 30000, "vehicle", "variant_orcaAA"], // Armed Ka-60
 	["PO-30 Orca (DAGR)", "O_Heli_Light_02_dynamicLoadout_F", 50000, "vehicle", "variant_orcaDAGR"], // Armed Ka-60
-	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 60000, "vehicle"], // Armed AW159
+	["PO-30 Orca (Mission)", "O_Heli_Light_02_dynamicLoadout_F", 250000, "vehicle", "variant_orcaMission", "HIDDEN"], // Armed Ka-60
+	
 	["WY-55 Hellcat (Anti-Air)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle", "variant_HellAA"], // Armed AW159
 	["WY-55 Hellcat (AT)", "I_Heli_light_03_dynamicLoadout_F", 70000, "vehicle", "variant_HellAT"], // Armed AW159
-	["AH-99 Blackfoot", "B_Heli_Attack_01_dynamicLoadout_F", 175000, "vehicle"], // RAH-66 with gunner
-	["Mi-48 Kajman", "O_Heli_Attack_02_dynamicLoadout_F", 200000, "vehicle"], // Mi-28 with gunner 
-	["Y-32 Xi'an", "O_T_VTOL_02_infantry_dynamicLoadout_F", 175000, "vehicle"],
+	["WY-55 Hellcat (Mission)", "I_Heli_light_03_dynamicLoadout_F", 250000, "vehicle", "variant_HellMission", "HIDDEN"], // Armed AW159
+	
+	["AH-99 Blackfoot (Mission)", "B_Heli_Attack_01_dynamicLoadout_F", 600000, "vehicle", "variant_BlackfootMission", "HIDDEN"], // RAH-66 with gunner
+	["AH-99 Blackfoot (AA)", "B_Heli_Attack_01_dynamicLoadout_F", 175000, "vehicle", "variant_BlackfootAA"], // RAH-66 with gunner
+	["AH-99 Blackfoot (AG)", "B_Heli_Attack_01_dynamicLoadout_F", 175000, "vehicle", "variant_BlackfootAG"], // RAH-66 with gunner
+	
+	["Mi-48 Kajman", "O_Heli_Attack_02_dynamicLoadout_F", 200000, "vehicle", "variant_KajmanAG"], // Mi-28 with gunner 
+	["Mi-48 Kajman (Mission AG)", "O_Heli_Attack_02_dynamicLoadout_F", 700000, "vehicle", "variant_KajmanMissionAG", "HIDDEN"], // Mi-28 with gunner 
+	["Mi-48 Kajman (Mission CAS)", "O_Heli_Attack_02_dynamicLoadout_F", 800000, "vehicle", "variant_KajmanMissionCAS", "HIDDEN"], // Mi-28 with gunner 
+	
+	["Y-32 Xi'an (Air)", "O_T_VTOL_02_infantry_dynamicLoadout_F", 175000, "vehicle", "variant_Xi'anAir"],
+	["Y-32 Xi'an (Earth)", "O_T_VTOL_02_infantry_dynamicLoadout_F", 175000, "vehicle", "variant_Xi'anEarth"],
+	["Y-32 Xi'an (Fire)", "O_T_VTOL_02_infantry_dynamicLoadout_F", 500000, "vehicle", "variant_Xi'anFire", "HIDDEN"],
+	["Y-32 Xi'an (Water)", "O_T_VTOL_02_infantry_dynamicLoadout_F", 400000, "vehicle", "variant_Xi'anWater", "HIDDEN"],
 
 	["MQ-12 Falcon Scout UAV", "B_T_UAV_03_dynamicLoadout_F", 80000, "vehicle", "variant_FalconScout"],
 	["MQ-12 Falcon AT UAV", "B_T_UAV_03_dynamicLoadout_F", 130000, "vehicle", "variant_FalconAT"],
@@ -1041,22 +1054,28 @@ planesArray = compileFinal str
 	
 	["A-143 Buzzard AA", "I_Plane_Fighter_03_dynamicLoadout_F", 150000, "vehicle", "variant_buzzardAA"],
 	["A-143 Buzzard CAS", "I_Plane_Fighter_03_dynamicLoadout_F", 225000, "vehicle", "variant_buzzardCAS"],
-	//["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 275000, "vehicle", "variant_buzzardCAS"],
+	["A-143 Buzzard (Mission)", "I_Plane_Fighter_03_dynamicLoadout_F", 800000, "vehicle", "variant_buzzardMission", "HIDDEN"],
 
-	["A-149 Gryphon", "I_Plane_Fighter_04_F", 200000, "vehicle"],
+	["A-149 Gryphon (AA)", "I_Plane_Fighter_04_F", 200000, "vehicle", "variant_GryphonA"],
+	["A-149 Gryphon (Ground)", "I_Plane_Fighter_04_F", 200000, "vehicle", "variant_GryphonG"],
+	["A-149 Gryphon (Mission)", "I_Plane_Fighter_04_F", 1000000, "vehicle", "variant_GryphonM", "HIDDEN"],
 
-	["F/A-181 Black Wasp (AA Lite)", "B_Plane_Fighter_01_Stealth_F", 175000, "vehicle"], // no missiles or bombs
-	["F/A-181 Black Wasp", "B_Plane_Fighter_01_F", 300000, "vehicle"],
+	["F/A-181 Black Wasp (Air Support)", "B_Plane_Fighter_01_Stealth_F", 1100000, "vehicle", "HIDDEN"], // no missiles or bombs
+	["F/A-181 Black Wasp (Ground Support)", "B_Plane_Fighter_01_F", 1200000, "vehicle"], "HIDDEN"],
 
-	["To-201 Shikra (Gun-Only)", "O_Plane_Fighter_02_Stealth_F", 175000, "vehicle"], // no missiles or bombs
-	["To-201 Shikra", "O_Plane_Fighter_02_F", 325000, "vehicle"],
+	["To-201 Shikra (Air Support)", "O_Plane_Fighter_02_Stealth_F", 1200000, "vehicle", "HIDDEN"], // no missiles or bombs
+	["To-201 Shikra (Ground Support)", "O_Plane_Fighter_02_F", 1300000, "vehicle", "HIDDEN"],
 
-	["A-164 Wipeout CAS", "B_Plane_CAS_01_dynamicLoadout_F", 300000, "vehicle"],
-	["To-199 Neophron CAS", "O_Plane_CAS_02_dynamicLoadout_F", 300000, "vehicle"],
+	["A-164 Wipeout AT", "B_Plane_CAS_01_dynamicLoadout_F", 1300000, "vehicle", "HIDDEN"],
+	["To-199 Neophron CAS", "O_Plane_CAS_02_dynamicLoadout_F", 1300000, "vehicle", "HIDDEN"],
 
 	["V-44 X Blackfish (Infantry)", "B_T_VTOL_01_infantry_F", 25000, "vehicle"],
 	["V-44 X Blackfish (Gunship)", "B_T_VTOL_01_armed_F", 125000, "vehicle"],
-	["Y-32 Xi'an", "O_T_VTOL_02_infantry_dynamicLoadout_F", 175000, "vehicle"],
+	
+	["Y-32 Xi'an", "O_T_VTOL_02_infantry_dynamicLoadout_F", 175000, "vehicle", "variant_Xi'anAir"],
+	["Y-32 Xi'an", "O_T_VTOL_02_infantry_dynamicLoadout_F", 175000, "vehicle", "variant_Xi'anEarth"],
+	["Y-32 Xi'an", "O_T_VTOL_02_infantry_dynamicLoadout_F", 500000, "vehicle", "variant_Xi'anFire", "HIDDEN"],
+	["Y-32 Xi'an", "O_T_VTOL_02_infantry_dynamicLoadout_F", 400000, "vehicle", "variant_Xi'anWater", "HIDDEN"],
 
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_dynamicLoadout_F", 140000, "vehicle", "variant_GreyBomber"],
 	["K40 Ababil-3 Bomber UAV", "O_UAV_02_dynamicLoadout_F", 140000, "vehicle", "variant_GreyBomber"],
