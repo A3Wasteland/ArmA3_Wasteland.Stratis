@@ -1061,7 +1061,7 @@ planesArray = compileFinal str
 	["A-149 Gryphon (Mission)", "I_Plane_Fighter_04_F", 1000000, "vehicle", "variant_GryphonM", "HIDDEN"],
 
 	["F/A-181 Black Wasp (Air Support)", "B_Plane_Fighter_01_Stealth_F", 1100000, "vehicle", "HIDDEN"], // no missiles or bombs
-	["F/A-181 Black Wasp (Ground Support)", "B_Plane_Fighter_01_F", 1200000, "vehicle"], "HIDDEN"],
+	["F/A-181 Black Wasp (Ground Support)", "B_Plane_Fighter_01_F", 1200000, "vehicle", "HIDDEN"],
 
 	["To-201 Shikra (Air Support)", "O_Plane_Fighter_02_Stealth_F", 1200000, "vehicle", "HIDDEN"], // no missiles or bombs
 	["To-201 Shikra (Ground Support)", "O_Plane_Fighter_02_F", 1300000, "vehicle", "HIDDEN"],
@@ -1072,10 +1072,10 @@ planesArray = compileFinal str
 	["V-44 X Blackfish (Infantry)", "B_T_VTOL_01_infantry_F", 25000, "vehicle"],
 	["V-44 X Blackfish (Gunship)", "B_T_VTOL_01_armed_F", 125000, "vehicle"],
 	
-	["Y-32 Xi'an", "O_T_VTOL_02_infantry_dynamicLoadout_F", 175000, "vehicle", "variant_Xi'anAir"],
-	["Y-32 Xi'an", "O_T_VTOL_02_infantry_dynamicLoadout_F", 175000, "vehicle", "variant_Xi'anEarth"],
-	["Y-32 Xi'an", "O_T_VTOL_02_infantry_dynamicLoadout_F", 500000, "vehicle", "variant_Xi'anFire", "HIDDEN"],
-	["Y-32 Xi'an", "O_T_VTOL_02_infantry_dynamicLoadout_F", 400000, "vehicle", "variant_Xi'anWater", "HIDDEN"],
+	["Y-32 Xi'an (Air)", "O_T_VTOL_02_infantry_dynamicLoadout_F", 175000, "vehicle", "variant_Xi'anAir"],
+	["Y-32 Xi'an (Earth)", "O_T_VTOL_02_infantry_dynamicLoadout_F", 175000, "vehicle", "variant_Xi'anEarth"],
+	["Y-32 Xi'an (Fire)", "O_T_VTOL_02_infantry_dynamicLoadout_F", 500000, "vehicle", "variant_Xi'anFire", "HIDDEN"],
+	["Y-32 Xi'an (Water)", "O_T_VTOL_02_infantry_dynamicLoadout_F", 400000, "vehicle", "variant_Xi'anWater", "HIDDEN"],
 
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_dynamicLoadout_F", 140000, "vehicle", "variant_GreyBomber"],
 	["K40 Ababil-3 Bomber UAV", "O_UAV_02_dynamicLoadout_F", 140000, "vehicle", "variant_GreyBomber"],

@@ -15,18 +15,18 @@ MainMissions =
 	["mission_HostileHeliFormation", 0.75],
 	["mission_APC", 1],
 	["mission_MBT", 1],
-	["mission_LightArmVeh", 1],
+	//["mission_LightArmVeh", 1],
 	["mission_ArmedHeli", 1],
 	//["mission_CivHeli", 1],
 	["mission_Hackers",0.5],
 	["mission_HostileJetFormation", .75],
-	["mission_AbandonedJet", .5],
+	["mission_AbandonedJet", .75],
 	["mission_ArmedPatrol", .75]
 ];
 
 SideMissions =
 [
-	["mission_HostileHelicopter", 0.5],
+	["mission_HostileHelicopter", 0.75],
 	["mission_MiniConvoy", 1],
 	["mission_SunkenSupplies", .5],
 	["mission_TownInvasion", 2],
@@ -34,7 +34,7 @@ SideMissions =
 	["mission_Truck", 1],
 	//["mission_AirWreck", 2],
 	["mission_geoCache", 1],
-	["mission_HostileJet", 0.5],
+	["mission_HostileJet", 0.75],
 	//["mission_WepCache", 2],
 	["mission_Sniper", 2],
 	["mission_Roadblock", 2]
@@ -53,13 +53,7 @@ ForestMissionMarkers = (allMapMarkers select {["ForestMission_", _x] call fn_sta
 SunkenMissionMarkers = (allMapMarkers select {["SunkenMission_", _x] call fn_startsWith}) apply {[_x, false]};
 RoadblockMissionMarkers = (allMapMarkers select {["RoadblockMission_", _x] call fn_startsWith}) apply {[_x, false]};
 
-if !(ForestMissionMarkers isEqualTo []) then
-{
-	SideMissions append
-	[
-		["mission_WepCache", 3]
-	];
-};
+
 
 LandConvoyPaths = (call compile preprocessFileLineNumbers "mapConfig\convoys\landConvoysList.sqf") apply {[_x, false]};
 CoastalConvoyPaths = (call compile preprocessFileLineNumbers "mapConfig\convoys\coastalConvoysList.sqf") apply {[_x, false]};

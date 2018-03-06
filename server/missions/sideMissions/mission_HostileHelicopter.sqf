@@ -164,11 +164,12 @@ _successExec =
 		_box2 setDir random 360;
 		[_box2, "mission_USLaunchers"] call randomCrateLoadOut;
 		
-		_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
-		_smoke = setDir random 360;
 
 	};
-
+	
+	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
+	_smoke = setDir random 360;
+	
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };
 
