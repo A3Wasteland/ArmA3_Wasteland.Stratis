@@ -130,30 +130,7 @@ _setupObjects =
 			_vehicle setVehicleAmmo 0.5;
 		};
 
-		// PO-30 Orca
-		case (_vehicle isKindOf "Heli_Light_02_base_F"):
-		{
-			// Reset all ammo
-			_vehicle setVehicleAmmoDef 1;
-		};
-
-		// Mi-48 Kajman
-		case (_vehicle isKindOf "Heli_Attack_02_base_F"):
-		{
-			_vehicle setVehicleAmmo 0;
-
-			// Custom load
-			_vehicle addMagazine "250Rnd_30mm_HE_shells";
-			_vehicle addMagazine ["38Rnd_80mm_rockets", 20];
-			_vehicle addmagazine ["8Rnd_LG_scalpel", 2];
-		};
-
-		// All other helicopters
-		case (_vehicle isKindOf "Helicopter_Base_F"):
-		{
-			// Cut all ammo by half
-			_vehicle setVehicleAmmoDef 0.5;
-		};
+		
 	};
 
 	// Reset all flares to 120

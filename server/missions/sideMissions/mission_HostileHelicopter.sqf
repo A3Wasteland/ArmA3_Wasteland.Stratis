@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "sideMissionDefines.sqf"
 
-private ["_vehicleClass", "_vehicle", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2"];
+private ["_vehicleClass", "_vehicle", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2", "_smoke"];
 
 _setupVars =
 {
@@ -21,11 +21,11 @@ _setupObjects =
 
 	_vehicleClass = if (missionDifficultyHard) then
 	{
-		selectRandom ["B_Heli_Attack_01_dynamicLoadout_F", "O_Heli_Attack_02_dynamicLoadout_F"] ;
+		selectRandom [["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"], ["I_Heli_light_03_dynamicLoadout_F", "HellMission"], ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"], ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionCAS"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaMission"]] ;
 	}
 	else
 	{
-		selectRandom [["B_Heli_Light_01_dynamicLoadout_F", "pawneeNormal"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaDAGR"], "I_Heli_light_03_dynamicLoadout_F"];
+		selectRandom [["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"], ["I_Heli_light_03_dynamicLoadout_F", "HellMission"], ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"], ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionCAS"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaMission"]];
 	};
 
 	_createVehicle =
@@ -127,7 +127,7 @@ _setupObjects =
 	_missionPicture = getText (configFile >> "CfgVehicles" >> (_vehicleClass param [0,""]) >> "picture");
  	_vehicleName = getText (configFile >> "CfgVehicles" >> (_vehicleClass param [0,""]) >> "displayName");
 
-	_missionHintText = format ["An armed <t color='%2'>%1</t> is patrolling the island. Intercept it and recover its cargo!", _vehicleName, sideMissionColor];
+	_missionHintText = format ["An Experimental <t color='%2'>%1</t> is patrolling the island. Intercept it and recover its cargo!", _vehicleName, sideMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -163,6 +163,10 @@ _successExec =
 		_box2 = createVehicle ["Box_East_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
 		_box2 setDir random 360;
 		[_box2, "mission_USLaunchers"] call randomCrateLoadOut;
+		
+		_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
+		_smoke = setDir random 360;
+
 	};
 
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";

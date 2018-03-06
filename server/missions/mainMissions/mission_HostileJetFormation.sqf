@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "mainMissionDefines.sqf"
 
-private ["_planeChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_box1", "_box2", "_box3"];
+private ["_planeChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_box1", "_box2", "_box3", "_smoke"];
 
 _setupVars =
 {
@@ -21,18 +21,20 @@ _setupObjects =
 
 	_planeChoices =
 	[
-		["B_Plane_CAS_01_dynamicLoadout_F", "B_Plane_Fighter_01_Stealth_F"],
- 		["O_Plane_CAS_02_dynamicLoadout_F", "I_Plane_Fighter_04_F"],
- 		["O_T_VTOL_02_infantry_dynamicLoadout_F", "I_Plane_Fighter_03_AA_F"],
-		["B_Plane_Fighter_01_Stealth_F", "O_Plane_Fighter_02_F"]
+		[["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["Plane_Fighter_03_dynamicLoadout_base_F", "buzzardMission"]],
+ 		[["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"], ["Plane_Fighter_03_dynamicLoadout_base_F", "buzzardMission"]],
+ 		[["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"]],
+		["B_Plane_Fighter_01_F", ["Plane_Fighter_04_Base_F", "GryphonM"]],
+		["O_Plane_Fighter_02_F", ["Plane_Fighter_04_Base_F", "GryphonM"]]
 	];
 
 	if (missionDifficultyHard) then
 	{
-		(_planeChoices select 0) set [0, "B_Plane_Fighter_01_Stealth_F"];
- 		(_planeChoices select 1) set [0, "I_Plane_Fighter_04_F"];
- 		(_planeChoices select 2) set [0, "I_Plane_Fighter_03_AA_F"];
-		(_planeChoices select 3) set [0, "O_Plane_Fighter_02_F"];
+		(_planeChoices select 0) set [0, ["Plane_Fighter_03_dynamicLoadout_base_F", "buzzardMission"]];
+ 		(_planeChoices select 1) set [0, ["Plane_Fighter_03_dynamicLoadout_base_F", "buzzardMission"]];
+ 		(_planeChoices select 2) set [0, ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"]];
+		(_planeChoices select 3) set [0, ["Plane_Fighter_04_Base_F", "GryphonM"]];
+		(_planeChoices select 4) set [0, ["Plane_Fighter_04_Base_F", "GryphonM"]];
 	};
 
 	_convoyVeh = _planeChoices call BIS_fnc_selectRandom;
@@ -184,7 +186,7 @@ _setupObjects =
  	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "displayName");
  	_vehicleName2 = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "displayName");
 
-	_missionHintText = format ["A formation of armed Jets containing a <t color='%3'>%1</t> and two <t color='%3'>%2</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
+	_missionHintText = format ["A formation of Experimental Jets containing a <t color='%3'>%1</t> and two <t color='%3'>%2</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -212,6 +214,9 @@ _successExec =
 	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
 	_box3 setDir random 360;
 	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
+	
+	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
+	_smoke = setDir random 360;
 
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };

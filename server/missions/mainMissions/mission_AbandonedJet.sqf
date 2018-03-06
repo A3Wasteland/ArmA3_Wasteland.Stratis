@@ -15,10 +15,14 @@ _setupVars =
 {
 	_vehicleClass = selectRandom
 	[
-		"I_Plane_Fighter_03_dynamicLoadout_F", 
-		"B_Plane_CAS_01_dynamicLoadout_F",
-		"O_Plane_CAS_02_dynamicLoadout_F",
-		"O_T_VTOL_02_infantry_dynamicLoadout_F"
+		["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardMission"],
+		["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"],
+		["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"],
+		["O_T_VTOL_02_infantry_dynamicLoadout_F", "Xi'anFire"],
+		["O_T_VTOL_02_infantry_dynamicLoadout_F", "Xi'anWater"],
+		["Plane_Fighter_04_Base_F", "GryphonM"],
+		"B_Plane_Fighter_01_F",
+		"O_Plane_Fighter_02_F"	
 	];
 
 	_missionType = "Abandoned Jet";

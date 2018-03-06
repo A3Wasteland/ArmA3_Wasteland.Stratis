@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "MoneyMissionDefines.sqf"
 
-private ["_heliChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_box1", "_box2","_cash"];
+private ["_heliChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_box1", "_box2","_cash", "_smoke"];
 
 _setupVars =
 {
@@ -21,16 +21,16 @@ _setupObjects =
 
 	_heliChoices =
 	[
-		["B_Heli_Transport_01_F", "B_Heli_Attack_01_dynamicLoadout_F"],
- 		["B_Heli_Transport_01_camo_F", "B_Heli_Attack_01_dynamicLoadout_F"],
- 		["B_Heli_Transport_03_F", "B_Heli_Attack_01_dynamicLoadout_F"]
+		["B_Heli_Transport_03_black_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"]],
+ 		["B_Heli_Transport_01_camo_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"]],
+ 		["B_Heli_Transport_03_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAA"]]
 	];
 
 	if (missionDifficultyHard) then
 	{
-		(_heliChoices select 0) set [0, "B_Heli_Transport_01_F"];
- 		(_heliChoices select 1) set [0, "B_Heli_Transport_01_camo_F"];
- 		(_heliChoices select 2) set [0, "B_Heli_Transport_03_F"];
+		(_heliChoices select 0) set [0, ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"]];
+ 		(_heliChoices select 1) set [0, ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"]];
+ 		(_heliChoices select 2) set [0, ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAA"]];
 	};
 
 	_convoyVeh = _heliChoices call BIS_fnc_selectRandom;
@@ -73,7 +73,7 @@ _setupObjects =
 
 		switch (true) do
 		{
-			case (_type isKindOf "Heli_Transport_01_base_F"):
+			case (_type isKindOf "Heli_Transport_01_base_F" || _type isKindOf "Heli_Transport_03_base_F"):
 			{
 				// these choppers have 2 turrets so we need 2 gunners
 				_soldier = [_aiGroup, _position] call createRandomSoldierC;
@@ -143,7 +143,7 @@ _setupObjects =
  	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "displayName");
  	_vehicleName2 = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "displayName");
 
-	_missionHintText = format ["A Money Smuggler is being escorted in a <t color='%3'>%1</t> by two <t color='%3'>%2</t> around the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
+	_missionHintText = format ["A Money Smuggler is being escorted in a <t color='%3'>%1</t> by two Experimental <t color='%3'>%2</t> around the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, moneyMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 	
@@ -180,6 +180,10 @@ _successExec =
 		_cash setVariable ["cmoney", 10000, true];
 		_cash setVariable ["owner", "world", true];
 	};
+	
+	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
+	_smoke = setDir random 360;
+
 
 	_successHintMessage = "The sky is clear again, the Smuggler and Escort were taken out! Ammo crates and Money have fallen near the wreck.";
 };
