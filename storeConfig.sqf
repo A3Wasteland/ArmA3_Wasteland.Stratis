@@ -1066,8 +1066,8 @@ planesArray = compileFinal str
 	["To-201 Shikra (Air Support)", "O_Plane_Fighter_02_Stealth_F", 1200000, "vehicle", "HIDDEN"], // no missiles or bombs
 	["To-201 Shikra (Ground Support)", "O_Plane_Fighter_02_F", 1300000, "vehicle", "HIDDEN"],
 
-	["A-164 Wipeout AT", "B_Plane_CAS_01_dynamicLoadout_F", 1300000, "vehicle", "HIDDEN"],
-	["To-199 Neophron CAS", "O_Plane_CAS_02_dynamicLoadout_F", 1300000, "vehicle", "HIDDEN"],
+	["A-164 Wipeout AT", "B_Plane_CAS_01_dynamicLoadout_F", 1300000, "vehicle", "variant_WipeoutMission", "HIDDEN"],
+	["To-199 Neophron CAS", "O_Plane_CAS_02_dynamicLoadout_F", 1300000, "vehicle", "variant_NeoMission", "HIDDEN"],
 
 	["V-44 X Blackfish (Infantry)", "B_T_VTOL_01_infantry_F", 25000, "vehicle"],
 	["V-44 X Blackfish (Gunship)", "B_T_VTOL_01_armed_F", 125000, "vehicle"],
