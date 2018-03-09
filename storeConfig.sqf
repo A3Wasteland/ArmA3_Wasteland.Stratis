@@ -207,10 +207,10 @@ staticGunsArray = compileFinal str
 	// ["Mk32A GMG 20mm Sentry", "I_GMG_01_A_F", 1000],
 	["Mk32 GMG 20mm High tripod", "B_GMG_01_high_F", 16000],
 	["Mk32 GMG 20mm High tripod", "O_GMG_01_high_F", 16000],
-	["Mk32 GMG 20mm High tripod", "I_GMG_01_high_F", 16000]
-	//["Mk6 Mortar", "B_Mortar_01_F", 12500],
-	//["Mk6 Mortar", "O_Mortar_01_F", 12500],
-	//["Mk6 Mortar", "I_Mortar_01_F", 12500]
+	["Mk32 GMG 20mm High tripod", "I_GMG_01_high_F", 16000],
+	["Mk6 Mortar", "B_Mortar_01_F", 80000, "HIDDEN"],
+	["Mk6 Mortar", "O_Mortar_01_F", 80000, "HIDDEN"],
+	["Mk6 Mortar", "I_Mortar_01_F", 80000, "HIDDEN"]
 ];
 
 throwputArray = compileFinal str
