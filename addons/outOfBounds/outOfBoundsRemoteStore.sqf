@@ -18,7 +18,7 @@
 
 	----------------------------------------------------------------------------------------------
 	
-	Name: outOfBounds.sqf
+	Name: outOfBoundsRemoteStore.sqf
 	Version: 1.0.0
 	Author: soulkobk (soulkobk.blogspot.com)
 	Creation Date: 9:33 PM 04/07/2016
@@ -33,17 +33,17 @@
 	_uav (and any vehicle the _uav is in) will be killed and forced to respawn.
 	
 	The playable area is within a visible blue circle border on the map as well as an altitude limit
-	(in meters) as set per the _maxHeight variable. The maximum time duration any _uav is allowed
+	(in meters) as set per the _maxHeightRemote variable. The maximum time duration any _uav is allowed
 	to be outside the playable area (in seconds) is set by the _maxTime variable.
 	
 	Place this file at...
-	\addons\outOfBounds\uavOutOfBounds.sqf
+	\addons\outOfBounds\outOfBoundsRemoteStore.sqf
 	
 	Edit the file...
 	\server\functions\fn_createCrewUAV.sqf
 	
 	And paste in at the bottom...
-	[_uav] execVM "addons\outOfBounds\uavOutOfBounds.sqf";
+	[_uav] execVM "addons\outOfBounds\outOfBoundsRemoteStore.sqf";
 	
 	Above the line... (right at the bottom of the script).
 	_grp
@@ -58,8 +58,8 @@
 	----------------------------------------------------------------------------------------------
 */
 
-_maxTime = 30; // 30 seconds max default
-_maxHeight = 2200; // 2500m height max default
+_maxTime = 30; // max out of bounds timer
+_maxHeightRemote = 1200; // max remote-vehicle height - this MUST match the outOfBoundsRemote.sqf entry!
 
 /*	------------------------------------------------------------------------------------------
 	DO NOT EDIT BELOW HERE!
@@ -69,18 +69,21 @@ params ["_uav"];
 	
 if (!isNil "_uav") then
 {
-	[_uav,_maxTime,_maxHeight] spawn
+	_uavText = format ["\n! %1 PLEASE NOTE THAT THE REMOTE VEHICLE '%2' HAS A MAX ALTITUDE OF %3M !",toUpper (name player),toUpper (getText (configfile >> "CfgVehicles" >> typeOf _uav >> "displayName")),_maxHeightRemote];
+	[_uavText, 5] call mf_notify_client;
+	
+	[_uav,_maxTime,_maxHeightRemote] spawn
 	{
-		params ["_uav","_maxTime","_maxHeight"];
+		params ["_uav","_maxTime","_maxHeightRemote"];
 		respawnDialogActive = false;
 		_inLoop = false;
 		while {alive _uav} do
 		{
-			waitUntil {uiSleep 0.1; alive _uav};
+			waitUntil {uiSleep 1; alive _uav};
 			if (alive _uav) then
 			{
-				_outOfBounds = !(_uav inArea "playableArea");
-				_outOfBoundsAltitude = (getPos _uav select 2 > _maxHeight);
+				_outOfBounds = !(_uav inArea "playableAreaRemote");
+				_outOfBoundsAltitude = (getPos _uav select 2 > _maxHeightRemote);
 				if (((_outOfBounds) || (_outOfBoundsAltitude)) && (!_inLoop)) then
 				{
 					_inLoop = true;
@@ -95,8 +98,8 @@ if (!isNil "_uav") then
 							vehicle _uav setDamage 1;
 							_uav setDamage 1;
 						};
-						_outOfBounds = !(_uav inArea "playableArea");
-						_outOfBoundsAltitude = (getPos _uav select 2 > _maxHeight);
+						_outOfBounds = !(_uav inArea "playableAreaRemote");
+						_outOfBoundsAltitude = (getPos _uav select 2 > _maxHeightRemote);
 					};
 					_inLoop = false;
 					_outOfBounds = false;

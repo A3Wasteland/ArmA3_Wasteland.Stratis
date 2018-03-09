@@ -101,7 +101,12 @@ if (hasInterface || isServer) then
 	[] execVM "addons\scripts\servercredits.sqf";
 	[] execVM "addons\laptop\init.sqf";
 	[] execVM "addons\Grenades\initGrenades.sqf";
-	[] execVM "addons\outOfBounds\outOfBounds.sqf";
+	[] execVM "addons\outOfBounds\outOfBoundsPlayer.sqf";
+    [] execVM "addons\outOfBounds\outOfBoundsHeli.sqf";
+    [] execVM "addons\outOfBounds\outOfBoundsPlane.sqf";
+    [] execVM "addons\outOfBounds\outOfBoundsShip.sqf";
+    [] execVM "addons\outOfBounds\outOfBoundsLandVehicle.sqf";
+    [] execVM "addons\outOfBounds\outOfBoundsRemote.sqf";
 	[] execVM "addons\Fuel\Fuelconsumption.sqf";
 	
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
