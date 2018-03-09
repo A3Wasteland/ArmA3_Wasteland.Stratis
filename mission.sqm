@@ -8,7 +8,7 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=1199;
+		nextID=1226;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=78;
+		nextID=84;
 	};
 	class Camera
 	{
-		pos[]={5037.2437,256.93073,5874.7617};
-		dir[]={-0.3410866,-0.69554061,0.63254315};
-		up[]={-0.33011261,0.71831465,0.61219609};
-		aside[]={0.88034517,-1.2581295e-006,0.47470412};
+		pos[]={3611.981,460.76395,3975.446};
+		dir[]={0.29873133,-0.42954326,0.85234547};
+		up[]={0.14216425,0.90271884,0.40561837};
+		aside[]={0.94389886,-3.6789497e-006,-0.3308326};
 	};
 };
 binarizationWanted=0;
@@ -99,13 +99,14 @@ addons[]=
 	"A3_Structures_F_EPC_Civ_Camping",
 	"A3_Modules_F",
 	"A3_Structures_F_Mil_Bunker",
-	"A3_Structures_F_Orange_Humanitarian_Camps"
+	"A3_Structures_F_Orange_Humanitarian_Camps",
+	"A3_Soft_F_Gamma_Truck_02"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=18;
+		items=19;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -232,6 +233,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item18
+		{
+			className="A3_Soft_F_Gamma";
+			name="Arma 3 - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=40661;
@@ -262,7 +270,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=762;
+		items=770;
 		class Item0
 		{
 			dataType="Group";
@@ -4552,7 +4560,7 @@ class Mission
 			fillName="DiagGrid";
 			a=45;
 			b=50;
-			angle=340.66595;
+			angle=340.66592;
 			id=315;
 			atlOffset=6.1035156e-005;
 		};
@@ -9074,17 +9082,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4307.4292,178.04247,4384.1836};
+						position[]={4311.1143,178.02216,4371.3066};
 						angles[]={0,4.5788021,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						init="[this] call A3W_fnc_setupMissionObject; this setVariable ['is_storage', true]";
 					};
 					id=592;
 					type="Land_Pallet_MilBoxes_F";
+					atlOffset=0.53230286;
 				};
 				class Item4
 				{
@@ -9350,7 +9358,7 @@ class Mission
 					name="VehStore8_seaSpawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=225.39578;
+					angle=225.39574;
 					id=1126;
 					atlOffset=17.706646;
 				};
@@ -11979,8 +11987,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4329.6929,180.72926,4333.5342};
-				angles[]={0,5.4375563,0};
+				position[]={4320.5151,178.45522,4327.043};
+				angles[]={0,5.3858876,0};
 			};
 			side="Empty";
 			flags=1;
@@ -11989,14 +11997,14 @@ class Mission
 			};
 			id=783;
 			type="Land_i_House_Big_01_V1_F";
-			atlOffset=1.6949005;
+			atlOffset=1.3616028;
 		};
 		class Item543
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4343.6177,180.54686,4321.0498};
+				position[]={4335.1558,178.17059,4312.5537};
 				angles[]={0,0.6873939,0};
 			};
 			side="Empty";
@@ -12006,7 +12014,7 @@ class Mission
 			};
 			id=784;
 			type="Land_i_House_Big_02_V2_F";
-			atlOffset=1.3804932;
+			atlOffset=0.8626709;
 		};
 		class Item544
 		{
@@ -14548,7 +14556,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0=[this] spawn A3W_fnc_setupStoreNPC";
+						init="0=[this] spawn A3W_fnc_setupStoreNPC;";
 						name="VehStore7";
 					};
 					id=1040;
@@ -14557,6 +14565,25 @@ class Mission
 					class CustomAttributes
 					{
 						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03GRE";
+								};
+							};
+						};
+						class Attribute1
 						{
 							property="pitch";
 							expression="_this setpitch _value;";
@@ -14575,7 +14602,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						nAttributes=2;
 					};
 				};
 			};
@@ -16297,6 +16324,240 @@ class Mission
 			id=1198;
 			type="Land_Atm_01_F";
 			atlOffset=-0.071365356;
+		};
+		class Item762
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5015.7378,210.46649,5888.9214};
+				angles[]={0,1.6174664,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this, true] call A3W_fnc_setupResupplyTruck;";
+			};
+			id=1200;
+			type="I_Truck_02_ammo_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item763
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3283.1274,7.2437515,5805.8564};
+				angles[]={0,5.4294438,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this, true] call A3W_fnc_setupResupplyTruck;";
+			};
+			id=1204;
+			type="I_Truck_02_ammo_F";
+			atlOffset=-0.0066576004;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item764
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1908.5986,8.066247,5741.0029};
+				angles[]={0,0.21903677,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this, true] call A3W_fnc_setupResupplyTruck;";
+			};
+			id=1207;
+			type="I_Truck_02_ammo_F";
+			atlOffset=0.010523796;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item765
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4309.5811,179.89595,4383.4629};
+				angles[]={0,6.0377398,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this, true] call A3W_fnc_setupResupplyTruck;";
+			};
+			id=1212;
+			type="C_Truck_02_box_F";
+			atlOffset=-0.002243042;
+		};
+		class Item766
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3059.8257,169.89801,2153.8032};
+				angles[]={0,0.743218,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this, true] call A3W_fnc_setupResupplyTruck;";
+			};
+			id=1216;
+			type="C_Truck_02_box_F";
+			atlOffset=-0.0090332031;
+		};
+		class Item767
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1999.4894,5.1126509,2710.6387};
+				angles[]={0,2.0586634,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this, true] call A3W_fnc_setupResupplyTruck;";
+			};
+			id=1219;
+			type="C_Truck_02_box_F";
+			atlOffset=-0.0091342926;
+		};
+		class Item768
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6529.1548,7.0722461,4944.186};
+				angles[]={6.0714097,0.16935994,6.2033563};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this, true] call A3W_fnc_setupResupplyTruck;";
+			};
+			id=1222;
+			type="C_Truck_02_box_F";
+			atlOffset=-0.13890791;
+		};
+		class Item769
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6965.2373,25.907322,6151.0049};
+				angles[]={0,3.1076875,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this, true] call A3W_fnc_setupResupplyTruck;";
+			};
+			id=1225;
+			type="I_Truck_02_ammo_F";
+			atlOffset=45.433037;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };
