@@ -7,41 +7,36 @@
 if (!isServer) exitwith {};
 #include "mainMissionDefines.sqf"
 
-private ["_planeChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_box1", "_box2", "_box3", "_smoke"];
+private ["_hostileJetChoices", "_hostileJetVeh", "_veh1", "_veh2", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2", "_box3", "_smoke"];
 
 _setupVars =
 {
 	_missionType = "Hostile Jet Squadron";
-	//_locationsArray = nil; // locations are generated on the fly from towns
 };
 
 _setupObjects =
 {
 	_missionPos = markerPos (((call cityList) call BIS_fnc_selectRandom) select 0);
 
-	_planeChoices =
+	_hostileJetChoices =
 	[
-		[["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["Plane_Fighter_03_dynamicLoadout_base_F", "buzzardMission"]],
- 		[["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"], ["Plane_Fighter_03_dynamicLoadout_base_F", "buzzardMission"]],
- 		[["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"]],
-		["B_Plane_Fighter_01_F", ["Plane_Fighter_04_Base_F", "GryphonM"]],
-		["O_Plane_Fighter_02_F", ["Plane_Fighter_04_Base_F", "GryphonM"]]
+		[["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardMission"], ["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardMission"]],
+		["B_Plane_CAS_01_dynamicLoadout_F", "B_Plane_CAS_01_dynamicLoadout_F"],
+		["O_Plane_Fighter_02_F", "O_Plane_Fighter_02_F"],
+		["B_Plane_Fighter_01_F", "B_Plane_Fighter_01_F"],
+		["B_Plane_CAS_01_dynamicLoadout_F", "B_Plane_CAS_01_dynamicLoadout_F"],
+		[["I_Plane_Fighter_04_F", "GryphonM"], ["I_Plane_Fighter_04_F", "GryphonM"]],
+		["O_Plane_CAS_02_dynamicLoadout_F", "O_Plane_CAS_02_dynamicLoadout_F"]
+ 		
 	];
 
-	if (missionDifficultyHard) then
-	{
-		(_planeChoices select 0) set [0, ["Plane_Fighter_03_dynamicLoadout_base_F", "buzzardMission"]];
- 		(_planeChoices select 1) set [0, ["Plane_Fighter_03_dynamicLoadout_base_F", "buzzardMission"]];
- 		(_planeChoices select 2) set [0, ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"]];
-		(_planeChoices select 3) set [0, ["Plane_Fighter_04_Base_F", "GryphonM"]];
-		(_planeChoices select 4) set [0, ["Plane_Fighter_04_Base_F", "GryphonM"]];
-	};
+	
 
-	_convoyVeh = _planeChoices call BIS_fnc_selectRandom;
+	_hostileJetVeh = _hostileJetChoices call BIS_fnc_selectRandom;
 
-	_veh1 = _convoyVeh select 0;
-	_veh2 = _convoyVeh select 1;
-	_veh3 = _convoyVeh select 1;
+	_veh1 = _hostileJetVeh select 0;
+	_veh2 = _hostileJetVeh select 1;
+	
 
 	_createVehicle =
 	{
@@ -66,11 +61,10 @@ _setupObjects =
  		};
 
 		[_vehicle] call vehicleSetup;
-		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
-		_vehicle setDir _direction;
-		_vehicle setVelocity _vel; // Added to make it fly
-		_vehicle setVariable [call vChecksum, true, false];
-		_aiGroup addVehicle _vehicle;
+		
+		_speed = 20;
+		_vel = velocity _vehicle;
+		_vehicle setVelocity [(_vel select 0) + (sin _direction * _speed), (_vel select 1) + (cos _direction * _speed), _vel select 2];
 
 		// add a driver/pilot/captain to the vehicle
 		_soldier = [_aiGroup, _position] call createRandomSoldierC;
@@ -100,63 +94,24 @@ _setupObjects =
 		[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
 		_vehicle
 	};
-	// SKIP TOWN AND PLAYER PROXIMITY CHECK
- 
-	_skippedTowns = // get the list from -> \mapConfig\towns.sqf
-	[
-		"Town_4",
-		"Town_11",
-		"Town_13",
-		"Town_15",
-		"Town_16",
-		"Town_17",
-		"Town_19",
-		"Town_20"
-		
-	];
-	
-	_town = ""; _missionPos = [0,0,0]; _radius = 0;
-	_townOK = false;
-	while {!_townOK} do
-	{
-		_town = selectRandom (call cityList); // initially select a random town for the mission.
-		_missionPos = markerPos (_town select 0); // the town position.
-		_radius = (_town select 1); // the town radius.
-		_anyPlayersAround = (nearestObjects [_missionPos,["MAN"],_radius]) select {isPlayer _x}; // search the area for players only.
-		if (((count _anyPlayersAround) isEqualTo 0) && !((_town select 0) in _skippedTowns)) exitWith // if there are no players around and the town marker is not in the skip list, set _townOK to true (exit loop).
-		{
-			_townOK = true;
-		};
-		sleep 0.1; // sleep between loops.
-    };
 	
 	_aiGroup = createGroup CIVILIAN;
 	
-	//_town = selectRandom (call cityList);
- 	//_missionPos = markerPos (_town select 0);
- 	//_radius = (_town select 1);
- 	// _vehiclePosArray = [_missionPos,(_radius / 2),_radius,5,0,0,0] call findSafePos;
- 
- 	// _vehicles = [];
- 	// {
- 		// _vehicles pushBack ([_x, _vehiclePosArray, 0, _aiGroup] call _createVehicle);
-
+	///////////////////////////////////////////////////////////////////////////////////////////////
+	// added by soulkobk 09/03/2018...
+	_mapSizeSquare = getNumber (configfile >> "CfgWorlds" >> worldName >> "mapSize");
+	_mapSizeEllipse = sqrt ((_mapSizeSquare * _mapSizeSquare) + (_mapSizeSquare * _mapSizeSquare));
+	_mapCenterPos = [(_mapSizeSquare / 2),(_mapSizeSquare / 2)];
+	_startPosition = [_mapCenterPos,_mapSizeEllipse / 1.5,round(random(360))] call BIS_fnc_relPos;
+	_directionToFly = [_startPosition,_mapCenterPos] call BIS_fnc_dirTo;
 	_vehicles =
-	[
-		[_veh1, _missionPos vectorAdd ([[random 50, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle,
-		[_veh2, _missionPos vectorAdd ([[random 50, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle,
-		[_veh3, _missionPos vectorAdd ([[random 50, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle
-	];
-	_vehiclePosArray = nil;
-	{
-		_vehiclePosArray = getPos ((_missionPos nearRoads _radius) select _forEachIndex);
-		if (isNil "_vehiclePosArray") then
-		{
-			_vehiclePosArray = [_missionPos,(_radius / 2),_radius,5,0,0,0] call findSafePos;
-		};
-		_vehicles pushBack ([_x, _vehiclePosArray, 0, _aiGroup] call _createVehicle);
- 		_vehiclePosArray = nil;
-	};
+    [
+        [_veh1,([_startPosition,100,0] call BIS_fnc_relPos),_directionToFly] call _createVehicle,
+        [_veh2,([_startPosition,100,120] call BIS_fnc_relPos),_directionToFly] call _createVehicle
+     
+    ];
+	// eoa
+	///////////////////////////////////////////////////////////////////////////////////////////////
 	
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup selectLeader _leader;
@@ -166,7 +121,6 @@ _setupObjects =
 	_aiGroup setFormation "VEE";
 
 	_speedMode = if (missionDifficultyHard) then { "NORMAL" } else { "LIMITED" };
-
 	_aiGroup setSpeedMode _speedMode;
 
 	// behaviour on waypoints
@@ -184,9 +138,9 @@ _setupObjects =
 
 	_missionPicture = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "picture");
  	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "displayName");
- 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "displayName");
+ 	
 
-	_missionHintText = format ["A formation of Experimental Jets containing a <t color='%3'>%1</t> and two <t color='%3'>%2</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
+	_missionHintText = format ["A formation of Experimental Jets containing Two <t color='%3'>%1</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, mainMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
