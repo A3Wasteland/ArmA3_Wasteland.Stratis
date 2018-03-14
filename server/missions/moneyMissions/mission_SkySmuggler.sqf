@@ -21,17 +21,12 @@ _setupObjects =
 
 	_heliChoices =
 	[
-		["B_Heli_Transport_03_black_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"]],
+		["B_Heli_Transport_03_black_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"]],
  		["B_Heli_Transport_01_camo_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"]],
  		["B_Heli_Transport_03_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAA"]]
 	];
 
-	if (missionDifficultyHard) then
-	{
-		(_heliChoices select 0) set [0, ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"]];
- 		(_heliChoices select 1) set [0, ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"]];
- 		(_heliChoices select 2) set [0, ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAA"]];
-	};
+	
 
 	_convoyVeh = _heliChoices call BIS_fnc_selectRandom;
 
