@@ -14680,7 +14680,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="[this, true, true] call A3W_fnc_setupMissionObject; this allowDamage false;";
+				init="[this, true, true] call A3W_fnc_setupMissionObject;";
 			};
 			id=1048;
 			type="Land_Cargo_Tower_V2_F";
