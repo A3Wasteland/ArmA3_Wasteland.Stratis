@@ -38,7 +38,7 @@
 */
 
 _maxTime = 30; // max out of bounds timer
-_maxHeight = 2000; // max helicopter height
+_maxHeight = 1700; // max helicopter height
 
 /*	------------------------------------------------------------------------------------------
 	DO NOT EDIT BELOW HERE!
