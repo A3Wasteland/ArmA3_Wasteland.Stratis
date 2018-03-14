@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=84;
+		nextID=86;
 	};
 	class Camera
 	{
-		pos[]={3611.981,460.76395,3975.446};
-		dir[]={0.29873133,-0.42954326,0.85234547};
-		up[]={0.14216425,0.90271884,0.40561837};
-		aside[]={0.94389886,-3.6789497e-006,-0.3308326};
+		pos[]={3018.6638,190.23917,1904.5389};
+		dir[]={-0.34763816,-0.42668247,-0.83506477};
+		up[]={-0.16409092,0.90407348,-0.39415824};
+		aside[]={-0.92337322,-3.4620753e-006,0.3844161};
 	};
 };
 binarizationWanted=0;
@@ -9358,7 +9358,7 @@ class Mission
 					name="VehStore8_seaSpawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=225.39574;
+					angle=225.39572;
 					id=1126;
 					atlOffset=17.706646;
 				};
