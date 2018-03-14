@@ -207,10 +207,10 @@ staticGunsArray = compileFinal str
 	// ["Mk32A GMG 20mm Sentry", "I_GMG_01_A_F", 1000],
 	["Mk32 GMG 20mm High tripod", "B_GMG_01_high_F", 16000],
 	["Mk32 GMG 20mm High tripod", "O_GMG_01_high_F", 16000],
-	["Mk32 GMG 20mm High tripod", "I_GMG_01_high_F", 16000]
-	//["Mk6 Mortar", "B_Mortar_01_F", 12500],
-	//["Mk6 Mortar", "O_Mortar_01_F", 12500],
-	//["Mk6 Mortar", "I_Mortar_01_F", 12500]
+	["Mk32 GMG 20mm High tripod", "I_GMG_01_high_F", 16000],
+	["Mk6 Mortar", "B_Mortar_01_F", 80000, "HIDDEN"],
+	["Mk6 Mortar", "O_Mortar_01_F", 80000, "HIDDEN"],
+	["Mk6 Mortar", "I_Mortar_01_F", 80000, "HIDDEN"]
 ];
 
 throwputArray = compileFinal str
@@ -1066,8 +1066,8 @@ planesArray = compileFinal str
 	["To-201 Shikra (Air Support)", "O_Plane_Fighter_02_Stealth_F", 1200000, "vehicle", "HIDDEN"], // no missiles or bombs
 	["To-201 Shikra (Ground Support)", "O_Plane_Fighter_02_F", 1300000, "vehicle", "HIDDEN"],
 
-	["A-164 Wipeout AT", "B_Plane_CAS_01_dynamicLoadout_F", 1300000, "vehicle", "HIDDEN"],
-	["To-199 Neophron CAS", "O_Plane_CAS_02_dynamicLoadout_F", 1300000, "vehicle", "HIDDEN"],
+	["A-164 Wipeout AT", "B_Plane_CAS_01_dynamicLoadout_F", 1300000, "vehicle", "variant_WipeoutMission", "HIDDEN"],
+	["To-199 Neophron CAS", "O_Plane_CAS_02_dynamicLoadout_F", 1300000, "vehicle", "variant_NeoMission", "HIDDEN"],
 
 	["V-44 X Blackfish (Infantry)", "B_T_VTOL_01_infantry_F", 25000, "vehicle"],
 	["V-44 X Blackfish (Gunship)", "B_T_VTOL_01_armed_F", 125000, "vehicle"],

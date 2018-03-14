@@ -21,12 +21,12 @@ _setupObjects =
 	_hostileJetChoices =
 	[
 		[["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardMission"], ["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardMission"]],
-		["B_Plane_CAS_01_dynamicLoadout_F", "B_Plane_CAS_01_dynamicLoadout_F"],
+		[["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission]],
 		["O_Plane_Fighter_02_F", "O_Plane_Fighter_02_F"],
 		["B_Plane_Fighter_01_F", "B_Plane_Fighter_01_F"],
-		["B_Plane_CAS_01_dynamicLoadout_F", "B_Plane_CAS_01_dynamicLoadout_F"],
-		[["I_Plane_Fighter_04_F", "GryphonM"], ["I_Plane_Fighter_04_F", "GryphonM"]],
-		["O_Plane_CAS_02_dynamicLoadout_F", "O_Plane_CAS_02_dynamicLoadout_F"]
+		[["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"], ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"]],
+		[["I_Plane_Fighter_04_F", "GryphonM"], ["I_Plane_Fighter_04_F", "GryphonM"]]
+		
  		
 	];
 

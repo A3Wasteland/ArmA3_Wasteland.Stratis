@@ -201,7 +201,7 @@ switch (true) do
 	};
 
 	// A-164 Wipeout CAS
-	case (_class isKindOf "Plane_CAS_01_dynamicLoadout_base_F"):
+	case (_class isKindOf "B_Plane_CAS_01_dynamicLoadout_F"):
 	{
 		switch (_variant) do
 		{
@@ -210,7 +210,7 @@ switch (true) do
 	};
 
 	// To-199 Neophron CAS
-	case (_class isKindOf "Plane_CAS_02_dynamicLoadout_base_F"):
+	case (_class isKindOf "O_Plane_CAS_02_dynamicLoadout_F"):
 	{
 		switch (_variant) do
 		{
