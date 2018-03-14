@@ -45,7 +45,7 @@ MoneyMissions =
 [
 	["mission_MoneyShipment", 1],
 	["mission_SunkenTreasure", 1],
-	["mission_SkySmuggler", 1]
+	["mission_SkySmuggler", 0.25]
 ];
 
 MissionSpawnMarkers = (allMapMarkers select {["Mission_", _x] call fn_startsWith}) apply {[_x, false]};
