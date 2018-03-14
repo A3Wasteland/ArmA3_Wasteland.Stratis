@@ -34,7 +34,6 @@ _setupVars =
 				[ // Wheeled convoy
 					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"], // Veh 1
 					["O_T_APC_Wheeled_02_rcws_ghex_F", "O_APC_Wheeled_02_rcws_F"], // Veh 2
-					["O_T_APC_Wheeled_02_rcws_ghex_F", "O_APC_Wheeled_02_rcws_F"], // Veh 3
 					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"] // Veh 4
 				],
 				[ // Tracked Convoy 2
@@ -56,7 +55,6 @@ _setupVars =
 				[ // Wheeled convoy
 					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"], // Veh 1
 					["O_T_APC_Wheeled_02_rcws_ghex_F", "O_APC_Wheeled_02_rcws_F"], // Veh 2
-					["O_T_APC_Wheeled_02_rcws_ghex_F", "O_APC_Wheeled_02_rcws_F"], // Veh 3
 					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"] // Veh 4
 				],
 				[ // Tracked Convoy 2
@@ -78,7 +76,6 @@ _setupVars =
 				[ // Wheeled convoy
 					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"], // Veh 1
 					["B_T_APC_Tracked_01_AA_F", "B_APC_Tracked_01_AA_F"], // Veh 2
-					["O_T_APC_Tracked_02_AA_ghex_F", "O_APC_Tracked_02_AA_F"], // Veh 3
 					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"] // Veh 4
 				],
 				[ // Tracked Convoy 2
@@ -152,7 +149,8 @@ _setupObjects =
 
     _skippedTowns = // get the list from -> \mapConfig\towns.sqf
     [
-        "Town_14" // Pythos Island Marker Name
+        "Town_17",
+		"Town_14" // Pythos Island Marker Name
     ];
 
     _town = ""; _missionPos = [0,0,0]; _radius = 0;
