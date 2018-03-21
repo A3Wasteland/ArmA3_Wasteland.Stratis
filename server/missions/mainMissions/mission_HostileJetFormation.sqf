@@ -21,7 +21,7 @@ _setupObjects =
 	_hostileJetChoices =
 	[
 		[["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardMission"], ["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardMission"]],
-		[["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission]],
+		[["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"]],
 		["O_Plane_Fighter_02_F", "O_Plane_Fighter_02_F"],
 		["B_Plane_Fighter_01_F", "B_Plane_Fighter_01_F"],
 		[["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"], ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"]],
@@ -158,19 +158,19 @@ _successExec =
 	// Mission completed
 
 	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 5, "None"];
-	_box1 setDir random 360;
+	_box1 setDir (random 360);
 	[_box1, "mission_USSpecial"] call randomCrateLoadOut;
 
 	_box2 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
-	_box2 setDir random 360;
+	_box2 setDir (random 360);
 	[_box2, "mission_USLaunchers"] call fn_refillbox;
 
 	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
-	_box3 setDir random 360;
+	_box3 setDir (random 360);
 	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
 	
 	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
-	_smoke = setDir random 360;
+	_smoke setDir (random 360);
 
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };
