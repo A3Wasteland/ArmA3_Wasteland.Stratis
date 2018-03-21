@@ -1,5 +1,5 @@
 //	@file Version: 2.0.3
-//	@file Name: hvT.sqf
+//	@file Name: highValueTarget.sqf
 //	@file Author: Cael817, CRE4MPIE, LouD, AgentRev, soulkobk
 //	@file Modified: soulkobk 7:16 PM 30/06/2016
 //	@file Description:	v2.0.3 - soulkobk, added in proper HandleDisconnect event handler to delete the HVT marker upon player disconnecting.
@@ -7,11 +7,17 @@
 //						this may deter players from logging out as a high-value-target (toggable on/off via #define). Added in condition
 //						to disable abort/respawn buttons if player is a HVT. once player drops money, HVT condition is reset and marker deleted.
 
-#define HVT_AMOUNT 150000  // how much a player needs to be carrying to become a HVT
-#define HINT_DELAY 60  // number of seconds between each HVT reminder hint
-#define MARKER_REFRESH 15  // number of seconds between each HVT marker refresh
 #define __PUNISH_HVT_LOGOUT__ // punish user if logged out as HVT?
 #define __PREVENT_HVT_LOGOUT__ // disables the abort and respawn button if player is marked as a HVT
+#define __BETWEEN__(_compare,_start,_end) (if ((_compare > _start) && (_compare <= _end)) then {true} else {false})
+
+_markerRefreshTime = 30; // number of seconds between each HVT marker refresh
+_hintDelay = 60; // number of seconds between each HVT reminder hint
+
+_hvtAmountYellow = 150000; // yellow marker amount (minimum to trigger HVT).
+_hvtAmountOrange = 450000; // orange marker amount, mid range.
+_hvtAmountRed = 750000; // red marker amount, high range.
+_hvtAmountMax = 25000000; // this must match the amount that can be stored in the bank.
 
 if (isServer) then
 {
@@ -35,16 +41,18 @@ if (!hasInterface) exitWith {};
 
 waitUntil {sleep 0.1; alive player && !(player getVariable ["playerSpawning", true])};
 
-_lastHintTime = -HINT_DELAY;
-_lastMarkerTime = -MARKER_REFRESH;
+_lastHintTime = -_hintDelay;
+_lastMarkerTime = -_markerRefreshTime;
 _markerTarget = objNull;
 _hasMarker = false;
 _markerName = "";
+_markerColor = "colorYellow";
 
 while {true} do
 {
-	_isHvT = (player getVariable ["cmoney",0] >= HVT_AMOUNT && alive player && !(player getVariable ["playerSpawning", true]));
-	if (_isHvT && diag_tickTime - _lastHintTime >= HINT_DELAY) then
+	_cMoney = (player getVariable ["cmoney",0]);
+	_isHvT = (_cMoney >= _hvtAmountYellow && alive player && !(player getVariable ["playerSpawning", true]));
+	if (_isHvT && diag_tickTime - _lastHintTime >= _hintDelay) then
 	{
 		hint parseText ([
 			"<t color='#FF0000' size='1.5' align='center'>High Value Target</t>",
@@ -53,7 +61,7 @@ while {true} do
 		] joinString "<br/>");
 		_lastHintTime = diag_tickTime;
 	};
-	if (diag_tickTime - _lastMarkerTime >= MARKER_REFRESH || (!alive _markerTarget && _hasMarker)) then
+	if (diag_tickTime - _lastMarkerTime >= _markerRefreshTime || (!alive _markerTarget && _hasMarker)) then
 	{
 		_markerName = "HvT_" + getPlayerUID player;
 		if (_hasMarker) then
@@ -63,10 +71,16 @@ while {true} do
 		};
 		if (_isHvT) then
 		{
+			switch (true) do
+			{
+				case (__BETWEEN__(_cMoney,_hvtAmountYellow,_hvtAmountOrange)): {_markerColor = "colorYellow"; _markerRefreshTime = 15;};
+				case (__BETWEEN__(_cMoney,_hvtAmountOrange,_hvtAmountRed)): {_markerColor = "colorOrange"; _markerRefreshTime = 30;};
+				case (__BETWEEN__(_cMoney,_hvtAmountRed,_hvtAmountMax)): {_markerColor = "colorRed"; _markerRefreshTime = 45;};
+			};
 			createMarker [_markerName, getPosWorld player];
-			_markerName setMarkerColor "ColorRed";
-			_markerName setMarkerText format ["Sugar Daddy: %1 ($%2)", profileName, (player getVariable ["cmoney",0]) call fn_numToStr];
-			_markerName setMarkerSize [0.50, 0.50];
+			_markerName setMarkerColor _markerColor;
+			// _markerName setMarkerText format [" HVT: %1 ($%2)", profileName, (player getVariable ["cmoney",0]) call fn_numToStr];
+			_markerName setMarkerSize [0.75, 0.75];
 			_markerName setMarkerShape "ICON";
 			_markerName setMarkerType "mil_warning";
 			_lastMarkerTime = diag_tickTime;
