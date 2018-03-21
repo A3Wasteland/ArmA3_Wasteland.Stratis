@@ -160,11 +160,11 @@ _successExec =
 	
 
 	_box1 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
-	_box1 setDir random 360;
+	_box1 setDir (random 360);
 	[_box1, "mission_USLaunchers"] call fn_refillbox;
 
 	_box2 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
-	_box2 setDir random 360;
+	_box2 setDir (random 360);
 	[_box2, "mission_Main_A3snipers"] call fn_refillbox;
 	
 	for "_i" from 1 to 10 do
@@ -172,12 +172,12 @@ _successExec =
 		_cash = createVehicle ["Land_Money_F", _lastPos, [], 5, "None"];
 		_cash setPos ([_lastPos, [[2 + random 3,0,0], random 360] call BIS_fnc_rotateVector2D] call BIS_fnc_vectorAdd);
 		_cash setDir random 360;
-		_cash setVariable ["cmoney", 10000, true];
+		_cash setVariable ["cmoney", 7500, true];
 		_cash setVariable ["owner", "world", true];
 	};
 	
 	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
-	_smoke = setDir random 360;
+	_smoke setDir (random 360);
 
 
 	_successHintMessage = "The sky is clear again, the Smuggler and Escort were taken out! Ammo crates and Money have fallen near the wreck.";

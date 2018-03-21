@@ -157,18 +157,18 @@ _successExec =
 		};
 
 		_box1 = createVehicle ["Box_NATO_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
-		_box1 setDir random 360;
+		_box1 setDir (random 360);
 		[_box1, "mission_USSpecial"] call fn_refillbox;
 
 		_box2 = createVehicle ["Box_East_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
-		_box2 setDir random 360;
+		_box2 setDir (random 360);
 		[_box2, "mission_USLaunchers"] call randomCrateLoadOut;
 		
 
 	};
 	
 	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
-	_smoke = setDir random 360;
+	_smoke setDir (random 360);
 	
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };

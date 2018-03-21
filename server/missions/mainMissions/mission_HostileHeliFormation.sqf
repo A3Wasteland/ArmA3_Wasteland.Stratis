@@ -21,9 +21,9 @@ _setupObjects =
 
 	_heliChoices =
 	[
-		[["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"], ["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"]],
- 		[["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionCAS"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaDAGR"]],
- 		[["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionAG"], ["I_Heli_light_03_dynamicLoadout_F", "HellMission"]]
+		[["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"], ["B_Heli_Light_01_dynamicLoadout_F", "pawneeSkyhunter"]],
+ 		[["O_Heli_Attack_02_dynamicLoadout_F", "KajmanAG"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaDAGR"]],
+ 		[["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAA"], ["I_Heli_light_03_dynamicLoadout_F", "HellAT"]]
 	];
 
 
@@ -155,19 +155,19 @@ _successExec =
 	// Mission completed
 
 	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 5, "None"];
-	_box1 setDir random 360;
+	_box1 setDir (random 360);
 	[_box1, "mission_USSpecial"] call randomCrateLoadOut;
 
 	_box2 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
-	_box2 setDir random 360;
+	_box2 setDir (random 360);
 	[_box2, "mission_USLaunchers"] call fn_refillbox;
 
 	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
-	_box3 setDir random 360;
+	_box3 setDir (random 360);
 	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
 	
 	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
-	_smoke = setDir random 360;
+	_smoke setDir (random 360);
 
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };
