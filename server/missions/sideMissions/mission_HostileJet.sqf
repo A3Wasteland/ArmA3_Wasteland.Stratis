@@ -154,7 +154,7 @@ _successExec =
 
 		_box2 = createVehicle ["Box_East_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
 		_box2 setDir (random 360);
-		[_box2, "mission_USLaunchers"] randomCrateLoadOut;
+		[_box2, "mission_USLaunchers"] call randomCrateLoadOut;
 		
 		
 	};

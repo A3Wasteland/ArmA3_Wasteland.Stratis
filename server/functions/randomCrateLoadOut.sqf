@@ -1310,6 +1310,15 @@ for [{_i = 0},{_i < _overallLoopAmount},{_i = _i + 1}] do
 		};
 	};
 };
+
+if (["A3W_artilleryStrike"] call isConfigOn) then
+{
+    if (random 1.0 < ["A3W_artilleryCrateOdds", 1/10] call getPublicVar) then
+    {
+        _crate setVariable ["artillery", 1, true];
+    };
+};
+
 #ifdef __DEBUG__
 	diag_log "----------------------------------------------------";
 #endif

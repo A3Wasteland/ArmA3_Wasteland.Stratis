@@ -214,8 +214,8 @@ _setupObjects =
 
 	_missionPos = getPosATL leader _aiGroup;
 
-	_missionPicture = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "picture");
- 	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "displayName");
+	_missionPicture = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "picture");
+ 	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "displayName");
 
 	_missionHintText = format ["A Military Patrol containing a <t color='%3'>%1</t> is patrolling the island. Destroy them and recover their cargo!", _vehicleName, mainMissionColor];
 
