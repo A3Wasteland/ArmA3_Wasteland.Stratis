@@ -560,3 +560,4 @@ if !(["A3W_hcObjCleanup"] call isConfigOn) then
 	
 };
 [] ExecVM "addons\cleanStores\cleanStores.sqf";
+execVM (externalConfigFolder + "\scripts\serverRestartMessages\serverRestartMessages.sqf");
