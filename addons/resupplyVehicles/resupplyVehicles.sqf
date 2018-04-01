@@ -75,48 +75,50 @@ if !(_resupplyObjects isEqualTo []) then
 	{
 		_resupplyObject = _x;
 		
-		_resupplyObject allowDamage false;
-		_resupplyObject setAmmoCargo 0;
-		_resupplyObject setFuelCargo 0;
-		_resupplyObject setRepairCargo 0;
-		_resupplyObject enableRopeAttach false;
-
-		clearBackpackCargoGlobal _resupplyObject;
-		clearMagazineCargoGlobal _resupplyObject;
-		clearWeaponCargoGlobal _resupplyObject;
-		clearItemCargoGlobal _resupplyObject;
-			
-		_resupplyObject setVariable ["R3F_LOG_disabled", true];
-		_resupplyObject setVariable ["A3W_lockpickDisabled", true];
-		_resupplyObject setVariable ["A3W_resupplyTruck", true];
-		_resupplyObject setVariable ["A3W_resupplyTruckSetup", true];
-		
-		_resupplyObjectPos = getPos _resupplyObject;
-		_resupplyObjectDir = getDir _resupplyObject;
-
-		_attachedObject = createVehicle ["Land_HBarrier_01_line_1_green_F", _resupplyObjectPos, [], _resupplyObjectDir, "NONE"];
-		_attachedObject allowDamage false;
-		_attachedObject attachTo [_resupplyObject,[0,0,0]];
-		
-		_resupplyObjectTrigger = createTrigger ["EmptyDetector", (getPosASL _resupplyObject), false];
-		_resupplyObjectTrigger setTriggerArea [15,15,0,false,((getPosASL _resupplyObject select 2) + 15)];
-		_resupplyObjectTrigger setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		_resupplyObjectTrigger setTriggerStatements [
-			"
-				((vehicle player) in thisList) && {(_x isKindOf 'AllVehicles') && (alive _x) && (!isNull assignedDriver _x)} count thisList > 0;
-			",
-			"
-				resupplyVehicle = player addAction ['<img image=''client\icons\repair.paa''/> Resupply Vehicle', 'client\functions\fn_resupplyTruck.sqf', [], 2, false, true, '', 'alive objectParent _this && attachedTo _target != vehicle _this && _target distance vehicle _this <= 10 && (isNil ''mutexScriptInProgress'' || {!mutexScriptInProgress})'];
-			",
-			"
-				player removeAction resupplyVehicle;
-			"
-		];
+		if (hasInterface) then
+		{
+			_resupplyObjectTrigger = createTrigger ["EmptyDetector", (getPosASL _resupplyObject), false];
+			_resupplyObjectTrigger setTriggerArea [15,15,0,false,((getPosASL _resupplyObject select 2) + 15)];
+			_resupplyObjectTrigger setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+			_resupplyObjectTrigger setTriggerStatements [
+				"
+					((vehicle player) in thisList) && {(_x isKindOf 'AllVehicles') && (alive _x) && (!isNull assignedDriver _x)} count thisList > 0;
+				",
+				"
+					resupplyVehicle = player addAction ['<img image=''client\icons\repair.paa''/> Resupply Vehicle', 'client\functions\fn_resupplyTruck.sqf', [], 2, false, true, '', 'alive objectParent _this && attachedTo _target != vehicle _this && _target distance vehicle _this <= 10 && (isNil ''mutexScriptInProgress'' || {!mutexScriptInProgress})'];
+				",
+				"
+					player removeAction resupplyVehicle;
+				"
+			];
+		};
 		
 		if (isServer) then
 		{
 			_resupplyObject setDamage 0;
 			_resupplyObject enableSimulationGlobal false;
+			_resupplyObject allowDamage false;
+			_resupplyObject setAmmoCargo 0;
+			_resupplyObject setFuelCargo 0;
+			_resupplyObject setRepairCargo 0;
+			_resupplyObject enableRopeAttach false;
+
+			clearBackpackCargoGlobal _resupplyObject;
+			clearMagazineCargoGlobal _resupplyObject;
+			clearWeaponCargoGlobal _resupplyObject;
+			clearItemCargoGlobal _resupplyObject;
+
+			_resupplyObjectPos = getPos _resupplyObject;
+			_resupplyObjectDir = getDir _resupplyObject;
+			
+			_attachedObject = createVehicle ["Land_HBarrier_01_line_1_green_F", _resupplyObjectPos, [], _resupplyObjectDir, "NONE"];
+			_attachedObject allowDamage false;
+			_attachedObject attachTo [_resupplyObject,[0,0,0]];
+				
+			_resupplyObject setVariable ["R3F_LOG_disabled", true];
+			_resupplyObject setVariable ["A3W_lockpickDisabled", true];
+			_resupplyObject setVariable ["A3W_resupplyTruck", true];
+			_resupplyObject setVariable ["A3W_resupplyTruckSetup", true];
 			
 			_resupplyObjectMarker = createMarker [format ["resupplyObjectLayer0_%1",_resupplyObject],_resupplyObjectPos];
 			_resupplyObjectMarker setMarkerShape "ELLIPSE";
