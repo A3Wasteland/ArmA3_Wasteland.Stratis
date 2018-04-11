@@ -90,7 +90,8 @@ if (_uid call isAdmin) then
 				case 7: //Money
 				{
 					_money = 5000;
-					player setVariable ["cmoney", (player getVariable ["cmoney",0]) + _money, true];
+					//player setVariable ["cmoney", (player getVariable ["cmoney",0]) + _money, true];
+					[player, _money] call A3W_fnc_setCMoney;
 					if (!isNil "notifyAdminMenu") then { ["money", _money] call notifyAdminMenu };
 				};
 				case 8: //Tags
