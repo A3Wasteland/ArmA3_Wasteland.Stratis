@@ -39,6 +39,18 @@ storePurchaseHandle = _this spawn
 	_colorText = _colorlist lbText _colorIndex;
 	_colorData = call compile (_colorlist lbData _colorIndex);
 
+	_partList = _dialog displayCtrl vehshop_part_list;
+	_defPartsChk = _dialog displayCtrl vehshop_defparts_checkbox;
+	_animList = []; // ["anim1", 1, "anim2", 0, ...] - formatted for BIS_fnc_initVehicle
+
+	if (!cbChecked _defPartsChk) then
+	{
+		for "_i" from 0 to (lbSize _partList - 1) do
+		{
+			_animList append [_partList lbData _i, (vehshop_list_checkboxTextures find (_partList lbPicture _i)) max 0];
+		};
+	};
+
 	_showInsufficientFundsError =
 	{
 		_itemText = _this select 0;
@@ -61,7 +73,7 @@ storePurchaseHandle = _this spawn
 		hint format ["""%1"" has been spawned outside, in front of the store.", _itemText];
 		playSound "FD_Finish_F";
 	};
-	
+
 	_checkLastPurchase =
 	{
 		_canPurchase = true;
@@ -75,7 +87,7 @@ storePurchaseHandle = _this spawn
 		};
 		_canPurchase
 	};
-		
+
 	_checkLastRemotePurchase =
 	{
 		_canRemotePurchase = true;
@@ -92,28 +104,24 @@ storePurchaseHandle = _this spawn
 
 	_applyVehProperties =
 	{
-		private ["_vehicle", "_colorText", "_playerItems", "_playerAssignedItems", "_uavTerminal", "_allUAV"];
-		_vehicle = _this select 0;
-		_colorText = _this select 1;
-		_colorData = _this select 2;
-		_texArray  = [];
+		params ["_vehicle", "_colorText", "_colorData", "_animList"];
 
-		if (count _colorData > 0) then
+		if (count _animList > 0) then
 		{
-			[_vehicle, _colorData] call applyVehicleTexture;
+			[_vehicle, false, _animList, true] remoteExecCall ["BIS_fnc_initVehicle", _vehicle];
 		};
-		
+
 		// If UAV or UGV, fill vehicle with UAV AI, give UAV terminal to our player, and connect it to the vehicle
-		if (round getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") > 0) then
+		if (unitIsUAV _vehicle) then
 		{
-			vehicleStore_lastRemotePurchaseTime = diag_tickTime;
-			
-			switch (playerSide) do
+
+			private _uavTerminal = configName (configFile >> "CfgWeapons" >> (switch (playerSide) do // retrieve case-sensitive name
+
 			{
-				case BLUFOR: { _uavTerminal = "B_UavTerminal" };
-				case OPFOR:	 { _uavTerminal = "O_UavTerminal" };
-				default	     { _uavTerminal = "I_UavTerminal" };
-			};
+				case BLUFOR: { "B_UavTerminal" };
+				case OPFOR:  { "O_UavTerminal" };
+				default      { "I_UavTerminal" };
+			}));
 
 			if !(_uavTerminal in assignedItems player) then
 			{
@@ -146,7 +154,7 @@ storePurchaseHandle = _this spawn
 		_vehicle
 	};
 
-	
+
 	if (_itemData isEqualType []) then
 	{
 		_class = _itemData param [1];
@@ -157,19 +165,15 @@ storePurchaseHandle = _this spawn
 		{
 			[_itemText] call _showInsufficientFundsError;
 		};
-		
+
 		///////////////////////////////////////////////////////////////////////////////////////////
 		_purchaseAllowed = true; // set the default to true
 		_isRemote = false; // set the default to false
 		if (round getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") > 0) then // check if is UAV/UGV/REMOTE vehicle BEFORE vehicle creation!
 		{
-			_purchaseAllowed = call _checkLastRemotePurchase; // returns true or false
-			_isRemote = true;
-		}
-		else
-		{
-			_purchaseAllowed = call _checkLastPurchase; // returns true or false
-			_isRemote = false;
+
+			[_vehicle, _colorText, if (!isNil "_colorData") then { _colorData } else { "" }, _animList] call _applyVehProperties;
+
 		};
 		if (_purchaseAllowed) then
 		{
@@ -198,7 +202,7 @@ storePurchaseHandle = _this spawn
 				_price = -1;
 			};
 		};
-		///////////////////////////////////////////////////////////////////////////////////////////	
+		///////////////////////////////////////////////////////////////////////////////////////////
 	};
 	if (!isNil "_price" && {_price > -1}) then
 	{
@@ -218,7 +222,8 @@ storePurchaseHandle = _this spawn
 		{
 			vehicleStore_lastPurchaseTime = diag_tickTime;
 
-			player setVariable ["cmoney", _playerMoney - _price, true];
+			//player setVariable ["cmoney", _playerMoney - _price, true];
+			[player, -_price] call A3W_fnc_setCMoney;
 			_playerMoneyText ctrlSetText format ["Cash: $%1", [player getVariable ["cmoney", 0]] call fn_numbersText];
 
 			if (["A3W_playerSaving"] call isConfigOn) then
