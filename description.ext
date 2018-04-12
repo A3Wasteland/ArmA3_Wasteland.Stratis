@@ -20,13 +20,13 @@ class Header
 {
 	gameType=Sandbox;
 	minPlayers=1;
-	maxPlayers=146; // 144 players, 2 headless clients
+	maxPlayers=72; // 70 players, 2 headless clients
 };
 author="Fractured-Gaming.com - A3Wasteland.com"; // it would be great if you could keep "A3Wasteland.com" in the name, like "YourName and A3Wasteland.com" :)
 onLoadName = "Fractured A3Wasteland Stratis"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
-onLoadMission = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
-overviewText = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
-overviewTextLocked = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
+onLoadMission = "FRAC A3Wasteland is a harsh TDM-esk Server where two teams and independent players fight for survival.";
+overviewText = "FRAC A3Wasteland is a harsh TDM-esk Server where two teams and independent players fight for survival.";
+overviewTextLocked = "FRAC A3Wasteland is a harsh TDM-esk Server where two teams and independent players fight for survival.";
 overviewPicture = "mapConfig\Loading.jpg";
 loadScreen = "mapConfig\Loading.jpg";
 briefing = 0; // if 0, skip Continue button
