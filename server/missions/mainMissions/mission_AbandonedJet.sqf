@@ -22,7 +22,7 @@ _setupVars =
 		["O_T_VTOL_02_infantry_dynamicLoadout_F", "Xi'anWater"],
 		["Plane_Fighter_04_Base_F", "GryphonM"],
 		"B_Plane_Fighter_01_F",
-		"O_Plane_Fighter_02_F"
+		"O_Plane_Fighter_02_F"	
 	];
 
 	_missionType = "Abandoned Jet";
