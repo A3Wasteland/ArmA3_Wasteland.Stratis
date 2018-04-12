@@ -136,7 +136,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			}
 			else // normal spawn
 			{
-				_safePos = _markerPos findEmptyPosition [0, 50, [_class, "B_Truck_01_transport_F"] select (!surfaceIsWater _markerPos && _seaSpawn)]; // use HEMTT in findEmptyPosition for boats on lands 
+				_safePos = _markerPos findEmptyPosition [0, 50, [_class, "B_Truck_01_transport_F"] select (!surfaceIsWater _markerPos && _seaSpawn)]; // use HEMTT in findEmptyPosition for boats on lands
 				if (count _safePos == 0) then { _safePos = _markerPos };
 				_spawnPosAGL = _safePos;
 				if (_seaSpawn) then { _safePos vectorAdd [0,0,0.05] };
@@ -232,6 +232,8 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 
 			_object setDir (if (_object isKindOf "Plane") then { markerDir _marker } else { random 360 });
 
+
+
 			_isDamageable = !(_object isKindOf "ReammoBox_F"); // ({_object isKindOf _x} count ["AllVehicles", "Lamps_base_F", "Cargo_Patrol_base_F", "Cargo_Tower_base_F"] > 0);
 
 			[_object] call vehicleSetup;
@@ -239,7 +241,9 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			_object setVariable ["allowDamage", _isDamageable, true];
 
 			clearBackpackCargoGlobal _object;
-
+			clearWeaponCargoGlobal _object;
+			clearMagazineCargoGlobal _object;
+			clearItemCargoGlobal _object;
 			// give diving gear to RHIB, Speedboat, and SDV
 			if ({_object isKindOf _x} count ["Boat_Transport_02_base_F","Boat_Armed_01_base_F","SDV_01_base_F"] > 0) then
 			{
