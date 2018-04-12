@@ -3,8 +3,8 @@
 // ******************************************************************************************
 //	@file Version: 1.0
 //	@file Name: mission_ArmedHeli.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy, AgentRev
-//	@file Created: 08/12/2012 15:19
+//	@file Author: [404] Deadbeat, [404] Costlyy, AgentRev, Mokey
+//	@file Created: 4/12/2018 11:13AM
 
 if (!isServer) exitwith {};
 #include "mainMissionDefines.sqf";
@@ -15,17 +15,15 @@ _setupVars =
 {
 	_vehicleClass = selectRandom
 	[
-		["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardMission"],
-		["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"],
-		["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"],
-		["O_T_VTOL_02_infantry_dynamicLoadout_F", "Xi'anFire"],
-		["O_T_VTOL_02_infantry_dynamicLoadout_F", "Xi'anWater"],
-		["Plane_Fighter_04_Base_F", "GryphonM"],
-		"B_Plane_Fighter_01_F",
-		"O_Plane_Fighter_02_F"
+		["B_MBT_01_arty_F", "ScorcherMission"],         //NEED LOADOUT
+		["B_APC_Tracked_01_AA_F", "TigrisMission"],     //NEED LOADOUT
+		["B_MBT_01_mlrs_F", "MLRSMission"],             //NEED LOADOUT
+		["O_MRAP_02_gmg_F", "GMGStriderMission"],       //NEED LOADOUT
+		["O_MBT_02_cannon_F", "MBTMission"],            //NEED LOADOUT
+		["B_APC_Wheeled_03_cannon_F", "CheetahMission"] //NEED LOADOUT
 	];
 
-	_missionType = "Abandoned Jet";
+	_missionType = "Abandoned Vehicle";
 	_locationsArray = MissionSpawnMarkers;
 
 	_nbUnits = if (missionDifficultyHard) then { AI_GROUP_LARGE } else { AI_GROUP_MEDIUM };
