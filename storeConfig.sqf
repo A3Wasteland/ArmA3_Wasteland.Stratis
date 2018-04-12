@@ -1107,6 +1107,8 @@ planesArray = compileFinal str
 	["SDV Submarine (CSAT)", "O_SDV_01_F", 4000, "submarine", "SKIPSAVE"],
 	["SDV Submarine (AAF)", "I_SDV_01_F", 4000, "submarine", "SKIPSAVE"]
 
+];
+
 boatsArray = compileFinal str
 [
 	["Water Scooter", "C_Scooter_Transport_01_F", 500, "boat", "SKIPSAVE"],
