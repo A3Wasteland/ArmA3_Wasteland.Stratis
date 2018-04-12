@@ -7,7 +7,7 @@
 #define LAYER 85125
 
 _launchers = ["launch_I_Titan_short_F","launch_O_Titan_short_F","launch_B_Titan_short_F","launch_Titan_short_F","launch_Titan_F","launch_O_Titan_F","launch_I_Titan_F","launch_B_Titan_F","launch_B_Titan_tna_F","launch_O_Titan_ghex_F","launch_B_Titan_short_tna_F","launch_O_Titan_short_ghex_F", "launch_B_Titan_tna_F", "launch_B_Titan_short_tna_F", "H_HelmetO_ViperSP_ghex_F"];  // launcher array
-_vehicles = ["B_HMG_01_high_F", "B_static_AA_F", "B_static_AT_F", "B_GMG_01_F"];
+_vehicles = ["B_HMG_01_high_F", "B_static_AA_F", "B_static_AT_F", "B_GMG_01_F", "B_T_LSV_01_AT_F", "O_T_LSV_02_AT_F", "B_AFV_Wheeled_01_cannon_F", "B_AFV_Wheeled_01_up_cannon_F", "I_LT_01_scout_F", "I_LT_01_cannon_F", "I_LT_01_AT_F", "I_LT_01_AA_F", "O_T_MBT_04_cannon_F", "O_T_MBT_04_command_F", ];
 
 while {true} do
 {
