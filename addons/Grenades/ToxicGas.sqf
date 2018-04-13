@@ -13,10 +13,10 @@ setNoGasStatus = {
     "dynamicBlur" ppEffectAdjust [0];                   // enables normal vision
     "dynamicBlur" ppEffectCommit 10;                    // time it takes to go back to normal vision
     resetCamShake;                                      // resets the shake
-    20 fadeSound 1;                                     // fades the sound back to normal	
+    20 fadeSound 1;                                     // fades the sound back to normal
 };
 
-setGasStatus = { 
+setGasStatus = {
     "dynamicBlur" ppEffectEnable true;              	// enables ppeffect
     "dynamicBlur" ppEffectAdjust [12];             	  	// intensity of blur
 	"dynamicBlur" ppEffectCommit 5;                 	// time till vision is fully blurred
@@ -38,7 +38,7 @@ While{true} do{
 	waituntil{
         _smokeShell = nearestObject [getPosATL player, "SmokeShellYellow"];
 	    _curPlayerInvulnState = player getVariable ["isAdminInvulnerable", false];
-		_smokeShell distance player < 7
+		_smokeShell distance player < 6
 		&&
 	    velocity _smokeShell isEqualTo [ 0, 0, 0 ]
 	    &&
