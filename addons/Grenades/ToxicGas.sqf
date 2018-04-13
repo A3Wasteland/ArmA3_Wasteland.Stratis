@@ -38,7 +38,7 @@ While{true} do{
 	waituntil{
         _smokeShell = nearestObject [getPosATL player, "SmokeShellYellow"];
 	    _curPlayerInvulnState = player getVariable ["isAdminInvulnerable", false];
-		_smokeShell distance player < 6
+		_smokeShell distance player < 7
 		&&
 	    velocity _smokeShell isEqualTo [ 0, 0, 0 ]
 	    &&
