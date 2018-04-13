@@ -351,7 +351,7 @@ while { true } do
 					"aKKillcursor", "aKNoEscort", "aKEscort", "aKtroll", "aKTPall", "aKUnrestrain", "aKNoEscortMe", "aKNoTaze", "aKJailplayer", "aKLisense", "riasgremory_titans_shit_reold", "Tonic_merde", "jaimepaslepoisin_HLEAL", "TTTT_IIII___TTTTTTT_RAP_FR",
 					"TTTT_IIII___TTTTTTT_REPGA", "TTTT_IIII___TTTTTTT_REPGAs", "jaimepaslepoisin_HLEAL", "Root_Main4", "Root_Pistol4", "Root_Rifle4", "Root_Machinegun4", "Root_Sniper4", "Root_Launcher4", "Root_Attachement4", "VAR56401668319_secret",
 					"myPubVar", "XXMMWW_boxquad", "Init_Menu_Fury", "A3RANDVARrpv1tpv", "fnc_nestf", "XXMMWW_keybinds", "smissles", "wooden_velo", "vabox", "bis_fnc_camera_target"];
-			};
+				};
 
 		if (isNil "_cheatFlag" && isNil "_memAnomaly") then
 		{
