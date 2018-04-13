@@ -24,6 +24,7 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>][REDUCED] HVT Map Refresh Time to 5 seconds
 <br/>][REMOVED] Bounty System by Centrifugal
 <br/>[FIXED] Optimizations for Server
 <br/>[NEW VERSION] Server Updated and re-released as 2.0

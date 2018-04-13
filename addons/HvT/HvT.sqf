@@ -9,7 +9,7 @@
 
 #define HVT_AMOUNT 150000  // how much a player needs to be carrying to become a HVT
 #define HINT_DELAY 60  // number of seconds between each HVT reminder hint
-#define MARKER_REFRESH 15  // number of seconds between each HVT marker refresh
+#define MARKER_REFRESH 5  // number of seconds between each HVT marker refresh
 #define __PUNISH_HVT_LOGOUT__ // punish user if logged out as HVT?
 #define __PREVENT_HVT_LOGOUT__ // disables the abort and respawn button if player is marked as a HVT
 
