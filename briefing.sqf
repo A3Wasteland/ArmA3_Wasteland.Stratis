@@ -24,6 +24,16 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>[Optimized] Code and Calls
+<br/>[Update] Mission and Database to current
+<br/>[Added] New Vehicles to Disable Thermals
+<br/>[Added] New Vehicles to ToxicGas Exemptions
+<br/>[Update]Anti-Hack :)
+<br/>[New] Mission - Abandoned Vehicle
+<br/>[Added] Server Messages
+<br/>[Added] Tanks DLC to stores
+<br/>[Fixed] Store Prices
+<br/>[Fixed] Disable Thermals
 <br/>][REDUCED] HVT Map Refresh Time to 5 seconds
 <br/>][REMOVED] Bounty System by Centrifugal
 <br/>[FIXED] Optimizations for Server
@@ -328,10 +338,10 @@ player createDiaryRecord ["gearlevel",
 <br/> To revieve a gear level, Fill out a gear level application on the forums to upgrade your gear level.
 <br/> There are 10 Levels in total.
 <br/> There are 5 Prestiege Levels. (after the 1st 10 levels)
-<br/> Prestiege Gear Levels allow you to spawn with either nothing or the bare minimum. 
+<br/> Prestiege Gear Levels allow you to spawn with either nothing or the bare minimum.
 <br/> Prestiege Gear Levels are $10,000,000 per level and Prestiege level 5 is $25,000,000
 <br/> Prestiege Gear Levels are for the hardcore wasteland players with a big payoff at the end.
-<br/> The Final Prestiege level allows you to pick weapons from the VR before spawning. 
+<br/> The Final Prestiege level allows you to pick weapons from the VR before spawning.
 "
 ]];
 
@@ -652,7 +662,7 @@ player createDiaryRecord ["Rules",
 "Discord Rules & Info",
 "
 <br/> * (These are rules that apply to Fractured Gaming's Discord Server) Failure to follow these rules will result in a kick/ban with or without warning.
-<br/> 
+<br/>
 <br/> * No Channel Spamming, do not join different channels in a short period of time. A lot of people run dual monitors and spamming channels will catch their eye. Causing issues with gameplay. This is also annoying for people in the channels.
 <br/> * DO NOT Spam message anyone or any channel.
 <br/> * If you use voice activation or continuous transmission and you have a lot of background noise you will be asked to fix it. If it is not fixed YOU WILL be put on forced PTT (push to talk). Admins will apply or remove this at their own discretion.
@@ -660,9 +670,9 @@ player createDiaryRecord ["Rules",
 <br/> * New Discord users will be granted (Approved Guest) once the rules have been explained to you and verification that you understand the rules.
 <br/> * Use of the @Everyone command is restricted to FRAC Staff for official announcements only. The @Here may be used in channels sparingly for important topics only. Misuse or spamming of these commands will result in a ban.
 <br/> * Basic etiquette should be used when joining channels including:
-<br/> * - Listening to the channel first to not cut off people 
+<br/> * - Listening to the channel first to not cut off people
 <br/> * - Refraining from loud introductory noise (i.e. don't join a room yelling (GOOODDDDD MORRNINGGGG!!!!!)
-<br/> * - Giving priority of in-game communications in respective game channels over (chit chat). 
+<br/> * - Giving priority of in-game communications in respective game channels over (chit chat).
 <br/> * - Any channel with a player limit lock is specifically designated for gameplay and anyone joining these channels should take care not to speak over players in game or cause distractions.
 "
 ]];
@@ -672,7 +682,7 @@ player createDiaryRecord ["Rules",
 "Arma Rules & Info",
 "
 <br/> * (Theses rules apply to the ARMA 3 Stratis Wasteland Server) Failure to follow these rules will result in a kick and or ban, with or without warning.
-<br/> 
+<br/>
 <br/> * Keep away from and stay off of Spawn Island located at Grid [037079] North of the map.
 <br/> * STAY OFF of Global VON (Voice Over Network or Voice) , this is activated buy hitting -Caps Lock- (default.) If you are on Global VON hit . (period) to change your channel.
 <br/> * You are allowed to talk in Side VON (Voice Over Network or Voice),  DO NOT Spam side chat in VON. If people say to stop, most likely you are over using side chat and will be considered as spam.
@@ -719,7 +729,6 @@ player createDiaryRecord ["Rules",
 <br/> * Members under the age of 18 are allowed in the community. Minors have no exemptions from our rules.
 <br/> * NO ADVERTISING any other Discord or community/clan/guild. We work hard enough to keep Fractured up. We don't need people leeching off our community. We didn't do it, you don't need to.
 <br/> * If you own your own server DO NOT tag it with Fractured, Fractured Gaming, or anything made by Fractured until given permission by a Server Owner. (Mokey). If granted this permission, your server must follow ALL rules of Fractured Gaming. NO EXCEPTIONS!
-<br/> * Donations are greatly appreciated (located on the main page https://fractured-gaming.com however, donations WILL NOT grant you any more power than what you already have. 
+<br/> * Donations are greatly appreciated (located on the main page https://fractured-gaming.com however, donations WILL NOT grant you any more power than what you already have.
 "
 ]];
-
