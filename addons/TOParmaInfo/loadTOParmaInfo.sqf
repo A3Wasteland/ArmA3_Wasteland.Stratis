@@ -1,5 +1,5 @@
 // ******************************************************************************************
-// * This project is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
+// * This project is licensed under the GNU Affero GPL v3. Copyright ï¿½ 2015 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Name: loadTOParmaInfo.sqf
 //	@file Author: Lodac
@@ -22,7 +22,7 @@ _serverInfoString = format ["<t color='#A0FFFFFF'>Fractured Wasteland #%1 %2</t>
 _serverInfoText ctrlSetStructuredText parseText _serverInfoString;
 
 _generalInfoText = _display displayCtrl TOParmaInfo_General_Info_BG;
-_generalInfoString = "Website: <t color='#0091CD'><a href='http://www.Fractured-Gaming.Com'>Fractured-Gaming.</a></t> Forums: <t color='#0091CD'><a href='http://fractured-gaming.com/forum.php'>Fractured-Gaming Forums</a></t> TeamSpeak: ts.Fractured-Gaming.com";
+_generalInfoString = "Website: <t color='#0091CD'><a href='https://www.Fractured-Gaming.Com'>Fractured-Gaming.</a></t> Forums: <t color='#0091CD'><a href='https://forum.fractured-gaming.com/'>Fractured-Gaming Forums</a></t> DISCORD: Discord.Frac.gg";
 _generalInfoText ctrlSetStructuredText parseText _generalInfoString;
 
 
@@ -38,21 +38,21 @@ _statsOffline = "addons\TOParmaInfo\stats.html";
 _ctrlHTML = _display displayCtrl TOParmaInfo_Content_Rules;
 _ctrlHTML htmlLoad _rulesOnline;
 _htmlLoaded = ctrlHTMLLoaded _ctrlHTML;
-if (!_htmlLoaded) then 
+if (!_htmlLoaded) then
 {
 	_ctrlHTML htmlLoad _rulesOffline;
 };
 _ctrlHTML = _display displayCtrl TOParmaInfo_Content_News;
 _ctrlHTML htmlLoad _newsOnline;
 _htmlLoaded = ctrlHTMLLoaded _ctrlHTML;
-if (!_htmlLoaded) then 
+if (!_htmlLoaded) then
 {
 	_ctrlHTML htmlLoad _newsOffline;
 };
 _ctrlHTML = _display displayCtrl TOParmaInfo_Content_Stats;
 _ctrlHTML htmlLoad _statsOnline;
 _htmlLoaded = ctrlHTMLLoaded _ctrlHTML;
-if (!_htmlLoaded) then 
+if (!_htmlLoaded) then
 {
 	_ctrlHTML htmlLoad _statsOffline;
 };

@@ -4,9 +4,46 @@
 //	@web: http://www.fractured-gaming.com
 //	@Special Thanks to Pitoucc, CREAMPIE, and Izzer
 
-_gasMask = ["H_CrewHelmetHeli_B", "H_CrewHelmetHeli_O", "H_CrewHelmetHeli_I", "H_HelmetO_ViperSP_ghex_F", "H_HelmetO_ViperSP_hex_F"]; // define the gasmasks here
-//Edit what vehicles DO NOT get the gas/damage effect "Base_Vehicle DOES NOT work"
-_exemptVehicles = ["B_MRAP_01_F", "B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F", "O_MRAP_02_F", "O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F", "I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F", "O_APC_Wheeled_02_rcws_v2_F", "B_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F", "B_AFV_Wheeled_01_cannon_F", "B_AFV_Wheeled_01_up_cannon_F", "I_LT_01_scout_F", "I_LT_01_cannon_F", "I_LT_01_AT_F", "I_LT_01_AA_F", "B_APC_Tracked_01_CRV_F", "B_APC_Tracked_01_rcws_F", "I_APC_tracked_03_cannon_F", "O_APC_Tracked_02_cannon_F", "B_APC_Tracked_01_AA_F", "O_APC_Tracked_02_AA_F", "B_MBT_01_cannon_F", "B_MBT_01_TUSK_F", "O_MBT_02_cannon_F", "I_MBT_03_cannon_F", "O_T_MBT_04_cannon_F", "O_T_MBT_04_command_F"];
+_gasMask = [
+            "H_CrewHelmetHeli_B",
+            "H_CrewHelmetHeli_O",
+            "H_CrewHelmetHeli_I",
+            "H_HelmetO_ViperSP_ghex_F",
+            "H_HelmetO_ViperSP_hex_F"
+          ];
+
+_exemptVehicles = [
+                    "B_MRAP_01_F",
+                    "B_MRAP_01_hmg_F",
+                    "B_MRAP_01_gmg_F",
+                    "O_MRAP_02_F",
+                    "O_MRAP_02_hmg_F",
+                    "O_MRAP_02_gmg_F",
+                    "I_MRAP_03_F",
+                    "I_MRAP_03_hmg_F",
+                    "I_MRAP_03_gmg_F",
+                    "O_APC_Wheeled_02_rcws_v2_F",
+                    "B_APC_Wheeled_01_cannon_F",
+                    "I_APC_Wheeled_03_cannon_F",
+                    "B_AFV_Wheeled_01_cannon_F",
+                    "B_AFV_Wheeled_01_up_cannon_F",
+                    "I_LT_01_scout_F",
+                    "I_LT_01_cannon_F",
+                    "I_LT_01_AT_F",
+                    "I_LT_01_AA_F",
+                    "B_APC_Tracked_01_CRV_F",
+                    "B_APC_Tracked_01_rcws_F",
+                    "I_APC_tracked_03_cannon_F",
+                    "O_APC_Tracked_02_cannon_F",
+                    "B_APC_Tracked_01_AA_F",
+                    "O_APC_Tracked_02_AA_F",
+                    "B_MBT_01_cannon_F",
+                    "B_MBT_01_TUSK_F",
+                    "O_MBT_02_cannon_F",
+                    "I_MBT_03_cannon_F",
+                    "O_T_MBT_04_cannon_F",
+                    "O_T_MBT_04_command_F"
+                  ];
 
 setNoGasStatusGL = {
     "dynamicBlur" ppEffectEnable true;                  // enables ppeffect
