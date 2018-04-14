@@ -1000,9 +1000,9 @@ armoredArray = compileFinal str
 	["Strider HMG", "I_MRAP_03_hmg_F", 15000, "vehicle"],
 	["Strider GMG", "I_MRAP_03_gmg_F", 17500, "vehicle"],
 	["AWC 303 Nyx Recon", "I_LT_01_scout_F", 10000, "vehicle"],
-	["AWC 304 Nyx Autocannon", "I_LT_01_cannon_F", 25000, "vehicle"],
-	["AWC 301 Nyx AT", "I_LT_01_AT_F", 40000, "vehicle"],
-	["AWC 302 Nyx AA", "I_LT_01_AA_F", 30000, "vehicle"],
+	["AWC 304 Nyx Autocannon", "I_LT_01_cannon_F", 30000, "vehicle"],
+	["AWC 301 Nyx AT", "I_LT_01_AT_F", 35000, "vehicle"],
+	["AWC 302 Nyx AA", "I_LT_01_AA_F", 25000, "vehicle"],
 	["MSE-3 Marid", "O_APC_Wheeled_02_rcws_v2_F", 25000, "vehicle"],
 	["AMV-7 Marshall", "B_APC_Wheeled_01_cannon_F", 30000, "vehicle"],
 	["AFV-4 Gorgon", "I_APC_Wheeled_03_cannon_F", 40000, "vehicle"],
@@ -1014,10 +1014,6 @@ armoredArray = compileFinal str
 tanksArray = compileFinal str
 [
 
-	["AWC 303 Nyx Recon", "I_LT_01_scout_F", 10000, "vehicle"],
-	["AWC 304 Nyx Autocannon", "I_LT_01_cannon_F", 25000, "vehicle"],
-	["AWC 301 Nyx AT", "I_LT_01_AT_F", 40000, "vehicle"],
-	["AWC 302 Nyx AA", "I_LT_01_AA_F", 30000, "vehicle"],
 	["CRV-6e Bobcat (Resupply)", "B_APC_Tracked_01_CRV_F", 40000, "vehicle"],
 	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 40000, "vehicle"],
 	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 50000, "vehicle"],
