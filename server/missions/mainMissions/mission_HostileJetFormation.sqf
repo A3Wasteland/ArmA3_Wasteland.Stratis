@@ -20,23 +20,23 @@ _setupObjects =
 
 	_hostileJetChoices =
 	[
-		[["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardMission"], ["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardMission"]],
+		[["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardCAS"], ["I_Plane_Fighter_03_dynamicLoadout_F", "buzzardCAS"]],
 		[["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"]],
 		["O_Plane_Fighter_02_F", "O_Plane_Fighter_02_F"],
 		["B_Plane_Fighter_01_F", "B_Plane_Fighter_01_F"],
 		[["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"], ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"]],
-		[["I_Plane_Fighter_04_F", "GryphonM"], ["I_Plane_Fighter_04_F", "GryphonM"]]
-		
- 		
+		[["I_Plane_Fighter_04_F", "GryphonG"], ["I_Plane_Fighter_04_F", "GryphonG"]]
+
+
 	];
 
-	
+
 
 	_hostileJetVeh = _hostileJetChoices call BIS_fnc_selectRandom;
 
 	_veh1 = _hostileJetVeh select 0;
 	_veh2 = _hostileJetVeh select 1;
-	
+
 
 	_createVehicle =
 	{
@@ -46,7 +46,7 @@ _setupObjects =
 		_position = _this select 1;
 		_direction = _this select 2;
 		_variant = _type param [1,"",[""]];
- 
+
  		if (_type isEqualType []) then
  		{
  			_type = _type select 0;
@@ -61,7 +61,7 @@ _setupObjects =
  		};
 
 		[_vehicle] call vehicleSetup;
-		
+
 		_speed = 20;
 		_vel = velocity _vehicle;
 		_vehicle setVelocity [(_vel select 0) + (sin _direction * _speed), (_vel select 1) + (cos _direction * _speed), _vel select 2];
@@ -94,9 +94,9 @@ _setupObjects =
 		[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
 		_vehicle
 	};
-	
+
 	_aiGroup = createGroup CIVILIAN;
-	
+
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	// added by soulkobk 09/03/2018...
 	_mapSizeSquare = getNumber (configfile >> "CfgWorlds" >> worldName >> "mapSize");
@@ -108,11 +108,11 @@ _setupObjects =
     [
         [_veh1,([_startPosition,100,0] call BIS_fnc_relPos),_directionToFly] call _createVehicle,
         [_veh2,([_startPosition,100,120] call BIS_fnc_relPos),_directionToFly] call _createVehicle
-     
+
     ];
 	// eoa
 	///////////////////////////////////////////////////////////////////////////////////////////////
-	
+
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup selectLeader _leader;
 	_leader setRank "LIEUTENANT";
@@ -138,7 +138,7 @@ _setupObjects =
 
 	_missionPicture = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "picture");
  	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "displayName");
- 	
+
 
 	_missionHintText = format ["A formation of Experimental Jets containing Two <t color='%3'>%1</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, mainMissionColor];
 
@@ -168,7 +168,7 @@ _successExec =
 	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
 	_box3 setDir (random 360);
 	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
-	
+
 	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
 	_smoke setDir (random 360);
 

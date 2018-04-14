@@ -21,11 +21,11 @@ _setupObjects =
 
 	_vehicleClass = if (missionDifficultyHard) then
 	{
-		selectRandom [["Plane_Fighter_04_Base_F", "GryphonM"], ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"], ["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["O_T_VTOL_02_infantry_dynamicLoadout_F", "Xi'anFire"]];
+		selectRandom [["Plane_Fighter_04_Base_F", "GryphonA"], ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"], ["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["O_T_VTOL_02_infantry_dynamicLoadout_F", "Xi'anAir"]];
 	}
 	else
 	{
-		selectRandom [["Plane_Fighter_04_Base_F", "GryphonM"], ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"], ["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["O_T_VTOL_02_infantry_dynamicLoadout_F", "Xi'anFire"]];
+		selectRandom [["Plane_Fighter_04_Base_F", "GryphonG"], ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"], ["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["O_T_VTOL_02_infantry_dynamicLoadout_F", "Xi'anAir"]];
 	};
 
 	_createVehicle =
@@ -47,7 +47,7 @@ _setupObjects =
 		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
 		_vehicle setDir _direction;
 		_vehicle setVelocity _vel; // Added to make it fly
-		
+
 		if (_variant != "") then
  		{
  			_vehicle setVariable ["A3W_vehicleVariant", _variant, true];
@@ -155,13 +155,13 @@ _successExec =
 		_box2 = createVehicle ["Box_East_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
 		_box2 setDir (random 360);
 		[_box2, "mission_USLaunchers"] call randomCrateLoadOut;
-		
-		
+
+
 	};
-	
+
 	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
 	_smoke setDir (random 360);
-	
+
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };
 

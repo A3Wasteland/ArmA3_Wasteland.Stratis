@@ -21,11 +21,11 @@ _setupObjects =
 
 	_vehicleClass = if (missionDifficultyHard) then
 	{
-		selectRandom [["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"], ["I_Heli_light_03_dynamicLoadout_F", "HellMission"], ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"], ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionCAS"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaMission"]] ;
+		selectRandom [["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"], ["I_Heli_light_03_dynamicLoadout_F", "HellMission"], ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"], ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionAG"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaMission"]] ;
 	}
 	else
 	{
-		selectRandom [["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"], ["I_Heli_light_03_dynamicLoadout_F", "HellMission"], ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"], ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionCAS"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaMission"]];
+		selectRandom [["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"], ["I_Heli_light_03_dynamicLoadout_F", "HellMission"], ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"], ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionAG"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaMission"]];
 	};
 
 	_createVehicle =
@@ -163,13 +163,13 @@ _successExec =
 		_box2 = createVehicle ["Box_East_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
 		_box2 setDir (random 360);
 		[_box2, "mission_USLaunchers"] call randomCrateLoadOut;
-		
+
 
 	};
-	
+
 	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
 	_smoke setDir (random 360);
-	
+
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };
 

@@ -21,12 +21,12 @@ _setupObjects =
 
 	_heliChoices =
 	[
-		["B_Heli_Transport_03_black_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"]],
- 		["B_Heli_Transport_01_camo_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"]],
- 		["B_Heli_Transport_03_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAA"]]
+		["O_Heli_Light_02_dynamicLoadout_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"]],
+ 		["I_Heli_light_03_dynamicLoadout_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"]],
+ 		["O_Heli_Attack_02_dynamicLoadout_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAA"]]
 	];
 
-	
+
 
 	_convoyVeh = _heliChoices call BIS_fnc_selectRandom;
 
@@ -42,7 +42,7 @@ _setupObjects =
 		_position = _this select 1;
 		_direction = _this select 2;
 		_variant = _type param [1,"",[""]];
- 
+
  		if (_type isEqualType []) then
  		{
  			_type = _type select 0;
@@ -105,9 +105,9 @@ _setupObjects =
 
 	_vehicles =
 	[
-		[_veh1, _missionPos vectorAdd ([[random 50, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle,
-		[_veh2, _missionPos vectorAdd ([[random 50, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle,
-		[_veh3, _missionPos vectorAdd ([[random 50, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle
+		[_veh1, _missionPos vectorAdd ([[random 100, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle,
+		[_veh2, _missionPos vectorAdd ([[random 100, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle,
+		[_veh3, _missionPos vectorAdd ([[random 100, 0, 0], random 360] call BIS_fnc_rotateVector2D), 0] call _createVehicle
 	];
 
 	_leader = effectiveCommander (_vehicles select 0);
@@ -141,8 +141,8 @@ _setupObjects =
 	_missionHintText = format ["A Money Smuggler is being escorted in a <t color='%3'>%1</t> by two Experimental <t color='%3'>%2</t> around the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, moneyMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
-	
-	
+
+
 };
 
 _waitUntilMarkerPos = {getPosATL _leader};
@@ -157,7 +157,7 @@ _successExec =
 {
 	// Mission completed
 
-	
+
 
 	_box1 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
 	_box1 setDir (random 360);
@@ -166,7 +166,7 @@ _successExec =
 	_box2 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
 	_box2 setDir (random 360);
 	[_box2, "mission_Main_A3snipers"] call fn_refillbox;
-	
+
 	for "_i" from 1 to 10 do
 	{
 		_cash = createVehicle ["Land_Money_F", _lastPos, [], 5, "None"];
@@ -175,7 +175,7 @@ _successExec =
 		_cash setVariable ["cmoney", 7500, true];
 		_cash setVariable ["owner", "world", true];
 	};
-	
+
 	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
 	_smoke setDir (random 360);
 
