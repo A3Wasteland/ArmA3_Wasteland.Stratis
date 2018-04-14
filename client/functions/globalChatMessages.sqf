@@ -30,7 +30,7 @@
 	----------------------------------------------------------------------------------------------
 */
 
-_globalChatPrefix = "[FRAC]";
+_globalChatPrefix = "FRACbot";
 
 _globalChatMessagesSleep = 30*60; // 30 minutes sleep per full loop.
 
@@ -40,14 +40,14 @@ _globalChatMessages = [
     ["Website -> Fractured-Gaming.com",30],
     ["Server restarts are at 6am, 12pm, 6pm and 12am daily (CST).",1],
     ["Gearlevel Information -> Can be found in the map menu.",30],
-    ["You can view your stats or anyone elses stats -> stats.frac.gg .",30],
+    ["You can view your stats or anyone elses stats -> stats.frac.gg ",30],
     ["If you encounter a bug, please post it on the forums -> forums.fractured-gaming.com .",30],
     ["Servers cost money, and they aint cheap! Donate -> donate.frac.gg",30],
     ["Want to be a FRAC Member? Apply on the forums!.",30],
     ["Server Rules:",1],
     ["NO Hacking, Cheating or Exploiting!",5],
     ["NO Racism, Heterosexism, or Bashing Religion! This is to include the terminology.",5],
-    ["NO Advertising Any Other VOIP or Community/Clan/Guild! ",5],
+    ["NO Advertising Any Other VOIP or Community/Clan/Guild!",5],
     ["NO Abusing VOIP!",5],
     ["English Only When Using VOIP or Side/Global Chat!",5],
     ["If You Don't Like It Here, Then Leave! If Not, we will show you the door!",5],
