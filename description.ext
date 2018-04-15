@@ -40,7 +40,7 @@ briefing = 0; // if 0, skip Continue button
 #define A3W_UICOLOR_B  0.235 // default = 0.96
 
 //Dialog includes
-
+#include "infiSTAR_AdminMenu.hpp"
 #include "client\gui_base.hpp"
 #include "addons\R3F_ARTY_AND_LOG\desc_include.h"
 #include "client\systems\ui_toolkit.hpp"
