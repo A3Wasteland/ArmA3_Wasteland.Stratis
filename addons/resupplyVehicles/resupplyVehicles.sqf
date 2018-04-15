@@ -1,6 +1,6 @@
 /*
 	----------------------------------------------------------------------------------------------
-	
+
 	Copyright © 2018 soulkobk (soulkobk.blogspot.com)
 
 	This program is free software: you can redistribute it and/or modify
@@ -17,38 +17,38 @@
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	----------------------------------------------------------------------------------------------
-	
+
 	Name: resupplyVehicles.sqf
 	Version: 1.0
 	Author: soulkobk (soulkobk.blogspot.com)
 	Creation Date: 2:21 PM 20/03/2018
 	Modification Date: 2:21 PM 20/03/2018
-	
+
 	Description:
 	scripted for Fractured-Gaming.com A3Wasteland server.
-	
+
 	place this script at...
 	\addons\resupplyVehicles\resupplyVehicles.sqf
-	
+
 	edit...
 	\init.sqf
-	
+
 	paste in...
 	[] execVM "addons\resupplyVehicles\resupplyVehicles.sqf";
-	
+
 	underneath...
 	//init 3rd Party Scripts
 	[] execVM "addons\parking\functions.sqf";
-	
+
 	in EDEN...
 	place down object(s) "B_Slingload_01_Repair_F" then apply object variable name 'resupplyObject_0',
 	copy/paste where you need resupply points for vehicles and save.
-	
-	edit... 
+
+	edit...
 	\client\functions\fn_resupplyTruck.sqf
 
 	modify lines 91 to 97 (see below on what code to null/delete)...
-	
+
 	// Abort if no resupply vehicle in proximity
 	// _checkCondition = {{alive _x && {_x getVariable ["A3W_resupplyTruck", false]}} count (_vehicle nearEntities ["AllVehicles", RESUPPLY_TRUCK_DISTANCE]) == 0};
 	// if (call _checkCondition) exitWith
@@ -56,16 +56,16 @@
 		// _pauseText = "Move closer to a resupply vehicle.";
 		// _abortText = "Too far from resupply vehicle.";
 	// };
-	
+
 	enjoy!
 
 	Parameter(s): none
 
 	Example: none
-	
+
 	Change Log:
 	1.0 - original base script.
-	
+
 	----------------------------------------------------------------------------------------------
 */
 
@@ -74,7 +74,7 @@ if !(_resupplyObjects isEqualTo []) then
 {
 	{
 		_resupplyObject = _x;
-		
+
 		if (hasInterface) then
 		{
 			_resupplyObjectTrigger = createTrigger ["EmptyDetector", (getPosASL _resupplyObject), false];
@@ -92,7 +92,7 @@ if !(_resupplyObjects isEqualTo []) then
 				"
 			];
 		};
-		
+
 		if (isServer) then
 		{
 			_resupplyObject setDamage 0;
@@ -110,16 +110,12 @@ if !(_resupplyObjects isEqualTo []) then
 
 			_resupplyObjectPos = getPos _resupplyObject;
 			_resupplyObjectDir = getDir _resupplyObject;
-			
-			_attachedObject = createVehicle ["Land_HBarrier_01_line_1_green_F", _resupplyObjectPos, [], _resupplyObjectDir, "NONE"];
-			_attachedObject allowDamage false;
-			_attachedObject attachTo [_resupplyObject,[0,0,0]];
-				
+
 			_resupplyObject setVariable ["R3F_LOG_disabled", true];
 			_resupplyObject setVariable ["A3W_lockpickDisabled", true];
 			_resupplyObject setVariable ["A3W_resupplyTruck", true];
 			_resupplyObject setVariable ["A3W_resupplyTruckSetup", true];
-			
+
 			_resupplyObjectMarker = createMarker [format ["resupplyObjectLayer0_%1",_resupplyObject],_resupplyObjectPos];
 			_resupplyObjectMarker setMarkerShape "ELLIPSE";
 			_resupplyObjectMarker setMarkerBrush "SOLIDBORDER";
@@ -127,7 +123,7 @@ if !(_resupplyObjects isEqualTo []) then
 			_resupplyObjectMarker setMarkerDir _resupplyObjectDir;
 			_resupplyObjectMarker setMarkerColor "colorBlack";
 			_resupplyObjectMarker setMarkerAlpha 0.25;
-			
+
 			_resupplyObjectMarker = createMarker [format ["resupplyObjectLayer1_%1",_resupplyObject],_resupplyObjectPos];
 			_resupplyObjectMarker setMarkerShape "ELLIPSE";
 			_resupplyObjectMarker setMarkerBrush "SOLIDBORDER";
@@ -135,7 +131,7 @@ if !(_resupplyObjects isEqualTo []) then
 			_resupplyObjectMarker setMarkerDir _resupplyObjectDir;
 			_resupplyObjectMarker setMarkerColor "colorOrange";
 			_resupplyObjectMarker setMarkerAlpha 0.75;
-			
+
 			_resupplyObjectMarker = createMarker [format ["resupplyObjectLayer2_%1",_resupplyObject],_resupplyObjectPos];
 			_resupplyObjectMarker setMarkerShape "ICON";
 			_resupplyObjectMarker setMarkerType "n_service";
@@ -143,6 +139,6 @@ if !(_resupplyObjects isEqualTo []) then
 			_resupplyObjectMarker setMarkerColor "colorOrange";
 			_resupplyObjectMarker setMarkerAlpha 1;
 		};
-		
+
 	} forEach _resupplyObjects;
 };
