@@ -16,6 +16,8 @@ storeSellingHandle = _this spawn
 	_storeNPC = _this select 0;
 	_vehicle = objectFromNetId (player getVariable ["lastVehicleRidden", ""]);
 
+	_isStaticWep = _type isKindOf "StaticWeapon";
+	
 	if (isNull _vehicle) exitWith
 	{
 		playSound "FD_CP_Not_Clear_F";

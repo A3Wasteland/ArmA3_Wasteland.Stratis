@@ -7,12 +7,14 @@
 #define COLLISION_DMG_SCALE 0.2
 #define PLANE_COLLISION_DMG_SCALE 0.5
 #define WHEEL_COLLISION_DMG_SCALE 0.05
+
 #define MRAP_MISSILE_DMG_SCALE 1.5
-#define HELI_MISSILE_DMG_SCALE 2.0
-#define PLANE_MISSILE_DMG_SCALE 1.5
-#define IFV_DMG_SCALE 1.5
+#define HELI_MISSILE_DMG_SCALE 1.0
+#define PLANE_MISSILE_DMG_SCALE 1.0
+#define IFV_DMG_SCALE 1.25
 #define TANK_DMG_SCALE 2.0
 #define NYX_TRACK_DMG_SCALE 0.25
+
 
 params ["_vehicle", "_selection", "_damage", "_source", "_ammo", "", "_instigator", "_hitPoint"];
 
@@ -97,5 +99,3 @@ if (_selection != "?") then
 
 	[_vehicle, _selection, _damage, _source, _ammo, _instigator, _hitPoint] call vehicleHitTracking;
 };
-
-_damage

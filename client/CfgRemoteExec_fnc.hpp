@@ -12,6 +12,7 @@ class BIS_fnc_effectKilledAirDestruction {};
 class BIS_fnc_effectKilledSecondaries {};
 class BIS_fnc_initVehicle {}; // required for vehicle parts like tank cages
 class BIS_fnc_objectVar {};
+
 // do NOT whitelist BIS_fnc_execVM or BIS_fnc_spawn, hackers will exploit them!
 
 // A3W vanilla

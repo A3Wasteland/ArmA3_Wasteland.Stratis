@@ -47,7 +47,7 @@ A3W_fnc_savePlayerData =
 				["BankMoney", _player getVariable ["bmoney", 0]],
 				["Bounty", _player getVariable ["bounty", 0]],
 				["BountyKills", _player getVariable ["bountyKills", []]]
-			];
+ 			];
 
 			[_UID, _info, _data] call fn_saveAccount;
 		};
@@ -91,6 +91,10 @@ A3W_fnc_requestPlayerData =
 					case "BankMoney":    { _player setVariable ["bmoney", _val, true] };
 					case "Bounty":       { _player setVariable ["bounty", _val, true] };
 					case "BountyKills":  { _player setVariable ["bountyKills", _val, true] };
+				};
+				if (_x select 0 == "gearLevel") then
+				{
+					_player setVariable ["gear", _x select 1, true];
 				};
 			} forEach _data;
 

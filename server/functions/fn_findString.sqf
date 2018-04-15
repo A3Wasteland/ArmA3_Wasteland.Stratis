@@ -9,7 +9,6 @@
 	_this select 0: String or Array - string(s) to search for
 	_this select 1: String - string to check in
 	_this select 2: Boolean - case sensitive search (optional, default: false)
-
 	Returns: Number - first match position, -1 if not found
 */
 

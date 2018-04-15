@@ -26,11 +26,13 @@ _vehicle setVariable ["vehSaving_lastUse", diag_tickTime];
 	{
 		_assistOwner = _x getVariable ["A3W_driverAssistOwner", objNull];
 
+
 		if (!alive _assistOwner || _assistOwner == _unit) then
 		{
 			if (driver _vehicle == _x && lockedDriver _vehicle) then
 			{
 				[_vehicle, false] remoteExecCall ["lockDriver", 0];
+
 			};
 
 			deleteVehicle _x;

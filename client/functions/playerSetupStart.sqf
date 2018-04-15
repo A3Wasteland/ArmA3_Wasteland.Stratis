@@ -8,7 +8,7 @@ private "_player";
 _player = _this;
 
 _player setSkill 0;
-//{_player disableAI _x} foreach ["move","anim","target","autotarget"];
+{_player disableAI _x} foreach ["move","anim","target","autotarget"];
 _player setVariable ["BIS_noCoreConversations", true];
 _player setVariable ["A3W_corpseEjected", nil, true];
 _player allowDamage false;
@@ -19,6 +19,8 @@ if (["A3W_unlimitedStamina"] call isConfigOn) then
 {
 	_player enableFatigue false;
 	_player enableStamina false;
+	_player allowSprint true;
+ 	_player setCustomAimCoef 0.1;	
 };
 
 enableSentences false;

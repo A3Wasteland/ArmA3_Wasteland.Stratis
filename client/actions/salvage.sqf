@@ -8,7 +8,7 @@
 
 // Salvaging of vehicle wrecks
 
-#define GET_ONE_TENTH_PRICE(PRICE) ((ceil (((PRICE) / 10) / 5)) * 5)
+#define GET_QUARTER_PRICE(PRICE) ((ceil (((PRICE) / 4) / 5)) * 5)
 
 // Check if mutex lock is active.
 if (mutexScriptInProgress) exitWith
@@ -117,7 +117,7 @@ if (_variant != "") then { _variant = "variant_" + _variant };
 {
 	if (_x select 1 == _vehClass && (_variant == "" || {_variant in _x})) exitWith
 	{
-		_money = GET_ONE_TENTH_PRICE(_x select 2);
+		_money = GET_QUARTER_PRICE(_x select 2);
 	};
 } forEach call allVehStoreVehicles;
 

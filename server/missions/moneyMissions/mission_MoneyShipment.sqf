@@ -13,7 +13,7 @@ private ["_MoneyShipment", "_moneyAmount", "_convoys", "_vehChoices", "_moneyTex
 
 _setupVars =
 {
-	_locationsArray = LandConvoyPaths;
+	// _locationsArray = nil;
 
 	// Money Shipments settings
 	// Difficulties : Min = 1, Max = infinite
@@ -25,26 +25,28 @@ _setupVars =
 		// Easy
 		[
 			"Small Money Shipment", // Marker text
-			25000, // Money
+			80000, // Money
 			[
 				[ // NATO convoy
-					["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"], // Veh 1
-					["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"] // Veh 2
+					["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F", "O_T_LSV_02_armed_F"], // Veh 1
+					["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F", "O_T_LSV_02_armed_F"] // Veh 2
 				],
 				[ // CSAT convoy
-					["O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F"], // Veh 1
-					["O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F"] // Veh 2
+					["O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F", "B_T_LSV_01_armed_F"], // Veh 1
+					["O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F", "B_T_LSV_01_armed_F"] // Veh 2
 				],
 				[ // AAF convoy
+
 					["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F", "I_LT_01_cannon_F"], // Veh 1
 					["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F", "I_LT_01_AT_F"] // Veh 2
+
 				]
 			]
 		],
 		// Medium
 		[
 			"Medium Money Shipment", // Marker text
-			50000, // Money
+			140000, // Money
 			[
 				[ // NATO convoy
 					["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"], // Veh 1
@@ -66,7 +68,7 @@ _setupVars =
 		// Hard
 		[
 			"Large Money Shipment", // Marker text
-			75000, // Money
+			180000, // Money
 			[
 				[ // NATO convoy
 					["B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_rcws_F", "B_APC_Tracked_01_AA_F", "B_AFV_Wheeled_01_up_cannon_F"], // Veh 1
@@ -88,7 +90,7 @@ _setupVars =
 		// Extreme
 		[
 			"Heavy Money Shipment", // Marker text
-			100000, // Money
+			230000, // Money
 			[
 				[ // NATO convoy
 					["B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_rcws_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F", "B_MBT_01_TUSK_F"], // Veh 1
@@ -126,7 +128,7 @@ _setupVars =
 _setupObjects =
 {
 	private ["_starts", "_startDirs", "_waypoints"];
-	call compile preprocessFileLineNumbers format ["mapConfig\convoys\%1.sqf", _missionLocation];
+	// call compile preprocessFileLineNumbers format ["mapConfig\convoys\%1.sqf", _missionLocation];
 
 	_createVehicle =
 	{
@@ -175,11 +177,48 @@ _setupObjects =
 		_vehicle
 	};
 
-	_aiGroup = createGroup CIVILIAN;
 
+    // SKIP TOWN AND PLAYER PROXIMITY CHECK
+
+    _skippedTowns = // get the list from -> \mapConfig\towns.sqf
+    [
+        "Town_14" // Pythos Island Marker Name
+    ];
+
+    _town = ""; _missionPos = [0,0,0]; _radius = 0;
+    _townOK = false;
+    while {!_townOK} do
+    {
+        _town = selectRandom (call cityList); // initially select a random town for the mission.
+        _missionPos = markerPos (_town select 0); // the town position.
+        _radius = (_town select 1); // the town radius.
+        _anyPlayersAround = (nearestObjects [_missionPos,["MAN"],_radius]) select {isPlayer _x}; // search the area for players only.
+        if (((count _anyPlayersAround) isEqualTo 0) && !((_town select 0) in _skippedTowns)) exitWith // if there are no players around and the town marker is not in the skip list, set _townOK to true (exit loop).
+        {
+            _townOK = true;
+        };
+        sleep 0.1; // sleep between loops.
+    };
+
+	_aiGroup = createGroup CIVILIAN;
+	//_town = selectRandom (call cityList);
+	//_missionPos = markerPos (_town select 0);
+	//_radius = (_town select 1);
+	// _vehiclePosArray = [_missionPos,(_radius / 2),_radius,5,0,0,0] call findSafePos;
+
+	// _vehicles = [];
+	// {
+		// _vehicles pushBack ([_x, _vehiclePosArray, 0, _aiGroup] call _createVehicle);
 	_vehicles = [];
+	_vehiclePosArray = nil;
 	{
-		_vehicles pushBack ([_x, _starts select 0, _startdirs select 0, _aiGroup] call _createVehicle);
+		_vehiclePosArray = getPos ((_missionPos nearRoads _radius) select _forEachIndex);
+		if (isNil "_vehiclePosArray") then
+		{
+			_vehiclePosArray = [_missionPos,(_radius / 2),_radius,5,0,0,0] call findSafePos;
+		};
+		_vehicles pushBack ([_x, _vehiclePosArray, 0, _aiGroup] call _createVehicle);
+		_vehiclePosArray = nil;
 	} forEach _vehClasses;
 
 	_veh2 = _vehClasses select (1 min (count _vehClasses - 1));
@@ -187,23 +226,23 @@ _setupObjects =
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup selectLeader _leader;
 
-	_aiGroup setCombatMode "YELLOW"; // units will defend themselves
+	_aiGroup setCombatMode "GREEN"; // units will defend themselves
 	_aiGroup setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
-	_aiGroup setFormation "STAG COLUMN";
+	_aiGroup setFormation "COLUMN";
 
 	_speedMode = if (missionDifficultyHard) then { "NORMAL" } else { "LIMITED" };
 
 	_aiGroup setSpeedMode _speedMode;
 
 	{
-		_waypoint = _aiGroup addWaypoint [_x, 0];
+		_waypoint = _aiGroup addWaypoint [markerPos (_x select 0), 0];
 		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointCompletionRadius 25;
-		_waypoint setWaypointCombatMode "YELLOW";
+		_waypoint setWaypointCompletionRadius 100;
+		_waypoint setWaypointCombatMode "GREEN";
 		_waypoint setWaypointBehaviour "SAFE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
-		_waypoint setWaypointFormation "STAG COLUMN";
+		_waypoint setWaypointFormation "COLUMN";
 		_waypoint setWaypointSpeed _speedMode;
-	} forEach _waypoints;
+	} forEach ((call cityList) call BIS_fnc_arrayShuffle);
 
 	_missionPos = getPosATL leader _aiGroup;
 

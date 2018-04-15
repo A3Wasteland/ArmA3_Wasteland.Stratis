@@ -41,7 +41,7 @@ _setupObjects =
 
 	_box2 = createVehicle ["Box_East_Wps_F", _missionPos, [], 5, "None"];
 	_box2 setDir random 360;
-	[_box2, "mission_USLaunchers"] call fn_refillbox;
+	[_box2, "mission_USLaunchers"] call randomCrateLoadOut;
 
 	// create some atmosphere around the crates 8)
 	_tent1 = createVehicle ["Land_cargo_addon02_V2_F", _missionPos, [], 3, "None"];

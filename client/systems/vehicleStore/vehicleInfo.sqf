@@ -137,6 +137,7 @@ reverse _cfgColors;
 		_colorlist lbSetPicture [_colorlistIndex, _tex];
 		_colorlist lbSetData [_colorlistIndex, str _texData];
 	};
+
 } forEach _colorsArray;
 };
 /****************************************************************************************************/

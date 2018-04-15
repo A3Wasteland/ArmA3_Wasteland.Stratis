@@ -9,6 +9,20 @@ if (!isServer) exitWith {};
 params ["_UID", "_player"];
 private ["_result", "_data", "_location", "_dataTemp", "_ghostingTimer", "_secs", "_columns", "_pvar", "_pvarG"];
 
+_gears = 0;
+_PlayerGearLevel = 0;
+_gearsEnabled = ["A3W_gearsEnabled"] call isConfigOn;
+
+if (_gearsEnabled) then
+{
+	_result = ["getPlayerGearLevel:" + _UID, 2] call extDB_Database_async;
+
+	if (count _result > 0) then
+	{
+		_gears = _result select 0;
+	};
+};
+
 private _moneySaving = ["A3W_moneySaving"] call isConfigOn;
 private _crossMap = ["A3W_extDB_playerSaveCrossMap"] call isConfigOn;
 private _environment = ["A3W_extDB_Environment", "normal"] call getPublicVar;
@@ -19,7 +33,8 @@ _result = ([_query, 2] call extDB_Database_async) param [0,false];
 
 if (!_result) then
 {
-	_data = [["PlayerSaveValid", false]/*, ["BankMoney", _bank]*/];
+	_data = [["PlayerSaveValid", false]/*, ["BankMoney", _bank]*/,["GearLevel", _gears]];
+
 
 	// prevent constraint fail on first save
 	private _sqlValues = [[["Name", name _player]], [0,1], false] call extDB_pairsToSQL;
@@ -124,6 +139,7 @@ else
 	};
 
 	_data append _dataTemp;
+	_data pushBack ["GearLevel", _gears];
 	//_data pushBack ["BankMoney", _bank];
 };
 
@@ -131,7 +147,9 @@ private _bank = 0;
 private _bounty = 0;
 private _bountyKills = [];
 
+
 _result = [["getPlayerStatusXMap", _UID, _environment], 2] call extDB_Database_async;
+
 
 if (_moneySaving) then
 {

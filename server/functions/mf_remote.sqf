@@ -40,10 +40,12 @@ mf_remote_repair = {
 	_vehicle setVariable ["FAR_killerVehicle", nil, true];
 	_vehicle setVariable ["FAR_killerAmmo", nil, true];
 
+
 	// reset ejection seat crap
 	if (_vehicle isKindOf "Plane") then
 	{
 		_vehicle setVariable ["bis_ejected", nil, true];
 		{ _vehicle animate [_x, 0, true] } forEach ["canopy_hide", "ejection_seat_motion", "ejection_seat_hide"];
 	};
+
 } call mf_compile;

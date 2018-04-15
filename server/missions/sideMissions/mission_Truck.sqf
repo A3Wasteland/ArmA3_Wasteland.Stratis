@@ -40,7 +40,7 @@ _setupObjects =
 
 	// Class, Position, Fuel, Ammo, Damage, Special
 	_vehicle = [_vehicleClass, _missionPos] call createMissionVehicle;
-	_vehicle call fn_refilltruck;
+	_vehicle call randomCrateLoadOut;
 
 	_aiGroup = createGroup CIVILIAN;
 	[_aiGroup, _missionPos, _nbUnits] call createCustomGroup;

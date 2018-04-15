@@ -115,7 +115,7 @@ _wp2 setWaypointType "DISMISS";
 			};
 		};
 	};
-
+	
 	_x disableAI "COVER";
 } forEach units _grp;
 
@@ -123,7 +123,7 @@ _grp spawn
 {
 	while {{alive _x} count units _this > 0} do
 	{
-		if (combatMode _this != "RED") then
+		if (combatMode _this == "RED") then
 		{
 			_this setCombatMode "RED"; // FIRE AT WILL MOTHERFUCKERS!
 		};

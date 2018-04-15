@@ -1,5 +1,5 @@
 respawn="BASE";
-respawnDelay=15;
+respawnDelay=7;
 disabledAI=1;
 disableChannels[] = {{0,false,true}, {2,true,true}}; // 0 = global, 1 = side, 2 = command // new syntax: {{channel<number>, disableText<bool>, disableVoice<bool>}, ...};
 // side voice is disabled for indies in client\preInit.sqf
@@ -8,8 +8,8 @@ enableItemsDropping = 0;
 forceRotorLibSimulation = 0; // if you set this to 1, you deny freedom of choice to the players, which is the very principle this mission is built upon
 weaponPool = 0;
 corpseManagerMode = 1;
-corpseRemovalMinTime = 30*60;
-corpseRemovalMaxTime = 30*60;
+corpseRemovalMinTime = 5*60;
+corpseRemovalMaxTime = 10*60;
 wreckManagerMode = 1;
 wreckRemovalMinTime = 5*60;
 wreckRemovalMaxTime = 10*60;
@@ -20,13 +20,13 @@ class Header
 {
 	gameType=Sandbox;
 	minPlayers=1;
-	maxPlayers=146; // 144 players, 2 headless clients
+	maxPlayers=72; // 70 players, 2 headless clients
 };
-author="AgentRev - A3Wasteland.com"; // it would be great if you could keep "A3Wasteland.com" in the name, like "YourName and A3Wasteland.com" :)
-onLoadName = "A3Wasteland Stratis"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
-onLoadMission = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
-overviewText = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
-overviewTextLocked = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
+author="Fractured-Gaming.com - A3Wasteland.com"; // it would be great if you could keep "A3Wasteland.com" in the name, like "YourName and A3Wasteland.com" :)
+onLoadName = "Fractured A3Wasteland Stratis"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
+onLoadMission = "FRAC A3Wasteland is a harsh TDM-esk Server where two teams and independent players fight for survival.";
+overviewText = "FRAC A3Wasteland is a harsh TDM-esk Server where two teams and independent players fight for survival.";
+overviewTextLocked = "FRAC A3Wasteland is a harsh TDM-esk Server where two teams and independent players fight for survival.";
 overviewPicture = "mapConfig\Loading.jpg";
 loadScreen = "mapConfig\Loading.jpg";
 briefing = 0; // if 0, skip Continue button
@@ -35,12 +35,12 @@ briefing = 0; // if 0, skip Continue button
 
 // A3W UI color (default = sky blue)
 
-#define A3W_UICOLOR_R  0.25 // default = 0.25
-#define A3W_UICOLOR_G  0.51 // default = 0.51
-#define A3W_UICOLOR_B  0.96 // default = 0.96
+#define A3W_UICOLOR_R  0.275 // default = 0.25
+#define A3W_UICOLOR_G  0.322 // default = 0.51
+#define A3W_UICOLOR_B  0.235 // default = 0.96
 
 //Dialog includes
-
+#include "infiSTAR_AdminMenu.hpp"
 #include "client\gui_base.hpp"
 #include "addons\R3F_ARTY_AND_LOG\desc_include.h"
 #include "client\systems\ui_toolkit.hpp"
@@ -70,7 +70,11 @@ briefing = 0; // if 0, skip Continue button
 #include "addons\outlw_magrepack\config.hpp"
 #include "addons\gui\gui.hpp"
 #include "addons\parking\list_simple_menu.hpp"
+#include "addons\beacondetector\sound\cfgsounds.hpp"
+#include "addons\laptop\downloadData.hpp"
+#include "addons\TOParmaInfo\dialog\TOParmaInfo_dialog.hpp"
 #include "addons\CHVD\dialog.hpp"
+
 
 class RscTitles
 {
@@ -81,6 +85,7 @@ class RscTitles
 	#include "client\systems\scoreboard\score_gui.hpp"
 	#include "client\systems\killFeed\killFeed_gui.hpp"
 	#include "addons\far_revive\revive_gui.hpp"
+	#include "addons\statusBar\statusBar.hpp"
 };
 
 class CfgDebriefing
@@ -93,6 +98,7 @@ class CfgDebriefing
 	};
 };
 
+
 class CfgFunctions
 {
 	class A3W
@@ -100,7 +106,6 @@ class CfgFunctions
 		#include "client\CfgFunctions.hpp"
 		#include "server\CfgFunctions.hpp"
 	};
-
 	#include "addons\CHVD\CfgFunctions.hpp"
 };
 

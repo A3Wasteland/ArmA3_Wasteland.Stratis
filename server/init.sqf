@@ -137,6 +137,7 @@ if (isServer) then
 		"A3W_teamPlayersMap",
 		"A3W_remoteBombStoreRadius",
 		"A3W_vehiclePurchaseCooldown",
+		"A3W_vehicleRemotePurchaseCooldown",
 		"A3W_disableGlobalVoice",
 		"A3W_antiHackMinRecoil",
 		"A3W_spawnBeaconCooldown",
@@ -154,6 +155,7 @@ if (isServer) then
 		"A3W_uavControl",
 		"A3W_disableUavFeed",
 		"A3W_townSpawnCooldown",
+		"A3W_maxSpawnBeacons",
 		"A3W_survivalSystem",
 		"A3W_extDB_GhostingAdmins",
 		"A3W_extDB_SaveUnlockedObjects",
@@ -175,7 +177,12 @@ if (isServer) then
 		"A3W_artilleryCooldown",
 		"A3W_artilleryAmmo",
 		"A3W_disableBuiltInThermal",
-		"A3W_headshotNoRevive"
+		"A3W_customDeathMessages",
+		"A3W_headshotNoRevive",
+		"gearLevel"
+
+		
+
 	];
 
 	addMissionEventHandler ["PlayerConnected", fn_onPlayerConnected];
@@ -550,4 +557,6 @@ if !(["A3W_hcObjCleanup"] call isConfigOn) then
 {
 	// Start clean-up loop
 	execVM "server\WastelandServClean.sqf";
+	
 };
+[] ExecVM "addons\cleanStores\cleanStores.sqf";

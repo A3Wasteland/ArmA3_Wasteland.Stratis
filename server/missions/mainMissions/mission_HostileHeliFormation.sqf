@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "mainMissionDefines.sqf"
 
-private ["_heliChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_box1", "_box2", "_box3"];
+private ["_heliChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_box1", "_box2", "_box3", "_smoke"];
 
 _setupVars =
 {
@@ -21,17 +21,11 @@ _setupObjects =
 
 	_heliChoices =
 	[
-		["B_Heli_Transport_01_F", ["B_Heli_Light_01_dynamicLoadout_F", "pawneeNormal"]],
-		["B_Heli_Transport_01_camo_F", ["O_Heli_Light_02_dynamicLoadout_F", "orcaDAGR"]],
-		["B_Heli_Transport_01_F", "I_Heli_light_03_dynamicLoadout_F"]
+		[["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"], ["B_Heli_Light_01_dynamicLoadout_F", "pawneeSkyhunter"]],
+ 		[["O_Heli_Attack_02_dynamicLoadout_F", "KajmanAG"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaDAGR"]],
+ 		[["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAA"], ["I_Heli_light_03_dynamicLoadout_F", "HellAT"]]
 	];
 
-	if (missionDifficultyHard) then
-	{
-		(_heliChoices select 0) set [0, "B_Heli_Attack_01_dynamicLoadout_F"];
-		(_heliChoices select 1) set [0, "O_Heli_Attack_02_dynamicLoadout_F"];
-		(_heliChoices select 2) set [0, "O_Heli_Attack_02_dynamicLoadout_F"];
-	};
 
 	_convoyVeh = _heliChoices call BIS_fnc_selectRandom;
 
@@ -47,19 +41,19 @@ _setupObjects =
 		_position = _this select 1;
 		_direction = _this select 2;
 		_variant = _type param [1,"",[""]];
-
-		if (_type isEqualType []) then
-		{
-			_type = _type select 0;
-		};
+ 
+ 		if (_type isEqualType []) then
+ 		{
+ 			_type = _type select 0;
+ 		};
 
 		_vehicle = createVehicle [_type, _position, [], 0, "FLY"];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 
-		if (_variant != "") then
-		{
-			_vehicle setVariable ["A3W_vehicleVariant", _variant, true];
-		};
+ 		if (_variant != "") then
+ 		{
+ 			_vehicle setVariable ["A3W_vehicleVariant", _variant, true];
+ 		};
 
 		[_vehicle] call vehicleSetup;
 
@@ -92,7 +86,7 @@ _setupObjects =
 		};
 
 		// remove flares because it overpowers AI choppers
-		if (_type isKindOf "Air") then
+		/*if (_type isKindOf "Air") then
 		{
 			{
 				if (["CMFlare", _x] call fn_findString != -1) then
@@ -100,7 +94,7 @@ _setupObjects =
 					_vehicle removeMagazinesTurret [_x, [-1]];
 				};
 			} forEach getArray (configFile >> "CfgVehicles" >> _type >> "magazines");
-		};
+		};*/
 
 		[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
 		_vehicle
@@ -140,10 +134,10 @@ _setupObjects =
 	_missionPos = getPosATL leader _aiGroup;
 
 	_missionPicture = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "picture");
-	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "displayName");
-	_vehicleName2 = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "displayName");
+ 	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "displayName");
+ 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "displayName");
 
-	_missionHintText = format ["A formation of armed helicopters containing a <t color='%3'>%1</t> and two <t color='%3'>%2</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
+	_missionHintText = format ["A formation of Experimental Helicopters containing a <t color='%3'>%1</t> and two <t color='%3'>%2</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -161,16 +155,19 @@ _successExec =
 	// Mission completed
 
 	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 5, "None"];
-	_box1 setDir random 360;
-	[_box1, "mission_USSpecial"] call fn_refillbox;
+	_box1 setDir (random 360);
+	[_box1, "mission_USSpecial"] call randomCrateLoadOut;
 
 	_box2 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
-	_box2 setDir random 360;
+	_box2 setDir (random 360);
 	[_box2, "mission_USLaunchers"] call fn_refillbox;
 
 	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
-	_box3 setDir random 360;
+	_box3 setDir (random 360);
 	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
+	
+	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
+	_smoke setDir (random 360);
 
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };

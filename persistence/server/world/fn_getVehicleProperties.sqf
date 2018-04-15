@@ -157,15 +157,15 @@ _turretMags3 = _veh call fn_getPylonsAmmo;
 
 // deprecated
 /*
+
 _hasDoorGuns = isClass (_vehCfg >> "Turrets" >> "RightDoorGun");
 
-_turrets = allTurrets [_veh, false];
 
+_turrets = allTurrets [_veh, false];
 if !(_class isKindOf "B_Heli_Transport_03_unarmed_F") then
 {
 	_turrets = [[-1]] + _turrets; // only add driver turret if not unarmed Huron, otherwise flares get saved twice
 };
-
 if (_hasDoorGuns) then
 {
 	// remove left door turret, because its mags are already returned by magazinesAmmo
@@ -175,13 +175,10 @@ if (_hasDoorGuns) then
 			_turrets set [_forEachIndex, 1];
 		};
 	} forEach _turrets;
-
 	_turrets = _turrets - [1];
 };
-
 {
 	_path = _x;
-
 	{
 		if ([_turretMags, _x, -1] call fn_getFromPairs == -1 || _hasDoorGuns) then
 		{

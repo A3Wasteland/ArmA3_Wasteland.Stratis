@@ -25,6 +25,9 @@ groupManagmentActive = false;
 pvar_PlayerTeamKiller = [];
 doCancelAction = false;
 
+//AJ Beacondetector
+BeaconScanInProgress = false;
+
 //Initialization Variables
 playerCompiledScripts = false;
 playerSetupComplete = false;
@@ -158,9 +161,12 @@ A3W_clientSetupComplete = compileFinal "true";
 
 A3W_scriptThreads pushBack execVM "addons\fpsFix\vehicleManager.sqf";
 A3W_scriptThreads pushBack execVM "addons\Lootspawner\LSclientScan.sqf";
+[] execVM "addons\disableThermal\disablethermal.sqf";
 [] execVM "client\functions\drawPlayerIcons.sqf";
 [] execVM "addons\camera\functions.sqf";
 [] execVM "addons\UAV_Control\functions.sqf";
+
+if(hasInterface) then{[] execVM "addons\statusBar\statusBar.sqf"};
 
 call compile preprocessFileLineNumbers "client\functions\generateAtmArray.sqf";
 [] execVM "client\functions\drawPlayerMarkers.sqf";
@@ -169,7 +175,7 @@ inGameUISetEventHandler ["Action", "_this call A3W_fnc_inGameUIActionEvent"];
 
 { [_x] call fn_remotePlayerSetup } forEach allPlayers;
 
-// update player's spawn beaoon
+// update player's spawn beacon
 {
 	if (_x getVariable ["ownerUID",""] == getPlayerUID player) then
 	{
@@ -177,3 +183,5 @@ inGameUISetEventHandler ["Action", "_this call A3W_fnc_inGameUIActionEvent"];
 		_x setVariable ["side", playerSide, true];
 	};
 } forEach pvar_spawn_beacons;
+
+[] execVM "client\functions\globalChatMessages.sqf";

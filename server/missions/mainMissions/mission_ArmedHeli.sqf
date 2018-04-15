@@ -15,15 +15,17 @@ _setupVars =
 {
 	_vehicleClass = selectRandom
 	[
-		["B_Heli_Light_01_dynamicLoadout_F", "pawneeNormal"],
-		"B_Heli_Transport_01_F",
-		"B_Heli_Attack_01_dynamicLoadout_F",
-		["O_Heli_Light_02_dynamicLoadout_F", "orcaDAGR"],
-		"O_Heli_Attack_02_dynamicLoadout_F",
-		"I_Heli_light_03_dynamicLoadout_F"
+		["B_Heli_Light_01_dynamicLoadout_F", "PawneeMission"],
+		["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"],
+		["O_Heli_Light_02_dynamicLoadout_F", "orcaMission"],
+		["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionCAS"],
+		["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionAG"],
+		["I_Heli_light_03_dynamicLoadout_F", "HellMission"],
+		"B_Heli_Transport_03_black_F",
+		"B_Heli_Transport_01_camo_F"
 	];
 
-	_missionType = "Armed Helicopter";
+	_missionType = "Experimental Attack Chopper";
 	_locationsArray = MissionSpawnMarkers;
 
 	_nbUnits = if (missionDifficultyHard) then { AI_GROUP_LARGE } else { AI_GROUP_MEDIUM };

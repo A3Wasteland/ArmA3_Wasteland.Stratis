@@ -18,7 +18,7 @@
 	["Town_11", 230, "Kamino Firing Range"],
 	["Town_12", 240, "Camp Maxwell"],
 	["Town_13", 150, "ol-Kamino"],
-	//["Town_14", 15, "Isla Pythos"], // who the heck thought a town on an island was a good idea!?
+	["Town_14", 30, "Isla Pythos"], // who the heck thought a town on an island was a good idea!?
 	["Town_15", 100, "Baldy Barracks"],
 	["Town_16", 175, "ol-Keiros"],
 	["Town_17", 175, "Tsoukalia"],
