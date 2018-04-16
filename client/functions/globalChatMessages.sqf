@@ -35,24 +35,24 @@ _globalChatPrefix = "FRACbot";
 _globalChatMessagesSleep = 30*60; // 30 minutes sleep per full loop.
 
 _globalChatMessages = [
-    ["You are playing on Fractured's A3Wasteland Stratis server.",1],
-    ["Discord -> discord.frac.gg",1],
-    ["Website -> Fractured-Gaming.com",30],
-    ["Server restarts are at 6am, 12pm, 6pm and 12am daily (CST).",1],
-    ["Gearlevel Information -> Can be found in the map menu.",30],
-    ["You can view your stats or anyone elses stats -> stats.frac.gg ",30],
-    ["If you encounter a bug, please post it on the forums -> forums.fractured-gaming.com .",30],
-    ["Servers cost money, and they aint cheap! Donate -> donate.frac.gg",30],
-    ["Want to be a FRAC Member? Apply on the forums!.",30],
+    ["You are playing on Fractured's A3Wasteland Stratis server.",120],
+    ["Discord -> discord.frac.gg",120],
+    ["Website -> Fractured-Gaming.com",120],
+    ["Server restarts are at 6am, 12pm, 6pm and 12am daily (CST).",120],
+    ["Gearlevel Information -> Can be found in the map menu.",120],
+    ["You can view your stats or anyone elses stats -> stats.frac.gg ",120],
+    ["If you encounter a bug, please post it on the forums -> forums.fractured-gaming.com .",120],
+    ["Servers cost money, and they aint cheap! Donate -> donate.frac.gg",120],
+    ["Want to be a FRAC Member? Apply on the forums!.",120],
     ["Server Rules:",1],
-    ["NO Hacking, Cheating or Exploiting!",5],
-    ["NO Racism, Heterosexism, or Bashing Religion! This is to include the terminology.",5],
-    ["NO Advertising Any Other VOIP or Community/Clan/Guild!",5],
-    ["NO Abusing VOIP!",5],
-    ["English Only When Using VOIP or Side/Global Chat!",5],
-    ["If You Don't Like It Here, Then Leave! If Not, we will show you the door!",5],
-    ["Don't Be An Asshole!",5],
-    ["Admins Can/Will Ban At Their Own Discretion To Stop Toxicity On The Server",5]
+    ["NO Hacking, Cheating or Exploiting!",30],
+    ["NO Racism, Heterosexism, or Bashing Religion! This is to include the terminology.",30],
+    ["NO Advertising Any Other VOIP or Community/Clan/Guild!",30],
+    ["NO Abusing VOIP!",30],
+    ["English Only When Using VOIP or Side/Global Chat!",30],
+    ["If You Don't Like It Here, Then Leave! If Not, we will show you the door!",30],
+    ["Don't Be An Asshole!",30],
+    ["Admins Can/Will Ban At Their Own Discretion To Stop Toxicity On The Server",30]
 ];
 
 /*	------------------------------------------------------------------------------------------
