@@ -38,6 +38,8 @@ player createDiaryRecord ["changelog",
 <br/>][REMOVED] Bounty System by Centrifugal
 <br/>[FIXED] Optimizations for Server
 <br/>[NEW VERSION] Server Updated and re-released as 2.0
+<br/>[Update] Mission updated.
+<br/>[Update] Anti-hack Updated.
 
 "
 ]];
