@@ -49,7 +49,6 @@ switch (_type) do
 		_veh engineOn false;
 	};
 };
-=======
 	case "enableDriving":
 	{
 		if (!isAgent teamMember driver _veh) then { _veh lockDriver false }; // isAgent == driverAssist active
