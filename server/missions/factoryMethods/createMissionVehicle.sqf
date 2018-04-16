@@ -43,7 +43,6 @@ _veh setDamage _damage;
 [_veh, 2] call A3W_fnc_setLockState; // Lock
 _veh setVariable ["R3F_LOG_disabled", true, true];
 _veh setVariable ["A3W_lockpickDisabled", true, true];
-_veh
 // apply tropical textures to vehicles on Tanoa
 if (worldName == "Tanoa" && _class select [1,3] != "_T_") then
 {
