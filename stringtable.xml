@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
+<!--
 █████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
 
   Do not bother submitting translations to the A3W GitHub repo, the strings below are only a tiny fraction of all messages used in the mission.
@@ -44,10 +44,10 @@
 			<English>&lt;t color='#FF8000' size='2.5' &gt;A3Wasteland Stratis v1.4b &lt;/t&gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInTeam">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* Attacking or stealing from other %4 players is &lt;t color="#FF1111"&gt;FORBIDDEN&lt;/t&gt;&lt;br/&gt;* &lt;t color="#FF1111"&gt;NO VOICE IN GLOBAL&lt;/t&gt;&lt;br/&gt;* You can find the Server Rules in the map menu.&lt;br/&gt;* Server restarts are done at the admin's discretion.&lt;br/&gt;* You will be locked to your team after 3 minutes.&lt;/t&gt;</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* You are on &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* Attacking or stealing from other %4 players is &lt;t color="#FF1111"&gt;FORBIDDEN&lt;/t&gt;&lt;br/&gt;* &lt;t color="#FF1111"&gt;NO VOICE IN GLOBAL&lt;/t&gt;&lt;br/&gt;* You can find the Server Rules in the map menu.&lt;br/&gt;* Server restarts are done at the admin's discretion.&lt;br/&gt;* You will be locked to your team after 3 minutes.&lt;/t&gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInFFA">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* You are &lt;t color="#00aa00"&gt;FREE TO ATTACK ANYONE&lt;/t&gt;&lt;br/&gt;* &lt;t color="#FF1111"&gt;NO VOICE IN GLOBAL&lt;/t&gt;&lt;br/&gt;* You can find the Server Rules in the map menu.&lt;br/&gt;* Server restarts are done at the admin's discretion.&lt;/t&gt;</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* You are on &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* You are &lt;t color="#00aa00"&gt;FREE TO ATTACK ANYONE&lt;/t&gt;&lt;br/&gt;* &lt;t color="#FF1111"&gt;NO VOICE IN GLOBAL&lt;/t&gt;&lt;br/&gt;* You can find the Server Rules in the map menu.&lt;br/&gt;* Server restarts are done at the admin's discretion.&lt;/t&gt;</English>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
 			<English>&lt;t color='#FFFFFF' size='1.5' &gt;Report bugs and suggestions at http://forums.a3wasteland.com/ &lt;br/&gt;Server restarts are done at the admin's discretion.&lt;br/&gt;Press the Windows or Home key to toggle player names&lt;br/&gt;Press the End key to toggle earplugs&lt;br/&gt;For more info please see the map&lt;br/&gt;</English>
