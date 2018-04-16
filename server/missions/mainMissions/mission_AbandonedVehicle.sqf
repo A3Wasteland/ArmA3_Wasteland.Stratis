@@ -20,7 +20,8 @@ _setupVars =
 		["B_MBT_01_mlrs_F", "MLRSMission"],             //NEED LOADOUT
 		["O_MRAP_02_gmg_F", "GMGStriderMission"],       //NEED LOADOUT
 		["O_MBT_02_cannon_F", "MBTMission"],            //NEED LOADOUT
-		["B_APC_Wheeled_03_cannon_F", "CheetahMission"] //NEED LOADOUT
+		["B_APC_Wheeled_03_cannon_F", "CheetahMission"], //NEED LOADOUT
+		["I_Truck_02_MRL_F", "ZamakMission"]            //NEED LOADOUT
 	];
 
 	_missionType = "Abandoned Vehicle";

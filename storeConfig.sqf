@@ -1025,7 +1025,11 @@ tanksArray = compileFinal str
 	["T-100 Varsuk", "O_MBT_02_cannon_F", 120000, "vehicle"],
 	["MBT-52 Kuma", "I_MBT_03_cannon_F", 120000, "vehicle"],
 	["T-140 Angara", "O_T_MBT_04_cannon_F", 130000, "vehicle"],
-	["T-140K Angara", "O_T_MBT_04_command_F", 140000, "vehicle"]
+	["T-140K Angara", "O_T_MBT_04_command_F", 140000, "vehicle"],
+	["Scorcher", "B_MBT_01_arty_F", 300000, "vehicle", "HIDDEN"],
+	["Sochor", "O_MBT_02_arty_F", 300000, "vehicle", "HIDDEN"],
+	["Sandstorm", "B_MBT_01_mlrs_F", 300000, "vehicle", "HIDDEN"],
+	["Zamak MRL", "I_Truck_02_MRL_F", 200000, "vehicle", "HIDDEN"]
 
 ];
 
