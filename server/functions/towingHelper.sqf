@@ -48,7 +48,6 @@ switch (_type) do
 		_veh enableCopilot false;
 		_veh engineOn false;
 	};
-};
 	case "enableDriving":
 	{
 		if (!isAgent teamMember driver _veh) then { _veh lockDriver false }; // isAgent == driverAssist active
