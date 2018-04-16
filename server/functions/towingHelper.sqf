@@ -48,7 +48,6 @@ switch (_type) do
 		_veh enableCopilot false;
 		_veh engineOn false;
 	};
-<<<<<<< HEAD
 };
 =======
 	case "enableDriving":
@@ -57,4 +56,3 @@ switch (_type) do
 		_veh enableCopilot true;
 	};
 };
->>>>>>> upstream/dev
