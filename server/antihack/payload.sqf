@@ -337,7 +337,7 @@ while { true } do
 					"amm0", "Att4chm3nt", "F0od_Dr1nk", "M3d1c4l", "T0ol_it3ms", "B4ckp4cks", "It3m5", "Cl0th1ng", "walkloc", "nwaf", "cherno", "cherno_resident", "cherno_resident_2", "dubky", "oaks",
 					"swaf", "swmb", "getX", "PlayerShowDistance", "M_e_n_u_2", "colorme", "keybindloop", "Tractor_Time", "murkrow", "noctowl", "isExecuted", "piloswine", "AddPlayersToMap", "markers",
 					"miltank", "Malvsm", "Malcars", "malfly", "keyForward", "PermDialogSelected", "TempDialogSelected", "pfKeygen", "pfScanUnits", "pfPickPlayer", "pfshnext", "pfnlist", "pfselecteditem",
-					"pfshnmenu", "pfPlayerMonitor", "pfPlayersToMonitor", "pfShowPlayerMonitor", "pfPlayerMonitorMutex", "marker", "E_X_T_A_S_Y_Init_Menu", "monkaiinsalt", 
+					"pfshnmenu", "pfPlayerMonitor", "pfPlayersToMonitor", "pfShowPlayerMonitor", "pfPlayerMonitorMutex", "marker", "E_X_T_A_S_Y_Init_Menu", "monkaiinsalt",
 					"monkaiin", "part88", "adminKeybinds", "PV_DevUIDs", "fapEspGroup", "Repair", "RepairIT", "rainbowTarget", "rainbowTarget1", "rainbowTarget2", "rainbowTarget3", "VehicleMenue",
 					"Menue_Vehicle", "my_anus_hurtz", "life_no_injection", "Tonic_has_a_gaping_vagina", "teletoplr", "telet", "ygurv1f2", "BIGM", "E3p", "fnc_PVAH_AdminReq", "infiSTAR_MAIN_CODE",
 					"MAIN_CODE_INJECTED", "D34DXH34RT_E5P", "Arsenal", "B0X_CANN0N_T0GGLE", "aim", "HOLY_FUCK_FDKFHSDJFHSDKJ_vehicles_m", "lazy_ILHA_is_lazy", "POOP_Item", "die_menu_esp_v1",
@@ -370,7 +370,7 @@ while { true } do
 					"aKKillcursor", "aKNoEscort", "aKEscort", "aKtroll", "aKTPall", "aKUnrestrain", "aKNoEscortMe", "aKNoTaze", "aKJailplayer", "aKLisense", "riasgremory_titans_shit_reold", "Tonic_merde",
 					"jaimepaslepoisin_HLEAL", "TTTT_IIII___TTTTTTT_RAP_FR", "TTTT_IIII___TTTTTTT_REPGA", "TTTT_IIII___TTTTTTT_REPGAs", "jaimepaslepoisin_HLEAL", "Root_Pistol4", "Root_Rifle4",
 					"Root_Machinegun4", "Root_Sniper4", "Root_Launcher4", "Root_Attachement4", "VAR56401668319_secret", "myPubVar", "XXMMWW_boxquad", "A3RANDVARrpv1tpv", "fnc_nestf", "smissles", "wooden_velo",
-					"vabox", "bis_fnc_camera_target"];
+					"vabox"];
 				};
 
 		if (isNil "_cheatFlag" && isNil "_memAnomaly") then
