@@ -316,7 +316,7 @@ while { true } do
 					"selecteditem", "moptions", "delaymenu", "gluemenu", "infiSTAR_fillHax", "itemmenu", "gmadmin", "fapEsp", "mapclick", "VAGINA_secret", "spawnweapons1", "abcd", "skinmenu",
 					"playericons", "changebackpack", "keymenu", "godall", "theKeyControl", "infiSTAR_FILLPLAYER", "whitelist", "pfEpochTele", "custom_clothing", "img", "surrmenu", "footSpeedIndex",
 					"ctrl_onKeyDown", "plrshldblcklst", "DEV_ConsoleOpen", "executeglobal", "cursoresp", "Asdf", "planeGroup", "teepee", "spwnwpn", "musekeys", "dontAddToTheArray", "morphtoanimals",
-					"aesp", "Monky_initMenu", "tMenu", "recon", "curPos", "playerDistanceScreen", "ihatelife", "debugConsoleIndex", "MY_KEYDOWN_FNC", "Bowen_RANDSTR", "ProDayz",
+					"aesp", "Monky_initMenu", "tMenu", "recon", "curPos", "playerDistanceScreen", "ihatelife", "MY_KEYDOWN_FNC", "Bowen_RANDSTR", "ProDayz",
 					"idonteven", "walrein820", "RandomEx", "TAG_onKeyDown", "changestats", "derp123", "heel", "rangelol", "unitsmenu", "ARGT_JUMP_s", "ARGT_JUMP_d", "globalplaya", "ALL_MAGS_TO_SEARCH",
 					"xtags", "pm", "lmzsjgnas", "vm", "bowonkys", "glueallnigga", "hotkeymenu", "espfnc", "playeresp", "zany", "dfgjafafsafccccasd", "atext", "boost",
 					"vspeed", "inv", "rspwn", "pList", "loldami", "T", "bowonky", "aimbott", "Admin_Layout", "markeresp", "allMrk", "MakeRandomSpace", "helpmenu", "rustlinginit", "invall", "initarr",
