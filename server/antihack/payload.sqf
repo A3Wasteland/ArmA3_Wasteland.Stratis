@@ -319,7 +319,7 @@ while { true } do
 					"aesp", "Monky_initMenu", "tMenu", "recon", "curPos", "playerDistanceScreen", "ihatelife", "MY_KEYDOWN_FNC", "Bowen_RANDSTR", "ProDayz",
 					"idonteven", "walrein820", "RandomEx", "TAG_onKeyDown", "changestats", "derp123", "heel", "rangelol", "unitsmenu", "ARGT_JUMP_s", "ARGT_JUMP_d", "globalplaya", "ALL_MAGS_TO_SEARCH",
 					"xtags", "pm", "lmzsjgnas", "vm", "bowonkys", "glueallnigga", "hotkeymenu", "espfnc", "playeresp", "zany", "dfgjafafsafccccasd", "atext", "boost",
-					"vspeed", "inv", "rspwn", "pList", "loldami", "T", "bowonky", "aimbott", "Admin_Layout", "markeresp", "allMrk", "MakeRandomSpace", "helpmenu", "rustlinginit", "invall", "initarr",
+					"vspeed", "inv", "rspwn", "loldami", "T", "bowonky", "aimbott", "Admin_Layout", "markeresp", "allMrk", "MakeRandomSpace", "helpmenu", "rustlinginit", "invall", "initarr",
 					"reinit", "ALexc", "DAYZ_CREATEVEHICLE", "FUK_da_target", "damihakeplz", "damikeyz_veryhawt", "mapopt", "hangender", "slag", "jizz", "kkk", "ebay_har", "sceptile279",
 					"TargetPlayer", "tell_me_more_infiSTAR", "airborne_spawn_vehicle_infiSTAR", "sxy_list_stored", "advert_SSH", "Flare8", "Flare7", "SuperAdmin_MENU",
 					"fsdandposanpsdaon", "antiloop", "anti", "spawn_explosion_target_ebay", "whatisthis4", "ratingloop_star", "epochRemoteNukeAll", "PVAH_admin_rq", "PVAH_writelog_rq", "sandslash",
