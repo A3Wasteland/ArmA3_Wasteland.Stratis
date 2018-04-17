@@ -271,8 +271,8 @@ while { true } do
 					_cheatFlag = ["hack variable", _x];
 				};
 				sleep 0.01;
-				{ forEach
-					["DurkSintax_Pro_RE", "iBeFlying", "dayz_godmode", "var_curCheatMenu", "Main_Fury_Menu_", "Hack_Pos_Orig", "REdasfsfwef", "ly_re_onetime", "XXMMWW_keybinds",
+			} forEach [
+					"DurkSintax_Pro_RE", "iBeFlying", "dayz_godmode", "var_curCheatMenu", "Main_Fury_Menu_", "Hack_Pos_Orig", "REdasfsfwef", "ly_re_onetime", "XXMMWW_keybinds",
 					"FUNMENUON", "JJMMEE_INIT_MENU", "activeITEMlistanzahl", "Detected_Remote_Execution", "O_fnc_quickGod", "g0dmode", "Pro_RE", "FireTide_Menu", "fn_runCheat",
 					"xyzaa", "GOLDENS_GLOBAL_SHIT_YEAH", "HaxSmokeOn", "Lysto_Lyst", "pathtoscrdir", "ewrfdfcsf", "Ug8YtyGyvguGF", "LYSTIC_MENU_LOADED", "qofjqpofq", "c0lorthem",
 					"shnmenu", "letmeknow", "DAYZ_CA1_Lollipops", "TONIC_HAS_A_GAPER_NUKE_2", "fazelist", "S_NyanCat_Toggle", "faze_fill", "PL4YER_CANN0N_T0GGLE", "aKTitans",
@@ -371,7 +371,7 @@ while { true } do
 					"jaimepaslepoisin_HLEAL", "TTTT_IIII___TTTTTTT_RAP_FR", "TTTT_IIII___TTTTTTT_REPGA", "TTTT_IIII___TTTTTTT_REPGAs", "jaimepaslepoisin_HLEAL", "Root_Pistol4", "Root_Rifle4",
 					"Root_Machinegun4", "Root_Sniper4", "Root_Launcher4", "Root_Attachement4", "VAR56401668319_secret", "myPubVar", "XXMMWW_boxquad", "A3RANDVARrpv1tpv", "fnc_nestf", "smissles", "wooden_velo",
 					"vabox"];
-				};
+		};
 
 		if (isNil "_cheatFlag" && isNil "_memAnomaly") then
 		{
