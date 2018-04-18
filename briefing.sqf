@@ -24,6 +24,7 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>[Removed] Vehicles from Abandoned Vehicle Mission
 <br/>[Fixed] Start Up Messages
 <br/>[Optimized] Code and Calls
 <br/>[Update] Mission and Database to current

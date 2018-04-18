@@ -1,4 +1,4 @@
-// ******************************************************************************************
+-// ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Version: 1.0
@@ -18,10 +18,8 @@ _setupVars =
 		["B_MBT_01_arty_F", "ScorcherMission"],         //NEED LOADOUT
 		["B_APC_Tracked_01_AA_F", "TigrisMission"],     //NEED LOADOUT
 		["B_MBT_01_mlrs_F", "MLRSMission"],             //NEED LOADOUT
-		["O_MRAP_02_gmg_F", "GMGStriderMission"],       //NEED LOADOUT
-		["O_MBT_02_cannon_F", "MBTMission"],            //NEED LOADOUT
-		["B_APC_Wheeled_03_cannon_F", "CheetahMission"], //NEED LOADOUT
-		["I_Truck_02_MRL_F", "ZamakMission"]            //NEED LOADOUT
+		["B_Mortar_01_F"],
+		["B_G_Mortar_01_F"]
 	];
 
 	_missionType = "Abandoned Vehicle";
