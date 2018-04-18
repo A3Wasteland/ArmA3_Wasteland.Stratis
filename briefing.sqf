@@ -24,6 +24,7 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>[Fixed] Start Up Messages
 <br/>[Optimized] Code and Calls
 <br/>[Update] Mission and Database to current
 <br/>[Added] New Vehicles to Disable Thermals
