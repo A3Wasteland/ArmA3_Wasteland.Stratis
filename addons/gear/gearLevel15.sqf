@@ -8,18 +8,29 @@ _player = _this;
 
 _player setVariable ["cmoney", (_player getVariable "cmoney") + 1000, true];
 
-[missionNamespace, "arsenalOpened", {
+
+// Open arsenal and disable Save button
+[ missionNamespace, "arsenalOpened", {
     disableSerialization;
     _display = _this select 0;
-    (_display displayCtrl 44150) ctrlRemoveAllEventHandlers "buttonclick";
-    (_display displayCtrl 44150) ctrlEnable false;
-}] call BIS_fnc_addScriptedEventHandler;
+    {
+        ( _display displayCtrl _x ) ctrlSetText "Disabled";
+        ( _display displayCtrl _x ) ctrlSetTextColor [ 1, 0, 0, 0.5 ];
+        ( _display displayCtrl _x ) ctrlRemoveAllEventHandlers "buttonclick";
+    }forEach [ 44147, 44150 ];
+} ] call BIS_fnc_addScriptedEventHandler;
 
 _display displayAddEventHandler ["KeyDown", "if ((_this select 1) in [19,29]) then {true}"];
 
-_crate = "Box_East_Ammo_F";		
-["Open",_crate] call BIS_fnc_arsenal;
+_crate = "Box_East_Ammo_F";
+
+//remove "Load" Button from VA
+["Open",_crate] call BIS_fnc_arsenal;waitUntil { sleep 0.5; !isnull ( uinamespace getvariable "RSCDisplayArsenal" ) };
+ctrlEnable [44147, false];
+
 [_crate,[true],true] call BIS_fnc_addVirtualMagazineCargo;
+
+
 [_crate,[true],true] call BIS_fnc_addVirtualBackpackCargo;
 
 
@@ -112,7 +123,7 @@ _crate = "Box_East_Ammo_F";
 "Binocular"
 
 ],true] call BIS_fnc_addVirtualWeaponCargo;
-					
+
 [_crate,[
 // Accessories
 "optic_Holosight",
@@ -468,12 +479,10 @@ _crate = "Box_East_Ammo_F";
 "H_BandMask_demon",
 "H_BandMask_khk",
 "H_BandMask_reaper"
-	  
+
 ],true] call BIS_fnc_addVirtualItemCargo;
 
 systemChat format["Welcome %1, Enjoy your Virtual Arsenal!", name player];
 
 
 waitUntil {isNull (uiNamespace getVariable ["RscDisplayArsenal", displayNull])};
-
-

@@ -24,6 +24,7 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>[Disabled] Loading VA Items with the 'Load' Button
 <br/>[Reduced] Frequency of Abandoned Vehicle Mission
 <br/>[Removed] Vehicles from Abandoned Vehicle Mission
 <br/>[Fixed] Start Up Messages
