@@ -16,6 +16,7 @@ _setupVars =
 	_vehicleClass = selectRandom
 	[
 		["B_MBT_01_arty_F", "ScorcherMission"],         //NEED LOADOUT
+		["O_MBT_02_arty_F", "SochorMission"],         //NEED LOADOUT
 		["B_APC_Tracked_01_AA_F", "TigrisMission"],     //NEED LOADOUT
 		["B_MBT_01_mlrs_F", "MLRSMission"]
 	];

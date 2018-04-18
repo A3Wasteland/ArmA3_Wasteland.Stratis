@@ -180,7 +180,6 @@ _allObjItems = [];
 	};
 } forEach _allObjItems;
 
-
 {
 	_x params ["_itemName", "_itemClass", "", "", "", "_sellValue"];
 	_itemQty = [_obj getVariable _itemClass] param [0,0,[0]];
