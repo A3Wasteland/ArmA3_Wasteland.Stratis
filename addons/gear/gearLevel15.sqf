@@ -17,7 +17,7 @@ _player setVariable ["cmoney", (_player getVariable "cmoney") + 1000, true];
 
 _display displayAddEventHandler ["KeyDown", "if ((_this select 1) in [19,29]) then {true}"];
 
-_crate = "Box_East_Ammo_F";		
+_crate = "Box_East_Ammo_F";
 ["Open",_crate] call BIS_fnc_arsenal;
 [_crate,[true],true] call BIS_fnc_addVirtualMagazineCargo;
 [_crate,[true],true] call BIS_fnc_addVirtualBackpackCargo;
@@ -112,7 +112,7 @@ _crate = "Box_East_Ammo_F";
 "Binocular"
 
 ],true] call BIS_fnc_addVirtualWeaponCargo;
-					
+
 [_crate,[
 // Accessories
 "optic_Holosight",
@@ -475,5 +475,3 @@ systemChat format["Welcome %1, Enjoy your Virtual Arsenal!", name player];
 
 
 waitUntil {isNull (uiNamespace getVariable ["RscDisplayArsenal", displayNull])};
-
-

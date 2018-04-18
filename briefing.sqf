@@ -24,6 +24,7 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>[Limited] Ammo Amount for Gear Levels
 <br/>[Reduced] Frequency of Abandoned Vehicle Mission
 <br/>[Removed] Vehicles from Abandoned Vehicle Mission
 <br/>[Fixed] Start Up Messages
