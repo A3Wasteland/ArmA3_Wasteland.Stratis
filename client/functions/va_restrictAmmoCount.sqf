@@ -14,8 +14,14 @@ Fn_Gear_CompatibleMagazines =
 	private _res = [];
 	{
 		_res pushBack (if (_x == "this")
-		then {getArray(_cls >> "magazines")}
-		else {getArray(_cls >> _x >> "magazines")});
+		then
+		{
+			getArray(_cls >> "magazines")
+		}
+		else
+		{
+			getArray(_cls >> _x >> "magazines")
+		});
 	} forEach getArray(_cls >> "muzzles");
 
 	_res
