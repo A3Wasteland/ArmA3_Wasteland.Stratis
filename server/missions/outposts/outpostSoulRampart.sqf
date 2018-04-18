@@ -1,6 +1,6 @@
 /*
 	----------------------------------------------------------------------------------------------
-	
+
 	Copyright © 2016 soulkobk (soulkobk.blogspot.com)
 
 	This program is free software: you can redistribute it and/or modify
@@ -17,20 +17,20 @@
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	----------------------------------------------------------------------------------------------
-	
+
 	Name: outpostSoulRampart.sqf
 	Version: 1.0.0
 	Author: soulkobk (soulkobk.blogspot.com)
 	Creation Date: 10:55 PM 27/05/2016
 	Modification Date: 10:55 PM 27/05/2016
-	
+
 	Description:
 	For use with A3Wasteland 1.2b mission (A3Wasteland.com).
-	
+
 	Parameter(s): none
 
 	Example: none
-	
+
 	Change Log:
 	1.0.0 -	original base script.
 

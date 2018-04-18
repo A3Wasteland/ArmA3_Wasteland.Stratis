@@ -12,5 +12,5 @@
 	"outpostSoulRecon",
 	"outpostSoulResistance",
 	"outpostSoulSupplies"
-	
+
 ]

@@ -167,7 +167,7 @@ _setupObjects =
         };
         sleep 0.1; // sleep between loops.
     };
-  
+
 	_aiGroup = createGroup CIVILIAN;
 	//_town = selectRandom (call cityList);
 	//_missionPos = markerPos (_town select 0);
@@ -245,7 +245,7 @@ _successExec =
 	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
 	_box3 setDir random 360;
 	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
-	
+
 	_mortar = createVehicle ["I_Mortar_01_F", _lastPos, [], 5, "None"];
 	_mortar setVariable ["R3F_LOG_Disabled", false, true];
 	_mortar setDir random 360;

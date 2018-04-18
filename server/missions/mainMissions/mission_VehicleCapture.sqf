@@ -132,7 +132,7 @@ _setupObjects =
 			_vehicle setVehicleAmmo 0.5;
 		};
 
-		
+
 	};
 
 	// Reset all flares to 120

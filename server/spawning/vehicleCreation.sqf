@@ -53,7 +53,7 @@ if (_vehicleType isKindOf "Offroad_01_armed_base_F") then
 	_vehicle setVehicleAmmo ((1 + floor random 2) / 4);
 };
 
-// Reset Offroad AT to 0-4 rockets 
+// Reset Offroad AT to 0-4 rockets
 if (_vehicleType isKindOf "Offroad_01_AT_base_F") then
 {
 	{

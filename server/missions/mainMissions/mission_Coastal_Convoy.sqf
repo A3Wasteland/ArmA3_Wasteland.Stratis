@@ -35,7 +35,7 @@ _setupObjects =
 		(_vehChoices select 0) set [1, "B_Heli_Attack_01_dynamicLoadout_F"];
  		(_vehChoices select 1) set [1, "O_Heli_Attack_02_dynamicLoadout_F"];
  		(_vehChoices select 2) set [1, "O_T_VTOL_02_infantry_F"];
-		
+
 	};
 	_convoyVeh = _vehChoices call BIS_fnc_selectRandom;
 
@@ -51,12 +51,12 @@ _setupObjects =
 		_position = _this select 1;
 		_direction = _this select 2;
 		_variant = _type param [1,"",[""]];
- 
+
  		if (_type isEqualType []) then
  		{
  			_type = _type select 0;
  		};
-		
+
 		_vehicle = createVehicle [_type, _position, [], 0, "FLY"];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
 
@@ -193,7 +193,7 @@ _successExec =
 	_mortar = createVehicle ["I_Mortar_01_F", _lastPos, [], 5, "None"];
 	_mortar setVariable ["R3F_LOG_Disabled", false, true];
 	_mortar setDir random 360;
-	
+
 	_successHintMessage = "The patrol has been stopped, the ammo crates and mortar are yours to take. Find them near the wreck!";
 
 };

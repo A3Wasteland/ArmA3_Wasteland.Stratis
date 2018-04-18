@@ -21,7 +21,7 @@ if (_vehicle isKindOf "LandVehicle") then
 		_veh = assignedVehicle _unit;
 
 		if (canMove _veh) then
-		{ 
+		{
 			[_unit] orderGetIn true;
 
 			if ((assignedVehicleRole _unit) param [0,""] == "Driver") then

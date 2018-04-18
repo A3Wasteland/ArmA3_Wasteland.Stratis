@@ -40,7 +40,7 @@ water_edge_check_effects = {
 		};
 		water_edge_colorized = true;
 	};
-	
+
 	if (water_edge_colorized) then {
 	  1 setFog 1;
 	  setObjectViewDistance 15;

@@ -18,11 +18,11 @@ _setupVars =
 _setupObjects =
 {
 	_missionPos = markerPos _missionLocation;
-	
+
 	//delete existing base parts and vehicles at location
 	_baseToDelete = nearestObjects [_missionPos, ["All"], 25];
-	{ deleteVehicle _x } forEach _baseToDelete; 
-	
+	{ deleteVehicle _x } forEach _baseToDelete;
+
 	_camonet = createVehicle ["CamoNet_INDP_big_F", [_missionPos select 0, _missionPos select 1], [], 0, "CAN COLLIDE"];
 	_camonet allowdamage false;
 	_camonet setDir random 360;
@@ -32,20 +32,20 @@ _setupObjects =
 
 	_table = createVehicle ["Land_WoodenTable_small_F", _missionPos, [], 0, "CAN COLLIDE"];
 	_table setPosATL [_missionPos select 0, _missionPos select 1, _missionPos select 2];
-	
+
 	_laptop = createVehicle ["Land_Laptop_unfolded_F", _missionPos, [], 0, "CAN COLLIDE"];
 	_laptop attachTo [_table,[0,0,0.60]];
 
-	_obj1 = createVehicle ["I_GMG_01_high_F", _missionPos,[], 10,"None"]; 
+	_obj1 = createVehicle ["I_GMG_01_high_F", _missionPos,[], 10,"None"];
 	_obj1 setPosATL [(_missionPos select 0) - 2, (_missionPos select 1) + 2, _missionPos select 2];
-	
-	_obj2 = createVehicle ["I_GMG_01_high_F", _missionPos,[], 10,"None"]; 
+
+	_obj2 = createVehicle ["I_GMG_01_high_F", _missionPos,[], 10,"None"];
 	_obj2 setPosATL [(_missionPos select 0) + 2, (_missionPos select 1) + 2, _missionPos select 2];
-	
-	_obj3 = createVehicle ["I_GMG_01_high_F", _missionPos,[], 10,"None"]; 
+
+	_obj3 = createVehicle ["I_GMG_01_high_F", _missionPos,[], 10,"None"];
 	_obj3 setPosATL [(_missionPos select 0) - 2, (_missionPos select 1) - 2, _missionPos select 2];
-	
-	_obj4 = createVehicle ["I_GMG_01_high_F", _missionPos,[], 10,"None"]; 
+
+	_obj4 = createVehicle ["I_GMG_01_high_F", _missionPos,[], 10,"None"];
 	_obj4 setPosATL [(_missionPos select 0) + 2, (_missionPos select 1) - 2, _missionPos select 2];
 
 	AddLaptopHandler = _laptop;
@@ -57,8 +57,8 @@ _setupObjects =
 	[_aiGroup,_missionPos,24,20] spawn createCustomGroup3;
 
 	_aiGroup setCombatMode "RED";
-	_aiGroup setBehaviour "COMBAT";	
-	
+	_aiGroup setBehaviour "COMBAT";
+
 	_vehicleName = "Laptop";
 	_missionHintText = format ["<t color='%2'>Hackers</t> are using a laptop to hack your bank accounts. Hacking the laptop successfully will steal 1 percent from each on-line players bank account! HURRY TO DEFEND YOUR BANK ACCOUNT OR HACK OTHERS BANK ACCOUNTS!", _vehicleName, mainMissionColor];
 };

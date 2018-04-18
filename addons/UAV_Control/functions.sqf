@@ -13,7 +13,7 @@ while {true} do
 {
 	waitUntil {_uav = getConnectedUAV player; !isNull _uav};
 
-	
+
 
 	// ignore remote designators and autoturrets unless indie
 	if (!(_uav isKindOf "StaticWeapon") || !(playerSide in [BLUFOR,OPFOR])) then
@@ -73,7 +73,7 @@ while {true} do
 			_uav setVariable ["FAR_uavReviveAction", -1];
 		};
 	};
-	
+
 	waitUntil {_uav != getConnectedUAV player};
 
 	if (!isNull _uav) then

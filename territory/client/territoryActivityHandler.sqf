@@ -25,4 +25,3 @@ if (typeName _this == "ARRAY" && {count _this >= 1}) then {
 
 	playSound 'FD_Finish_F'; // Nice sound effect to draw players attention to the notification
 };
-

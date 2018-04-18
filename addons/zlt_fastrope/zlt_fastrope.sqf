@@ -16,7 +16,7 @@ zlt_rope_ropes = [];
 zlt_mutexAction = false;
 
 zlt_rope_helis = ["O_Heli_Light_02_unarmed_F","O_Heli_Light_02_F","B_Heli_Transport_01_F","B_Heli_Transport_01_camo_F","O_Heli_Attack_02_F","O_Heli_Attack_02_black_F","I_Heli_Transport_02_F","B_Heli_Light_01_F"];
-zlt_rope_helidata = 
+zlt_rope_helidata =
 [
 	[
 		["O_Heli_Light_02_unarmed_F", "O_Heli_Light_02_F"],
@@ -37,7 +37,7 @@ zlt_rope_helidata =
 		["I_Heli_Transport_02_F"],
 		[0,-5,-26],
 		[]
-	],	
+	],
 	[
 		["B_Heli_Light_01_F"],
 		[0.6,0.5,-25.9],
@@ -56,13 +56,13 @@ zlt_fnc_tossropes = {
 	{
 		if ((typeof _heli) in (_x select 0)) exitwith {
 			_ropes = _ropes + [_x select 1];
-			if ( count (_x select 2) !=0 ) then { 
+			if ( count (_x select 2) !=0 ) then {
 				_ropes = _ropes + [_x select 2];
 			};
 		};
 		_i = _i +1;
 	} foreach zlt_rope_helidata;
-	
+
 	sleep random 0.3;
 	if ( count (_heli getvariable ["zlt_ropes",[]]) != 0 ) exitwith { zlt_mutexAction = false; };
 	_heli animateDoor ['door_R', 1];
@@ -74,7 +74,7 @@ zlt_fnc_tossropes = {
 		_oropes = _oropes + [_rope];
 	} foreach _ropes;
 	_heli setvariable ["zlt_ropes",_oropes,true];
-	
+
 	_heli spawn {
 		private ["_heli","_ropes"];
 		_heli = _this;
@@ -101,9 +101,9 @@ zlt_fnc_fastropeaiunits = {
 		_grunits = _this select 1;
 
 		dostop (driver _heli );
-		(driver _heli) setBehaviour "Careless"; 
-		(driver _heli) setCombatMode "Blue"; 
-		
+		(driver _heli) setBehaviour "Careless";
+		(driver _heli) setCombatMode "Blue";
+
 		_heli spawn zlt_fnc_tossropes;
 
 		[_heli, _grunits] spawn {
@@ -114,15 +114,15 @@ zlt_fnc_fastropeaiunits = {
 			_units = _units - [player];
 			_units = _units - [driver _heli];
 			{if (!alive _x or isplayer _x or vehicle _x != _heli) then {_units = _units - [_x];}; } foreach _units;
-						
+
 			{ sleep (0.5 + random 0.7); _x spawn zlt_fnc_fastropeUnit; } foreach _units;
 			waituntil {sleep 0.5; { (getpos _x select 2) < 1 } count _units == count _units; };
 			sleep 10;
 			(driver _heli) doFollow (leader group (driver _heli ));
-			(driver _heli) setBehaviour "Aware"; 
-			(driver _heli) setCombatMode "White"; 
+			(driver _heli) setBehaviour "Aware";
+			(driver _heli) setCombatMode "White";
 			_heli call zlt_fnc_cutropes;
-			
+
 		};
 };
 
@@ -145,15 +145,15 @@ zlt_fnc_fastropeUnit = {
 
 	_ropes = (_heli getvariable ["zlt_ropes", []]);
 	if (count _ropes == 0) exitwith {};
-	
+
 	_rope = _ropes call BIS_fnc_selectRandom;
 	_zmax = 22;
 	_zdelta = 7 / 10  ;
-	
+
 	_zc = _zmax;
 	_unit action ["eject", _heli];
 	_unit switchmove "gunner_standup01";
-	
+
 	_unit setpos [(getpos _unit select 0), (getpos _unit select 1), 0 max ((getpos _unit select 2) - 3)];
 	while {alive _unit and (getpos _unit select 2) > 1 and (abs (speed _heli)) < MAX_SPEED_WHILE_FASTROPING  and _zc > -24} do {
 		_unit attachTo [_rope, [0,0,_zc]];

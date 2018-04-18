@@ -1,6 +1,6 @@
 /*
 	----------------------------------------------------------------------------------------------
-	
+
 	Copyright © 2016 soulkobk (soulkobk.blogspot.com)
 
 	This program is free software: you can redistribute it and/or modify
@@ -17,13 +17,13 @@
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	----------------------------------------------------------------------------------------------
-	
+
 	Name: outOfBoundsRemoteStore.sqf
 	Version: 1.0.0
 	Author: soulkobk (soulkobk.blogspot.com)
 	Creation Date: 9:33 PM 04/07/2016
 	Modification Date: 3:01 PM 06/07/2016
-	
+
 	Description:
 	For use with A3Wasteland 1.xx mission (A3Wasteland.com). This script will create a playable area
 	boundary on the map (server side) which is automatically calculated from the current maps
@@ -31,30 +31,30 @@
 	playable area at all times. If the _uav is outside of the play area, a timer will show on
 	screen with a count down and an audible warning. If the countdown reaches 0 seconds, then the
 	_uav (and any vehicle the _uav is in) will be killed and forced to respawn.
-	
+
 	The playable area is within a visible blue circle border on the map as well as an altitude limit
 	(in meters) as set per the _maxHeightRemote variable. The maximum time duration any _uav is allowed
 	to be outside the playable area (in seconds) is set by the _maxTime variable.
-	
+
 	Place this file at...
 	\addons\outOfBounds\outOfBoundsRemoteStore.sqf
-	
+
 	Edit the file...
 	\server\functions\fn_createCrewUAV.sqf
-	
+
 	And paste in at the bottom...
 	[_uav] execVM "addons\outOfBounds\outOfBoundsRemoteStore.sqf";
-	
+
 	Above the line... (right at the bottom of the script).
 	_grp
-	
+
 	Parameter(s): none
 
 	Example: none
-	
+
 	Change Log:
 	1.0.0 -	original base script.
-	
+
 	----------------------------------------------------------------------------------------------
 */
 
@@ -66,12 +66,12 @@ _maxHeightRemote = 1500; // max remote-vehicle height - this MUST match the outO
 	------------------------------------------------------------------------------------------	*/
 
 params ["_uav"];
-	
+
 if (!isNil "_uav") then
 {
 	_uavText = format ["\n! %1 PLEASE NOTE THAT THE REMOTE VEHICLE '%2' HAS A MAX ALTITUDE OF %3M !",toUpper (name player),toUpper (getText (configfile >> "CfgVehicles" >> typeOf _uav >> "displayName")),_maxHeightRemote];
 	[_uavText, 5] call mf_notify_client;
-	
+
 	[_uav,_maxTime,_maxHeightRemote] spawn
 	{
 		params ["_uav","_maxTime","_maxHeightRemote"];

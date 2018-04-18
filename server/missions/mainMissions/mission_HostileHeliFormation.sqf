@@ -41,7 +41,7 @@ _setupObjects =
 		_position = _this select 1;
 		_direction = _this select 2;
 		_variant = _type param [1,"",[""]];
- 
+
  		if (_type isEqualType []) then
  		{
  			_type = _type select 0;
@@ -165,7 +165,7 @@ _successExec =
 	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
 	_box3 setDir (random 360);
 	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
-	
+
 	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
 	_smoke setDir (random 360);
 

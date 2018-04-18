@@ -1,6 +1,6 @@
 /*
 	----------------------------------------------------------------------------------------------
-	
+
 	Copyright © 2018 soulkobk (soulkobk.blogspot.com)
 
 	This program is free software: you can redistribute it and/or modify
@@ -17,13 +17,13 @@
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	----------------------------------------------------------------------------------------------
-	
+
 	Name: outOfBoundsPlane.sqf
 	Version: 1.0
 	Author: soulkobk (soulkobk.blogspot.com)
 	Creation Date: 2:14 PM 20/02/2018
 	Modification Date: 2:14 PM 20/02/2018
-	
+
 	Description:
 	out of bounds checks for player in a plane.
 
@@ -33,7 +33,7 @@
 
 	Change Log:
 	1.0 - original base script.
-	
+
 	----------------------------------------------------------------------------------------------
 */
 
@@ -127,4 +127,4 @@ if (hasInterface) then
 			///////////////////////////////////////////////////////////////////////////////////////
 		};
 	};
-};	
+};

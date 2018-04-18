@@ -1,8 +1,8 @@
 //display the "Vehicle Information" action
-cfg_va_info_action_on = true; 
+cfg_va_info_action_on = true;
 
 //display "Unflip vehicle" action (when vehicle is flipped)
-cfg_va_unflip_action_on = true;  
+cfg_va_unflip_action_on = true;
 
 //How much time (in seconds) to make the player wait before the vehicle is unflipped
 cfg_va_unflip_wait_time = 5;
@@ -13,7 +13,7 @@ cfg_va_unflip_wait_distance = 10;
 //display the "Pull {PlayerName}" action
 cfg_va_pull_player_action_on = true;
 
-//display lock/unlock actions 
+//display lock/unlock actions
 cfg_va_lock_action_on = ["A3W_vehicleLocking"] call isConfigOn;
 
 //Only the player with UID that matches "ownerUID" variable can lock/unlock the vehicle

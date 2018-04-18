@@ -39,7 +39,7 @@ player removeAction _mdet_action_1;
 player removeAction _mdet_action_2;
 /*
 MineDetectorMakeSound = true;
-MineDetector_fnc_init = 
+MineDetector_fnc_init =
 {
 	player addAction ["Switch MineDetector On/Off",
 	"MineDetectorMakeSound=not MineDetectorMakeSound;hint ('Enable MineDetector Beep: '+str(MineDetectorMakeSound))",

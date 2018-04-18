@@ -1,6 +1,6 @@
 /*
 	----------------------------------------------------------------------------------------------
-	
+
 	Copyright © 2016 soulkobk (soulkobk.blogspot.com)
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as
@@ -12,28 +12,28 @@
 	GNU Affero General Public License for more details.
 	You should have received a copy of the GNU Affero General Public License
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
-	
+
 	----------------------------------------------------------------------------------------------
-	
+
 	Name: randomSoldierLoadOut.sqf
 	Version: 1.0.1
 	Author: soulkobk (soulkobk.blogspot.com)
 	Creation Date: 2:20 PM 10/10/2016
 	Modification Date: 2:20 PM 10/10/2016
-	
+
 	Description:
 	For use with A3Wasteland 1.Xx mission (A3Wasteland.com). This script is for custom AI loadouts,
 	for usage within missions.
-	
+
 	Place this script into folder...
 	\server\missions\factoryMethods\createUnits\randomSoldierLoadOut.sqf
-	
+
 	Then add...
 	randomSoldierLoadOut = [_path, "createUnits\randomSoldierLoadOut.sqf"] call mf_compile;
-	
+
 	To...
 	\server\functions\serverCompile.sqf
-	
+
 	Underneath the line...
 	_path = "server\missions\factoryMethods";
 
@@ -42,15 +42,15 @@
 	\server\missions\factoryMethods\createUnits\customGroup2.sqf
 	\server\missions\factoryMethods\createUnits\createRandomSoldier.sqf
 	\server\missions\factoryMethods\createUnits\createRandomSoldierC.sqf
-	
+
 	You need to remove the old load out for AI and add in...
 	[_soldier] call randomSoldierLoadOut;
-	
+
 	*Or leave the original code as-is and add the above line to the end of each of those scripts
 	(before the last "_soldier" line) to override the _soldier's load out with 100% random gear.
-	
+
 	This script will load out each AI unit randomly with...
-	
+
 	+ Uniform (default/guarenteed addition)
 	+ Head Gear (percentage chance addition)
 	+ Vest (percentage chance addition)
@@ -62,20 +62,20 @@
 	+ Health Kit(s) (percentage chance addition) - unit will also have 'Medic' trait
 	+ Grenade(s) (percentage chance addition)
 	+ Rocket Launcher (percentage chance addition) - unit will also have a back pack added
-	
+
 	*See the percentage chance per AI unit below (changable configuration).
 	*See _opticsDisallow option to REMOVE optics from the random optic list.
-	
+
 	Changeable configuration below.
-	
+
 	Parameter(s): [<unit>] call randomSoldierLoadOut;
 	Example: [_soldier] call randomSoldierLoadOut;
-	
+
 	Change Log:
 	1.0.0 -	original base script.
 	1.0.1 -	corrected _opticsDisallow default entries.
 	1.0.2 -	corrected typo at setUnitTrait.
-	
+
 	----------------------------------------------------------------------------------------------
 */
 

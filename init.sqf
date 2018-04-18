@@ -109,14 +109,14 @@ if (hasInterface || isServer) then
     [] execVM "addons\outOfBounds\outOfBoundsLandVehicle.sqf";
     [] execVM "addons\outOfBounds\outOfBoundsRemote.sqf";
 	[] execVM "addons\Fuel\Fuelconsumption.sqf";
-	
+
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 };
 
 // Remove line drawings from map
 (createTrigger ["EmptyDetector", [0,0,0], false]) setTriggerStatements
 [
-	"!triggerActivated thisTrigger", 
+	"!triggerActivated thisTrigger",
 	"thisTrigger setTriggerTimeout [30,30,30,false]",
 	"{if (markerShape _x == 'POLYLINE') then {deleteMarker _x}} forEach allMapMarkers"
 ];

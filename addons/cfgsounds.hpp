@@ -1,7 +1,7 @@
 
 class CfgSounds
 {
-	sounds[] = 
+	sounds[] =
 	{
 		beep, beep2, beep3, beep4, beep5, beep6, beep7, beep8, beep9, Mine_Detector_Sound_1,Mine_Detector_Sound_2,Mine_Detector_Sound_3,Mine_Detector_Sound_4,Mine_Detector_Sound_5
 	};
@@ -9,7 +9,7 @@ class CfgSounds
 			{
                                 sound[] = {"addons\beacondetector\sound\beep.wav", db-10, 0.5};
                                 titles[] = {};
-			};		
+			};
 		class beep2
 			{
                                 sound[] = {"addons\beacondetector\sound\beep.wav", db-10, 0.6};
@@ -50,27 +50,27 @@ class CfgSounds
                                 sound[] = {"addons\beacondetector\sound\beep.wav", db-10, 0.1};
                                 titles[] = {};
 			};
-		
+
 		class Mine_Detector_Sound_1
 			{
 								name = "Mine_Detector_Sound_1";
 								sound[] = {"addons\Mine_detector\sound\1.ogg", 1, 1};
 								titles[] = {};
 			};
-	
+
 		class Mine_Detector_Sound_2
 			{
 								name = "Mine_Detector_Sound_2";
 								sound[] = {"addons\Mine_detector\sound\2.ogg", 1, 1};
 								titles[] = {};
 			};
-			
+
 		class Mine_Detector_Sound_3
 			{
 								name = "Mine_Detector_Sound_3";
 								sound[] = {"addons\Mine_detector\sound\3.ogg", 1, 1};
 								titles[] = {};
-			};	
+			};
 
 		class Mine_Detector_Sound_4
 			{
@@ -78,7 +78,7 @@ class CfgSounds
 								sound[] = {"addons\Mine_detector\sound\4.ogg", 1, 1};
 								titles[] = {};
 			};
-			
+
 		class Mine_Detector_Sound_5
 			{
 								name = "Mine_Detector_Sound_5";
