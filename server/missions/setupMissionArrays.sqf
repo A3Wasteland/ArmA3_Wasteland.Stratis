@@ -22,7 +22,7 @@ MainMissions =
 	["mission_HostileJetFormation", .5],
 	["mission_AbandonedJet", .5],
 	["mission_ArmedPatrol", .75],
-	["mission_AbandonedVehicle", 1]
+	["mission_AbandonedVehicle", 0.75]
 ];
 
 SideMissions =
