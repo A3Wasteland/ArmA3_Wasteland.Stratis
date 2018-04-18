@@ -17,7 +17,7 @@ _break = floor (random 100);
 
 if (_break < 1) then
 {
-	hint "Your ToolKit broke";	
+	hint "Your ToolKit broke";
 	player removeItem "ToolKit";
 };
 
@@ -29,7 +29,7 @@ _checks =
 	_progress = _this select 0;
 	_object = _this select 1;
 	_failed = true;
-	
+
 	switch (true) do
 	{
 		case (!alive player): { _text = "" };
@@ -114,7 +114,7 @@ if (_success) then
 		[[netId _vehicle, 1], "A3W_fnc_setLockState", _vehicle] call A3W_fnc_MP; // Unlock
 	};
 
-	_vehicle setVariable ["objectLocked", false, true]; 
+	_vehicle setVariable ["objectLocked", false, true];
 	_vehicle setVariable ["R3F_LOG_disabled",false,true];
 	_vehicle setVariable ["ownerUID", getPlayerUID player, true];
 	_vehicle engineOn true;

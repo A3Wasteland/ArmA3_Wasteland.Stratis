@@ -15,6 +15,3 @@ if (soundVolume > 0.99) then
 			enableEnvironment true;
 			["Environment effects Enabled.", 5] call mf_notify_client;
 		};
-
-
-

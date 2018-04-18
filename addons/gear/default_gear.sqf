@@ -50,43 +50,43 @@ else
 	[
 		// Put player UIDs here
 	];
-	
+
 	// gearLevel4
 	gearLevel4 = compileFinal str
 	[
 		// Put player UIDs here
 	];
-	
+
 	// gearLevel5
 	gearLevel5 = compileFinal str
 	[
 		// Put player UIDs here
 	];
-	
+
 	// gearLevel6
 	gearLevel6 = compileFinal str
 	[
 		// Put player UIDs here
 	];
-	
+
 	// gearLevel7
 	gearLevel7 = compileFinal str
 	[
 		// Put player UIDs here
 	];
-	
+
 	// gearLevel8
 	gearLevel8 = compileFinal str
 	[
 		// Put player UIDs here
 	];
-	
+
 	// gearLevel9
 	gearLevel9 = compileFinal str
 	[
 		// Put player UIDs here
 	];
-	
+
 	// gearLevel10
 	gearLevel10 = compileFinal str
 	[

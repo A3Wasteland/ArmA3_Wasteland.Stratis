@@ -36,16 +36,16 @@ if (isDedicated) exitWith {};
 
 T8_fnc_abortActionLaptop =
 {
-	if ( T8_varDownSucce ) then 
+	if ( T8_varDownSucce ) then
 	{
 		// hint "DEBUG - DONE";
 		T8_varDiagAbort = false;
-		T8_varDownSucce = false;		
-	
-	} else { 
-		player sideChat T8_varTLine01; 
-		T8_varDiagAbort = true; 
-		T8_varDownSucce = false; 
+		T8_varDownSucce = false;
+
+	} else {
+		player sideChat T8_varTLine01;
+		T8_varDiagAbort = true;
+		T8_varDownSucce = false;
 	};
 };
 
@@ -63,63 +63,63 @@ T8_fnc_ActionLaptop =
 	_laptop = _this select 0;
 	_caller = _this select 1;
 	_id = _this select 2;
-	
-	
-	
+
+
+
 	_cIU = _laptop getVariable [ "InUse", false ];
 	if ( _cIU ) exitWith { player sideChat T8_varTLine02; };
-	
+
 	player sideChat T8_varTLine03;
-	
+
 	T8_varDiagAbort = false;
-	
+
 	_laptop setVariable [ "InUse", true, true ];
-		
-	[ _laptop, _id] spawn 
+
+	[ _laptop, _id] spawn
 	{
 		private [ "_laptop", "_id", "_newFile", "_dlRate" ];
-		
+
 		_laptop		= _this select 0;
 		_id			= _this select 1;
-		
+
 		_newFile = 0;
-		
+
 		createDialog "T8_DataDownloadDialog";
-		
+
 		sleep 0.5;
 		ctrlSetText [ 8001, "Connecting ..." ];
 		sleep 0.5;
-		ctrlSetText [ 8001, "Connected:" ];		
-		ctrlSetText [ 8003, format [ "%1 kb", T8_varFileSize ] ];		
-		ctrlSetText [ 8004, format [ "%1 kb", _newFile ] ];		
-		
+		ctrlSetText [ 8001, "Connected:" ];
+		ctrlSetText [ 8003, format [ "%1 kb", T8_varFileSize ] ];
+		ctrlSetText [ 8004, format [ "%1 kb", _newFile ] ];
+
 		while { !T8_varDiagAbort && alive player && (player getVariable ["A3W_fnc_isUnconscious", 0] == 0)} do
 		{
 			_dlRate = 1000 + random 400;
 			_newFile = _newFile + _dlRate;
 
-			if ( _newFile > T8_varFileSize ) then 
+			if ( _newFile > T8_varFileSize ) then
 			{
-				_dlRate = 0;		
+				_dlRate = 0;
 				_newFile = T8_varFileSize;
-				ctrlSetText [ 8001, "Download finished!" ];	
+				ctrlSetText [ 8001, "Download finished!" ];
 				T8_varDiagAbort = true;
 				T8_varDownSucce = true;
-				
-				_laptop setVariable [ "Done", true, true ];
-				
-	
 
-	
-	
+				_laptop setVariable [ "Done", true, true ];
+
+
+
+
+
 	// Give Reward to the hacker
 		_totalMoney = 0;
 		_playerSide = side player;
 		switch (_playerSide) do {
-		
-	case BLUFOR: 
-	{	
-		{    
+
+	case BLUFOR:
+	{
+		{
 			if (isPlayer _x) then {
 			if  (side _x == BLUFOR) then {}
 			else {
@@ -132,11 +132,11 @@ T8_fnc_ActionLaptop =
 			}
 				}
 		} forEach playableUnits;
-	}; 
-	
-	case OPFOR: 
-	{	
-		{    
+	};
+
+	case OPFOR:
+	{
+		{
 			if (isPlayer _x) then {
 			if  (side _x == OPFOR) then {}
 			else {
@@ -147,12 +147,12 @@ T8_fnc_ActionLaptop =
 			_totalMoney = _totalMoney + _fivePercent;
 		}
 			}
-				}	
+				}
 		} forEach playableUnits;
-	}; 		
+	};
 	default
 	{
-		{    
+		{
 			if (isPlayer _x) then {
 			_bmoney = _x getVariable ["bmoney",0];
 			if ( _bmoney > 0 ) then { //might as well check for zero's
@@ -162,31 +162,31 @@ T8_fnc_ActionLaptop =
 		}
 			}
 		} forEach playableUnits;
-	
-		   }; 
+
+		   };
 							};
-			
+
 			if (_totalMoney > 100000) then {
 			player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + _totalMoney, true];
-			systemChat format["You have hacked players bank accounts to the value of $%1",_totalMoney];	
+			systemChat format["You have hacked players bank accounts to the value of $%1",_totalMoney];
 			}
 		else 	{
 			player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + 25000, true];
-			systemChat format["You have hacked players bank accounts to the value of $25,000"];				
+			systemChat format["You have hacked players bank accounts to the value of $25,000"];
 				};
 			};
-					
-			ctrlSetText [ 8002, format [ "%1 kb/s", _dlRate ] ];		
-			ctrlSetText [ 8004, format [ "%1 kb", _newFile ] ];				
-			
+
+			ctrlSetText [ 8002, format [ "%1 kb/s", _dlRate ] ];
+			ctrlSetText [ 8004, format [ "%1 kb", _newFile ] ];
+
 			sleep 1;
 		};
-		
+
 		T8_varDiagAbort = false;
-		
+
 		closeDialog 0;
 
-		_laptop setVariable [ "InUse", false, true];	
+		_laptop setVariable [ "InUse", false, true];
 	};
 };
 

@@ -36,7 +36,7 @@ if (isServer) then
 		deleteMarker _markerName;
 	}];
 };
-	
+
 if (!hasInterface) exitWith {};
 
 waitUntil {sleep 0.1; alive player && !(player getVariable ["playerSpawning", true])};

@@ -3,14 +3,14 @@ scriptName "tm4_fuelUptake";
    file: tm4_fuelUptake.sqf
    ========================
    Author: Tom_48_97 <@Tom_48_97>
-   Description: This script increases the fuel consumption of the 
+   Description: This script increases the fuel consumption of the
    player's vehicle. It just needs to be exec on client side
 --------------------------------------------------------------------*/
 #define __filename "tm4_fuelUptake.sqf"
- 
+
 if (isServer and isDedicated) exitWith {};
 waitUntil {!isNull player && player == player};
- 
+
 if (isNil "tm4_handler_fuelUptake") then {
    tm4_handler_fuelUptake = [] spawn {
       if (isNil "tm4_prom_spotrebaPaliva") then {

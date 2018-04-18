@@ -17,7 +17,7 @@ switch (_index) do {
 if (!CHVD_allowNoGrass) then {
 	_terrainGrid = _terrainGrid min 10;
 };
-ctrlSetText [_text, str _terrainGrid];		
+ctrlSetText [_text, str _terrainGrid];
 call compile format ["%1 = %2",_varType, _terrainGrid];
 call compile format ["profileNamespace setVariable ['%1',%1]", _varType];
 //[] call CHVD_fnc_updateSettings;

@@ -222,14 +222,14 @@ class CHVD_rscFrame
 	idc = -1;
 	style = 0;
 	shadow = 1;
-	colorBackground[] = 
+	colorBackground[] =
 	{
 		0,
 		0,
 		0,
 		0
 	};
-	colorText[] = 
+	colorText[] =
 	{
 		1,
 		1,
@@ -302,7 +302,7 @@ class CHVD_dialog
 	moving = 1;
 	onLoad = "[_this] call CHVD_fnc_localize";
 	onUnload = "";
-	
+
 	class controlsBackground
 	{
 		class CHVD_rscBackground: CHVD_rscFrame

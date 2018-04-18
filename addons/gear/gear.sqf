@@ -14,61 +14,61 @@
 ********************************************************/
 
 // gearLevel1
-gearLevel1 = 
+gearLevel1 =
 [
 	"76561198008596823" //Mokey
 ];
 
 // gearLevel2
-gearLevel2 = 
+gearLevel2 =
 [
 	// Put player UIDs here
 ];
 
 // gearLevel3
-gearLevel3 = 
+gearLevel3 =
 [
 	// Put player UIDs here
 ];
 
 // gearLevel4
-gearLevel4 = 
+gearLevel4 =
 [
 	// Put player UIDs here
 ];
 
 // gearLevel5
-gearLevel5 = 
+gearLevel5 =
 [
 	// Put player UIDs here
 ];
 
 // gearLevel6
-gearLevel6 = 
+gearLevel6 =
 [
 	 // Put player UIDs here
 ];
 
 // gearLevel7
-gearLevel7 = 
+gearLevel7 =
 [
 	// Put player UIDs here
 ];
 
 // gearLevel8
-gearLevel8 = 
+gearLevel8 =
 [
 	// Put player UIDs here
 ];
 
 // gearLevel9
-gearLevel9 = 
+gearLevel9 =
 [
 	// Put player UIDs here
 ];
 
 // gearLevel10
-gearLevel10 = 
+gearLevel10 =
 [
 	"76561198039532076"// Put player UIDs here
 ];

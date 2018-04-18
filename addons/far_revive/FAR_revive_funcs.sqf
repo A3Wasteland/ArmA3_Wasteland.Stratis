@@ -280,8 +280,8 @@ FAR_Eject_Injured =
 		{
 			moveOut _x;
 			unassignVehicle _x;
-			
-			
+
+
  			// ejection bug workaround
  			if (!isNull objectParent _x) then
  			{
@@ -388,7 +388,7 @@ FAR_FindTarget =
 				_valid = (abs _relDir <= 45); // medic must have target visible within a 90° horizontal FoV
 			};
 
-			if (_valid && {!FAR_Target_INVALID(_unit)}) exitWith 
+			if (_valid && {!FAR_Target_INVALID(_unit)}) exitWith
 			{
 				_target = _unit;
 			};

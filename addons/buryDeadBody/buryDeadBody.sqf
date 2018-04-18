@@ -28,19 +28,19 @@
 	For use with A3Wasteland 1.Xx mission (A3Wasteland.com). The script adds a 'Bury Dead Body'
 	action to dead bodies for a COST set in the header of this script (default $5000 of CARRIED
 	money). The action will remove dead bodies and immediate surrounding (< 2 meters) dropped items.
-	
+
 	Place this file at...
 	\addons\buryDeadBody\buryDeadBody.sqf
-	
+
 	Place the buryDeadBody.paa icon at...
 	\addons\buryDeadBody\buryDeadBody.paa
-	
+
 	Edit file...
 	\client\functions\playerActions.sqf
-	
+
 	And paste in...
 	["<img image='addons\buryDeadBody\buryDeadBody.paa'/> Bury Dead Body", "addons\buryDeadBody\buryDeadBody.sqf", [], 1.1, false, false, "", "!(([allDeadMen,[],{player distance _x},'ASCEND',{((player distance _x) < 2) && !(_x getVariable ['buryDeadBodyBurried',false])}] call BIS_fnc_sortBy) isEqualTo [])"],
-	
+
 	Above the line...
 	[format ["<img image='client\icons\playerMenu.paa' color='%1'/>.......
 

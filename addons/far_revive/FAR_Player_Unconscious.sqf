@@ -226,7 +226,7 @@ _unit spawn
 
 		if !(_unit getVariable ["FAR_cancelAutoEject", false]) then
 		{
-		
+
 			if (_veh != _unit) then
 			{
 				if (_veh isKindOf "ParachuteBase") then

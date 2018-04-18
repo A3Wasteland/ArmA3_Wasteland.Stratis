@@ -17,16 +17,16 @@ _listboxCtrl = (finddisplay 2900) displayCtrl _listbox;
 _listboxCtrl ctrlRemoveAllEventHandlers "LBSelChanged";
 _sel = [_textValue] call CHVD_fnc_selTerrainQuality;
 if (CHVD_allowNoGrass) then {
-	_listboxCtrl lbSetCurSel _sel;	
+	_listboxCtrl lbSetCurSel _sel;
 } else {
 	_listboxCtrl lbSetCurSel (_sel - 1);
-};	
+};
 //add EH again
-_listboxCtrl ctrlSetEventHandler ["LBSelChanged", 
+_listboxCtrl ctrlSetEventHandler ["LBSelChanged",
 	format ["[_this select 1, '%1', %2] call CHVD_fnc_onLBSelChanged", _varType, _textCtrl]
 ];
 
-//ctrlSetText [_textCtrl, str _textValue];	
+//ctrlSetText [_textCtrl, str _textValue];
 call compile format ["%1 = %2",_varType, _textValue];
 call compile format ["profileNamespace setVariable ['%1',%1]", _varType];
 

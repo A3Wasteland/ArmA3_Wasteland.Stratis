@@ -41,7 +41,7 @@ disableSerialization;
 	_ctrl lbAdd _textHigh;
 	_textVeryHigh = if (isLocalized "STR_chvd_veryHigh") then {localize "STR_chvd_veryHigh"} else {"Ultra"};
 	_ctrl lbAdd _textVeryHigh;
-	
+
 	_sel = [_x select 1] call CHVD_fnc_selTerrainQuality;
 	//if (CHVD_allowNoGrass) then {
 		_ctrl lbSetCurSel _sel;
@@ -55,7 +55,7 @@ disableSerialization;
 	if (!CHVD_allowTerrain) then {
 		_ctrl ctrlEnable false;
 	};
-	_handle = _ctrl ctrlSetEventHandler ["LBSelChanged", 
+	_handle = _ctrl ctrlSetEventHandler ["LBSelChanged",
 		format ["[_this select 1, '%1', %2] call CHVD_fnc_onLBSelChanged", _x select 1, _x select 2]
 	];
 } forEach [[1500,"CHVD_footTerrain",1400],[1501,"CHVD_carTerrain",1401],[1502,"CHVD_airTerrain",1402]];
@@ -64,7 +64,7 @@ disableSerialization;
 if (CHVD_footSyncObj) then {
 	ctrlEnable [1901,false];
 	ctrlEnable [1007,false];
-} else {	
+} else {
 	ctrlEnable [1901,true];
 	ctrlEnable [1007,true];
 };
@@ -72,7 +72,7 @@ if (CHVD_footSyncObj) then {
 if (CHVD_carSyncObj) then {
 	ctrlEnable [1903,false];
 	ctrlEnable [1014,false];
-} else {	
+} else {
 	ctrlEnable [1903,true];
 	ctrlEnable [1014,true];
 };
@@ -80,7 +80,7 @@ if (CHVD_carSyncObj) then {
 if (CHVD_airSyncObj) then {
 	ctrlEnable [1905,false];
 	ctrlEnable [1018,false];
-} else {	
+} else {
 	ctrlEnable [1905,true];
 	ctrlEnable [1018,true];
 };

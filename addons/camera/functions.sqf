@@ -215,13 +215,13 @@ camera_update_target = {
   if (_shift && _key in (actionKeys "Chat")) then {
     private["_new_target", "_current_target"];
     _new_target = [10] call camera_target;
-    
+
     def(_aiming_at_same_player);
     _aiming_at_same_player = (!isNil "_new_target" && {!isNil "_previous_target" && {_new_target == _previous_target}});
-    
+
     def(_not_aiming_at_anything);
     _not_aiming_at_anything = (isNil "_new_target" && {!isNil "_previous_target"});
-    
+
     if (_not_aiming_at_anything || _aiming_at_same_player) then {
       camera_unit commandChat format["Detaching from %1", (name _previous_target)];
       [_player, _previous_target] call camera_detach_from_target;
@@ -236,24 +236,24 @@ camera_update_target = {
 
     _handled = true;
   };
-  
+
   if (_control && _key == DIK_H) then {
     camera_hud_enabled = if (isNil "camera_hud_enabled") then {true} else {nil};
     _handled = true;
   };
-  
+
   if (_control && _key == DIK_E) then {
     [] call camera_toggle;
     _handled = true;
   };
-  
+
   _handled
 };
 
 camera_detach_from_target = {
   ARGVX3(0,_player,objNull);
   ARGV3(1,_previous_target,objNull);
-  
+
   _camera = [_player,"camera"] call object_getVariable;
 
   detach _camera;
@@ -266,16 +266,16 @@ camera_detach_from_target = {
   def(_pos);
   _pos = if (undefined(_previous_target)) then {nil} else {_previous_target modelToWorld ([_player] call camera_get_position)};
   [_player,OR(_pos,nil)] call camera_set_position;
-  
+
 };
 
 camera_attach_to_target = {
   ARGVX3(0,_player,objNull);
   ARGVX3(1,_target,objNull);
   ARGV3(2,_previous_target,objNull);
-  
+
   [_player,"camera_target",_target] call object_setVariable;
-  
+
   def(_pos);
   _pos = if (undefined(_previous_target)) then {nil} else {[_player] call camera_get_position};
   [_player,OR(_pos,nil)] call camera_set_position;
@@ -657,12 +657,12 @@ camera_target = {
   _objects = nearestObjects [(screenToWorld [(safezoneX + 0.5 * safezoneW),(safezoneY + 0.5 * safezoneH)]),["LandVehicle","Man"],_distance];
   if (count _objects == 0) exitWith {nil};
   _object = (_objects select 0);
-  
+
   if (isNil "_object" || isNull _object) exitWith {nil};
-  
+
   if (_object isKindOf "Man" && {!isPlayer _object}) exitWith {nil};
   if (_object isKindOf "LandVehicle" && {(count (crew _object)) == 0}) exitWith {nil};
-  
+
   _object
 };
 
@@ -710,7 +710,7 @@ camera_keyDownHandler = {
   if (_key == DIK_SPACE) then {
     camera_space_held = true;
   };
-  
+
 
 
   def(_camera);

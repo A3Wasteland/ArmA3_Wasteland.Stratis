@@ -11,7 +11,7 @@ _gasMask = [
             "H_HelmetO_ViperSP_ghex_F",
             "H_HelmetO_ViperSP_hex_F"
           ];
-          
+
 _exemptVehicles = [
                     "B_MRAP_01_F",
                     "B_MRAP_01_hmg_F",

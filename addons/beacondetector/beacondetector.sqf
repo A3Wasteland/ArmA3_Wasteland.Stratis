@@ -11,33 +11,33 @@ if (BeaconScanInProgress) exitWith
 
 _beaconsnear = nearestObjects [player, ["Land_Tentdome_F", "Land_HandyCam_F", "Land_Device_assembled_F"], 100];
 
-if ((count _beaconsnear) > 0 ) then 
+if ((count _beaconsnear) > 0 ) then
 	{
-	
+
 	playsound "beep9"; ["Beacon found - tracking started.", 5] call mf_notify_client;
 	BeaconScanInProgress = true;
 	Beaconscanstop = false;
-	
+
 	_distance = 0; //init distance
-	
+
 	while {_distance < 100} do
-		{	
+		{
 		_beaconsnear = nearestObjects [player, ["Land_Tentdome_F", "Land_HandyCam_F", "Land_Device_assembled_F"], 100];
-		
-		if (Beaconscanstop) exitwith 
+
+		if (Beaconscanstop) exitwith
 			{
 			playsound "beep9";
 			["Beacon scan interrupted.", 5] call mf_notify_client;
 			BeaconScanInProgress = false;
 			};
-		
-		if (count _beaconsnear == 0) exitwith 
+
+		if (count _beaconsnear == 0) exitwith
 			{
 			playsound "beep9";
 			["No spawn beacon in range.", 5] call mf_notify_client;
 			BeaconScanInProgress = false;
 			};
-		
+
 		_nearestbeacon = _beaconsnear select 0;
 		_distance = player distance _nearestbeacon;
 		_dir = getdir (vehicle player);
@@ -47,11 +47,11 @@ if ((count _beaconsnear) > 0 ) then
 		if (_difference > 180) then { _difference = _difference - 360};
 		if (_difference < -180) then { _difference = _difference + 360};
 		_adjusteddiff = (abs _difference);
-		_beepfreq = ((_adjusteddiff / 50) + 0.25);	
-		
-		
-		
-			switch (true) do 
+		_beepfreq = ((_adjusteddiff / 50) + 0.25);
+
+
+
+			switch (true) do
 				{
 				case (_distance < 6) : {playsound "beep6";};
 				case (_distance < 10) : {playsound "beep5";};
@@ -66,7 +66,7 @@ if ((count _beaconsnear) > 0 ) then
 						};
 				};
 			sleep _beepfreq;
-			
+
 		};
 	}
 else
