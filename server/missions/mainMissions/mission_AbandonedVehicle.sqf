@@ -17,9 +17,7 @@ _setupVars =
 	[
 		["B_MBT_01_arty_F", "ScorcherMission"],         //NEED LOADOUT
 		["B_APC_Tracked_01_AA_F", "TigrisMission"],     //NEED LOADOUT
-		["B_MBT_01_mlrs_F", "MLRSMission"],             //NEED LOADOUT
-		["B_Mortar_01_F"],
-		["B_G_Mortar_01_F"]
+		["B_MBT_01_mlrs_F", "MLRSMission"]
 	];
 
 	_missionType = "Abandoned Vehicle";
