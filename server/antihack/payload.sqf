@@ -311,7 +311,7 @@ while { true } do
 					"pic", "veh", "unitList", "list_wrecked", "addgun", "ESP", "BIS_fnc_3dCredits_n", "dayzforce_save", "ViLayer", "blackhawk_sex", "activeITEMlist", "items1",
 					"adgnafgnasfnadfgnafgn", "Metallica_infiSTAR_hax_toggled", "rem", "HMDIR", "vehC", "HDIR", "carg0d", "init_Fncvwr_menu_star", "altstate", "black1ist", "ARGT_JUMP",
 					"ARGT_KEYDOWN", "ARGT_JUMP_w", "ARGT_JUMP_a", "bpmenu", "color_black", "fffffffffff", "markPos", "pos", "TentS", "VL", "MV", "monky", "pbx", "Cock_random_F", "_nearPlayers",
-					"nametagThread", "spawnmenu", "sceptile15", "sandshrew", "zombieDistanceScreen", "cargodz", "R3m0te_RATSifni", "wepmenu", "bis_fnc_halo", "WookieESP", "ggggggggggggggggggg",
+					"nametagThread", "spawnmenu", "sceptile15", "sandshrew", "zombieDistanceScreen", "cargodz", "R3m0te_RATSifni", "wepmenu", "WookieESP", "ggggggggggggggggggg",
 					"admin_d0", "RAINBOWREMEXECVEH", "omgwtfbbq", "namePlayer", "thingtoattachto", "testIndex", "g0d", "spawnvehicles_star", "kill_all_star", "sCode", "dklilawedve", "peter_so_fly_CUS",
 					"selecteditem", "moptions", "delaymenu", "gluemenu", "infiSTAR_fillHax", "itemmenu", "gmadmin", "fapEsp", "mapclick", "VAGINA_secret", "spawnweapons1", "abcd", "skinmenu",
 					"playericons", "changebackpack", "keymenu", "godall", "theKeyControl", "infiSTAR_FILLPLAYER", "whitelist", "pfEpochTele", "custom_clothing", "img", "surrmenu", "footSpeedIndex",
