@@ -577,3 +577,4 @@ _crate = "Box_East_Ammo_F";
 systemChat format["Welcome %1, Enjoy your Virtual Arsenal!", name player];
 
 waitUntil {isNull (uiNamespace getVariable ["RscDisplayArsenal", displayNull])};
+call va_restrictAmmo;
