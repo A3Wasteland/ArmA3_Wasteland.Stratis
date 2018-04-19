@@ -185,3 +185,14 @@ inGameUISetEventHandler ["Action", "_this call A3W_fnc_inGameUIActionEvent"];
 } forEach pvar_spawn_beacons;
 
 [] execVM "client\functions\globalChatMessages.sqf";
+
+/*/ --------------------- FRAC - arsenal restrictions --------------------- /*/
+[missionNamespace, "arsenalOpened", {
+    _display = _this select 0;
+    ['showMessage',[_display,'VA RESTRICTION: You are only allowed a maximum of 4 held magazines with 1 in gun and 1 rocket in launcher, extras will be removed!']] call BIS_fnc_Arsenal;
+}] call BIS_fnc_addScriptedEventHandler;
+
+[missionNamespace, "arsenalClosed", {
+    [] call va_gearRestrict;
+}] call BIS_fnc_addScriptedEventHandler;
+/*/ --------------------- FRAC - arsenal restrictions --------------------- /*/

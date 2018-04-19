@@ -111,6 +111,27 @@ populateVehicleStore = "client\systems\vehicleStore\populateVehicleStore.sqf" ca
 requestStoreObject = "client\functions\requestStoreObject.sqf" call mf_compile;
 vehicleInfo = "client\systems\vehicleStore\vehicleInfo.sqf" call mf_compile;
 weaponInfo = "client\systems\gunStore\weaponInfo.sqf" call mf_compile;
+/*/ --------------- FRAC - Gear Levels ---------------/*/
+va_gearCheck = "addons\gear\gearCheck.sqf" call mf_compile;
+va_gearLevel01 = "addons\gear\gearLevel1.sqf" call mf_compile;
+va_gearLevel02 = "addons\gear\gearLevel2.sqf" call mf_compile;
+va_gearLevel03 = "addons\gear\gearLevel3.sqf" call mf_compile;
+va_gearLevel04 = "addons\gear\gearLevel4.sqf" call mf_compile;
+va_gearLevel05 = "addons\gear\gearLevel5.sqf" call mf_compile;
+va_gearLevel06 = "addons\gear\gearLevel6.sqf" call mf_compile;
+va_gearLevel07 = "addons\gear\gearLevel7.sqf" call mf_compile;
+va_gearLevel08 = "addons\gear\gearLevel8.sqf" call mf_compile;
+va_gearLevel09 = "addons\gear\gearLevel9.sqf" call mf_compile;
+va_gearLevel10 = "addons\gear\gearLevel10.sqf" call mf_compile;
+va_gearLevel11 = "addons\gear\gearLevel11.sqf" call mf_compile;
+va_gearLevel12 = "addons\gear\gearLevel12.sqf" call mf_compile;
+va_gearLevel13 = "addons\gear\gearLevel13.sqf" call mf_compile;
+va_gearLevel14 = "addons\gear\gearLevel14.sqf" call mf_compile;
+va_gearLevel15 = "addons\gear\gearLevel15.sqf" call mf_compile;
+va_gearLevel16 = "addons\gear\gearLevel16.sqf" call mf_compile;
+va_gearRestrict = "addons\gear\gearRestrict.sqf" call mf_compile;
+/*/ --------------- FRAC - Gear Levels ---------------/*/
+
 
 if (isNil "A3W_fnc_MP") then { A3W_fnc_MP = compile preprocessFileLineNumbers "\A3\functions_f\MP\fn_MP.sqf" };
 if (isNil "A3W_fnc_MPexec") then { A3W_fnc_MPexec = compile preprocessFileLineNumbers "\A3\functions_f\MP\fn_MPexec.sqf" };

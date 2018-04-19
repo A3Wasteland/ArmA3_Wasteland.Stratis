@@ -2,28 +2,28 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Version: 1.0
-//	@file Name: va_restrictAmmoCount.sqf
+//	@file Name: gearRestrict.sqf
 //	@file Author: [FRAC] Mokey
 //	@file Created: 4/18/2018 17:48
 
 private _var = player;
-Fn_Gear_CompatibleMagazines =
+fn_gearCompatibleMagazines =
 {
-	private _cls = configFile >> "CfgWeapons" >> _this;
-	private _res = [];
+	private _class = configFile >> "CfgWeapons" >> _this;
+	private _result = [];
 	{
-		_res pushBack (if (_x == "this")
+		_result pushBack (if (_x == "this")
 		then
 		{
-			getArray(_cls >> "magazines")
+			getArray(_class >> "magazines")
 		}
 		else
 		{
-			getArray(_cls >> _x >> "magazines")
+			getArray(_class >> _x >> "magazines")
 		});
-	} forEach getArray(_cls >> "muzzles");
+	} forEach getArray(_class >> "muzzles");
 
-	_res
+	_result
 };
 
 {
@@ -35,7 +35,7 @@ Fn_Gear_CompatibleMagazines =
 			    	{
 					_var removeMagazine (_x select 0)
 				}
-			} foreach (_x call Fn_Gear_CompatibleMagazines)
+			} foreach (_x call fn_gearCompatibleMagazines)
 		}
 	}
 
@@ -47,8 +47,8 @@ Fn_Gear_CompatibleMagazines =
 		{
 			if (count _x > 0) then
 			{
-				_var addMagazines [(_x select 0), 5]
+				_var addMagazines [(_x select 0), 4]
 			}
-		} foreach (_x call Fn_Gear_CompatibleMagazines)
+		} foreach (_x call fn_gearCompatibleMagazines)
 	}
 } forEach [primaryWeapon _var, handgunWeapon _var];

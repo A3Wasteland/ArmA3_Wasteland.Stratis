@@ -3,7 +3,7 @@
 //@file Author: Cael817, based of something i found
 private ["_player"];
 _player = _this;
-
+9999 cutText ["", "BLACK IN", 0.01]; // remove the black screen
 
 
 _player setVariable ["cmoney", (_player getVariable "cmoney") + 1000, true];
@@ -467,8 +467,8 @@ _crate = "Box_East_Ammo_F";
 "H_BandMask_blk",
 "H_BandMask_demon",
 "H_BandMask_khk",
-"H_BandMask_reaper",
-
+"H_BandMask_reaper"
+/*
 //ammo
 ["10Rnd_9x21_Mag", 5],
 ["16Rnd_9x21_Mag", 5],
@@ -550,7 +550,7 @@ _crate = "Box_East_Ammo_F";
 ["1Rnd_SmokeYellow_Grenade_shell", 2],
 ["3Rnd_SmokeYellow_Grenade_shell", 2],
 ["1Rnd_Smoke_Grenade_shell", 2],
-["1Rnd_SmokePurple_Grenade_shell", 2],,
+["1Rnd_SmokePurple_Grenade_shell", 2],
 ["1Rnd_SmokeBlue_Grenade_shell", 2],
 ["1Rnd_SmokeGreen_Grenade_shell", 2],
 ["1Rnd_SmokeOrange_Grenade_shell", 2],
@@ -571,9 +571,12 @@ _crate = "Box_East_Ammo_F";
 ["3Rnd_UGL_FlareYellow_F", 2],
 ["3Rnd_UGL_FlareRed_F", 2],
 ["3Rnd_UGL_FlareCIR_F", 2]
+*/
 
 ],true] call BIS_fnc_addVirtualItemCargo;
 
 systemChat format["Welcome %1, Enjoy your Virtual Arsenal!", name player];
 
 waitUntil {isNull (uiNamespace getVariable ["RscDisplayArsenal", displayNull])};
+
+9999 cutText ["", "BLACK", 0.01]; // fade to black screen

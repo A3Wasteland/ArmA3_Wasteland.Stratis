@@ -72,6 +72,13 @@ _player call playerSetup;
 
 //[] execVM "client\clientEvents\onMouseWheel.sqf";
 
+/*/ gear levels -------------------------------------------- /*/
+[player, true] call fn_hideObjectGlobal; // hide player for everyone
+player hideObject false; // unhide player for gearlevel purposes
+_gearLevels = [] spawn va_gearCheck;
+waitUntil { scriptDone _gearLevels };
+/*/ -------------------------------------------------------- /*/
+
 call playerSpawn;
 
 if !(pvar_PlayerTeamKiller isEqualTo []) then

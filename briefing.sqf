@@ -24,6 +24,8 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>[Changed]VA Spawn Order VA -> Select Spawn
+<br/>[Optimized] VA Gear Level
 <br/>[Limited] Ammo Amount for Gear Levels
 <br/>[Reduced] Frequency of Abandoned Vehicle Mission
 <br/>[Removed] Vehicles from Abandoned Vehicle Mission

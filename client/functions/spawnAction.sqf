@@ -34,8 +34,6 @@ spawnActionHandle = (_this select 1) spawn
 		//player setVariable ["cmoney", _baseMoney, true];
 		[player, _baseMoney, true] call A3W_fnc_setCMoney;
 
-		[] execVM "addons\gear\gearCheck.sqf"; //Cael817, Add extra gear at respawn.
-
 		if (["A3W_survivalSystem"] call isConfigOn) then
 		{
 			[MF_ITEMS_CANNED_FOOD, 0] call mf_inventory_add;
