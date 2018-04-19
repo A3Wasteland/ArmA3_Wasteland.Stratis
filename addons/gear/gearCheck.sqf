@@ -113,7 +113,6 @@ switch (_gearLevel) do
    {
 		player execVM "addons\gear\gearLevel15.sqf";
                 sleep 5;
-                player execVM "client\funtions\va_restrictAmmoCount.sqf";
 		hint "Congrats! Virtual Arsenal Loaded!";
    };
 
