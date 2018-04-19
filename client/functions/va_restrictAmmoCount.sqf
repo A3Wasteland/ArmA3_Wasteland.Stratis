@@ -7,7 +7,6 @@
 //	@file Created: 4/18/2018 17:48
 
 private _var = player;
-
 Fn_Gear_CompatibleMagazines =
 {
 	private _cls = configFile >> "CfgWeapons" >> _this;
@@ -48,8 +47,8 @@ Fn_Gear_CompatibleMagazines =
 		{
 			if (count _x > 0) then
 			{
-				_var addMagazines [(_x select 0), 2]
+				_var addMagazines [(_x select 0), 5]
 			}
 		} foreach (_x call Fn_Gear_CompatibleMagazines)
 	}
-} forEach [primaryWeapon _var, secondaryWeapon _var, handgunWeapon _var];
+} forEach [primaryWeapon _var, handgunWeapon _var];
