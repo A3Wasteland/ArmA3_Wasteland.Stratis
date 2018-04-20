@@ -27,13 +27,13 @@ while {_count < _restrictedAmmoArrayCount} do
 {
     for "_x" from 0 to _restrictedAmmoArrayCount do
     {
-        _currentElement = _restrictedAmmoArray select _x;
-        _numberOfKits = {_currentElement == _x} count (backpackItems player);
-        if (_numberOfKits > _limit) then
+        _selectItems = _restrictedAmmoArray select _x;
+        _rocketCount = {_selectItems == _x} count (backpackItems player);
+        if (_rocketCount > _limit) then
         {
-            for "_i" from 1 to (_numberOfKits - _limit) do
+            for "_i" from 1 to (_rocketCount - _limit) do
             {
-          player removeItem _currentElement;
+          player removeItem _selectItems;
           };
         };
     };
