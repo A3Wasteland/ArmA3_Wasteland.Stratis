@@ -62,11 +62,19 @@ if (isNil "playerData_alive" || !isNil "playerData_resetPos") then
 {
 	[player, "AmovPknlMstpSnonWnonDnon"] call switchMoveGlobal;
 
-	9999 cutText ["Loading...", "BLACK", 0.01];
+	/*/ --------------------------------------------------------------------------------------- /*/
+	9999 cutText ["Initiating Gear Levels...", "BLACK", 0.01];
+	[player, true] call fn_hideObjectGlobal; // hide player for everyone.
+	[] spawn va_fnc_gearCheck; // spawn the gear check.
+	waitUntil {!(isNil "va_var_gearCheckInProgress")}; // wait until variable va_var_gearCheckInProgress exists (declared within \addons\gear\gearCheck.sqf).
+	waitUntil {(isNil "va_var_gearCheckInProgress")}; // wait until variable va_var_gearCheckInProgress is nil (set to nil within \addons\gear\gearCheck.sqf AND \client\init.sqf).
+	/*/ --------------------------------------------------------------------------------------- /*/
 
+	9999 cutText ["Loading Respawn Dialog...", "BLACK", 0.01];
+	
 	true spawn client_respawnDialog;
-
 	waitUntil {respawnDialogActive};
+	
 	9999 cutText ["", "BLACK", 0.01];
 	waitUntil {player setOxygenRemaining 1; !respawnDialogActive};
 
