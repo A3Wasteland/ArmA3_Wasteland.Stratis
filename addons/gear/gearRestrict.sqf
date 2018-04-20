@@ -7,17 +7,18 @@
 //	@file Created: 4/18/2018 17:48
 
 _restrictedAmmoArray = [
-"RPG7_F",
-"RPG32_F",
-"RPG32_HE_F",
-"MRAWS_HEAT_F",
-"MRAWS_HE_F",
-"Vorona_HEAT",
-"Vorona_HE",
-"NLAW_F",
-"Titan_AT",
-"Titan_AP",
-"Titan_AA"];
+	"RPG7_F",
+	"RPG32_F",
+	"RPG32_HE_F",
+	"MRAWS_HEAT_F",
+	"MRAWS_HE_F",
+	"Vorona_HEAT",
+	"Vorona_HE",
+	"NLAW_F",
+	"Titan_AT",
+	"Titan_AP",
+	"Titan_AA"
+	];
 
 _restrictedAmmoArrayCount = (count _restrictedAmmoArray) -1;
 _count = 0;
