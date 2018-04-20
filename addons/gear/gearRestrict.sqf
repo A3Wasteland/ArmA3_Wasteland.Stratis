@@ -6,7 +6,7 @@
 //	@file Author: [FRAC] Mokey
 //	@file Created: 4/18/2018 17:48
 
-_restrictedAmmoArray = [
+_restrictedRockets = [
 "RPG7_F",
 "RPG32_F",
 "RPG32_HE_F",
@@ -21,20 +21,20 @@ _restrictedAmmoArray = [
 ];
 
 //restrict rocketAmmoArray count from BackPack
-_restrictedAmmoArrayCount = (count _restrictedAmmoArray) -1;
+_restrictedRocketsCount = (count _restrictedRockets) -1;
 _count = 0;
 _limit = 1;
-while {_count < _restrictedAmmoArrayCount} do
+while {_count < _restrictedRocketsCount} do
 {
-    for "_x" from 0 to _restrictedAmmoArrayCount do
+    for "_x" from 0 to _restrictedRocketsCount do
     {
-        _selectItems = _restrictedAmmoArray select _x;
-        _rocketCount = {_selectItems == _x} count (backpackItems player);
+        _selectRockets = _restrictedRockets select _x;
+        _rocketCount = {_selectRockets == _x} count (backpackItems player);
         if (_rocketCount > _limit) then
         {
             for "_i" from 1 to (_rocketCount - _limit) do
             {
-              player removeItem _selectItems;
+              player removeItem _selectRockets;
             };
         };
     };
