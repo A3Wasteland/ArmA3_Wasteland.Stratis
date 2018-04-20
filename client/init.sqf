@@ -195,7 +195,7 @@ inGameUISetEventHandler ["Action", "_this call A3W_fnc_inGameUIActionEvent"];
     (_display displayCtrl 44150) ctrlRemoveAllEventHandlers "buttonclick";
     (_display displayCtrl 44150) ctrlEnable false; // remove random button action.
 	_display displayAddEventHandler ["KeyDown", "if ((_this select 1) in [19,29]) then {true}"];
-	['showMessage',[_display,'VA RESTRICTION: You are only allowed a maximum of 4 held magazines with 1 in gun and 1 rocket in launcher, extras will be removed!']] call BIS_fnc_Arsenal;
+	['showMessage',[_display,'VA RESTRICTION: You are only allowed a maximum of 4 held magazines with 1 in gun. Rockets cannot exceed 1 per type in bag, however 1 AT will be in Launcher on spawn, extra equipment and magazines will be removed!']] call BIS_fnc_Arsenal;
 }] call BIS_fnc_addScriptedEventHandler;
 
 [missionNamespace, "arsenalClosed", {
