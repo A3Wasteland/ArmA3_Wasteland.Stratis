@@ -20,6 +20,9 @@ _restrictedAmmoArray = [
 	"Titan_AA"
 	];
 
+//The following is functional TO A Point. It will check for all items in the array and delete them down to 1each.
+//I.E; if you have 5 MAAWS HEAT and 4 MAAWS HE you will wind up with 1 MAAWS HEAT and 1  MAAWS HE.
+
 _restrictedAmmoArrayCount = (count _restrictedAmmoArray) -1;
 _count = 0;
 _limit = 1;
