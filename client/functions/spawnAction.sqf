@@ -29,10 +29,12 @@ spawnActionHandle = (_this select 1) spawn
 	if (isNil "playerData_resetPos") then
 	{
 		// Deal with money here
-		_baseMoney = ["A3W_startingMoney", 100] call getPublicVar;
-
-		//player setVariable ["cmoney", _baseMoney, true];
-		[player, _baseMoney, true] call A3W_fnc_setCMoney;
+		/*/ ------------------------------------------------------------------------------------------- /*/
+		_baseMoney = ["A3W_startingMoney", 100] call getPublicVar; // config entry starting money.
+		_gearLevelMoney = player getVariable ["gmoney",0]; // current carried player starting money.
+		_startingMoney = _baseMoney + _gearLevelMoney; // add config entry starting money to current carried player starting money.
+		[player, _startingMoney, true] call A3W_fnc_setCMoney; // apply the money to the player (base money + gear level money).
+		/*/ ------------------------------------------------------------------------------------------- /*/
 
 		if (["A3W_survivalSystem"] call isConfigOn) then
 		{

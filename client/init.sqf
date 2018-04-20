@@ -186,13 +186,21 @@ inGameUISetEventHandler ["Action", "_this call A3W_fnc_inGameUIActionEvent"];
 
 [] execVM "client\functions\globalChatMessages.sqf";
 
-/*/ --------------------- FRAC - arsenal restrictions --------------------- /*/
+/*/ virtual arsenal --------------------------------------------------------------------------- /*/
 [missionNamespace, "arsenalOpened", {
+	9999 cutText ["", "BLACK IN", 0.01]; // remove the black screen
+	player hideObject false; // unhide player for virtual arsenal viewing purposes (local only, not global).
+    disableSerialization;
     _display = _this select 0;
-    ['showMessage',[_display,'VA RESTRICTION: You are only allowed a maximum of 4 held magazines with 1 in gun and 1 rocket in launcher, extras will be removed!']] call BIS_fnc_Arsenal;
+    (_display displayCtrl 44150) ctrlRemoveAllEventHandlers "buttonclick";
+    (_display displayCtrl 44150) ctrlEnable false; // remove random button action.
+	_display displayAddEventHandler ["KeyDown", "if ((_this select 1) in [19,29]) then {true}"];
+	['showMessage',[_display,'VA RESTRICTION: You are only allowed a maximum of 4 held magazines with 1 in gun and 1 rocket in launcher, extras will be removed!']] call BIS_fnc_Arsenal;
 }] call BIS_fnc_addScriptedEventHandler;
 
 [missionNamespace, "arsenalClosed", {
-    [] call va_gearRestrict;
+	9999 cutText ["", "BLACK", 0.01]; // fade to black screen
+	va_var_gearCheckInProgress = nil; // gearCheck.sqf has a waitUntil for VA level 15... and only exits once VA has CLOSED so the respawn screen doesn't show whilst in VA! damn bugs!
+    [] call va_fnc_gearRestrict; // restrict the VA load out (mokey)
 }] call BIS_fnc_addScriptedEventHandler;
-/*/ --------------------- FRAC - arsenal restrictions --------------------- /*/
+/*/ ------------------------------------------------------------------------------------------- /*/

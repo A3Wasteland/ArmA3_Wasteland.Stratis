@@ -4,7 +4,8 @@
 private ["_player"];
 _player = _this;
 
-_player setVariable ["cmoney", (_player getVariable "cmoney") + 25000, true];
+// _player setVariable ["cmoney", (_player getVariable "cmoney") + 25000, true];
+_player setVariable ["gmoney",25000];
 
 {_player removeWeapon _x} forEach weapons _player;
 {_player removeMagazine _x} forEach magazines _player;
