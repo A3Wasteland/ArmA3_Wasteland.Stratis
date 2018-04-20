@@ -864,10 +864,10 @@ _availableMagazines = [
 
 ];
 //Populate with predefined items and whatever is already in the crate
-[_crate,((backpackCargo _crate) + _availableBackpacks)] call BIS_fnc_addVirtualBackpackCargo;
-[_crate,((itemCargo _crate) + _availableHeadgear + _availableUniforms + _availableVests + _availableHeadAccessories + _availableAttachments + _availableAccessories)] call BIS_fnc_addVirtualItemCargo;
-[_crate,(magazineCargo _crate + _availableMagazine)] call BIS_fnc_addVirtualMagazineCargo;
-[_crate,((weaponCargo _crate) + _availablePrimary + _availableSecondary)] call BIS_fnc_addVirtualWeaponCargo;
+[_crate,(_availableBackpacks),true] call BIS_fnc_addVirtualBackpackCargo;
+[_crate,(_availableHeadgear + _availableHeadAccessories + _availableUniforms + _availableVests + _weaponAccessories + _availableAttachments + _availableAccessories),true] call BIS_fnc_addVirtualItemCargo;
+[_crate,(_availableMagazine),true] call BIS_fnc_addVirtualMagazineCargo;
+[_crate,(_availablePrimary + _availableSecondary),true] call BIS_fnc_addVirtualWeaponCargo;
 
 systemChat format["Welcome %1, Enjoy your Virtual Arsenal!", name player];
 
