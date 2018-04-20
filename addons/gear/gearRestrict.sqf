@@ -17,7 +17,8 @@ _restrictedAmmoArray = [
 "NLAW_F",
 "Titan_AT",
 "Titan_AP",
-"Titan_AA"];
+"Titan_AA"
+];
 
 //restrict rocketAmmoArray count from BackPack
 _restrictedAmmoArrayCount = (count _restrictedAmmoArray) -1;
@@ -33,8 +34,8 @@ while {_count < _restrictedAmmoArrayCount} do
         {
             for "_i" from 1 to (_rocketCount - _limit) do
             {
-          player removeItem _selectItems;
-          };
+              player removeItem _selectItems;
+            };
         };
     };
     _count = _count + 1;
