@@ -24,6 +24,9 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>[Limited] VA Grenades to 2 (2 per type)
+<br/>[Limited] VA Rockets to 3 (1 AT in Rocket 1 HE and 1 AT in Inventory)
+<br/>[Limited] VA Mags to 5 (1 in gun 4 in inventory)
 <br/>[Changed]VA Spawn Order VA -> Select Spawn
 <br/>[Optimized] VA Gear Level
 <br/>[Limited] Ammo Amount for Gear Levels
