@@ -1,4 +1,4 @@
-availableAttachments//@file Version: 1.2
+//@file Version: 1.2
 //@file Name: gearLevel10.sqf
 //@file Author: Cael817, based of something i found
 private ["_player"];
