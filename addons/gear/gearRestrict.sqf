@@ -242,15 +242,15 @@ while {_count < _restrictedGrenadesCount} do
 
 
 _allItems = (items player) + (assignedItems player) + (player weaponAccessories (currentWeapon player));
-		{
-			if (_x in _blackListedItems) then
-			{
-                                player unassignItem _x;
-                                player removeItem _x;
-				player removePrimaryWeaponItem _x;
-				player removeHandGunItem _x;
-				player removeItemFromUniform _x;
-				player removeItemFromVest _x;
-				player removeItemFromBackpack _x;
-			};
-		} forEach _allItems;
+{
+        if (_x in _blackListedItems) then
+        {
+                player unassignItem _x;
+                player removeItem _x;
+		player removePrimaryWeaponItem _x;
+		player removeHandGunItem _x;
+		player removeItemFromUniform _x;
+		player removeItemFromVest _x;
+		player removeItemFromBackpack _x;
+	};
+} forEach _allItems;
