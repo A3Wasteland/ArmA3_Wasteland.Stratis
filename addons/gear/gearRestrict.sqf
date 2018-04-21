@@ -3,263 +3,281 @@
 // ******************************************************************************************
 //	@file Version: 1.0
 //	@file Name: gearRestrict.sqf
-//	@file Author: [FRAC] Mokey
+//	@file Author: [FRAC] Mokey , PIX515E, Strilles
 //	@file Created: 4/18/2018 17:48
 
-_restrictedRockets = [
-"RPG7_F",
-"RPG32_F",
-"RPG32_HE_F",
-"MRAWS_HEAT_F",
-"MRAWS_HE_F",
-"Vorona_HEAT",
-"Vorona_HE",
-"NLAW_F",
-"Titan_AT",
-"Titan_AP",
-"Titan_AA"
-];
 
-_restrictedMags = [
-"30Rnd_545x39_Mag_Green_F",
-"30Rnd_545x39_Mag_F",
-"30Rnd_545x39_Mag_Tracer_Green_F",
-"30Rnd_545x39_Mag_Tracer_F",
-"20Rnd_556x45_UW_mag",
-"30Rnd_556x45_Stanag_green",
-"30Rnd_556x45_Stanag_red",
-"30Rnd_556x45_Stanag",
-"30Rnd_556x45_Stanag_Tracer_Green",
-"30Rnd_556x45_Stanag_Tracer_Red",
-"30Rnd_556x45_Stanag_Tracer_Yellow",
-"100Rnd_580x42_Mag_F",
-"100Rnd_580x42_Mag_Tracer_F",
-"30Rnd_580x42_Mag_F",
-"30Rnd_580x42_Mag_Tracer_F",
-"30Rnd_65x39_caseless_mag",
-"30Rnd_65x39_caseless_green_mag_Tracer",
-"30Rnd_65x39_caseless_mag_Tracer",
-"30Rnd_65x39_caseless_green",
-"30Rnd_762x39_Mag_Green_F",
-"30Rnd_762x39_Mag_F",
-"30Rnd_762x39_Mag_Tracer_Green_F",
-"30Rnd_762x39_Mag_Tracer_F",
-"16Rnd_9x21_Mag","16Rnd_9x21_green_Mag",
-"16Rnd_9x21_red_Mag",
-"16Rnd_9x21_yellow_Mag",
-"30Rnd_9x21_Mag",
-"30Rnd_9x21_Mag_SMG_02",
-"30Rnd_9x21_Green_Mag",
-"30Rnd_9x21_Mag_SMG_02_Tracer_Green",
-"30Rnd_9x21_Mag_SMG_02_Tracer_Red",
-"30Rnd_9x21_Red_Mag",
-"30Rnd_9x21_Mag_SMG_02_Tracer_Yellow",
-"30Rnd_9x21_Yellow_Mag","10Rnd_338_Mag",
-"130Rnd_338_Mag",
-"7Rnd_408_Mag",
-"5Rnd_127x108_Mag",
-"10Rnd_127x54_Mag",
-"5Rnd_127x108_APDS_Mag",
-"150Rnd_556x45_Drum_Mag_F",
-"150Rnd_556x45_Drum_Mag_Tracer_F",
-"200Rnd_556x45_Box_Red_F",
-"200Rnd_556x45_Box_F",
-"200Rnd_556x45_Box_Tracer_Red_F",
-"200Rnd_556x45_Box_Tracer_F",
-"100Rnd_65x39_caseless_mag",
-"100Rnd_65x39_caseless_mag_Tracer",
-"200Rnd_65x39_cased_Box",
-"200Rnd_65x39_cased_Box_Tracer",
-"20Rnd_650x39_Cased_Mag_F",
-"150Rnd_762x54_Box",
-"150Rnd_762x54_Box_Tracer",
-"20Rnd_762x51_Mag",
-"10Rnd_762x54_Mag",
-"10Rnd_93x64_DMR_05_Mag",
-"150Rnd_93x64_Mag",
-"30Rnd_45ACP_Mag_SMG_01",
-"30Rnd_45ACP_Mag_SMG_01_tracer_green",
-"30Rnd_45ACP_Mag_SMG_01_Tracer_Red",
-"30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow"
-];
+#include "gearWhiteList.sqf"
 
-_restrictedGrenades = [
-"Chemlight_blue",
-"Chemlight_green",
-"Chemlight_red",
-"Chemlight_yellow",
-"I_IR_Grenade",
-"O_IR_Grenade",
-"B_IR_Grenade",
-"MiniGrenade",
-"HandGrenade",
-"SmokeShellBlue",
-"SmokeShellGreen",
-"SmokeShellOrange",
-"SmokeShellPurple",
-"SmokeShellRed",
-"SmokeShell",
-"SmokeShellYellow",
-"TrainingMine_Mag",
-"3Rnd_UGL_FlareGreen_F",
-"3Rnd_UGL_FlareCIR_F",
-"3Rnd_UGL_FlareRed_F",
-"3Rnd_UGL_FlareWhite_F",
-"3Rnd_UGL_FlareYellow_F",
-"3Rnd_SmokeBlue_Grenade_shell",
-"3Rnd_SmokeGreen_Grenade_shell",
-"3Rnd_SmokeOrange_Grenade_shell",
-"3Rnd_SmokePurple_Grenade_shell",
-"3Rnd_SmokeRed_Grenade_shell",
-"3Rnd_Smoke_Grenade_shell",
-"3Rnd_SmokeYellow_Grenade_shell",
-"3Rnd_HE_Grenade_shell",
-"1Rnd_HE_Grenade_shell",
-"UGL_FlareGreen_F",
-"UGL_FlareCIR_F",
-"UGL_FlareRed_F",
-"UGL_FlareWhite_F",
-"UGL_FlareYellow_F",
-"1Rnd_SmokeBlue_Grenade_shell",
-"1Rnd_SmokeGreen_Grenade_shell",
-"1Rnd_SmokeOrange_Grenade_shell",
-"1Rnd_SmokePurple_Grenade_shell",
-"1Rnd_SmokeRed_Grenade_shell",
-"1Rnd_Smoke_Grenade_shell",
-"MiniGrenade",
-"HandGrenade"
-];
-
-_blackListedItems = [
-"optic_Nightstalker",
-"optic_tws",
-"optic_tws_mg",
-"H_HelmetO_ViperSP_hex_F",
-"H_HelmetO_ViperSP_ghex_F",
-"launch_NLAW_F",
-"launch_B_Titan_F",
-"launch_I_Titan_F",
-"launch_O_Titan_F",
-"launch_Titan_F",
-"launch_B_Titan_short_F",
-"launch_I_Titan_short_F",
-"launch_O_Titan_short_F",
-"launch_Titan_short_F",
-"launch_MRAWS_olive_F",
-"launch_MRAWS_olive_rail_F",
-"launch_MRAWS_green_F",
-"launch_MRAWS_green_rail_F",
-"launch_MRAWS_sand_F",
-"launch_MRAWS_sand_rail_F",
-"launch_O_Vorona_brown_F",
-"launch_O_Vorona_green_F",
-"ModuleExplosive_APERSMineDispenser_F",
-"ModuleAPERSMineDispenser_Mine_F",
-"Laserdesignator",
-"Laserdesignator_02",
-"Laserdesignator_03",
-"B_GMG_01_A_high_weapon_F",
-"B_GMG_01_A_weapon_F",
-"B_GMG_01_high_weapon_F",
-"B_GMG_01_weapon_F",
-"B_HMG_01_A_high_weapon_F",
-"B_HMG_01_A_weapon_F",
-"B_HMG_01_high_weapon_F",
-"B_HMG_01_support_F",
-"B_HMG_01_support_high_F",
-"B_HMG_01_weapon_F",
-"B_Mortar_01_support_F",
-"B_Mortar_01_weapon_F",
-"B_UAV_01_backpack_F",
-"I_UAV_01_backpack_F",
-"O_UAV_01_backpack_F",
-"NVGogglesB_blk_F",
-"NVGogglesB_grn_F",
-"NVGogglesB_gry_F",
-"B_Parachute"
-
-];
-
-
-_restrictedRocketsCount = (count _restrictedRockets) -1;
-_count = 0;
+/*/-----------------Limits apply to each array in gearWhiteList.sqf-----------------/*/
+/*/-----To remove an item completley, just comment it out in gearWhiteList.sqf-----/*/
+/*/--------------------------Remember 1 Mag spawns in gun-------------------------/*/
 _limitRockets = 1;
+_limitRifleMagazines = 5;
+_limitSniperMagazines = 3;
+_limitLmgMagazines = 2;
+_limitSmgMagazines = 8;
+_limitHandGunMagazines = 3;
+_limitHandGrenades = 2;
+_limitGLRounds = 3;
+_limit3GLRounds = 1;
+_limitExplosives = 2;
+/*/---END---/*/
+
+/*/----------DO NOT EDIT BELOW UNLESS YOU KNOW WHAT YOU ARE DOING----------/*/
+_restrictedRocketsCount = (count _availableRockets) -1;
+_count = 0;
 while {_count < _restrictedRocketsCount} do
 {
     for "_x" from 0 to _restrictedRocketsCount do
     {
-        _selectRockets = _restrictedRockets select _x;
+        _selectRockets = _availableRockets select _x;
         _countRockets = {_selectRockets == _x} count (backpackItems player);
         if (_countRockets > _limitRockets) then
         {
             for "_i" from 1 to (_countRockets - _limitRockets) do
             {
               player removeItem _selectRockets;
+              systemChat format ["Extra %1 found, removed from Inventory",_selectRockets];
             };
         };
     };
     _count = _count + 1;
 };
 
-_restrictedMagsCount = (count _restrictedMags) -1;
+_restrictedRifleMagazineCount = (count _availableRifleMagazines) -1;
 _count = 0;
-_limitMags = 4;
-while {_count < _restrictedMagsCount} do
+while {_count < _restrictedRifleMagazineCount} do
 {
-    for "_x" from 0 to _restrictedMagsCount do
+    for "_x" from 0 to _restrictedRifleMagazineCount do
     {
-        _selectMags = _restrictedMags select _x;
-        _countMags = {_selectMags == _x} count (ItemsWithMagazines player);
-        if (_countMags > _limitMags) then
+        _selectRifleMagazines = _availableRifleMagazines select _x;
+        _countRifleMagazines = {_selectRifleMagazines == _x} count (ItemsWithMagazines player);
+        if (_countRifleMagazines > _limitRifleMagazines) then
         {
-            for "_i" from 1 to (_countMags - _limitMags) do
+            for "_i" from 1 to (_countRifleMagazines - _limitRifleMagazines) do
             {
-              player removeItem _selectMags;
+              player removeItem _selectRifleMagazines;
+              systemChat format ["Extra %1 found, removed from Inventory",_selectRifleMagazines];
             };
         };
     };
     _count = _count + 1;
 };
 
-
-_restrictedGrenadesCount = (count _restrictedGrenades) -1;
+_restrictedSniperMagazineCount = (count _availableSniperMagazines) -1;
 _count = 0;
-_limitGrenades = 2;
-while {_count < _restrictedGrenadesCount} do
+while {_count < _restrictedSniperMagazineCount} do
 {
-    for "_x" from 0 to _restrictedGrenadesCount do
+    for "_x" from 0 to _restrictedSniperMagazineCount do
     {
-        _selectGrenades = _restrictedGrenades select _x;
-        _countGrenades = {_selectGrenades == _x} count (ItemsWithMagazines player);
-        if (_countGrenades > _limitGrenades) then
+        _selectSniperMagazines = _availableSniperMagazines select _x;
+        _countSniperMagazines = {_selectSniperMagazines == _x} count (ItemsWithMagazines player);
+        if (_countSniperMagazines > _limitSniperMagazines) then
         {
-            for "_i" from 1 to (_countGrenades - _limitGrenades) do
+            for "_i" from 1 to (_countSniperMagazines - _limitSniperMagazines) do
             {
-              player removeItem _selectGrenades;
+              player removeItem _selectSniperMagazines;
+              systemChat format ["Extra %1 found, removed from Inventory",_selectSniperMagazines];
             };
         };
     };
     _count = _count + 1;
 };
 
+_restrictedLmgMagazineCount = (count _availableLmgMagazines) -1;
+_count = 0;
+while {_count < _restrictedLmgMagazineCount} do
+{
+    for "_x" from 0 to _restrictedLmgMagazineCount do
+    {
+        _selectLmgMagazines = _availableLmgMagazines select _x;
+        _countLmgMagazines = {_selectLmgMagazines == _x} count (ItemsWithMagazines player);
+        if (_countLmgMagazines > _limitLmgMagazines) then
+        {
+            for "_i" from 1 to (_countLmgMagazines - _limitLmgMagazines) do
+            {
+              player removeItem _selectLmgMagazines;
+              systemChat format ["Extra %1 found, removed from Inventory",_selectLmgMagazines];
+            };
+        };
+    };
+    _count = _count + 1;
+};
+
+_restrictedSmgMagazineCount = (count _availableSmgMagazines) -1;
+_count = 0;
+while {_count < _restrictedSmgMagazineCount} do
+{
+    for "_x" from 0 to _restrictedSmgMagazineCount do
+    {
+        _selectSmgMagazines = _availableSmgMagazines select _x;
+        _countSmgMagazines = {_selectSmgMagazines == _x} count (ItemsWithMagazines player);
+        if (_countSmgMagazines > _limitSmgMagazines) then
+        {
+            for "_i" from 1 to (_countSmgMagazines - _limitSmgMagazines) do
+            {
+              player removeItem _selectSmgMagazines;
+              systemChat format ["Extra %1 found, removed from Inventory",_selectSmgMagazines];
+            };
+        };
+    };
+    _count = _count + 1;
+};
+
+_restrictedHandGunMagazineCount = (count _availableHandGunMagazines) -1;
+_count = 0;
+while {_count < _restrictedHandGunMagazineCount} do
+{
+    for "_x" from 0 to _restrictedHandGunMagazineCount do
+    {
+        _selectHandGunMagazines = _availableHandGunMagazines select _x;
+        _countHandGunMagazines = {_selectHandGunMagazines == _x} count (ItemsWithMagazines player);
+        if (_countHandGunMagazines > _limitHandGunMagazines) then
+        {
+            for "_i" from 1 to (_countHandGunMagazines - _limitHandGunMagazines) do
+            {
+              player removeItem _selectHandGunMagazines;
+              systemChat format ["Extra %1 found, removed from Inventory",_selectHandGunMagazines];
+            };
+        };
+    };
+    _count = _count + 1;
+};
+
+_restrictedHandGrenadesCount = (count _availableHandGrenades) -1;
+_count = 0;
+while {_count < _restrictedHandGrenadesCount} do
+{
+    for "_x" from 0 to _restrictedHandGrenadesCount do
+    {
+        _selectHandGrenades = _availableHandGrenades select _x;
+        _countHandGrenades = {_selectHandGrenades == _x} count (ItemsWithMagazines player);
+        if (_countHandGrenades > _limitHandGrenades) then
+        {
+            for "_i" from 1 to (_countHandGrenades - _limitHandGrenades) do
+            {
+              player removeItem _selectHandGrenades;
+              systemChat format ["Extra %1 found, removed from Inventory",_selectHandGrenades];
+            };
+        };
+    };
+    _count = _count + 1;
+};
+
+_restrictedGLRoundsCount = (count _availableGLRounds) -1;
+_count = 0;
+while {_count < _restrictedGLRoundsCount} do
+{
+    for "_x" from 0 to _restrictedGLRoundsCount do
+    {
+        _selectGLRounds = _availableGLRounds select _x;
+        _countGLRounds = {_selectGLRounds == _x} count (ItemsWithMagazines player);
+        if (_countGLRounds > _limitGLRounds) then
+        {
+            for "_i" from 1 to (_countGLRounds - _limitGLRounds) do
+            {
+              player removeItem _selectGLRounds;
+              systemChat format ["Extra %1 found, removed from Inventory",_selectGLRounds];
+            };
+        };
+    };
+    _count = _count + 1;
+};
+
+_restricted3GLRoundsCount = (count _available3GLRounds) -1;
+_count = 0;
+while {_count < _restricted3GLRoundsCount} do
+{
+    for "_x" from 0 to _restricted3GLRoundsCount do
+    {
+        _select3GLRounds = _available3GLRounds select _x;
+        _count3GLRounds = {_select3GLRounds == _x} count (ItemsWithMagazines player);
+        if (_count3GLRounds > _limit3GLRounds) then
+        {
+            for "_i" from 1 to (_count3GLRounds - _limit3GLRounds) do
+            {
+              player removeItem _select3GLRounds;
+              systemChat format ["Extra %1 found, removed from Inventory",_select3GLRounds];
+            };
+        };
+    };
+    _count = _count + 1;
+};
+
+_restrictedExplosivesCount = (count _availableExplosives) -1;
+_count = 0;
+while {_count < _restrictedExplosivesCount} do
+{
+    for "_x" from 0 to _restrictedExplosivesCount do
+    {
+        _selectExplosives = _availableExplosives select _x;
+        _countExplosives = {_selectExplosives == _x} count (ItemsWithMagazines player);
+        if (_countExplosives > _limitExplosives) then
+        {
+            for "_i" from 1 to (_countExplosives - _limitExplosives) do
+            {
+              player removeItem _selectExplosives;
+              systemChat format ["Extra %1 found, removed from Inventory",_selectExplosives];
+            };
+        };
+    };
+    _count = _count + 1;
+};
+
+_whiteListedItems =
+_availableAttachments +
+_availableRifles +
+_availableRifleMagazines +
+_availableSnipers +
+_availableSniperMagazines +
+_availableLmgs +
+_availableLmgMagazines +
++ _availableSmgs;
+_availableSmgMagazines +
+_availableHandGuns +
+_availableHandGunMagazines +
+_availableLaunchers +
+_availableRockets +
+_availableHandGrenades +
+_availableGLRounds +
+_available3GLRounds +
+_availableExplosives +
+_availableHeadGear +
+_availableHeadGearAccessories +
+_availableUniforms +
+_availableBackPacks +
+_availableVests +
+_availableAccessories;
 
 _allItems = (items player) + (player weaponAccessories (currentWeapon player));
 {
-    if (_x in _blackListedItems) then
-    {
-        player removePrimaryWeaponItem _x;
-        player removeHandGunItem _x;
-        player removeItemFromUniform _x;
-        player removeItemFromVest _x;
-        player removeItemFromBackpack _x;
+    if !(_x in _whiteListedItems) then
+        {
+                player removePrimaryWeaponItem _x;
+                player removeHandGunItem _x;
+                player removeItemFromUniform _x;
+                player removeItemFromVest _x;
+                player removeItemFromBackpack _x;
+        systemChat format ["%1, IS NOT ALLOWED WITH VA, IT HAS BEEN REMOVED FROM YOUR INVENTORY", _x];
     };
 } forEach _allItems;
 
 _assignedItems = (assignedItems player);
 {
-    if (_x in _blackListedItems) then
+    if !(_x in _whiteListedItems) then
     {
         player unassignItem _x;
         player removeItem _x;
+        systemChat format ["%1, IS NOT ALLOWED WITH VA, IT HAS BEEN REMOVED FROM YOUR INVENTORY", _x];
     };
 } forEach _assignedItems;
+
+_whiteListedPrimary = _availableRifles + _availableSnipers + _availableLmgs + _availableSmgs;
+{
+        if !(_x in _whiteListedPrimary) Then
+        {
+                player removeWeapon _x;
+        };
+
+} forEach weapons player;
