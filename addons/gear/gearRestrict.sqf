@@ -153,6 +153,8 @@ _blackListedItems = [
 "launch_MRAWS_sand_rail_F",
 "launch_O_Vorona_brown_F",
 "launch_O_Vorona_green_F",
+"ModuleExplosive_APERSMineDispenser_F",
+"ModuleAPERSMineDispenser_Mine_F",
 "Laserdesignator",
 "Laserdesignator_02",
 "Laserdesignator_03",
