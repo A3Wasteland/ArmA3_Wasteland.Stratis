@@ -233,7 +233,7 @@ _availableSnipers +
 _availableSniperMagazines +
 _availableLmgs +
 _availableLmgMagazines +
-+ _availableSmgs;
+_availableSmgs +
 _availableSmgMagazines +
 _availableHandGuns +
 _availableHandGunMagazines +
