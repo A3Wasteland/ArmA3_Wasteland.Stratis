@@ -130,7 +130,55 @@ _restrictedGrenades = [
 "HandGrenade"
 ];
 
-//restrict rocketAmmoArray count from BackPack
+_blackListedItems = [
+"optic_Nightstalker",
+"optic_tws",
+"optic_tws_mg",
+"H_HelmetO_ViperSP_hex_F",
+"H_HelmetO_ViperSP_ghex_F",
+"launch_NLAW_F",
+"launch_B_Titan_F",
+"launch_I_Titan_F",
+"launch_O_Titan_F",
+"launch_Titan_F",
+"launch_B_Titan_short_F",
+"launch_I_Titan_short_F",
+"launch_O_Titan_short_F",
+"launch_Titan_short_F",
+"launch_MRAWS_olive_F",
+"launch_MRAWS_olive_rail_F",
+"launch_MRAWS_green_F",
+"launch_MRAWS_green_rail_F",
+"launch_MRAWS_sand_F",
+"launch_MRAWS_sand_rail_F",
+"launch_O_Vorona_brown_F",
+"launch_O_Vorona_green_F",
+"Laserdesignator",
+"Laserdesignator_02",
+"Laserdesignator_03",
+"B_GMG_01_A_high_weapon_F",
+"B_GMG_01_A_weapon_F",
+"B_GMG_01_high_weapon_F",
+"B_GMG_01_weapon_F",
+"B_HMG_01_A_high_weapon_F",
+"B_HMG_01_A_weapon_F",
+"B_HMG_01_high_weapon_F",
+"B_HMG_01_support_F",
+"B_HMG_01_support_high_F",
+"B_HMG_01_weapon_F",
+"B_Mortar_01_support_F",
+"B_Mortar_01_weapon_F",
+"B_UAV_01_backpack_F",
+"I_UAV_01_backpack_F",
+"O_UAV_01_backpack_F",
+"NVGogglesB_blk_F",
+"NVGogglesB_grn_F",
+"NVGogglesB_gry_F",
+"B_Parachute"
+
+];
+
+
 _restrictedRocketsCount = (count _restrictedRockets) -1;
 _count = 0;
 _limitRockets = 1;
@@ -191,3 +239,18 @@ while {_count < _restrictedGrenadesCount} do
     };
     _count = _count + 1;
 };
+
+
+_allItems = (items player) + (assignedItems player) + (player weaponAccessories (currentWeapon player));
+		{
+			if (_x in _blackListedItems) then
+			{
+                                player unassignItem _x;
+                                player removeItem _x;
+				player removePrimaryWeaponItem _x;
+				player removeHandGunItem _x;
+				player removeItemFromUniform _x;
+				player removeItemFromVest _x;
+				player removeItemFromBackpack _x;
+			};
+		} forEach _allItems;
