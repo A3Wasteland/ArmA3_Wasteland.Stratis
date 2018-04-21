@@ -852,7 +852,11 @@ _availableMagazines =
 	"20Rnd_762x51_Mag",
 	"10Rnd_762x54_Mag",
 	"10Rnd_93x64_DMR_05_Mag",
-	"150Rnd_93x64_Mag"
+	"150Rnd_93x64_Mag",
+	"30Rnd_45ACP_Mag_SMG_01",
+	"30Rnd_45ACP_Mag_SMG_01_tracer_green",
+	"30Rnd_45ACP_Mag_SMG_01_Tracer_Red",
+	"30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow"
 ];
 
 [missionNameSpace,(_availableBackpacks),false,false] call BIS_fnc_addVirtualBackpackCargo;
