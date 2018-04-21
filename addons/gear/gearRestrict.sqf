@@ -253,4 +253,4 @@ _allItems = (items player) + (assignedItems player) + (player weaponAccessories 
 		player removeItemFromVest _x;
 		player removeItemFromBackpack _x;
 	};
-} forEach _allItems;
+}forEach _allItems;
