@@ -259,7 +259,7 @@ _allItems = (items player) + (player weaponAccessories (currentWeapon player));
                 player removeItemFromUniform _x;
                 player removeItemFromVest _x;
                 player removeItemFromBackpack _x;
-        systemChat format ["%1, IS NOT ALLOWED WITH VA, IT HAS BEEN REMOVED FROM YOUR INVENTORY", _x];
+        systemChat format ["ITEMS NOT ALLOWED WITH VA HAVE BEEN REMOVED FROM YOUR INVENTORY", _x];
     };
 } forEach _allItems;
 
@@ -269,7 +269,7 @@ _assignedItems = (assignedItems player);
     {
         player unassignItem _x;
         player removeItem _x;
-        systemChat format ["%1, IS NOT ALLOWED WITH VA, IT HAS BEEN REMOVED FROM YOUR INVENTORY", _x];
+        systemChat format ["ITEMS NOT ALLOWED WITH VA HAVE BEEN REMOVED FROM YOUR INVENTORY", _x];
     };
 } forEach _assignedItems;
 
