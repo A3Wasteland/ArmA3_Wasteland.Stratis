@@ -3,7 +3,7 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Version: 1.0
-//	@file Name: gearRestrict.sqf
+//	@file Name gearWhiteList.sqf
 //	@file Author: [FRAC] Mokey , PIX515E
 //	@file Created: 4/21/2018 09:48
 
@@ -63,278 +63,175 @@ _availableRifles =
 
 _availableRifleMagazines =
 [
-// Work In Progress
-
-
-"30Rnd_545x39_Mag_Green_F",
+"30Rnd_762x39_Mag_F",
+"30Rnd_762x39_Mag_Green_F",
+"30Rnd_762x39_Mag_Tracer_F",
+"30Rnd_762x39_Mag_Tracer_Green_F",
 "30Rnd_545x39_Mag_F",
-"30Rnd_545x39_Mag_Tracer_Green_F",
 "30Rnd_545x39_Mag_Tracer_F",
-"20Rnd_556x45_UW_mag",
+"30Rnd_545x39_Mag_Green_F",
+"30Rnd_545x39_Mag_Tracer_Green_F",
+"30Rnd_65x39_caseless_green",
+"30Rnd_65x39_caseless_green_mag_Tracer",
+"30Rnd_580x42_Mag_F",
+"30Rnd_580x42_Mag_Tracer_F",
+"30Rnd_556x45_Stanag",
 "30Rnd_556x45_Stanag_green",
 "30Rnd_556x45_Stanag_red",
-"30Rnd_556x45_Stanag",
 "30Rnd_556x45_Stanag_Tracer_Green",
 "30Rnd_556x45_Stanag_Tracer_Red",
 "30Rnd_556x45_Stanag_Tracer_Yellow",
-"30Rnd_580x42_Mag_F",
-"30Rnd_580x42_Mag_Tracer_F",
-"30Rnd_65x39_caseless_green_mag_Tracer",
-"30Rnd_65x39_caseless_green",
-"30Rnd_762x39_Mag_Green_F",
-"30Rnd_762x39_Mag_F",
-"30Rnd_762x39_Mag_Tracer_Green_F",
-"30Rnd_762x39_Mag_Tracer_F",
-"20Rnd_650x39_Cased_Mag_F",
+"30Rnd_65x39_caseless_mag",
+"30Rnd_65x39_caseless_mag_Tracer",
+"20Rnd_556x45_UW_mag",
 "20Rnd_762x51_Mag"
 ];
 
 
 _availableSnipers =
 [
-"srifle_DMR_01_ACO_F",
-"srifle_DMR_01_ARCO_F",
-"srifle_DMR_01_DMS_BI_F",
-"srifle_DMR_01_DMS_F",
-"srifle_DMR_01_DMS_snds_BI_F",
-"srifle_DMR_01_DMS_snds_F",
 "srifle_DMR_01_F",
-"srifle_DMR_01_MRCO_F",
-"srifle_DMR_01_SOS_F",
-"srifle_DMR_02_ACO_F",
-"srifle_DMR_02_ARCO_F",
-"srifle_DMR_02_camo_AMS_LP_F",
 "srifle_DMR_02_camo_F",
-"srifle_DMR_02_DMS_F",
 "srifle_DMR_02_F",
-"srifle_DMR_02_MRCO_F",
-"srifle_DMR_02_sniper_AMS_LP_S_F",
 "srifle_DMR_02_sniper_F",
-"srifle_DMR_02_SOS_F",
-"srifle_DMR_03_ACO_F",
-"srifle_DMR_03_AMS_F",
-"srifle_DMR_03_ARCO_F",
-"srifle_DMR_03_DMS_F",
-"srifle_DMR_03_DMS_snds_F",
 "srifle_DMR_03_F",
 "srifle_DMR_03_khaki_F",
-"srifle_DMR_03_MRCO_F",
-"srifle_DMR_03_multicam_F",
-"srifle_DMR_03_SOS_F",
-"srifle_DMR_03_tan_AMS_LP_F",
 "srifle_DMR_03_tan_F",
 "srifle_DMR_03_woodland_F",
-"srifle_DMR_04_ACO_F",
-"srifle_DMR_04_ARCO_F",
-"srifle_DMR_04_DMS_F",
 "srifle_DMR_04_F",
-"srifle_DMR_04_MRCO_F",
-"srifle_DMR_04_NS_LP_F",
-"srifle_DMR_04_SOS_F",
 "srifle_DMR_04_Tan_F",
-"srifle_DMR_05_ACO_F",
-"srifle_DMR_05_ARCO_F",
 "srifle_DMR_05_blk_F",
-"srifle_DMR_05_DMS_F",
-"srifle_DMR_05_DMS_snds_F",
 "srifle_DMR_05_hex_F",
-"srifle_DMR_05_KHS_LP_F",
-"srifle_DMR_05_MRCO_F",
-"srifle_DMR_05_SOS_F",
 "srifle_DMR_05_tan_f",
 "srifle_DMR_06_camo_F",
 "srifle_DMR_06_camo_khs_F",
 "srifle_DMR_06_olive_F",
-"srifle_DMR_07_blk_DMS_F",
-"srifle_DMR_07_blk_DMS_Snds_F",
 "srifle_DMR_07_blk_F",
-"srifle_DMR_07_blk_F_arco_flash_F",
 "srifle_DMR_07_ghex_F",
 "srifle_DMR_07_hex_F",
-"srifle_EBR_ACO_F",
-"srifle_EBR_ARCO_pointer_F",
-"srifle_EBR_ARCO_pointer_snds_F",
-"srifle_EBR_DMS_F",
-"srifle_EBR_DMS_pointer_snds_F",
 "srifle_EBR_F",
-"srifle_EBR_Hamr_pointer_F",
-"srifle_EBR_MRCO_LP_BI_F",
-"srifle_EBR_MRCO_pointer_F",
-"srifle_EBR_SOS_F",
 "srifle_GM6_camo_F",
-"srifle_GM6_camo_LRPS_F",
-"srifle_GM6_camo_SOS_F",
 "srifle_GM6_F",
 "srifle_GM6_ghex_F",
-"srifle_GM6_ghex_LRPS_F",
-"srifle_GM6_LRPS_F",
-"srifle_GM6_SOS_F",
 "srifle_LRR_camo_F",
-"srifle_LRR_camo_LRPS_F",
-"srifle_LRR_camo_SOS_F",
 "srifle_LRR_F",
-"srifle_LRR_LRPS_F",
-"srifle_LRR_SOS_F",
-"srifle_LRR_tna_F",
-"srifle_LRR_tna_LRPS_F"
+"srifle_LRR_tna_F"
 ];
 
 
 _availableSniperMagazines =
 [
-// Work In Progress
-
-
-"10Rnd_338_Mag",
-"7Rnd_408_Mag",
-"5Rnd_127x108_Mag",
-"10Rnd_127x54_Mag",
-"5Rnd_127x108_APDS_Mag",
 "10Rnd_762x54_Mag",
-"10Rnd_93x64_DMR_05_Mag"
+"10Rnd_338_Mag",
+"20Rnd_762x51_Mag",
+"10Rnd_127x54_Mag",
+"10Rnd_93x64_DMR_05_Mag",
+"20Rnd_650x39_Cased_Mag_F",
+"5Rnd_127x108_Mag",
+"5Rnd_127x108_APDS_Mag",
+"7Rnd_408_Mag"
 ];
 
 
 _availableLmgs =
 [
 "arifle_CTARS_blk_F",
-"arifle_CTARS_blk_flash_F",
-"arifle_CTARS_blk_Pointer_F",
 "arifle_CTARS_ghex_F",
 "arifle_CTARS_hex_F",
 "arifle_MX_SW_Black_F",
-"arifle_MX_SW_Black_Hamr_pointer_F",
 "arifle_MX_SW_F",
-"arifle_MX_SW_Hamr_pointer_F",
 "arifle_MX_SW_khk_F",
-"arifle_MX_SW_khk_Pointer_F",
-"arifle_MX_SW_pointer_F",
-"arifle_SPAR_02_blk_ERCO_Pointer_F",
 "arifle_SPAR_02_blk_F",
-"arifle_SPAR_02_blk_Pointer_F",
 "arifle_SPAR_02_khk_F",
 "arifle_SPAR_02_snd_F",
-"B_Patrol_Soldier_Autorifleman_weapon_F",
-"B_Patrol_Soldier_HeavyGunner_weapon_F",
-"B_Patrol_Soldier_MachineGunner_weapon_F",
-"LMG_03_Vehicle_F",
-"LMG_Mk200_BI_F",
 "LMG_Mk200_F",
-"LMG_Mk200_LP_BI_F",
-"LMG_Mk200_MRCO_F",
-"LMG_Mk200_pointer_F",
-"LMG_Zafir_ARCO_F",
 "LMG_Zafir_F",
-"LMG_Zafir_pointer_F",
-"MMG_01_hex_ARCO_LP_F",
 "MMG_01_hex_F",
 "MMG_01_tan_F",
 "MMG_02_black_F",
-"MMG_02_black_RCO_BI_F",
 "MMG_02_camo_F",
-"MMG_02_sand_F",
-"MMG_02_sand_RCO_LP_F"
+"MMG_02_sand_F"
 ];
 
 
 _availableLmgMagazines =
 [
-// Work In Progress
-
-
 "100Rnd_580x42_Mag_F",
 "100Rnd_580x42_Mag_Tracer_F",
-"130Rnd_338_Mag",
-"150Rnd_556x45_Drum_Mag_F",
-"150Rnd_556x45_Drum_Mag_Tracer_F",
-"200Rnd_556x45_Box_Red_F",
-"200Rnd_556x45_Box_F",
-"200Rnd_556x45_Box_Tracer_Red_F",
-"200Rnd_556x45_Box_Tracer_F",
 "100Rnd_65x39_caseless_mag",
 "100Rnd_65x39_caseless_mag_Tracer",
+"30Rnd_65x39_caseless_mag",
+"30Rnd_65x39_caseless_mag_Tracer",
+"150Rnd_556x45_Drum_Mag_F",
+"150Rnd_556x45_Drum_Mag_Tracer_F",
 "200Rnd_65x39_cased_Box",
 "200Rnd_65x39_cased_Box_Tracer",
 "150Rnd_762x54_Box",
 "150Rnd_762x54_Box_Tracer",
-"150Rnd_93x64_Mag"
+"150Rnd_93x64_Mag",
+"130Rnd_338_Mag"
 ];
 
 
 _availableSmgs =
 [
 "hgun_PDW2000_F",
-"hgun_PDW2000_Holo_F",
-"hgun_PDW2000_Holo_snds_F",
-"hgun_PDW2000_snds_F",
 "hgun_Pistol_01_F",
-"SMG_01_ACO_F",
 "SMG_01_F",
-"SMG_01_Holo_F",
-"SMG_01_Holo_pointer_snds_F",
-"SMG_02_ACO_F",
-"SMG_02_ARCO_pointg_F",
 "SMG_02_F",
-"SMG_02_flash_F",
 "SMG_05_F"
 ];
 
 
 _availableSmgMagazines =
 [
-// Work In Progress
-
-
-"30Rnd_9x21_Mag",
-"30Rnd_9x21_Mag_SMG_02",
+"16Rnd_9x21_green_Mag",
+"16Rnd_9x21_Mag",
+"16Rnd_9x21_red_Mag",
+"16Rnd_9x21_yellow_Mag",
 "30Rnd_9x21_Green_Mag",
+"30Rnd_9x21_Mag",
+"30Rnd_9x21_Red_Mag",
+"30Rnd_9x21_Yellow_Mag",
+"10Rnd_9x21_Mag",
+"30Rnd_45ACP_Mag_SMG_01",
+"30Rnd_45ACP_Mag_SMG_01_Tracer_Green",
+"30Rnd_45ACP_Mag_SMG_01_Tracer_Red",
+"30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+"30Rnd_9x21_Mag_SMG_02",
 "30Rnd_9x21_Mag_SMG_02_Tracer_Green",
 "30Rnd_9x21_Mag_SMG_02_Tracer_Red",
-"30Rnd_9x21_Red_Mag",
 "30Rnd_9x21_Mag_SMG_02_Tracer_Yellow",
-"30Rnd_9x21_Yellow_Mag","10Rnd_338_Mag",
-"30Rnd_45ACP_Mag_SMG_01",
-"30Rnd_45ACP_Mag_SMG_01_tracer_green",
-"30Rnd_45ACP_Mag_SMG_01_Tracer_Red",
-"30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow"
+"30Rnd_9x21_Green_Mag",
+"30Rnd_9x21_Mag",
+"30Rnd_9x21_Red_Mag",
+"30Rnd_9x21_Yellow_Mag"
 ];
 
 
 _availableHandGuns =
 [
-"B_Patrol_Soldier_Operator_weapon_F",
 "hgun_ACPC2_F",
-"hgun_ACPC2_snds_F",
 "hgun_P07_F",
 "hgun_P07_khk_F",
-"hgun_P07_khk_Snds_F",
-"hgun_P07_snds_F",
 "hgun_Pistol_heavy_01_F",
-"hgun_Pistol_heavy_01_MRD_F",
-"hgun_Pistol_heavy_01_snds_F",
 "hgun_Pistol_heavy_02_F",
-"hgun_Pistol_heavy_02_Yorris_F",
-"hgun_Pistol_Signal_F",
-"hgun_Rook40_F",
-"hgun_Rook40_snds_F"
+// "hgun_Pistol_Signal_F",
+"hgun_Rook40_F"
 ];
 
 
 _availableHandGunMagazines =
 [
-// Work In Progress
-
-
-"11Rnd_45ACP_Mag",
-"6Rnd_45ACP_Cylinder",
 "9Rnd_45ACP_Mag",
-"6Rnd_GreenSignal_F",
-"6Rnd_RedSignal_F",
-"10Rnd_9x21_Mag",
-"16Rnd_9x21_Mag",
 "16Rnd_9x21_green_Mag",
+"16Rnd_9x21_Mag",
 "16Rnd_9x21_red_Mag",
-"16Rnd_9x21_yellow_Mag"
+"16Rnd_9x21_yellow_Mag",
+"11Rnd_45ACP_Mag",
+"6Rnd_45ACP_Cylinder"
+// "6Rnd_GreenSignal_F",
+// "6Rnd_RedSignal_F"
 ];
 
 
@@ -369,109 +266,95 @@ _availableLaunchers =
 
 _availableRockets =
 [
-// From storeConfig.sqf
-// Accuracy and Completeness ==
-// NOT Check
-
-
-"RPG7_F",
-"RPG32_F",
-"RPG32_HE_F"
-// "MRAWS_HEAT_F",
-// "MRAWS_HE_F",
-// "Vorona_HEAT",
-// "Vorona_HE",
-// "NLAW_F",
-// "Titan_AT",
+// "Titan_AA",
 // "Titan_AP",
-// "Titan_AA"
+// "Titan_AT",
+// "MRAWS_HE_F",
+// "MRAWS_HEAT_F",
+// "NLAW_F",
+// "Vorona_HE",
+// "Vorona_HEAT",
+"RPG32_F",
+"RPG32_HE_F",
+"RPG7_F"
 ];
 
 
 _availableHandGrenades =
 [
-// Hand Grenades used by THROW
-// Complete from https://community.bistudio.com/wiki/Arma_3_CfgMagazines
-"HandGrenade_Stone",
-"HandGrenade",
-"MiniGrenade",
-"SmokeShell",
-"SmokeShellYellow",
-"SmokeShellGreen",
-"SmokeShellRed",
-"SmokeShellPurple",
-"SmokeShellOrange",
-"SmokeShellBlue",
+"B_IR_Grenade",
+"Chemlight_blue",
 "Chemlight_green",
 "Chemlight_red",
 "Chemlight_yellow",
-"Chemlight_blue",
-"B_IR_Grenade",
+"HandGrenade",
+// "HandGrenade_Stone",
+"I_IR_Grenade",
+"MiniGrenade",
 "O_IR_Grenade",
-"I_IR_Grenade"
+"SmokeShell",
+"SmokeShellBlue",
+"SmokeShellGreen",
+"SmokeShellOrange",
+"SmokeShellPurple",
+"SmokeShellRed"
+// "SmokeShellYellow"
 ];
 
 
 _availableGLRounds =
 [
-// Work In Progress
-
-
 "1Rnd_HE_Grenade_shell",
-"UGL_FlareGreen_F",
-"UGL_FlareCIR_F",
-"UGL_FlareRed_F",
-"UGL_FlareWhite_F",
-"UGL_FlareYellow_F",
+"1Rnd_Smoke_Grenade_shell",
 "1Rnd_SmokeBlue_Grenade_shell",
 "1Rnd_SmokeGreen_Grenade_shell",
 "1Rnd_SmokeOrange_Grenade_shell",
 "1Rnd_SmokePurple_Grenade_shell",
 "1Rnd_SmokeRed_Grenade_shell",
-"1Rnd_Smoke_Grenade_shell"
-//"1Rnd_SmokeYellow_Grenade_shell"
+// "1Rnd_SmokeYellow_Grenade_shell",
+"UGL_FlareCIR_F",
+"UGL_FlareGreen_F",
+"UGL_FlareRed_F",
+"UGL_FlareWhite_F",
+"UGL_FlareYellow_F",
+"10Rnd_50BW_Mag_F"
 ];
 
 
 _available3GLRounds =
 [
-// Work In Progress
-
-
-"3Rnd_UGL_FlareGreen_F",
-"3Rnd_UGL_FlareCIR_F",
-"3Rnd_UGL_FlareRed_F",
-"3Rnd_UGL_FlareWhite_F",
-"3Rnd_UGL_FlareYellow_F",
+"3Rnd_HE_Grenade_shell",
+"3Rnd_Smoke_Grenade_shell",
 "3Rnd_SmokeBlue_Grenade_shell",
 "3Rnd_SmokeGreen_Grenade_shell",
 "3Rnd_SmokeOrange_Grenade_shell",
 "3Rnd_SmokePurple_Grenade_shell",
 "3Rnd_SmokeRed_Grenade_shell",
-"3Rnd_Smoke_Grenade_shell",
-"3Rnd_SmokeYellow_Grenade_shell",
-"3Rnd_HE_Grenade_shell"
+// "3Rnd_SmokeYellow_Grenade_shell",
+"3Rnd_UGL_FlareGreen_F",
+"3Rnd_UGL_FlareCIR_F",
+"3Rnd_UGL_FlareRed_F",
+"3Rnd_UGL_FlareWhite_F",
+"3Rnd_UGL_FlareYellow_F"
 ];
 
 
 _availableExplosives =
 [
-// Explosives used by PUT
-// Complete from https://community.bistudio.com/wiki/Arma_3_CfgMagazines
 "APERSBoundingMine_Range_Mag",
 "APERSMine_Range_Mag",
-"APERSMineDispenser_Mag",
+//"APERSMineDispenser_Mag",
 "APERSTripMine_Wire_Mag",
 "ATMine_Range_Mag",
 "ClaymoreDirectionalMine_Remote_Mag",
 "DemoCharge_Remote_Mag",
-"IEDLandBig_Remote_Mag",
-"IEDLandSmall_Remote_Mag",
-"IEDUrbanBig_Remote_Mag",
-"IEDUrbanSmall_Remote_Mag",
+// "IEDLandBig_Remote_Mag",
+// "IEDLandSmall_Remote_Mag",
+// "IEDUrbanBig_Remote_Mag",
+// "IEDUrbanSmall_Remote_Mag",
 "SatchelCharge_Remote_Mag",
-"SatchelCharge_Remote_Mag",
-"SatchelCharge_Remote_Mag"
+"SLAMDirectionalMine_Wire_Mag",
+"TrainingMine_Mag"
 ];
 
 
@@ -709,13 +592,12 @@ _availableHeadGearAccessories =
 "NVGoggles_INDEP",
 "NVGoggles_OPFOR",
 "NVGoggles_tna_F",
-"NVGogglesB_blk_F",
-"NVGogglesB_grn_F",
-"NVGogglesB_gry_F"
-// "O_NVGoggles_ghex_F",
-// "O_NVGoggles_hex_F",
-// "O_NVGoggles_urb_F",
-// "O_UavTerminal",
+// "NVGogglesB_blk_F",
+// "NVGogglesB_grn_F",
+// "NVGogglesB_gry_F"
+"O_NVGoggles_ghex_F",
+"O_NVGoggles_hex_F",
+"O_NVGoggles_urb_F"
 ];
 
 
@@ -860,7 +742,8 @@ _availableBackPacks =
 // Work In Progress
 
 
-"B_AssaultPack_blk","B_AssaultPack_cbr",
+"B_AssaultPack_blk",
+"B_AssaultPack_cbr",
 "B_AssaultPack_dgtl",
 "B_AssaultPack_rgr",
 "B_AssaultPack_ocamo",
@@ -1017,11 +900,11 @@ _availableAccessories =
 "ItemMap",
 "ItemRadio",
 "ItemWatch",
-"Laserdesignator",
-"Laserdesignator_01_khk_F",
-"Laserdesignator_02",
-"Laserdesignator_02_ghex_F",
-"Laserdesignator_03",
+// "Laserdesignator",
+// "Laserdesignator_01_khk_F",
+// "Laserdesignator_02",
+// "Laserdesignator_02_ghex_F",
+// "Laserdesignator_03",
 "Medikit",
 "MineDetector",
 "Rangefinder",

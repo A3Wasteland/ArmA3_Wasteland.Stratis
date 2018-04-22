@@ -2,7 +2,7 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Version: 1.0
-//	@file Name: gearRestrict.sqf
+//	@file Name: gearRestric.sqf
 //	@file Author: [FRAC] Mokey , PIX515E, Strilles
 //	@file Created: 4/18/2018 17:48
 
@@ -10,11 +10,11 @@
 /*/-----To remove an item completley, just comment it out in gearWhiteList.sqf-----/*/
 /*/--------------------------Remember 1 Mag spawns in gun-------------------------/*/
 _limitRockets = 1;
-_limitRifleMagazines = 5;
+_limitRifleMagazines = 3;
 _limitSniperMagazines = 3;
 _limitLmgMagazines = 2;
-_limitSmgMagazines = 8;
-_limitHandGunMagazines = 3;
+_limitSmgMagazines = 4;
+_limitHandGunMagazines = 2;
 _limitHandGrenades = 2;
 _limitGLRounds = 3;
 _limit3GLRounds = 1;
@@ -40,7 +40,6 @@ while {_count < _restrictedRocketsCount} do
             for "_i" from 1 to (_countRockets - _limitRockets) do
             {
               player removeItem _selectRockets;
-              systemChat format ["Extra %1 found, removed from Inventory",_selectRockets];
             };
         };
     };
@@ -60,7 +59,6 @@ while {_count < _restrictedRifleMagazineCount} do
             for "_i" from 1 to (_countRifleMagazines - _limitRifleMagazines) do
             {
               player removeItem _selectRifleMagazines;
-              systemChat format ["Extra %1 found, removed from Inventory",_selectRifleMagazines];
             };
         };
     };
@@ -80,7 +78,6 @@ while {_count < _restrictedSniperMagazineCount} do
             for "_i" from 1 to (_countSniperMagazines - _limitSniperMagazines) do
             {
               player removeItem _selectSniperMagazines;
-              systemChat format ["Extra %1 found, removed from Inventory",_selectSniperMagazines];
             };
         };
     };
@@ -100,7 +97,6 @@ while {_count < _restrictedLmgMagazineCount} do
             for "_i" from 1 to (_countLmgMagazines - _limitLmgMagazines) do
             {
               player removeItem _selectLmgMagazines;
-              systemChat format ["Extra %1 found, removed from Inventory",_selectLmgMagazines];
             };
         };
     };
@@ -120,7 +116,6 @@ while {_count < _restrictedSmgMagazineCount} do
             for "_i" from 1 to (_countSmgMagazines - _limitSmgMagazines) do
             {
               player removeItem _selectSmgMagazines;
-              systemChat format ["Extra %1 found, removed from Inventory",_selectSmgMagazines];
             };
         };
     };
@@ -140,7 +135,6 @@ while {_count < _restrictedHandGunMagazineCount} do
             for "_i" from 1 to (_countHandGunMagazines - _limitHandGunMagazines) do
             {
               player removeItem _selectHandGunMagazines;
-              systemChat format ["Extra %1 found, removed from Inventory",_selectHandGunMagazines];
             };
         };
     };
@@ -160,7 +154,6 @@ while {_count < _restrictedHandGrenadesCount} do
             for "_i" from 1 to (_countHandGrenades - _limitHandGrenades) do
             {
               player removeItem _selectHandGrenades;
-              systemChat format ["Extra %1 found, removed from Inventory",_selectHandGrenades];
             };
         };
     };
@@ -180,7 +173,6 @@ while {_count < _restrictedGLRoundsCount} do
             for "_i" from 1 to (_countGLRounds - _limitGLRounds) do
             {
               player removeItem _selectGLRounds;
-              systemChat format ["Extra %1 found, removed from Inventory",_selectGLRounds];
             };
         };
     };
@@ -200,7 +192,6 @@ while {_count < _restricted3GLRoundsCount} do
             for "_i" from 1 to (_count3GLRounds - _limit3GLRounds) do
             {
               player removeItem _select3GLRounds;
-              systemChat format ["Extra %1 found, removed from Inventory",_select3GLRounds];
             };
         };
     };
@@ -220,7 +211,6 @@ while {_count < _restrictedExplosivesCount} do
             for "_i" from 1 to (_countExplosives - _limitExplosives) do
             {
               player removeItem _selectExplosives;
-              systemChat format ["Extra %1 found, removed from Inventory",_selectExplosives];
             };
         };
     };
@@ -262,7 +252,7 @@ _allItems = (items player) + (player weaponAccessories (currentWeapon player));
                 player removeItemFromUniform _x;
                 player removeItemFromVest _x;
                 player removeItemFromBackpack _x;
-                systemChat format ["SOME ITEMS ARE NOT ALLOWED WITH VA THEY BEEN REMOVED FROM YOUR INVENTORY", _x];
+                player removeItem _x;
     };
 } forEach _allItems;
 
@@ -272,7 +262,6 @@ _assignedItems = (assignedItems player);
     {
         player unassignItem _x;
         player removeItem _x;
-        systemChat format ["SOME ITEMS ARE NOT ALLOWED WITH VA> THEY BEEN REMOVED FROM YOUR INVENTORY", _x];
     };
 } forEach _assignedItems;
 
