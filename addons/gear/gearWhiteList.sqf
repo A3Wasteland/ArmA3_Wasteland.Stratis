@@ -5,7 +5,7 @@
 //	@file Version: 1.0
 //	@file Name: gearRestrict.sqf
 //	@file Author: [FRAC] Mokey , PIX515E
-//	@file Created: 4/18/2018 17:48
+//	@file Created: 4/21/2018 09:48
 
 _availableRifles =
 [
