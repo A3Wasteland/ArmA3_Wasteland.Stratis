@@ -131,6 +131,7 @@ va_fnc_gearLevel14 = "addons\gear\gearLevel14.sqf" call mf_compile;
 va_fnc_gearLevel15 = "addons\gear\gearLevel15.sqf" call mf_compile;
 va_fnc_gearLevel16 = "addons\gear\gearLevel16.sqf" call mf_compile;
 va_fnc_gearRestrict = "addons\gear\gearRestrict.sqf" call mf_compile;
+va_fnc_gearWhitelist = "addons\gear\gearWhiteList" call mf_compile;
 /*/ ------------------------------------------------------------------------------------------- /*/
 
 if (isNil "A3W_fnc_MP") then { A3W_fnc_MP = compile preprocessFileLineNumbers "\A3\functions_f\MP\fn_MP.sqf" };

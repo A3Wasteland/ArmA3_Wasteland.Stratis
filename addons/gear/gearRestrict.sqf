@@ -6,9 +6,6 @@
 //	@file Author: [FRAC] Mokey , PIX515E, Strilles
 //	@file Created: 4/18/2018 17:48
 
-
-#include "gearWhiteList.sqf"
-
 /*/-----------------Limits apply to each array in gearWhiteList.sqf-----------------/*/
 /*/-----To remove an item completley, just comment it out in gearWhiteList.sqf-----/*/
 /*/--------------------------Remember 1 Mag spawns in gun-------------------------/*/
@@ -24,7 +21,12 @@ _limit3GLRounds = 1;
 _limitExplosives = 2;
 /*/---END---/*/
 
+/*/------------------------------------------------------------------------/*/
 /*/----------DO NOT EDIT BELOW UNLESS YOU KNOW WHAT YOU ARE DOING----------/*/
+/*/------------------------------------------------------------------------/*/
+
+#include "addons/gear/gearWhiteList.sqf"
+
 _restrictedRocketsCount = (count _availableRockets) -1;
 _count = 0;
 while {_count < _restrictedRocketsCount} do
@@ -250,6 +252,7 @@ _availableBackPacks +
 _availableVests +
 _availableAccessories;
 
+private ["_allItems", "_assignedItems", "_whiteListedItems"];
 _allItems = (items player) + (player weaponAccessories (currentWeapon player));
 {
     if !(_x in _whiteListedItems) then
@@ -259,7 +262,7 @@ _allItems = (items player) + (player weaponAccessories (currentWeapon player));
                 player removeItemFromUniform _x;
                 player removeItemFromVest _x;
                 player removeItemFromBackpack _x;
-        systemChat format ["ITEMS NOT ALLOWED WITH VA HAVE BEEN REMOVED FROM YOUR INVENTORY", _x];
+                systemChat format ["SOME ITEMS ARE NOT ALLOWED WITH VA THEY BEEN REMOVED FROM YOUR INVENTORY", _x];
     };
 } forEach _allItems;
 
@@ -269,13 +272,12 @@ _assignedItems = (assignedItems player);
     {
         player unassignItem _x;
         player removeItem _x;
-        systemChat format ["ITEMS NOT ALLOWED WITH VA HAVE BEEN REMOVED FROM YOUR INVENTORY", _x];
+        systemChat format ["SOME ITEMS ARE NOT ALLOWED WITH VA> THEY BEEN REMOVED FROM YOUR INVENTORY", _x];
     };
 } forEach _assignedItems;
 
-_whiteListedPrimary = _availableRifles + _availableSnipers + _availableLmgs + _availableSmgs;
 {
-        if !(_x in _whiteListedPrimary) Then
+        if !(_x in _whiteListedItems) Then
         {
                 player removeWeapon _x;
         };
