@@ -25,7 +25,7 @@ _limitExplosives = 2;
 /*/----------DO NOT EDIT BELOW UNLESS YOU KNOW WHAT YOU ARE DOING----------/*/
 /*/------------------------------------------------------------------------/*/
 
-#include "addons/gear/gearWhiteList.sqf"
+#include "gearWhiteList.sqf"
 
 _restrictedRocketsCount = (count _availableRockets) -1;
 _count = 0;
