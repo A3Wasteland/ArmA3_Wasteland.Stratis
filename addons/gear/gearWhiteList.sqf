@@ -15,161 +15,57 @@ _availableRifles =
 "arifle_AKM_FL_F",
 "arifle_AKS_F",
 "arifle_ARX_blk_F",
-"arifle_ARX_ghex_ACO_Pointer_Snds_F",
-"arifle_ARX_ghex_ARCO_Pointer_Snds_F",
-"arifle_ARX_ghex_DMS_Pointer_Snds_Bipod_F",
 "arifle_ARX_ghex_F",
-"arifle_ARX_hex_ACO_Pointer_Snds_F",
-"arifle_ARX_hex_ARCO_Pointer_Snds_F",
-"arifle_ARX_hex_DMS_Pointer_Snds_Bipod_F",
 "arifle_ARX_hex_F",
 "arifle_ARX_Viper_F",
 "arifle_ARX_Viper_hex_F",
-"arifle_CTAR_blk_ACO_F",
-"arifle_CTAR_blk_aco_flash_F",
-"arifle_CTAR_blk_ACO_Pointer_F",
-"arifle_CTAR_blk_ACO_Pointer_Snds_F",
-"arifle_CTAR_blk_ARCO_F",
-"arifle_CTAR_blk_arco_flash_F",
-"arifle_CTAR_blk_ARCO_Pointer_F",
-"arifle_CTAR_blk_ARCO_Pointer_Snds_F",
 "arifle_CTAR_blk_F",
-"arifle_CTAR_blk_flash_F",
-"arifle_CTAR_blk_Pointer_F",
 "arifle_CTAR_ghex_F",
-"arifle_CTAR_GL_blk_ACO_F",
-"arifle_CTAR_GL_blk_aco_flash_F",
-"arifle_CTAR_GL_blk_ACO_Pointer_Snds_F",
-"arifle_CTAR_GL_blk_arco_flash_F",
-"arifle_CTAR_GL_blk_ARCO_Pointer_F",
 "arifle_CTAR_GL_blk_F",
 "arifle_CTAR_GL_ghex_F",
 "arifle_CTAR_GL_hex_F",
 "arifle_CTAR_hex_F",
-"arifle_Katiba_ACO_F",
-"arifle_Katiba_ACO_pointer_F",
-"arifle_Katiba_ACO_pointer_snds_F",
-"arifle_Katiba_ARCO_F",
-"arifle_Katiba_ARCO_pointer_F",
-"arifle_Katiba_ARCO_pointer_snds_F",
-"arifle_Katiba_C_ACO_F",
-"arifle_Katiba_C_ACO_pointer_F",
-"arifle_Katiba_C_ACO_pointer_snds_F",
 "arifle_Katiba_C_F",
 "arifle_Katiba_F",
-"arifle_Katiba_GL_ACO_F",
-"arifle_Katiba_GL_ACO_pointer_F",
-"arifle_Katiba_GL_ACO_pointer_snds_F",
-"arifle_Katiba_GL_ARCO_pointer_F",
 "arifle_Katiba_GL_F",
-"arifle_Katiba_GL_Nstalker_pointer_F",
-"arifle_Katiba_pointer_F",
-"arifle_Mk20_ACO_F",
-"arifle_Mk20_ACO_pointer_F",
 "arifle_Mk20_F",
-"arifle_Mk20_GL_ACO_F",
 "arifle_Mk20_GL_F",
-"arifle_Mk20_GL_MRCO_pointer_F",
 "arifle_Mk20_GL_plain_F",
-"arifle_Mk20_Holo_F",
-"arifle_Mk20_MRCO_F",
-"arifle_Mk20_MRCO_plain_F",
-"arifle_Mk20_MRCO_pointer_F",
 "arifle_Mk20_plain_F",
-"arifle_Mk20_pointer_F",
-"arifle_Mk20C_ACO_F",
-"arifle_Mk20C_ACO_pointer_F",
 "arifle_Mk20C_F",
 "arifle_Mk20C_plain_F",
-"arifle_MX_ACO_F",
-"arifle_MX_ACO_pointer_F",
-"arifle_MX_ACO_pointer_snds_F",
 "arifle_MX_Black_F",
-"arifle_MX_Black_Hamr_pointer_F",
 "arifle_MX_F",
-"arifle_MX_GL_ACO_F",
-"arifle_MX_GL_ACO_pointer_F",
 "arifle_MX_GL_Black_F",
-"arifle_MX_GL_Black_Hamr_pointer_F",
 "arifle_MX_GL_F",
-"arifle_MX_GL_Hamr_pointer_F",
-"arifle_MX_GL_Holo_pointer_snds_F",
-"arifle_MX_GL_khk_ACO_F",
 "arifle_MX_GL_khk_F",
-"arifle_MX_GL_khk_Hamr_Pointer_F",
-"arifle_MX_GL_khk_Holo_Pointer_Snds_F",
-"arifle_MX_Hamr_pointer_F",
-"arifle_MX_Holo_pointer_F",
-"arifle_MX_khk_ACO_Pointer_F",
-"arifle_MX_khk_ACO_Pointer_Snds_F",
 "arifle_MX_khk_F",
-"arifle_MX_khk_Hamr_Pointer_F",
-"arifle_MX_khk_Hamr_Pointer_Snds_F",
-"arifle_MX_khk_Holo_Pointer_F",
-"arifle_MX_khk_Pointer_F",
-"arifle_MX_pointer_F",
-"arifle_MX_RCO_pointer_snds_F",
-"arifle_MXC_ACO_F",
-"arifle_MXC_ACO_pointer_F",
-"arifle_MXC_ACO_pointer_snds_F",
 "arifle_MXC_Black_F",
 "arifle_MXC_F",
-"arifle_MXC_Holo_F",
-"arifle_MXC_Holo_pointer_F",
-"arifle_MXC_Holo_pointer_snds_F",
-"arifle_MXC_khk_ACO_F",
-"arifle_MXC_khk_ACO_Pointer_Snds_F",
 "arifle_MXC_khk_F",
-"arifle_MXC_khk_Holo_Pointer_F",
-"arifle_MXC_SOS_point_snds_F",
 "arifle_MXM_Black_F",
-"arifle_MXM_DMS_F",
-"arifle_MXM_DMS_LP_BI_snds_F",
 "arifle_MXM_F",
-"arifle_MXM_Hamr_LP_BI_F",
-"arifle_MXM_Hamr_pointer_F",
 "arifle_MXM_khk_F",
-"arifle_MXM_khk_MOS_Pointer_Bipod_F",
-"arifle_MXM_khk_MOS_Pointer_Bipod_Snds_F",
-"arifle_MXM_RCO_pointer_snds_F",
-"arifle_MXM_SOS_pointer_F",
 "arifle_SDAR_F",
-"arifle_SPAR_01_blk_ACO_Pointer_F",
-"arifle_SPAR_01_blk_ERCO_Pointer_F",
-"arifle_SPAR_01_blk_ERCO_Pointer_F",
-"arifle_SPAR_01_GL_blk_ACO_Pointer_F",
-"arifle_SPAR_01_GL_blk_ERCO_Pointer_F",
 "arifle_SPAR_01_GL_blk_F",
 "arifle_SPAR_01_GL_khk_F",
 "arifle_SPAR_01_GL_snd_F",
 "arifle_SPAR_01_khk_F",
 "arifle_SPAR_01_snd_F",
 "arifle_SPAR_03_blk_F",
-"arifle_SPAR_03_blk_MOS_Pointer_Bipod_F",
 "arifle_SPAR_03_khk_F",
 "arifle_SPAR_03_snd_F",
-"arifle_TRG20_ACO_F",
-"arifle_TRG20_ACO_Flash_F",
-"arifle_TRG20_ACO_pointer_F",
 "arifle_TRG20_F",
-"arifle_TRG20_Holo_F",
-"arifle_TRG21_ACO_pointer_F",
-"arifle_TRG21_ARCO_pointer_F",
 "arifle_TRG21_F",
-"arifle_TRG21_GL_ACO_pointer_F",
-"arifle_TRG21_GL_F",
-"arifle_TRG21_GL_MRCO_F",
-"arifle_TRG21_MRCO_F",
-"B_Patrol_Soldier_Carrier_weapon_F",
-"B_Patrol_Soldier_Leader_weapon_F",
-"B_Patrol_Soldier_Marksman_weapon_F",
-"B_Patrol_Soldier_Medic_weapon_F",
-"B_Patrol_Soldier_Operator_weapon_F",
-"B_Patrol_Soldier_Specialist_weapon_F"
+"arifle_TRG21_GL_F"
 ];
+
 
 _availableRifleMagazines =
 [
+// Work In Progress
+
+
 "30Rnd_545x39_Mag_Green_F",
 "30Rnd_545x39_Mag_F",
 "30Rnd_545x39_Mag_Tracer_Green_F",
@@ -192,6 +88,7 @@ _availableRifleMagazines =
 "20Rnd_650x39_Cased_Mag_F",
 "20Rnd_762x51_Mag"
 ];
+
 
 _availableSnipers =
 [
@@ -282,8 +179,12 @@ _availableSnipers =
 "srifle_LRR_tna_LRPS_F"
 ];
 
+
 _availableSniperMagazines =
 [
+// Work In Progress
+
+
 "10Rnd_338_Mag",
 "7Rnd_408_Mag",
 "5Rnd_127x108_Mag",
@@ -292,6 +193,7 @@ _availableSniperMagazines =
 "10Rnd_762x54_Mag",
 "10Rnd_93x64_DMR_05_Mag"
 ];
+
 
 _availableLmgs =
 [
@@ -334,8 +236,12 @@ _availableLmgs =
 "MMG_02_sand_RCO_LP_F"
 ];
 
+
 _availableLmgMagazines =
 [
+// Work In Progress
+
+
 "100Rnd_580x42_Mag_F",
 "100Rnd_580x42_Mag_Tracer_F",
 "130Rnd_338_Mag",
@@ -353,6 +259,7 @@ _availableLmgMagazines =
 "150Rnd_762x54_Box_Tracer",
 "150Rnd_93x64_Mag"
 ];
+
 
 _availableSmgs =
 [
@@ -372,8 +279,12 @@ _availableSmgs =
 "SMG_05_F"
 ];
 
+
 _availableSmgMagazines =
 [
+// Work In Progress
+
+
 "30Rnd_9x21_Mag",
 "30Rnd_9x21_Mag_SMG_02",
 "30Rnd_9x21_Green_Mag",
@@ -387,6 +298,7 @@ _availableSmgMagazines =
 "30Rnd_45ACP_Mag_SMG_01_Tracer_Red",
 "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow"
 ];
+
 
 _availableHandGuns =
 [
@@ -407,8 +319,12 @@ _availableHandGuns =
 "hgun_Rook40_snds_F"
 ];
 
+
 _availableHandGunMagazines =
 [
+// Work In Progress
+
+
 "11Rnd_45ACP_Mag",
 "6Rnd_45ACP_Cylinder",
 "9Rnd_45ACP_Mag",
@@ -421,52 +337,61 @@ _availableHandGunMagazines =
 "16Rnd_9x21_yellow_Mag"
 ];
 
+
 _availableLaunchers =
 [
-//"launch_B_Titan_F",
-//"launch_B_Titan_short_F",
-//"launch_B_Titan_short_tna_F",
-//"launch_B_Titan_tna_F",
-//"launch_I_Titan_F",
-//"launch_I_Titan_short_F",
-//"launch_MRAWS_green_F",
-//"launch_MRAWS_green_rail_F",
-//"launch_MRAWS_olive_F",
-//"launch_MRAWS_olive_rail_F",
-//"launch_MRAWS_sand_F",
-//"launch_MRAWS_sand_rail_F",
-//"launch_NLAW_F",
-//"launch_O_Titan_F",
-//"launch_O_Titan_ghex_F",
-//"launch_O_Titan_short_F",
-//"launch_O_Titan_short_ghex_F",
-//"launch_O_Vorona_brown_F",
-//"launch_O_Vorona_green_F",
+// "launch_B_Titan_F",
+// "launch_B_Titan_short_F",
+// "launch_B_Titan_short_tna_F",
+// "launch_B_Titan_tna_F",
+// "launch_I_Titan_F",
+// "launch_I_Titan_short_F",
+// "launch_MRAWS_green_F",
+// "launch_MRAWS_green_rail_F",
+// "launch_MRAWS_olive_F",
+// "launch_MRAWS_olive_rail_F",
+// "launch_MRAWS_sand_F",
+// "launch_MRAWS_sand_rail_F",
+// "launch_NLAW_F",
+// "launch_O_Titan_F",
+// "launch_O_Titan_ghex_F",
+// "launch_O_Titan_short_F",
+// "launch_O_Titan_short_ghex_F",
+// "launch_O_Vorona_brown_F",
+// "launch_O_Vorona_green_F",
 "launch_RPG32_F",
 "launch_RPG32_ghex_F",
 "launch_RPG7_F"
-//"launch_Titan_F",
-//"launch_Titan_short_F"
+// "launch_Titan_F",
+// "launch_Titan_short_F"
 ];
+
 
 _availableRockets =
 [
+// From storeConfig.sqf
+// Accuracy and Completeness ==
+// NOT Check
+
+
 "RPG7_F",
 "RPG32_F",
-"RPG32_HE_F",
-"MRAWS_HEAT_F",
-"MRAWS_HE_F",
-"Vorona_HEAT",
-"Vorona_HE",
-"NLAW_F",
-"Titan_AT",
-"Titan_AP",
-"Titan_AA"
+"RPG32_HE_F"
+// "MRAWS_HEAT_F",
+// "MRAWS_HE_F",
+// "Vorona_HEAT",
+// "Vorona_HE",
+// "NLAW_F",
+// "Titan_AT",
+// "Titan_AP",
+// "Titan_AA"
 ];
 
 
 _availableHandGrenades =
 [
+// Hand Grenades used by THROW
+// Complete from https://community.bistudio.com/wiki/Arma_3_CfgMagazines
 "HandGrenade_Stone",
 "HandGrenade",
 "MiniGrenade",
@@ -489,6 +414,9 @@ _availableHandGrenades =
 
 _availableGLRounds =
 [
+// Work In Progress
+
+
 "1Rnd_HE_Grenade_shell",
 "UGL_FlareGreen_F",
 "UGL_FlareCIR_F",
@@ -504,8 +432,12 @@ _availableGLRounds =
 //"1Rnd_SmokeYellow_Grenade_shell"
 ];
 
+
 _available3GLRounds =
 [
+// Work In Progress
+
+
 "3Rnd_UGL_FlareGreen_F",
 "3Rnd_UGL_FlareCIR_F",
 "3Rnd_UGL_FlareRed_F",
@@ -521,8 +453,11 @@ _available3GLRounds =
 "3Rnd_HE_Grenade_shell"
 ];
 
+
 _availableExplosives =
 [
+// Explosives used by PUT
+// Complete from https://community.bistudio.com/wiki/Arma_3_CfgMagazines
 "APERSBoundingMine_Range_Mag",
 "APERSMine_Range_Mag",
 "APERSMineDispenser_Mag",
@@ -539,8 +474,12 @@ _availableExplosives =
 "SatchelCharge_Remote_Mag"
 ];
 
+
 _availableHeadGear =
 [
+// Work In Progress
+
+
 "H_HelmetSpecO_blk",
 "H_HelmetSpecO_ghex_F",
 "H_HelmetSpecO_ocamo",
@@ -763,19 +702,28 @@ _availableHeadGear =
 "H_WirelessEarpiece_F"
 ];
 
+
 _availableHeadGearAccessories =
 [
-//"O_NVGoggles_ghex_F",
-//"O_NVGoggles_hex_F",
-//"O_NVGoggles_urb_F",
-"NVGoggles_OPFOR",
 "NVGoggles",
 "NVGoggles_INDEP",
-"NVGoggles_tna_F"
+"NVGoggles_OPFOR",
+"NVGoggles_tna_F",
+"NVGogglesB_blk_F",
+"NVGogglesB_grn_F",
+"NVGogglesB_gry_F"
+// "O_NVGoggles_ghex_F",
+// "O_NVGoggles_hex_F",
+// "O_NVGoggles_urb_F",
+// "O_UavTerminal",
 ];
+
 
 _availableUniforms =
 [
+// Work In Progress
+
+
 "U_B_CombatUniform_mcam",
 "U_B_CombatUniform_mcam_tshirt",
 "U_B_CombatUniform_mcam_vest",
@@ -906,8 +854,12 @@ _availableUniforms =
 "U_B_CombatUniform_mcam_worn"
 ];
 
+
 _availableBackPacks =
 [
+// Work In Progress
+
+
 "B_AssaultPack_blk","B_AssaultPack_cbr",
 "B_AssaultPack_dgtl",
 "B_AssaultPack_rgr",
@@ -963,8 +915,12 @@ _availableBackPacks =
 "B_ViperLightHarness_oli_F"
 ];
 
+
 _availableVests =
 [
+// Work In Progress
+
+
 "V_PlateCarrierGL_blk",
 "V_PlateCarrierGL_rgr",
 "V_PlateCarrierGL_mtp",
@@ -1045,26 +1001,78 @@ _availableVests =
 "V_Press_F"
 ];
 
+
 _availableAccessories =
 [
+"B_UavTerminal",
 "Binocular",
-"ItemCompass",
+"C_UavTerminal",
 "FirstAidKit",
+"I_UavTerminal",
+"Integrated_NVG_F",
+"Integrated_NVG_TI_0_F",
+"Integrated_NVG_TI_1_F",
+"ItemCompass",
 "ItemGPS",
 "ItemMap",
+"ItemRadio",
+"ItemWatch",
+"Laserdesignator",
+"Laserdesignator_01_khk_F",
+"Laserdesignator_02",
+"Laserdesignator_02_ghex_F",
+"Laserdesignator_03",
 "Medikit",
 "MineDetector",
-"ItemRadio",
 "Rangefinder",
-"ToolKit",
-"ItemWatch"
+"ToolKit"
 ];
 
 
 _availableAttachments =
 [
-"optic_ACO_grn",
+"acc_flashlight",
+"acc_flashlight_pistol",
+"acc_flashlight_smg_01",
+"acc_pointer_IR",
+"bipod_01_F_blk",
+"bipod_01_F_khk",
+"bipod_01_F_mtp",
+"bipod_01_F_snd",
+"bipod_02_F_blk",
+"bipod_02_F_hex",
+"bipod_02_F_tan",
+"bipod_03_F_blk",
+"bipod_03_F_oli",
+"muzzle_snds_338_black",
+"muzzle_snds_338_green",
+"muzzle_snds_338_sand",
+"muzzle_snds_58_blk_F",
+"muzzle_snds_58_ghex_F",
+"muzzle_snds_58_hex_F",
+"muzzle_snds_58_wdm_F",
+"muzzle_snds_65_TI_blk_F",
+"muzzle_snds_65_TI_ghex_F",
+"muzzle_snds_65_TI_hex_F",
+"muzzle_snds_93mmg",
+"muzzle_snds_93mmg_tan",
+"muzzle_snds_acp",
+"muzzle_snds_B",
+"muzzle_snds_B_khk_F",
+"muzzle_snds_B_snd_F",
+"muzzle_snds_H",
+"muzzle_snds_H_khk_F",
+"muzzle_snds_H_MG",
+"muzzle_snds_H_MG_blk_F",
+"muzzle_snds_H_MG_khk_F",
+"muzzle_snds_H_snd_F",
+"muzzle_snds_H_SW",
+"muzzle_snds_L",
+"muzzle_snds_M",
+"muzzle_snds_m_khk_F",
+"muzzle_snds_m_snd_F",
 "optic_Aco",
+"optic_ACO_grn",
 "optic_ACO_grn_smg",
 "optic_Aco_smg",
 "optic_AMS",
@@ -1073,23 +1081,19 @@ _availableAttachments =
 "optic_Arco",
 "optic_Arco_blk_F",
 "optic_Arco_ghex_F",
-"bipod_03_F_blk",
-"bipod_02_F_blk",
-"bipod_01_F_blk",
-"bipod_02_F_hex",
-"bipod_01_F_khk",
-"bipod_01_F_mtp",
-"bipod_03_F_oli",
-"bipod_01_F_snd",
-"bipod_02_F_tan",
 "optic_DMS",
 "optic_DMS_ghex_F",
 "optic_ERCO_blk_F",
 "optic_ERCO_khk_F",
 "optic_ERCO_snd_F",
-"acc_flashlight",
-"acc_flashlight_smg_01",
-"acc_pointer_IR",
+"optic_Hamr",
+"optic_Hamr_khk_F",
+"optic_Holosight",
+"optic_Holosight_blk_F",
+"optic_Holosight_khk_F",
+"optic_Holosight_smg",
+"optic_Holosight_smg_blk_F",
+"optic_Holosight_smg_khk_F",
 "optic_KHS_blk",
 "optic_KHS_hex",
 "optic_KHS_old",
@@ -1097,40 +1101,13 @@ _availableAttachments =
 "optic_LRPS",
 "optic_LRPS_ghex_F",
 "optic_LRPS_tna_F",
-"optic_Holosight",
-"optic_Holosight_blk_F",
-"optic_Holosight_khk_F",
-"optic_Holosight_smg",
-"optic_Holosight_smg_blk_F",
-"optic_Holosight_smg_khk_F",
-"optic_SOS","optic_SOS_khk_F",
 "optic_MRCO",
 "optic_MRD",
+// "optic_Nightstalker",
 "optic_NVS",
-"acc_flashlight_pistol",
-"optic_Hamr",
-"optic_Hamr_khk_F",
-"muzzle_snds_338_black",
-"muzzle_snds_338_green",
-"muzzle_snds_338_sand",
-"muzzle_snds_acp",
-"muzzle_snds_M",
-"muzzle_snds_m_khk_F",
-"muzzle_snds_m_snd_F",
-"muzzle_snds_H",
-"muzzle_snds_H_khk_F",
-"muzzle_snds_H_snd_F",
-"muzzle_snds_B",
-"muzzle_snds_B_khk_F",
-"muzzle_snds_B_snd_F",
-"muzzle_snds_L",
-"muzzle_snds_93mmg",
-"muzzle_snds_93mmg_tan",
-"muzzle_snds_58_blk_F",
-"muzzle_snds_58_ghex_F",
-"muzzle_snds_58_hex_F",
-"muzzle_snds_65_TI_blk_F",
-"muzzle_snds_65_TI_ghex_F",
-"muzzle_snds_65_TI_hex_F",
+"optic_SOS",
+"optic_SOS_khk_F",
+// "optic_tws",
+// "optic_tws_mg",
 "optic_Yorris"
 ];
