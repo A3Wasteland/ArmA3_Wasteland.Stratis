@@ -347,7 +347,7 @@ _availableExplosives =
 "APERSBoundingMine_Range_Mag",
 "APERSMine_Range_Mag",
 //"APERSMineDispenser_Mag",
-"APERSTripMine_Wire_Mag",
+//"APERSTripMine_Wire_Mag",
 "ATMine_Range_Mag",
 "ClaymoreDirectionalMine_Remote_Mag",
 "DemoCharge_Remote_Mag",
@@ -363,9 +363,6 @@ _availableExplosives =
 
 _availableHeadGear =
 [
-// Work In Progress
-
-
 "H_HelmetSpecO_blk",
 "H_HelmetSpecO_ghex_F",
 "H_HelmetSpecO_ocamo",
@@ -606,9 +603,6 @@ _availableHeadGearAccessories =
 
 _availableUniforms =
 [
-// Work In Progress
-
-
 "U_B_CombatUniform_mcam",
 "U_B_CombatUniform_mcam_tshirt",
 "U_B_CombatUniform_mcam_vest",
@@ -742,9 +736,6 @@ _availableUniforms =
 
 _availableBackPacks =
 [
-// Work In Progress
-
-
 "B_AssaultPack_blk",
 "B_AssaultPack_cbr",
 "B_AssaultPack_dgtl",
@@ -804,9 +795,6 @@ _availableBackPacks =
 
 _availableVests =
 [
-// Work In Progress
-
-
 "V_PlateCarrierGL_blk",
 "V_PlateCarrierGL_rgr",
 "V_PlateCarrierGL_mtp",
