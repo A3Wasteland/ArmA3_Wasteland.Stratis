@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=10;
+		nextID=12;
 	};
 	class Camera
 	{
@@ -227,24 +227,6 @@ class CustomAttributes
 						type[]=
 						{
 							"ARRAY"
-						};
-					};
-					class value
-					{
-						items=1;
-						class Item0
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="None";
-							};
 						};
 					};
 				};
@@ -8935,7 +8917,7 @@ class Mission
 					name="Parking1_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=222.76918;
+					angle=222.76917;
 					id=597;
 				};
 				class Item9
@@ -9793,7 +9775,7 @@ class Mission
 					name="Parking4_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=213.11589;
+					angle=213.11588;
 					id=649;
 					atlOffset=53.335487;
 				};
