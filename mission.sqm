@@ -9036,7 +9036,7 @@ class Mission
 						textures="Orange";
 					};
 					id=604;
-					type="C_Truck_02_box_F";
+					type="B_T_Truck_01_ammo_F";
 					atlOffset=-0.078711748;
 				};
 				class Item16
@@ -9237,7 +9237,7 @@ class Mission
 						textures="Orange";
 					};
 					id=616;
-					type="C_Truck_02_box_F";
+					type="B_T_Truck_01_ammo_F";
 					atlOffset=49.137833;
 				};
 				class Item26
