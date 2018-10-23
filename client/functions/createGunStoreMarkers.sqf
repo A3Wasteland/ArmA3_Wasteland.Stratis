@@ -73,22 +73,22 @@ _setStatus =
 	switch(_this select 1) do {
 		case "EMPTY": {
 			_markerNameZone setmarkerColorLocal _col_empty;
-			_markerNameDescription setmarkerColorLocal _col_empty;
+			_markerNameDescription setmarkerColorLocal "ColorBlue";
 			_markerNameDescription setMarkerTextLocal "Gear Store";
 		};
 		case "ENEMY": {
 			_markerNameZone setmarkerColorLocal _col_enemy;
-			_markerNameDescription setmarkerColorLocal _col_enemy;
+			_markerNameDescription setmarkerColorLocal "ColorBlue";
 			_markerNameDescription setMarkerTextLocal "Gear Store (Enemies)";
 		};
 		case "FRIENDLY": {
 			_markerNameZone setmarkerColorLocal _col_friendly;
-			_markerNameDescription setmarkerColorLocal _col_friendly;
+			_markerNameDescription setmarkerColorLocal "ColorBlue";
 			_markerNameDescription setMarkerTextLocal "Gear Store (Allies)";
 		};
 		case "MIXED": {
 			_markerNameZone setmarkerColorLocal _col_mixed;
-			_markerNameDescription setmarkerColorLocal _col_mixed;
+			_markerNameDescription setmarkerColorLocal "ColorBlue";
 			_markerNameDescription setMarkerTextLocal "Gear Store (Enemies and Allies)";
 		};
 	};
