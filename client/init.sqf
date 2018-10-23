@@ -147,7 +147,7 @@ if (["A3W_survivalSystem"] call isConfigOn) then
 		waitUntil {!isNil "storage_functions_defined"};
 	};
 
-	[] execVM "client\functions\createGeneralStoreMarkers.sqf";
+	// [] execVM "client\functions\createGeneralStoreMarkers.sqf";
 	[] execVM "client\functions\createVehicleStoreMarkers.sqf";
 	[] execVM "client\functions\createLegendMarkers.sqf";
 };

@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4;
+		nextID=6;
 	};
 	class Camera
 	{
-		pos[]={1924.8414,8.0003548,5725.8613};
-		dir[]={0.82491452,-0.40743935,-0.39213651};
-		up[]={0.36808726,0.91316116,-0.17497331};
-		aside[]={-0.42938235,-1.49275e-006,-0.9032439};
+		pos[]={1936.6621,73.906845,5795.7759};
+		dir[]={0.0036414193,-0.50872558,-0.86107391};
+		up[]={0.0021548304,0.86085278,-0.50881648};
+		aside[]={-1.0000979,-3.2121488e-007,-0.0042190226};
 	};
 };
 binarizationWanted=0;
@@ -9203,7 +9203,7 @@ class Mission
 					name="Parking1_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=222.76924;
+					angle=222.76923;
 					id=597;
 				};
 				class Item9
@@ -10082,7 +10082,7 @@ class Mission
 					name="Parking4_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=213.11595;
+					angle=213.11594;
 					id=649;
 					atlOffset=53.335487;
 				};
@@ -10103,7 +10103,7 @@ class Mission
 					};
 					id=730;
 					type="B_T_Truck_01_ammo_F";
-					atlOffset=-0.19000006;
+					atlOffset=-0.19002438;
 				};
 				class Item61
 				{
@@ -10143,7 +10143,7 @@ class Mission
 				};
 			};
 			id=588;
-			atlOffset=0.073522091;
+			atlOffset=27.327789;
 		};
 		class Item434
 		{
@@ -10206,7 +10206,7 @@ class Mission
 			};
 			id=677;
 			type="Land_BusStop_01_sign_F";
-			atlOffset=0.018749952;
+			atlOffset=0.018749714;
 		};
 		class Item437
 		{
@@ -10223,6 +10223,7 @@ class Mission
 			};
 			id=691;
 			type="Land_Billboard_03_duckit_F";
+			atlOffset=2.3841858e-007;
 			class CustomAttributes
 			{
 				class Attribute0

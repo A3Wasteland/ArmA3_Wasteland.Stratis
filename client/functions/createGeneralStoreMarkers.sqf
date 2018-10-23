@@ -8,6 +8,9 @@
 //	@file Args:
 
 //Creates the markers around general stores.
+
+// THIS CODE IS DISABLED - REMOVED init.sqf -Vince
+
 {
 	if (!isPlayer _x && {(vehicleVarName _x) select [0,8] == "GenStore"}) then
 	{

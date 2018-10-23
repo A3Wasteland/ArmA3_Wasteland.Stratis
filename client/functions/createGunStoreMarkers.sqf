@@ -16,7 +16,7 @@ _col_mixed = "ColorOrange";
 
 //Creates the markers around gunstores.
 {
-	if (!isPlayer _x && {(vehicleVarName _x) select [0,8] == "GunStore"}) then
+	if (!isPlayer _x && {(vehicleVarName _x) select [0,8] in ["GunStore", "GenStore"]}) then
 	{
 		_npcPos = getPosATL _x;
 
@@ -27,7 +27,7 @@ _col_mixed = "ColorOrange";
 			deleteMarkerLocal _markerName;
 			_marker = createMarkerLocal [_markerName, _npcPos];
 			_markerName setMarkerShapeLocal "ELLIPSE";
-			_markerName setMarkerColorLocal _col_empty;
+			_markerName setMarkerColorLocal "ColorBlue";
 			_markerName setMarkerSizeLocal [_radius, _radius];
 			_markerName setMarkerBrushLocal "Grid";
 			_markerName setMarkerAlphaLocal 0.5;
@@ -54,7 +54,7 @@ _col_mixed = "ColorOrange";
 		_markerName setMarkerTypeLocal "mil_dot";
 		_markerName setMarkerColorLocal _col_empty;
 		_markerName setMarkerSizeLocal [1,1];
-		_markerName setMarkerTextLocal "GUN STORE";
+		_markerName setMarkerTextLocal "GEAR STORE";
 		// _markerName setMarkerAlphaLocal 0.5;
 
 		_status pushBack "EMPTY";
@@ -74,22 +74,22 @@ _setStatus =
 		case "EMPTY": {
 			_markerNameZone setmarkerColorLocal _col_empty;
 			_markerNameDescription setmarkerColorLocal _col_empty;
-			_markerNameDescription setMarkerTextLocal "GUN STORE";
+			_markerNameDescription setMarkerTextLocal "GEAR STORE";
 		};
 		case "ENEMY": {
 			_markerNameZone setmarkerColorLocal _col_enemy;
 			_markerNameDescription setmarkerColorLocal _col_enemy;
-			_markerNameDescription setMarkerTextLocal "GUN STORE (Enemies)";
+			_markerNameDescription setMarkerTextLocal "GEAR STORE (Enemies)";
 		};
 		case "FRIENDLY": {
 			_markerNameZone setmarkerColorLocal _col_friendly;
 			_markerNameDescription setmarkerColorLocal _col_friendly;
-			_markerNameDescription setMarkerTextLocal "GUN STORE (Allies)";
+			_markerNameDescription setMarkerTextLocal "GEAR STORE (Allies)";
 		};
 		case "MIXED": {
 			_markerNameZone setmarkerColorLocal _col_mixed;
 			_markerNameDescription setmarkerColorLocal _col_mixed;
-			_markerNameDescription setMarkerTextLocal "GUN STORE (Enemies and Allies)";
+			_markerNameDescription setMarkerTextLocal "GEAR STORE (Enemies and Allies)";
 		};
 	};
 
