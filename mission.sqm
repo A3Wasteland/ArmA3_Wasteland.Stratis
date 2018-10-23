@@ -8,7 +8,7 @@ class EditorData
 	toggles=518;
 	class ItemIDProvider
 	{
-		nextID=769;
+		nextID=777;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1936.6621,73.906845,5795.7759};
-		dir[]={0.0036414193,-0.50872558,-0.86107391};
-		up[]={0.0021548304,0.86085278,-0.50881648};
-		aside[]={-1.0000979,-3.2121488e-007,-0.0042190226};
+		pos[]={4352.2202,252.625,3795.1836};
+		dir[]={-0.34240583,-0.65194494,0.67655605};
+		up[]={-0.29439425,0.75826472,0.58169097};
+		aside[]={0.89223939,5.1280949e-008,0.4515636};
 	};
 };
 binarizationWanted=0;
@@ -309,7 +309,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=448;
+		items=451;
 		class Item0
 		{
 			dataType="Group";
@@ -9203,7 +9203,7 @@ class Mission
 					name="Parking1_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=222.76923;
+					angle=222.76921;
 					id=597;
 				};
 				class Item9
@@ -10082,7 +10082,7 @@ class Mission
 					name="Parking4_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=213.11594;
+					angle=213.11592;
 					id=649;
 					atlOffset=53.335487;
 				};
@@ -10578,6 +10578,101 @@ class Mission
 			};
 			id=768;
 			type="Land_Atm_01_F";
+		};
+		class Item448
+		{
+			dataType="Marker";
+			position[]={4374.5,228.875,3755.5};
+			name="VehStore5_landSpawn";
+			type="Empty";
+			colorName="ColorBlack";
+			id=773;
+			atlOffset=3.9600067;
+		};
+		class Item449
+		{
+			dataType="Marker";
+			position[]={4365.875,227.625,3816.375};
+			name="VehStore5_heliSpawn";
+			type="Empty";
+			colorName="ColorBlack";
+			id=774;
+			atlOffset=0.8374939;
+		};
+		class Item450
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4347.2451,226.83919,3802.4399};
+						angles[]={0,5.1508851,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+					    init="[this] spawn A3W_fnc_setupStoreNPC";
+						name="VehStore5";
+					};
+					id=776;
+					type="C_man_1_1_F";
+					atlOffset=0.00030517578;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=775;
+			atlOffset=0.00030517578;
 		};
 	};
 };

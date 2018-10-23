@@ -27,7 +27,7 @@ _col_mixed = "ColorOrange";
 			deleteMarkerLocal _markerName;
 			_marker = createMarkerLocal [_markerName, _npcPos];
 			_markerName setMarkerShapeLocal "ELLIPSE";
-			_markerName setMarkerColorLocal "ColorBlue";
+			_markerName setMarkerColorLocal _col_empty;
 			_markerName setMarkerSizeLocal [_radius, _radius];
 			_markerName setMarkerBrushLocal "Grid";
 			_markerName setMarkerAlphaLocal 0.5;
@@ -52,9 +52,9 @@ _col_mixed = "ColorOrange";
 		_marker = createMarkerLocal [_markerName, _npcPos];
 		_markerName setMarkerShapeLocal "ICON";
 		_markerName setMarkerTypeLocal "mil_dot";
-		_markerName setMarkerColorLocal _col_empty;
+		_markerName setMarkerColorLocal "ColorBlue";
 		_markerName setMarkerSizeLocal [1,1];
-		_markerName setMarkerTextLocal "GEAR STORE";
+		_markerName setMarkerTextLocal "Gear Store";
 		// _markerName setMarkerAlphaLocal 0.5;
 
 		_status pushBack "EMPTY";
@@ -74,22 +74,22 @@ _setStatus =
 		case "EMPTY": {
 			_markerNameZone setmarkerColorLocal _col_empty;
 			_markerNameDescription setmarkerColorLocal _col_empty;
-			_markerNameDescription setMarkerTextLocal "GEAR STORE";
+			_markerNameDescription setMarkerTextLocal "Gear Store";
 		};
 		case "ENEMY": {
 			_markerNameZone setmarkerColorLocal _col_enemy;
 			_markerNameDescription setmarkerColorLocal _col_enemy;
-			_markerNameDescription setMarkerTextLocal "GEAR STORE (Enemies)";
+			_markerNameDescription setMarkerTextLocal "Gear Store (Enemies)";
 		};
 		case "FRIENDLY": {
 			_markerNameZone setmarkerColorLocal _col_friendly;
 			_markerNameDescription setmarkerColorLocal _col_friendly;
-			_markerNameDescription setMarkerTextLocal "GEAR STORE (Allies)";
+			_markerNameDescription setMarkerTextLocal "Gear Store (Allies)";
 		};
 		case "MIXED": {
 			_markerNameZone setmarkerColorLocal _col_mixed;
 			_markerNameDescription setmarkerColorLocal _col_mixed;
-			_markerNameDescription setMarkerTextLocal "GEAR STORE (Enemies and Allies)";
+			_markerNameDescription setMarkerTextLocal "Gear Store (Enemies and Allies)";
 		};
 	};
 
