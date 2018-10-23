@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8;
+		nextID=10;
 	};
 	class Camera
 	{
-		pos[]={2737.9741,37.925903,302.72565};
-		dir[]={0.34950212,-0.47948572,-0.80496961};
-		up[]={0.19096611,0.87754005,-0.43983111};
-		aside[]={-0.9172858,4.0436862e-007,-0.39826682};
+		pos[]={3030.1777,673.43335,2353.6108};
+		dir[]={0.076540239,-0.50822246,0.85785717};
+		up[]={0.045167182,0.86121303,0.50622708};
+		aside[]={0.99607128,3.8529106e-007,-0.08887399};
 	};
 };
 binarizationWanted=0;
@@ -67,12 +67,11 @@ addons[]=
 	"A3_Structures_F_EPC_Civ_Accessories",
 	"A3_Structures_F_System",
 	"A3_Structures_F_EPA_Mil_Scrapyard",
-	"A3_Soft_F_Gamma_Truck_02",
+	"A3_Soft_F_Exp_Truck_01",
 	"A3_Boat_F_Jets_Carrier_01",
 	"A3_Structures_F_Training",
 	"A3_Structures_F_EPC_Dominants_GhostHotel",
 	"A3_Structures_F_Kart_Civ_SportsGrounds",
-	"A3_Soft_F_Exp_Truck_01",
 	"A3_Structures_F_Argo_Civilian_Accessories",
 	"A3_Structures_F_Argo_Commercial_Billboards",
 	"A3_Boat_F_Destroyer_Destroyer_01",
@@ -85,7 +84,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=17;
+		items=16;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -151,8 +150,8 @@ class AddonsMetaData
 		};
 		class Item9
 		{
-			className="A3_Soft_F_Gamma";
-			name="Arma 3 - Unarmored Land Vehicles";
+			className="A3_Soft_F_Exp";
+			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -172,33 +171,26 @@ class AddonsMetaData
 		};
 		class Item12
 		{
-			className="A3_Soft_F_Exp";
-			name="Arma 3 Apex - Unarmored Land Vehicles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item13
-		{
 			className="A3_Structures_F_Argo";
 			name="Arma 3 Malden - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item13
 		{
 			className="A3_Boat_F_Destroyer";
 			name="Arma 3 Jets - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item14
 		{
 			className="A3_Boat_F_EPC";
 			name="Arma 3 Win Episode - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item15
 		{
 			className="A3_Props_F_Tank";
 			name="Arma 3 Tank - Decorative and Mission Objects";
@@ -211,6 +203,7 @@ randomSeed=40661;
 class ScenarioData
 {
 	author="Team Wasteland and El Presidente";
+	overViewPicture="mapConfig/loading.jpg";
 	class Header
 	{
 		gameType="Survive";
@@ -4590,7 +4583,7 @@ class Mission
 			fillName="DiagGrid";
 			a=100;
 			b=100;
-			angle=67.669991;
+			angle=67.669983;
 			id=319;
 			atlOffset=4.4775;
 		};
@@ -8942,7 +8935,7 @@ class Mission
 					name="Parking1_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=222.7692;
+					angle=222.76918;
 					id=597;
 				};
 				class Item9
@@ -9028,7 +9021,6 @@ class Mission
 						angles[]={6.2257466,1.8510264,0.062412973};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						init="[this, true] call A3W_fnc_setupResupplyTruck";
@@ -9037,7 +9029,7 @@ class Mission
 					};
 					id=604;
 					type="B_T_Truck_01_ammo_F";
-					atlOffset=-0.078711748;
+					atlOffset=0.3790288;
 				};
 				class Item16
 				{
@@ -9238,7 +9230,7 @@ class Mission
 					};
 					id=616;
 					type="B_T_Truck_01_ammo_F";
-					atlOffset=49.137833;
+					atlOffset=0.42835045;
 				};
 				class Item26
 				{
@@ -9801,7 +9793,7 @@ class Mission
 					name="Parking4_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=213.11591;
+					angle=213.11589;
 					id=649;
 					atlOffset=53.335487;
 				};
@@ -9877,6 +9869,7 @@ class Mission
 					};
 					id=782;
 					type="B_T_Truck_01_ammo_F";
+					atlOffset=-0.0018157959;
 				};
 				class Item63
 				{
@@ -9895,10 +9888,11 @@ class Mission
 					};
 					id=784;
 					type="B_T_Truck_01_ammo_F";
+					atlOffset=-0.0045044422;
 				};
 			};
 			id=588;
-			atlOffset=-75.274994;
+			atlOffset=-13.712318;
 		};
 		class Item419
 		{
