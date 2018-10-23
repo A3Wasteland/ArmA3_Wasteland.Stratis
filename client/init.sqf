@@ -177,3 +177,6 @@ inGameUISetEventHandler ["Action", "_this call A3W_fnc_inGameUIActionEvent"];
 		_x setVariable ["side", playerSide, true];
 	};
 } forEach pvar_spawn_beacons;
+
+// Epoch StatusBar port by CRE4MPIE
+if(hasInterface) then{[] execVM "addons\statusBar\statusbar.sqf"};
