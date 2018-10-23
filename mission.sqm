@@ -203,7 +203,7 @@ randomSeed=40661;
 class ScenarioData
 {
 	author="Team Wasteland and El Presidente";
-	overViewPicture="mapConfig/loading.jpg";
+	overViewPicture="mapConfig\Loading.jpg";
 	class Header
 	{
 		gameType="Survive";
