@@ -131,3 +131,5 @@ class CfgRemoteExec // applies only to clients
 		#endif
 	};
 };
+
+#include "infiSTAR_AdminMenu.hpp"
