@@ -19,7 +19,7 @@ if (isNull _dialog) exitWith {};
 _input = _dialog displayCtrl AtmAmountInput_IDC;
 _amount = _input call mf_verify_money_input;
 
-if (_amount < 1) exitWith {};
+if (_amount < 100) exitWith {systemChat "Please enter more then 100 cash"};
 
 if (player getVariable ["bmoney", 0] < _amount) exitWith
 {
