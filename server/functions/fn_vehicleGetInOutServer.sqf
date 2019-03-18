@@ -26,7 +26,7 @@ _vehicle setVariable ["vehSaving_lastUse", diag_tickTime];
 if (isNull objectParent _unit) then 
 {
 	//Check the current position of the player
-	_pos = [_unit, 0, 0.25, 2, 0, 1, 0] call BIS_fnc_findSafePos;
+	_pos = [_unit, 0, 0.25, 0.5, 0, 1, 0] call BIS_fnc_findSafePos;
 
 	//Function returns current position [x,y] if it is safe, otherwise map center
 	// is returned [x,y,z]. In the second case, the player current position is
