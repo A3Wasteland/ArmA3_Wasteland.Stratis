@@ -5,6 +5,7 @@
 //	@file Author: AgentRev
 
 params ["_vehicle", "_seat", "_unit"];
+private ["_pos"];
 
 _unit setVariable ["lastVehicleRidden", netId _vehicle, true];
 
