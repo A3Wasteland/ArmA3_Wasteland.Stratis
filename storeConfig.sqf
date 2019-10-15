@@ -690,7 +690,7 @@ uniformArray = compileFinal str
 	["Granit-T Suit", "U_O_R_Gorka_01_camo_F", 200, "uni"],
 	["Granit-N Suit", "U_O_R_Gorka_01_black_F", 200, "uni"],
 	["Default Uniform (NATO)", "U_B_CombatUniform_mcam", 25, "uni"],
-	["Default Uniform (CSAT)", "U_O_OfficerUniform_ocamo", 25, "uni"],
+	["Default Uniform (CSAT)", "U_O_officer_noInsignia_hex_F", 25, "uni", "noDLC"],
 	["Default Uniform (AAF)", "U_I_CombatUniform", 25, "uni"],
 	["Recon Fatigues (MTP)", "U_B_CombatUniform_mcam_vest", 25, "uni"],
 	["Recon Fatigues (Tropic)", "U_B_T_Soldier_SL_F", 25, "uni", "noDLC"],
@@ -1031,8 +1031,8 @@ landArray = compileFinal str
 [
 	// SKIPSAVE = will not be autosaved until first manual force save, good for cheap vehicles that usually get abandoned
 
-	["Remote Designator (NATO)", "B_Static_Designator_01_F", GENSTORE_ITEM_PRICE("B_Static_Designator_01_weapon_F"), "vehicle", "SKIPSAVE"],
-	["Remote Designator (CSAT)", "O_Static_Designator_02_F", GENSTORE_ITEM_PRICE("O_Static_Designator_02_weapon_F"), "vehicle", "SKIPSAVE"],
+	["Remote Designator (NATO)", "B_Static_Designator_01_F", GENSTORE_ITEM_PRICE("B_Static_Designator_01_weapon_F"), "vehicle", "SKIPSAVE", "HIDDEN"], // for sell vehicle price
+	["Remote Designator (CSAT)", "O_Static_Designator_02_F", GENSTORE_ITEM_PRICE("O_Static_Designator_02_weapon_F"), "vehicle", "SKIPSAVE", "HIDDEN"],
 
 	["Kart", "C_Kart_01_F", 400, "vehicle", "SKIPSAVE"],
 	["Tractor", "C_Tractor_01_F", 500, "vehicle", "SKIPSAVE"],
