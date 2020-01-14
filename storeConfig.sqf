@@ -979,7 +979,7 @@ tanksArray = compileFinal str
 	["MBT-52 Kuma", "I_MBT_03_cannon_F", 50000, "vehicle"],
 	["M2A1 Slammer", "B_MBT_01_cannon_F", 50000, "vehicle"],
 	["M2A4 Slammer (Urban)", "B_MBT_01_TUSK_F", 70000, "vehicle"], // Commander gun variant
-	["T-100 Varsuk", "O_MBT_02_cannon_F", 70000, "vehicle"],
+	["T-100 Varsuk", "O_MBT_02_cannon_F", 100000, "vehicle"],
 	["T-140 Angara", "O_MBT_04_cannon_F", 200000, "vehicle"],
 	["T-140K Angara", "O_MBT_04_command_F", 250000, "vehicle"]
 ];
@@ -1009,13 +1009,13 @@ helicoptersArray = compileFinal str
 	["UH-80 Ghost Hawk", "B_Heli_Transport_01_F", 10000, "vehicle"], // UH-60 Stealth with 2 side miniguns
 	["AH-9 Pawnee (No rockets)", "B_Heli_Light_01_dynamicLoadout_F", 10000, "vehicle", "variant_pawneeGun"], // Armed AH-6 (no missiles)
 	["AH-9 Pawnee", "B_Heli_Light_01_dynamicLoadout_F", 30000, "vehicle", "variant_pawneeNormal"], // Armed AH-6
-	["PO-30 Orca (DAR)", "O_Heli_Light_02_dynamicLoadout_F", 30000, "vehicle", "variant_orcaDAR"], // Armed Ka-60
+	["PO-30 Orca (DAR)", "O_Heli_Light_02_dynamicLoadout_F", 40000, "vehicle", "variant_orcaDAR"], // Armed Ka-60
 	["PO-30 Orca (DAGR)", "O_Heli_Light_02_dynamicLoadout_F", 50000, "vehicle", "variant_orcaDAGR"], // Armed Ka-60, add "HIDDEN" if you don't want it, but don't remove the line!
-	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 30000, "vehicle"], // Armed AW159
-	["AH-99 Blackfoot", "B_Heli_Attack_01_dynamicLoadout_F", 70000, "vehicle"], // RAH-66 with gunner
-	["Mi-48 Kajman", "O_Heli_Attack_02_dynamicLoadout_F", 100000, "vehicle"], // Mi-28 with gunner 
+	["WY-55 Hellcat (Armed)", "I_Heli_light_03_dynamicLoadout_F", 40000, "vehicle"], // Armed AW159
+	["AH-99 Blackfoot", "B_Heli_Attack_01_dynamicLoadout_F", 90000, "vehicle"], // RAH-66 with gunner
+	["Mi-48 Kajman", "O_Heli_Attack_02_dynamicLoadout_F", 125000, "vehicle"], // Mi-28 with gunner 
 
-	["MQ-12 Falcon UAV", "B_T_UAV_03_F", 100000, "vehicle"] // Do NOT use "B_T_UAV_03_dynamicLoadout_F" (unlees you don't need ASRAAM)
+	["MQ-12 Falcon UAV", "B_T_UAV_03_F", 500000, "vehicle"] // Do NOT use "B_T_UAV_03_dynamicLoadout_F" (unlees you don't need ASRAAM)
 ];
 
 planesArray = compileFinal str
@@ -1023,18 +1023,30 @@ planesArray = compileFinal str
 	["Caesar BTT", "C_Plane_Civil_01_F", 5000, "vehicle"],
 	["Caesar BTT (El Presidente)", "C_Plane_Civil_01_racing_F", 7000, "vehicle"],
 
-	["A-149 Gryphon", "I_Plane_Fighter_04_F", 100000, "vehicle"],
-
-	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_dynamicLoadout_F", 50000, "vehicle", "variant_greyhawkBomber"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than Missile ones
-	["K40 Ababil-3 Bomber UAV", "O_UAV_02_dynamicLoadout_F", 50000, "vehicle", "variant_greyhawkBomber"],
-	["K40 Ababil-3 Bomber UAV", "I_UAV_02_dynamicLoadout_F", 50000, "vehicle", "variant_greyhawkBomber"],
-
-	["MQ4A Greyhawk Cluster UAV", "B_UAV_02_dynamicLoadout_F", 75000, "vehicle", "variant_greyhawkCluster"],
-	["K40 Ababil-3 Cluster UAV", "O_UAV_02_dynamicLoadout_F", 75000, "vehicle", "variant_greyhawkCluster"],
-	["K40 Ababil-3 Cluster UAV", "I_UAV_02_dynamicLoadout_F", 75000, "vehicle", "variant_greyhawkCluster"],
+	["A-143 Buzzard (AA)", "I_Plane_Fighter_03_AA_F", 70000, "vehicle"],
+	["A-143 Buzzard (CAS)", "I_Plane_Fighter_03_CAS_F", 90000, "vehicle"],
 	
-	["UCAV Sentinel Bomber", "B_UAV_05_F", 50000, "vehicle", "variant_sentinelBomber"],
-	["UCAV Sentinel Cluster", "B_UAV_05_F", 75000, "vehicle", "variant_sentinelCluster"]
+	["A-149 Gryphon (AA/Bomb)", "I_Plane_Fighter_04_F", 175000, "vehicle"],
+	
+	["A-164 Wipeout (CAS)", "B_Plane_CAS_01_F", 450000, "vehicle"],
+	
+	["F/A-181 Black Wasp II (Gun)", "B_Plane_Fighter_01_Stealth_F", 250000, "vehicle"],
+	
+	["F/A-181 Black Wasp II (CAS)", "B_Plane_Fighter_01_Stealth_F", 800000, "vehicle"],
+	
+	["V-44 X Blackfish (Infantry)", "B_T_VTOL_01_infantry_F", 80000, "vehicle"],
+	["V-44 X Blackfish (Armed)", "B_T_VTOL_01_armed_F", 350000, "vehicle"],
+
+	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_dynamicLoadout_F", 100000, "vehicle", "variant_greyhawkBomber"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than Missile ones
+	["K40 Ababil-3 Bomber UAV", "O_UAV_02_dynamicLoadout_F", 100000, "vehicle", "variant_greyhawkBomber"],
+	["K40 Ababil-3 Bomber UAV", "I_UAV_02_dynamicLoadout_F", 100000, "vehicle", "variant_greyhawkBomber"],
+
+	["MQ4A Greyhawk Cluster UAV", "B_UAV_02_dynamicLoadout_F", 100000, "vehicle", "variant_greyhawkCluster"],
+	["K40 Ababil-3 Cluster UAV", "O_UAV_02_dynamicLoadout_F", 100000, "vehicle", "variant_greyhawkCluster"],
+	["K40 Ababil-3 Cluster UAV", "I_UAV_02_dynamicLoadout_F", 100000, "vehicle", "variant_greyhawkCluster"],
+	
+	["UCAV Sentinel Bomber", "B_UAV_05_F", 150000, "vehicle", "variant_sentinelBomber"],
+	["UCAV Sentinel Cluster", "B_UAV_05_F", 150000, "vehicle", "variant_sentinelCluster"]
 ];
 
 boatsArray = compileFinal str
