@@ -265,4 +265,17 @@ switch (true) do
 			["Laserdesignator_mounted", [0]]
 		];
 	};
+	
+	// Qilin Minigun - experimental use of Blackfish minigun
+	case (_class isKindOf "O_T_LSV_02_armed_F"):
+	{
+		_mags =
+		[
+			["4000Rnd_20mm_Tracer_Red_shells", [0]],
+		];
+		_weapons =
+		[
+			["gatling_20mm_VTOL_01", [0]],
+		];
+	};
 };
