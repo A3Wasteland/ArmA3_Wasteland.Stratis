@@ -1034,7 +1034,7 @@ planesArray = compileFinal str
 	
 	["F/A-181 Black Wasp II (Gun)", "B_Plane_Fighter_01_Stealth_F", 250000, "vehicle"],
 	
-	["F/A-181 Black Wasp II (CAS)", "B_Plane_Fighter_01_Stealth_F", 800000, "vehicle"],
+	["F/A-181 Black Wasp II (CAS)", "B_Plane_Fighter_01_F", 800000, "vehicle"],
 	
 	["V-44 X Blackfish (Infantry)", "B_T_VTOL_01_infantry_F", 80000, "vehicle"],
 	["V-44 X Blackfish (Armed)", "B_T_VTOL_01_armed_F", 350000, "vehicle"],
