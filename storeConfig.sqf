@@ -960,16 +960,16 @@ armoredArray = compileFinal str
 	["MSE-3 Marid", "O_APC_Wheeled_02_rcws_v2_F", 20000, "vehicle"],
 	["AMV-7 Marshall", "B_APC_Wheeled_01_cannon_F", 30000, "vehicle"],
 	["AFV-4 Gorgon", "I_APC_Wheeled_03_cannon_F", 30000, "vehicle"],
-	["Rhino MGS", "B_AFV_Wheeled_01_cannon_F", 50000, "vehicle"],
-	["Rhino MGS (Urban)", "B_AFV_Wheeled_01_up_cannon_F", 70000, "vehicle"]
-];
-
-tanksArray = compileFinal str
-[
 	["AWC 303 Nyx Recon", "I_LT_01_scout_F", 2000, "vehicle"],
 	["AWC 304 Nyx Autocannon", "I_LT_01_cannon_F", 5000, "vehicle"],
 	["AWC 302 Nyx AA", "I_LT_01_AA_F", 7000, "vehicle"],
 	["AWC 301 Nyx AT", "I_LT_01_AT_F", 10000, "vehicle"],
+];
+
+tanksArray = compileFinal str
+[
+	["Rhino MGS", "B_AFV_Wheeled_01_cannon_F", 50000, "vehicle"],
+	["Rhino MGS (Urban)", "B_AFV_Wheeled_01_up_cannon_F", 70000, "vehicle"]
 	["CRV-6e Bobcat (Resupply)", "B_APC_Tracked_01_CRV_F", 30000, "vehicle"],
 	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 30000, "vehicle"],
 	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 40000, "vehicle"],
