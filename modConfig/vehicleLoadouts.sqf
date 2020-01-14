@@ -271,11 +271,11 @@ switch (true) do
 	{
 		_mags =
 		[
-			["4000Rnd_20mm_Tracer_Red_shells", [0]],
+			["4000Rnd_20mm_Tracer_Red_shells", [0]]
 		];
 		_weapons =
 		[
-			["gatling_20mm_VTOL_01", [0]],
+			["gatling_20mm_VTOL_01", [0]]
 		];
 	};
 };
