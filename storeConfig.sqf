@@ -976,6 +976,8 @@ tanksArray = compileFinal str
 	["BTR-K Kamysh", "O_APC_Tracked_02_cannon_F", 40000, "vehicle"],
 	["IFV-6a Cheetah AA", "B_APC_Tracked_01_AA_F", 70000, "vehicle"],
 	["ZSU-39 Tigris AA", "O_APC_Tracked_02_AA_F", 70000, "vehicle"],
+	["M4 Scorcher", "B_MBT_01_arty_F", 275000, "vehicle"],
+	["M5 Sandstorm MLRS", "B_MBT_01_mlrs_F", 350000, "vehicle"],
 	["MBT-52 Kuma", "I_MBT_03_cannon_F", 50000, "vehicle"],
 	["M2A1 Slammer", "B_MBT_01_cannon_F", 50000, "vehicle"],
 	["M2A4 Slammer (Urban)", "B_MBT_01_TUSK_F", 70000, "vehicle"], // Commander gun variant
