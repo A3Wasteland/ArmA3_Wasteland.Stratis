@@ -36,7 +36,7 @@ while { true } do
 				{
 					_clientPlayer = [owner _unit] call findClientPlayer;
 
-					if ((getText (configFile >> "CfgVehicles" >> typeOf _clientPlayer >> "simulation") == "headlessclient") || ((getPlayerUID player) call isAdmin)) exitWith {};
+					if ((getText (configFile >> "CfgVehicles" >> typeOf _clientPlayer >> "simulation") == "headlessclient") || ((getPlayerUID _clientPlayer) call isAdmin)) exitWith {};
 
 					/*if (isNil "_cheatFlag") then
 					{
