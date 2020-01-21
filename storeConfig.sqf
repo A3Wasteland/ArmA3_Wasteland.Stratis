@@ -405,7 +405,7 @@ accessoriesArray = compileFinal str
 	["NVS", "optic_NVS", 5000, "item"],
 	["TWS", "optic_tws", 50000, "item"],
 	["TWS MG", "optic_tws_mg", 60000, "item"],
-	["Nightstalker", "optic_Nightstalker", 750000, "item"]
+	["Nightstalker", "optic_Nightstalker", 75000, "item"]
 ];
 
 // If commented, means the color/camo isn't implemented or is a duplicate of another hat
