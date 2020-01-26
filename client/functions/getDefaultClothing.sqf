@@ -52,7 +52,7 @@ switch (_side) do
 			};
 		};
 
-		if (_item == "headgear") then { _result = "H_Cap_blu" };
+		if (_item == "headgear") then { _result = "H_HelmetB_light_sand" };
 	};
 	case OPFOR:
 	{
@@ -76,7 +76,7 @@ switch (_side) do
 			};
 		};
 
-		if (_item == "headgear") then { _result = "H_Cap_red" };
+		if (_item == "headgear") then { _result = "H_HelmetB_light_sand" };
 	};
 	default
 	{
@@ -100,7 +100,7 @@ switch (_side) do
 			};
 		};
 
-		if (_item == "headgear") then { _result = "H_Cap_grn" };
+		if (_item == "headgear") then { _result = "H_HelmetB_light_wdl" };
 	};
 };
 
