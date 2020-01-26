@@ -21,6 +21,8 @@ if (_goggles != "") then { _player addGoggles _goggles };
 
 sleep 0.1;
 
+//Weapons
+
 // Remove GPS
 _player unlinkItem "ItemGPS";
 
@@ -35,13 +37,16 @@ _player linkItem "NVGoggles";
 
 _player addBackpack "B_AssaultPack_rgr";
 
-_player addMagazine "9Rnd_45ACP_Mag";
-_player addWeapon "hgun_ACPC2_F";
-_player addMagazine "9Rnd_45ACP_Mag";
-_player addMagazine "9Rnd_45ACP_Mag";
-_player addMagazine "9Rnd_45ACP_Mag";
+_player addMagazine "16Rnd_9x21_Mag";
+_player addWeapon "hgun_Rook40_snds_F";
+_player addMagazine "16Rnd_9x21_Mag";
+_player addMagazine "30Rnd_9x21_Mag_SMG_02_Tracer_Red";
+_player addWeapon "SMG_05_F";
+_player addMagazine "30Rnd_9x21_Mag_SMG_02_Tracer_Red";
 _player addItem "FirstAidKit";
-_player selectWeapon "hgun_ACPC2_F";
+_player addItem "Binocular";
+_player addItem "MineDetector";
+_player selectWeapon "SMG_05_F";
 
 switch (true) do
 {
