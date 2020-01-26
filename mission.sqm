@@ -1,29 +1,29 @@
 version=53;
 class EditorData
 {
-	moveGridStep=1;
+	moveGridStep=64;
 	angleGridStep=0.2617994;
 	scaleGridStep=10;
 	autoGroupingDist=10;
 	toggles=550;
 	class ItemIDProvider
 	{
-		nextID=957;
+		nextID=961;
 	};
 	class MarkerIDProvider
 	{
-		nextID=175;
+		nextID=179;
 	};
 	class LayerIndexProvider
 	{
-		nextID=14;
+		nextID=16;
 	};
 	class Camera
 	{
-		pos[]={5142.7393,298.72824,5025.002};
-		dir[]={0.85030282,-0.51297277,0.11860867};
-		up[]={0.50818467,0.85829192,0.07088875};
-		aside[]={0.13816884,4.6368223e-007,-0.99054152};
+		pos[]={5318.519,393.22192,5000.8228};
+		dir[]={-0.89666867,-0.44105873,-0.040980291};
+		up[]={-0.4407517,0.89736968,-0.020145431};
+		aside[]={-0.045659307,3.9467523e-007,0.99908864};
 	};
 };
 binarizationWanted=0;
@@ -83,14 +83,13 @@ addons[]=
 	"A3_Structures_F_Enoch_Military_Barracks",
 	"A3_Structures_F_Enoch_Military_Radar",
 	"A3_Structures_F_Enoch_Military_Training",
-	"A3_Armor_F_Tank_LT_01",
-	"A3_Ui_F_Orange"
+	"A3_Armor_F_Tank_LT_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=18;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -217,13 +216,6 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
-		{
-			className="A3_Ui_F_Orange";
-			name="Arma 3 Orange - User Interface";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 randomSeed=40661;
@@ -308,7 +300,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=456;
+		items=458;
 		class Item0
 		{
 			dataType="Group";
@@ -8907,7 +8899,7 @@ class Mission
 					name="Parking1_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=222.76913;
+					angle=222.7691;
 					id=597;
 				};
 				class Item9
@@ -9525,7 +9517,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2724,25.324522,260.125};
-						angles[]={0,2.2855117,-0};
+						angles[]={0,2.2855117,0};
 					};
 					side="Empty";
 					flags=4;
@@ -9537,10 +9529,11 @@ class Mission
 					};
 					id=879;
 					type="B_Truck_01_ammo_F";
+					atlOffset=0.014385223;
 				};
 			};
 			id=588;
-			atlOffset=-31.603386;
+			atlOffset=-62.027935;
 		};
 		class Item417
 		{
@@ -10257,7 +10250,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3787.25,19.728865,7911.375};
-				angles[]={0,5.497787,-0};
+				angles[]={0,5.497787,0};
 			};
 			side="Empty";
 			class Attributes
@@ -10308,20 +10301,11 @@ class Mission
 		};
 		class Item441
 		{
-			dataType="Marker";
-			position[]={1897,5.6620002,5743.75};
-			name="marker_169";
-			type="c_air";
-			id=867;
-			atlOffset=0.00012540817;
-		};
-		class Item442
-		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={2621.5015,66.624908,622.8985};
-				angles[]={0,5.5502043,-0};
+				angles[]={0,5.5502043,0};
 			};
 			side="Empty";
 			flags=1;
@@ -10332,7 +10316,7 @@ class Mission
 			type="Land_GuardHouse_02_grey_F";
 			atlOffset=0.32682037;
 		};
-		class Item443
+		class Item442
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10347,7 +10331,7 @@ class Mission
 			id=902;
 			type="Land_MobileRadar_01_radar_F";
 		};
-		class Item444
+		class Item443
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10363,7 +10347,7 @@ class Mission
 			type="Land_MobileRadar_01_generator_F";
 			atlOffset=-0.26116943;
 		};
-		class Item445
+		class Item444
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10380,13 +10364,13 @@ class Mission
 			type="Land_Target_Line_PaperTargets_01_F";
 			atlOffset=-0.36676025;
 		};
-		class Item446
+		class Item445
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={3916.3557,210.46622,4609.9399};
-				angles[]={0,0.25223109,-0};
+				angles[]={0,0.25223109,0};
 			};
 			side="Empty";
 			flags=5;
@@ -10396,13 +10380,13 @@ class Mission
 			id=923;
 			type="Land_Barracks_06_F";
 		};
-		class Item447
+		class Item446
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={3929.8516,206.8934,4607.9761};
-				angles[]={0,1.8167212,-0};
+				angles[]={0,1.8167212,0};
 			};
 			side="Empty";
 			flags=4;
@@ -10413,8 +10397,9 @@ class Mission
 			};
 			id=926;
 			type="I_LT_01_AA_F";
+			atlOffset=0.0011901855;
 		};
-		class Item448
+		class Item447
 		{
 			dataType="Marker";
 			position[]={3787.6489,16.993801,7911.8325};
@@ -10422,16 +10407,7 @@ class Mission
 			type="loc_Bunker";
 			id=929;
 		};
-		class Item449
-		{
-			dataType="Marker";
-			position[]={3781.8569,17.184,7918.438};
-			name="marker_171";
-			type="RedCrystal";
-			id=930;
-			atlOffset=0.00010871887;
-		};
-		class Item450
+		class Item448
 		{
 			dataType="Marker";
 			position[]={3380,142,2903};
@@ -10441,7 +10417,7 @@ class Mission
 			id=950;
 			atlOffset=-92.137512;
 		};
-		class Item451
+		class Item449
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10480,7 +10456,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item452
+		class Item450
 		{
 			dataType="Marker";
 			position[]={3753,213.593,4890};
@@ -10490,7 +10466,7 @@ class Mission
 			id=952;
 			atlOffset=0.00048828125;
 		};
-		class Item453
+		class Item451
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10529,7 +10505,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item454
+		class Item452
 		{
 			dataType="Marker";
 			position[]={5263,218,5021};
@@ -10539,7 +10515,7 @@ class Mission
 			id=955;
 			atlOffset=-6.6450043;
 		};
-		class Item455
+		class Item453
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10576,6 +10552,50 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item454
+		{
+			dataType="Marker";
+			position[]={1920,0,6464};
+			name="marker_175";
+			text="Discord for chat and communication - https://discord.gg/ucyuyPc";
+			type="mil_join";
+			colorName="ColorWEST";
+			id=957;
+			atlOffset=39.41;
+		};
+		class Item455
+		{
+			dataType="Marker";
+			position[]={1920,0,6528};
+			name="marker_176";
+			text="Community Website - https://republic.community";
+			type="mil_join";
+			colorName="ColorEAST";
+			id=958;
+			atlOffset=34.290001;
+		};
+		class Item456
+		{
+			dataType="Marker";
+			position[]={1920,0,6592};
+			name="marker_177";
+			text="El Presidente welcomes you to Banana Republic Wasteland!";
+			type="mil_join";
+			colorName="ColorGUER";
+			id=959;
+			atlOffset=32.529999;
+		};
+		class Item457
+		{
+			dataType="Marker";
+			position[]={1920,0,6400};
+			name="marker_178";
+			text="Server operational since June 2016";
+			type="mil_join";
+			colorName="ColorCIV";
+			id=960;
+			atlOffset=20.059999;
 		};
 	};
 };
