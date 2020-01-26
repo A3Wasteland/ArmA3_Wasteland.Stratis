@@ -52,7 +52,7 @@ switch (_side) do
 			};
 		};
 
-		if (_item == "headgear") then { _result = "H_HelmetB_light_sand" };
+		if (_item == "headgear") then { _result = "H_HelmetB_light_black" };
 	};
 	case OPFOR:
 	{
