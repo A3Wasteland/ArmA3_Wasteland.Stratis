@@ -8,7 +8,7 @@ class EditorData
 	toggles=518;
 	class ItemIDProvider
 	{
-		nextID=785;
+		nextID=792;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=12;
+		nextID=14;
 	};
 	class Camera
 	{
-		pos[]={3030.1777,673.43335,2353.6108};
-		dir[]={0.076540239,-0.50822246,0.85785717};
-		up[]={0.045167182,0.86121303,0.50622708};
-		aside[]={0.99607128,3.8529106e-007,-0.08887399};
+		pos[]={3016.5459,11.522546,6011.8965};
+		dir[]={0.7180931,-0.53745955,-0.44241247};
+		up[]={0.45763785,0.84322816,-0.28194922};
+		aside[]={-0.52459383,1.9911677e-006,-0.85148227};
 	};
 };
 binarizationWanted=0;
@@ -78,7 +78,9 @@ addons[]=
 	"A3_Boat_F_EPC_Submarine_01",
 	"A3_Props_F_Tank_Military_Wrecks",
 	"A3_Structures_F_Mil_Radar",
-	"A3_Structures_F_Argo_Commercial_Shop_02"
+	"A3_Structures_F_Argo_Commercial_Shop_02",
+	"A3_Structures_F_Kart_Signs_Companies",
+	"A3_Structures_F_Argo_Commercial_Accessories"
 };
 class AddonsMetaData
 {
@@ -283,7 +285,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=439;
+		items=442;
 		class Item0
 		{
 			dataType="Group";
@@ -4551,7 +4553,7 @@ class Mission
 			a=100;
 			b=100;
 			id=318;
-			atlOffset=0.00032806396;
+			atlOffset=0.00028181076;
 		};
 		class Item165
 		{
@@ -8916,7 +8918,7 @@ class Mission
 					name="Parking1_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=222.76917;
+					angle=222.76915;
 					id=597;
 				};
 				class Item9
@@ -9774,7 +9776,7 @@ class Mission
 					name="Parking4_spawn";
 					type="Empty";
 					colorName="ColorBlack";
-					angle=213.11588;
+					angle=213.11586;
 					id=649;
 					atlOffset=53.335487;
 				};
@@ -10443,17 +10445,160 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3045.625,4.8897667,5990.5};
-				angles[]={0,1.5390044,0};
+				position[]={3042.5,4.7981477,5986.5};
+				angles[]={0,6.2526069,0};
 			};
 			side="Empty";
-			flags=4;
+			flags=5;
 			class Attributes
 			{
 				init="[this] call A3W_fnc_setupMissionATM";
 			};
-			id=780;
-			type="Land_Atm_01_F";
+			id=787;
+			type="Land_Atm_02_F";
+			atlOffset=0.00032091141;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item439
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3032.75,4.4159284,5980.625};
+				angles[]={0,0.18985692,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=789;
+			type="SignAd_Sponsor_Suatmm_F";
+			atlOffset=1.253;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item440
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3042.375,4.6580229,6006.5};
+				angles[]={0,3.1010487,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=790;
+			type="Land_ATM_02_malden_F";
+			atlOffset=-2.3841858e-007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item441
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3029.125,4.4914684,6009.75};
+				angles[]={0,3.0957429,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=791;
+			type="SignAd_SponsorS_Suatmm_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };
