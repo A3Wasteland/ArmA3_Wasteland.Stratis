@@ -45,6 +45,7 @@ _player addWeapon "SMG_05_F";
 _player addMagazine "30Rnd_9x21_Mag_SMG_02_Tracer_Red";
 _player addItem "FirstAidKit";
 _player addItem "Binocular";
+_player linkItem "Binocular";
 _player addItem "MineDetector";
 _player selectWeapon "SMG_05_F";
 
