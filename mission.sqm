@@ -282,7 +282,7 @@ class Mission
 	assetType="Free";
 	class Intel
 	{
-		briefingName="A3Wasteland Stratis v1.4c";
+		briefingName="A3Wasteland Stratis v1.4d";
 		overviewText="Banana Republic Wasteland";
 		resistanceWest=0;
 		startWeather=0;
