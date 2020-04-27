@@ -282,7 +282,7 @@ class Mission
 	assetType="Free";
 	class Intel
 	{
-		briefingName="A3Wasteland Stratis v1.4d";
+		briefingName="A3Wasteland Stratis v1.4d"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
 		overviewText="Banana Republic Wasteland";
 		resistanceWest=0;
 		startWeather=0;

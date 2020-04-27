@@ -81,7 +81,7 @@ if (isServer) then
 	[] execVM "server\admins.sqf";
 };
 
-[] execVM "server\functions\serverVars.sqf";
+call compile preprocessFileLineNumbers "server\functions\serverVars.sqf";
 
 if (isServer) then
 {
@@ -174,6 +174,7 @@ if (isServer) then
 		"A3W_artilleryRadius",
 		"A3W_artilleryCooldown",
 		"A3W_artilleryAmmo",
+		"A3W_territoryWarningIcons",
 		"A3W_disableBuiltInThermal",
 		"A3W_headshotNoRevive"
 	];

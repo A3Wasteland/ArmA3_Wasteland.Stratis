@@ -55,11 +55,10 @@ player addEventHandler ["Put",
 	};
 }];
 
-player addEventHandler ["WeaponDisassembled", { _this spawn weaponDisassembledEvent }];
+//player addEventHandler ["WeaponDisassembled", { _this spawn weaponDisassembledEvent }]; // now handled in fn_inGameUIActionEvent.sqf
 player addEventHandler ["WeaponAssembled",
 {
 	params ["_player", "_obj"];
-	_objClass = typeOf _obj;
 
 	clearBackpackCargoGlobal _obj;
 	clearMagazineCargoGlobal _obj;
@@ -68,22 +67,47 @@ player addEventHandler ["WeaponAssembled",
 
 	if (unitIsUAV _obj) then
 	{
-		// ownerUID handled thru save funcs
+		// Don't disable UAV thermal vision here, do it at the bottom of fn_createCrewUAV.sqf
 
 		_playerSide = side group _player;
 
-		if (side _obj != _playerSide) then
+		if (side _obj != _playerSide && count crew _obj > 0) then
 		{
 			(crew _obj) joinSilent createGroup _playerSide;
 		};
+
+		if (isNil {_obj getVariable "ownerUID"}) then
+		{
+			_obj setVariable ["A3W_skipAutoSave", true, true]; // SKIPSAVE on first assembly
+
+			_obj allowDamage true;
+			_obj setVariable ["allowDamage", true, true];
+
+			[_obj, true] call A3W_fnc_setVehicleLoadout;
+		};
+
+		_obj setVariable ["ownerUID", getPlayerUID _player, true];
+		_obj setVariable ["ownerName", name _player, true];
+		_obj setPlateNumber name _player;
+
+		[_obj, _playerSide, true] call fn_createCrewUAV;
 
 		if (!alive getConnectedUAV _player) then
 		{
 			_player connectTerminalToUAV _obj;
 		};
 
-		[_obj, _playerSide, true] call fn_createCrewUAV;
-		[_obj, _player, false] call A3W_fnc_takeOwnership;
+		if !(_obj getVariable ["A3W_skipAutoSave", false]) then
+		{
+			if (_obj isKindOf "AllVehicles" && !(_obj isKindOf "StaticWeapon")) then
+			{
+				if (!isNil "fn_manualVehicleSave") then { _obj call fn_manualVehicleSave };
+			}
+			else
+			{
+				if (!isNil "fn_manualObjectSave") then { _obj call fn_manualObjectSave };
+			};
+		};
 	};
 }];
 

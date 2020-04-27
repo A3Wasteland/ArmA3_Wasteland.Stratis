@@ -175,6 +175,7 @@ if (_key != "" && _player isKindOf "Man" && {_isGenStore || _isGunStore || _isVe
 			_object setVariable ["A3W_purchasedStoreObject", true];
 			_object setVariable ["ownerUID", getPlayerUID _player, true];
 			_object setVariable ["ownerName", name _player, true];
+			if (isPlayer _player) then { _object setPlateNumber name _player };
 
 			private _variant = (_itemEntry select {_x isEqualType "" && {_x select [0,8] == "variant_"}}) param [0,""];
 
@@ -203,6 +204,11 @@ if (_key != "" && _player isKindOf "Man" && {_isGenStore || _isGunStore || _isVe
 				};
 			};
 
+			if (_skipSave) then
+			{
+				_object setVariable ["A3W_skipAutoSave", true, true];
+			};
+
 			if !(_player getVariable [_timeoutKey, true]) then
 			{
 				[_player, -_itemPrice] call A3W_fnc_setCMoney;
@@ -218,7 +224,7 @@ if (_key != "" && _player isKindOf "Man" && {_isGenStore || _isGunStore || _isVe
 			{
 				if (!surfaceIsWater _safePos) then
 				{
-					_object setPosATL [_safePos select 0, _safePos select 1, 0.05];
+					_object setPosATL [_safePos select 0, _safePos select 1, 0.25];
 				};
 
 				_object setVelocity [0,0,0.01];
@@ -269,11 +275,7 @@ if (_key != "" && _player isKindOf "Man" && {_isGenStore || _isGunStore || _isVe
 				_object addMagazineCargoGlobal ["30Rnd_556x45_Stanag", 2];
 			};
 
-			if (_skipSave) then
-			{
-				_object setVariable ["A3W_skipAutoSave", true, true];
-			}
-			else
+			if (!_skipSave) then
 			{
 				if (_object getVariable ["A3W_purchasedVehicle", false] && !isNil "fn_manualVehicleSave") then
 				{

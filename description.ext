@@ -7,6 +7,7 @@ joinUnassigned = 0;
 enableItemsDropping = 0;
 forceRotorLibSimulation = 0; // if you set this to 1, you deny freedom of choice to the players, which is the very principle this mission is built upon
 weaponPool = 0;
+unsafeCVL = 1; // required for store selling bins and private storage
 corpseManagerMode = 1;
 corpseRemovalMinTime = 30*60;
 corpseRemovalMaxTime = 30*60;
@@ -55,6 +56,7 @@ briefing = 0; // if 0, skip Continue button
 #include "client\systems\gunStore\dialog\gunshop_settings.hpp"
 #include "client\systems\generalStore\dialog\genstore_settings.hpp"
 #include "client\systems\vehicleStore\dialog\vehiclestore_settings.hpp"
+#include "client\systems\vehicleStore\dialog\vehpaint_gui.hpp"
 #include "client\systems\adminPanel\dialog\adminMenu.hpp"
 #include "client\systems\adminPanel\dialog\modMenu.hpp"
 #include "client\systems\adminPanel\dialog\serverAdminMenu.hpp"
@@ -108,6 +110,12 @@ class CfgFunctions
 class CfgNotifications
 {
 	#include "client\CfgNotifications.hpp"
+};
+
+class CfgSounds
+{
+	sounds[] = {};
+	#include "client\CfgSounds.hpp"
 };
 
 class CfgRemoteExec // applies only to clients

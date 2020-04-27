@@ -11,23 +11,21 @@
 
 // Generally called from buyVehicles.sqf
 
-private ["_veh", "_texture", "_textureSource", "_selections", "_textures"];
+params [["_veh",objNull,[objNull]], ["_texture","",["",[]]], ["_selections",[],[[]]]];
 
-_veh = param [0, objNull, [objNull]];
-_texture = param [1, "", ["",[]]];
-_selections = param [2, [], [[]]];
-
-if (isNull _veh || count _texture == 0) exitWith {};
+if (isNull _veh || _texture isEqualTo []) exitWith {};
 
 _veh setVariable ["BIS_enableRandomization", false, true];
 
-_textures = _veh getVariable ["A3W_objectTextures", []];
-
 scopeName "applyVehicleTexture";
+
+private _textures = _veh getVariable ["A3W_objectTextures", []];
 private _vehCfg = configFile >> "CfgVehicles" >> typeOf _veh;
+private _defaultTextures = getArray (_vehCfg >> "hiddenSelectionsTextures");
+private "_textureSource";
 
 // if _texture == ["string"], extract data from TextureSources config
-if (_texture isEqualType [] && {_texture isEqualTypeAll ""}) then
+if (_texture isEqualType [] && {_texture isEqualTypeArray [""]}) then
 {
 	_textureSource = _texture select 0;
 	private _srcTextures = getArray (_vehCfg >> "TextureSources" >> _textureSource >> "textures");
@@ -38,12 +36,23 @@ if (_texture isEqualType [] && {_texture isEqualTypeAll ""}) then
 	{ _texture pushBack [_forEachIndex, _x]	} forEach _srcTextures;
 };
 
+if (_texture isEqualTo "") then // reset to default
+{
+	_texture = _defaultTextures;
+};
+
+// if painting on top of existing TextureSource, preserve non-colored selections
+if (_textures isEqualType "") then
+{
+	_textures = getObjectTextures _veh;
+};
+
 // Apply texture to all appropriate parts
 if (_texture isEqualType "") then
 {
 	if (_selections isEqualTo []) then
 	{
-		{ _selections pushBack _forEachIndex } forEach getArray (_vehCfg >> "hiddenSelections"); // gather all selections
+		{ _selections pushBack _forEachIndex } forEach _defaultTextures; // gather all selections
 
 		// test color: vehicle player setObjectTextureGlobal [0, "#(rgb,1,1,1)color(0.5,0.03,0.3,1)"];
 
@@ -66,6 +75,7 @@ if (_texture isEqualType "") then
 //			case (_veh isKindOf "Truck_03_base_F"):                { [] };
 
 			case (_veh isKindOf "UGV_01_base_F"):                  { [1] };
+			case (_veh isKindOf "UGV_02_Base_F"):                  { [1] };
 
 //			case (_veh isKindOf "MRAP_01_base_F"):                 { [1] };
 //			case (_veh isKindOf "MRAP_02_base_F"):                 { [] };
@@ -98,9 +108,12 @@ if (_texture isEqualType "") then
 //			case (_veh isKindOf "Heli_Transport_03_base_F"):       { [] };
 //			case (_veh isKindOf "Heli_Transport_04_base_F"):       { [] };
 
+			case (_veh isKindOf "Heli_Light_01_armed_base_F"):     { [1] };
+
 //			case (_veh isKindOf "Heli_Attack_02_base_F"):          { [] };
 
 //			case (_veh isKindOf "VTOL_Base_F"):                    { [] };
+			case (_veh isKindOf "VTOL_02_base_F"):                 { [4] };
 			case (_veh isKindOf "Plane_Civil_01_base_F"):          { [2,3] };
 			case (_veh isKindOf "Plane_Fighter_01_Base_F"):        { [2,3,4,5,6,7,8,9] };
 			case (_veh isKindOf "Plane_Fighter_02_Base_F"):        { [3,4,5] };
@@ -109,6 +122,7 @@ if (_texture isEqualType "") then
 
 //			case (_veh isKindOf "UAV_03_base_F"):                  { [] };
 			case (_veh isKindOf "UAV_05_Base_F"):                  { [2,3,4,5] };
+//			case (_veh isKindOf "UAV_06_medical_base_F"):          { [1] };
 
 			case (_veh isKindOf "Boat_Civil_01_base_F"):           { [1] };
 
@@ -118,19 +132,27 @@ if (_texture isEqualType "") then
 
 	{
 		_veh setObjectTextureGlobal [_x, _texture];
-		[_textures, _x, _texture] call fn_setToPairs;
+		_textures set [_x, _texture];
 	} forEach _selections;
 }
 else
 {
+	if (_texture isEqualTypeAll []) then
 	{
-		_sel = _x select 0;
-		_tex = _x select 1;
-
-		_veh setObjectTextureGlobal [_sel, _tex];
-		[_textures, _sel, _tex] call fn_setToPairs;
-	} forEach _texture;
+		{
+			_x params ["_sel", "_tex"];
+			_veh setObjectTextureGlobal [_sel, _tex];
+			_textures set [_sel, _tex];
+		} forEach _texture;
+	};
+	if (_texture isEqualTypeAll "") then
+	{
+		{
+			_veh setObjectTextureGlobal [_forEachIndex, _x];
+			_textures set [_forEachIndex, _x];
+		} forEach _texture;
+	};
 };
 
-_veh setVariable ["A3W_objectTextures", if (isNil "_textureSource") then { _textures } else { [_textureSource] }, true];
+_veh setVariable ["A3W_objectTextures", if (isNil "_textureSource") then { _textures } else { _textureSource }, true];
 _veh setVariable ["A3W_objectTextures_missionDir", call currMissionDir, true]; // dirty workaround for bohemia's setObjectTextureGlobal client-server path mismatch retarded bullshit - https://feedback.bistudio.com/T80668
