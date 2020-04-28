@@ -58,18 +58,18 @@ if (hasInterface) then
 	_npc addAction ["<img image='client\icons\repair.paa'/> Paint vehicle", { createDialog "A3W_vehPaintMenu" }, [], 0.999, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
 };
 
-_ARMORYNPC = false
+_ARMORYNPC = false;
 switch (true) do
 {
     case (["GenStore", _npcName] call _startsWith):
     {
         [_npc, "Gear Store (Armory)"] spawn TER_fnc_addShop;
-        _ARMORYNPC = true
+        _ARMORYNPC = true;
     };
     case (["GunStore", _npcName] call _startsWith):
     {
         [_npc, "Gear Store (Armory)"] spawn TER_fnc_addShop;
-        _ARMORYNPC = true
+        _ARMORYNPC = true;
     };
 };
 
