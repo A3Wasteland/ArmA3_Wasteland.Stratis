@@ -980,6 +980,7 @@ genItemArray = compileFinal str
 allStoreMagazines = compileFinal str (call ammoArray + call throwputArray + call genItemArray);
 allRegularStoreItems = compileFinal str (call allGunStoreFirearms + call allStoreMagazines + call accessoriesArray);
 allStoreGear = compileFinal str (call headArray + call uniformArray + call vestArray + call backpackArray);
+allArsenalItems = compileFinal str (call allRegularStoreItems + call allStoreGear);
 
 genObjectsArray = compileFinal str
 [

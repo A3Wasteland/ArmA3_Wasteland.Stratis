@@ -28,8 +28,8 @@ switch _mode do {
 			 NUMBER - Unit's money
 		*/
 		params ["_unit"];
-		/* EXAMPLE */
-		rating _unit
+
+		_unit getVariable "cmoney";
 	};
 	case "setMoney":{
 		/*
@@ -44,7 +44,9 @@ switch _mode do {
 			 Nothing
 		*/
 		params ["_unit", "_change"];
-		/* EXAMPLE */
-		_unit addRating _change;
+
+		[_unit, _change] call A3W_fnc_setCMoney;
+        if (_successHint) then { hint "Purchase successful!" };
+        playSound "FD_Finish_F";
 	};
 };

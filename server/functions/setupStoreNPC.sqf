@@ -58,6 +58,21 @@ if (hasInterface) then
 	_npc addAction ["<img image='client\icons\repair.paa'/> Paint vehicle", { createDialog "A3W_vehPaintMenu" }, [], 0.999, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
 };
 
+_ARMORYNPC = false
+switch (true) do
+{
+    case (["GenStore", _npcName] call _startsWith):
+    {
+        [_npc, "Gear Store (Armory)"] spawn TER_fnc_addShop;
+        _ARMORYNPC = true
+    };
+    case (["GunStore", _npcName] call _startsWith):
+    {
+        [_npc, "Gear Store (Armory)"] spawn TER_fnc_addShop;
+        _ARMORYNPC = true
+    };
+};
+
 if (isServer) then
 {
 	// nearestBuilding no longer detects barracks since A3 v1.42, so we need this shitty workaround
@@ -212,6 +227,13 @@ if (isServer) then
 			_npc setVariable ["storeNPC_cashDesk", netId _desk, true];
 		};
 	} forEach (call storeOwnerConfig);
+
+    if (_ARMORYNPC) then
+    {
+        _inv = [];
+        {_inv append [_x select 1, _x select 2, true]} forEach (call allGunStoreFirearms);
+        [_npc, _inv] spawn TER_fnc_addShopCargo;
+    };
 };
 
 if (isServer) then
