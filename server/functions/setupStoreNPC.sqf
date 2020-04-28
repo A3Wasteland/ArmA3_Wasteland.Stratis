@@ -231,7 +231,7 @@ if (isServer) then
     if (_ARMORYNPC) then
     {
         _inv = [];
-        {_inv append [_x select 1, _x select 2, true]} forEach (call allGunStoreFirearms);
+        {_inv append [_x select 1, _x select 2, true]} forEach (call allArsenalItems);
         [_npc, _inv] spawn TER_fnc_addShopCargo;
     };
 };
