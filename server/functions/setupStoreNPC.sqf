@@ -22,17 +22,17 @@ _npc setName [_npcName,"",""];
 _npc allowDamage false;
 { _npc disableAI _x } forEach ["MOVE","FSM","TARGET","AUTOTARGET"];
 
+_startsWith =
+{
+    private ["_needle", "_testArr"];
+    _needle = _this select 0;
+    _testArr = toArray (_this select 1);
+    _testArr resize count toArray _needle;
+    (toString _testArr == _needle)
+};
+
 if (hasInterface) then
 {
-	_startsWith =
-	{
-		private ["_needle", "_testArr"];
-		_needle = _this select 0;
-		_testArr = toArray (_this select 1);
-		_testArr resize count toArray _needle;
-		(toString _testArr == _needle)
-	};
-
 	switch (true) do
 	{
 		case (["GenStore", _npcName] call _startsWith):
