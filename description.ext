@@ -73,6 +73,7 @@ briefing = 0; // if 0, skip Continue button
 #include "addons\gui\gui.hpp"
 #include "addons\parking\list_simple_menu.hpp"
 #include "addons\CHVD\dialog.hpp"
+#include "addons\VASS\gui\cfgGUI.hpp"
 
 class RscTitles
 {
@@ -105,6 +106,7 @@ class CfgFunctions
 	};
 
 	#include "addons\CHVD\CfgFunctions.hpp"
+	#include "addons\VASS\cfgFunctions.hpp"
 };
 
 class CfgNotifications
